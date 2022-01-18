@@ -35,7 +35,7 @@ namespace DNN.Modules.DnnUserVoice.Services
                 if (string.IsNullOrWhiteSpace(this.resourceFileRoot))
                 {
                     this.resourceFileRoot = HostingEnvironment.MapPath(
-                        "~/DesktopModules/DNN.UserVoice/resources/App_LocalResources/");
+                        "~/DesktopModules/Dnn.UserVoice/resources/App_LocalResources/");
                 }
 
                 return this.resourceFileRoot;
@@ -77,6 +77,32 @@ namespace DNN.Modules.DnnUserVoice.Services
 
         private LocalizationViewModel HydrateViewModel()
         {
+            var modelvalidation = new ModelValidationInfo
+            {
+                IdGreaterThanZero = this.GetString("IdGreaterThanZero", "ModelValidation.resx"),
+                NameRequired = this.GetString("NameRequired", "ModelValidation.resx"),
+
+            };
+            viewModel.ModelValidation = modelvalidation;
+            var ui = new UIInfo
+            {
+                AddItem = this.GetString("AddItem", "UI.resx"),
+                Cancel = this.GetString("Cancel", "UI.resx"),
+                Create = this.GetString("Create", "UI.resx"),
+                Delete = this.GetString("Delete", "UI.resx"),
+                DeleteItemConfirm = this.GetString("DeleteItemConfirm", "UI.resx"),
+                Description = this.GetString("Description", "UI.resx"),
+                Edit = this.GetString("Edit", "UI.resx"),
+                LoadMore = this.GetString("LoadMore", "UI.resx"),
+                Name = this.GetString("Name", "UI.resx"),
+                No = this.GetString("No", "UI.resx"),
+                Save = this.GetString("Save", "UI.resx"),
+                SearchPlaceholder = this.GetString("SearchPlaceholder", "UI.resx"),
+                ShownItems = this.GetString("ShownItems", "UI.resx"),
+                Yes = this.GetString("Yes", "UI.resx"),
+
+            };
+            viewModel.UI = ui;
             return viewModel;
 
         }

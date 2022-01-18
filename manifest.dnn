@@ -1,6 +1,6 @@
 <dotnetnuke version="5.0" type="Package">
   <packages>
-    <package name="DNN_UserVoice" type="Module" version="00.01.00">
+    <package name="DNN_UserVoice" type="Module" version="00.02.00">
       <friendlyName>User Voice</friendlyName>
       <description>User Voice</description>
       <iconFile>~/DesktopModules/DNN.UserVoice/resources/images/module-icon.png</iconFile>
@@ -65,7 +65,7 @@
             </moduleDefinitions>
           </desktopModule>
         </component>
-        <component type="Cleanup" version="00.01.00" glob="DesktopModules/DNN.UserVoice/resources/**/*" />
+        <component type="Cleanup" version="00.02.00" glob="DesktopModules/DNN.UserVoice/resources/**/*" />
         <component type="ResourceFile">
           <resourceFiles>
             <basePath>DesktopModules/DNN.UserVoice/resources</basePath>

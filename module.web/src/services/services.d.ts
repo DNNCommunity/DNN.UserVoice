@@ -182,6 +182,10 @@ export interface IUpdateItemDTO extends ICreateItemDTO {
 }
 /** A viewmodel that exposes all resource keys in strong types. */
 export declare class LocalizationViewModel implements ILocalizationViewModel {
+    /** Localized strings present the ModelValidation resources. */
+    modelValidation?: ModelValidationInfo | undefined;
+    /** Localized strings present the UI resources. */
+    uI?: UIInfo | undefined;
     constructor(data?: ILocalizationViewModel);
     init(_data?: any): void;
     static fromJS(data: any): LocalizationViewModel;
@@ -189,6 +193,94 @@ export declare class LocalizationViewModel implements ILocalizationViewModel {
 }
 /** A viewmodel that exposes all resource keys in strong types. */
 export interface ILocalizationViewModel {
+    /** Localized strings present the ModelValidation resources. */
+    modelValidation?: ModelValidationInfo | undefined;
+    /** Localized strings present the UI resources. */
+    uI?: UIInfo | undefined;
+}
+/** Localized strings for the ModelValidation resources. */
+export declare class ModelValidationInfo implements IModelValidationInfo {
+    /** Gets or sets the IdGreaterThanZero localized text. */
+    idGreaterThanZero?: string | undefined;
+    /** Gets or sets the NameRequired localized text. */
+    nameRequired?: string | undefined;
+    constructor(data?: IModelValidationInfo);
+    init(_data?: any): void;
+    static fromJS(data: any): ModelValidationInfo;
+    toJSON(data?: any): any;
+}
+/** Localized strings for the ModelValidation resources. */
+export interface IModelValidationInfo {
+    /** Gets or sets the IdGreaterThanZero localized text. */
+    idGreaterThanZero?: string | undefined;
+    /** Gets or sets the NameRequired localized text. */
+    nameRequired?: string | undefined;
+}
+/** Localized strings for the UI resources. */
+export declare class UIInfo implements IUIInfo {
+    /** Gets or sets the AddItem localized text. */
+    addItem?: string | undefined;
+    /** Gets or sets the Cancel localized text. */
+    cancel?: string | undefined;
+    /** Gets or sets the Create localized text. */
+    create?: string | undefined;
+    /** Gets or sets the Delete localized text. */
+    delete?: string | undefined;
+    /** Gets or sets the DeleteItemConfirm localized text. */
+    deleteItemConfirm?: string | undefined;
+    /** Gets or sets the Description localized text. */
+    description?: string | undefined;
+    /** Gets or sets the Edit localized text. */
+    edit?: string | undefined;
+    /** Gets or sets the LoadMore localized text. */
+    loadMore?: string | undefined;
+    /** Gets or sets the Name localized text. */
+    name?: string | undefined;
+    /** Gets or sets the No localized text. */
+    no?: string | undefined;
+    /** Gets or sets the Save localized text. */
+    save?: string | undefined;
+    /** Gets or sets the SearchPlaceholder localized text. */
+    searchPlaceholder?: string | undefined;
+    /** Gets or sets the ShownItems localized text. */
+    shownItems?: string | undefined;
+    /** Gets or sets the Yes localized text. */
+    yes?: string | undefined;
+    constructor(data?: IUIInfo);
+    init(_data?: any): void;
+    static fromJS(data: any): UIInfo;
+    toJSON(data?: any): any;
+}
+/** Localized strings for the UI resources. */
+export interface IUIInfo {
+    /** Gets or sets the AddItem localized text. */
+    addItem?: string | undefined;
+    /** Gets or sets the Cancel localized text. */
+    cancel?: string | undefined;
+    /** Gets or sets the Create localized text. */
+    create?: string | undefined;
+    /** Gets or sets the Delete localized text. */
+    delete?: string | undefined;
+    /** Gets or sets the DeleteItemConfirm localized text. */
+    deleteItemConfirm?: string | undefined;
+    /** Gets or sets the Description localized text. */
+    description?: string | undefined;
+    /** Gets or sets the Edit localized text. */
+    edit?: string | undefined;
+    /** Gets or sets the LoadMore localized text. */
+    loadMore?: string | undefined;
+    /** Gets or sets the Name localized text. */
+    name?: string | undefined;
+    /** Gets or sets the No localized text. */
+    no?: string | undefined;
+    /** Gets or sets the Save localized text. */
+    save?: string | undefined;
+    /** Gets or sets the SearchPlaceholder localized text. */
+    searchPlaceholder?: string | undefined;
+    /** Gets or sets the ShownItems localized text. */
+    shownItems?: string | undefined;
+    /** Gets or sets the Yes localized text. */
+    yes?: string | undefined;
 }
 export declare class ApiException extends Error {
     message: string;

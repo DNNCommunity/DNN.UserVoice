@@ -390,6 +390,7 @@ internal class Build : NukeBuild
         .DependsOn(SetManifestVersions)
         .DependsOn(SetPackagesVersions)
         .DependsOn(Swagger)
+        .DependsOn(Compile)
         .Executes(() =>
         {
             NpmRun(s => s
