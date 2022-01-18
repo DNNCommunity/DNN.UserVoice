@@ -699,6 +699,10 @@ export interface IUpdateItemDTO extends ICreateItemDTO {
 
 /** A viewmodel that exposes all resource keys in strong types. */
 export class LocalizationViewModel implements ILocalizationViewModel {
+    /** Localized strings present the ModelValidation resources. */
+    modelValidation?: ModelValidationInfo | undefined;
+    /** Localized strings present the UI resources. */
+    uI?: UIInfo | undefined;
 
     constructor(data?: ILocalizationViewModel) {
         if (data) {
@@ -710,6 +714,10 @@ export class LocalizationViewModel implements ILocalizationViewModel {
     }
 
     init(_data?: any) {
+        if (_data) {
+            this.modelValidation = _data["ModelValidation"] ? ModelValidationInfo.fromJS(_data["ModelValidation"]) : <any>undefined;
+            this.uI = _data["UI"] ? UIInfo.fromJS(_data["UI"]) : <any>undefined;
+        }
     }
 
     static fromJS(data: any): LocalizationViewModel {
@@ -721,12 +729,182 @@ export class LocalizationViewModel implements ILocalizationViewModel {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
+        data["ModelValidation"] = this.modelValidation ? this.modelValidation.toJSON() : <any>undefined;
+        data["UI"] = this.uI ? this.uI.toJSON() : <any>undefined;
         return data;
     }
 }
 
 /** A viewmodel that exposes all resource keys in strong types. */
 export interface ILocalizationViewModel {
+    /** Localized strings present the ModelValidation resources. */
+    modelValidation?: ModelValidationInfo | undefined;
+    /** Localized strings present the UI resources. */
+    uI?: UIInfo | undefined;
+}
+
+/** Localized strings for the ModelValidation resources. */
+export class ModelValidationInfo implements IModelValidationInfo {
+    /** Gets or sets the IdGreaterThanZero localized text. */
+    idGreaterThanZero?: string | undefined;
+    /** Gets or sets the NameRequired localized text. */
+    nameRequired?: string | undefined;
+
+    constructor(data?: IModelValidationInfo) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.idGreaterThanZero = _data["IdGreaterThanZero"];
+            this.nameRequired = _data["NameRequired"];
+        }
+    }
+
+    static fromJS(data: any): ModelValidationInfo {
+        data = typeof data === 'object' ? data : {};
+        let result = new ModelValidationInfo();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["IdGreaterThanZero"] = this.idGreaterThanZero;
+        data["NameRequired"] = this.nameRequired;
+        return data;
+    }
+}
+
+/** Localized strings for the ModelValidation resources. */
+export interface IModelValidationInfo {
+    /** Gets or sets the IdGreaterThanZero localized text. */
+    idGreaterThanZero?: string | undefined;
+    /** Gets or sets the NameRequired localized text. */
+    nameRequired?: string | undefined;
+}
+
+/** Localized strings for the UI resources. */
+export class UIInfo implements IUIInfo {
+    /** Gets or sets the AddItem localized text. */
+    addItem?: string | undefined;
+    /** Gets or sets the Cancel localized text. */
+    cancel?: string | undefined;
+    /** Gets or sets the Create localized text. */
+    create?: string | undefined;
+    /** Gets or sets the Delete localized text. */
+    delete?: string | undefined;
+    /** Gets or sets the DeleteItemConfirm localized text. */
+    deleteItemConfirm?: string | undefined;
+    /** Gets or sets the Description localized text. */
+    description?: string | undefined;
+    /** Gets or sets the Edit localized text. */
+    edit?: string | undefined;
+    /** Gets or sets the LoadMore localized text. */
+    loadMore?: string | undefined;
+    /** Gets or sets the Name localized text. */
+    name?: string | undefined;
+    /** Gets or sets the No localized text. */
+    no?: string | undefined;
+    /** Gets or sets the Save localized text. */
+    save?: string | undefined;
+    /** Gets or sets the SearchPlaceholder localized text. */
+    searchPlaceholder?: string | undefined;
+    /** Gets or sets the ShownItems localized text. */
+    shownItems?: string | undefined;
+    /** Gets or sets the Yes localized text. */
+    yes?: string | undefined;
+
+    constructor(data?: IUIInfo) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.addItem = _data["AddItem"];
+            this.cancel = _data["Cancel"];
+            this.create = _data["Create"];
+            this.delete = _data["Delete"];
+            this.deleteItemConfirm = _data["DeleteItemConfirm"];
+            this.description = _data["Description"];
+            this.edit = _data["Edit"];
+            this.loadMore = _data["LoadMore"];
+            this.name = _data["Name"];
+            this.no = _data["No"];
+            this.save = _data["Save"];
+            this.searchPlaceholder = _data["SearchPlaceholder"];
+            this.shownItems = _data["ShownItems"];
+            this.yes = _data["Yes"];
+        }
+    }
+
+    static fromJS(data: any): UIInfo {
+        data = typeof data === 'object' ? data : {};
+        let result = new UIInfo();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["AddItem"] = this.addItem;
+        data["Cancel"] = this.cancel;
+        data["Create"] = this.create;
+        data["Delete"] = this.delete;
+        data["DeleteItemConfirm"] = this.deleteItemConfirm;
+        data["Description"] = this.description;
+        data["Edit"] = this.edit;
+        data["LoadMore"] = this.loadMore;
+        data["Name"] = this.name;
+        data["No"] = this.no;
+        data["Save"] = this.save;
+        data["SearchPlaceholder"] = this.searchPlaceholder;
+        data["ShownItems"] = this.shownItems;
+        data["Yes"] = this.yes;
+        return data;
+    }
+}
+
+/** Localized strings for the UI resources. */
+export interface IUIInfo {
+    /** Gets or sets the AddItem localized text. */
+    addItem?: string | undefined;
+    /** Gets or sets the Cancel localized text. */
+    cancel?: string | undefined;
+    /** Gets or sets the Create localized text. */
+    create?: string | undefined;
+    /** Gets or sets the Delete localized text. */
+    delete?: string | undefined;
+    /** Gets or sets the DeleteItemConfirm localized text. */
+    deleteItemConfirm?: string | undefined;
+    /** Gets or sets the Description localized text. */
+    description?: string | undefined;
+    /** Gets or sets the Edit localized text. */
+    edit?: string | undefined;
+    /** Gets or sets the LoadMore localized text. */
+    loadMore?: string | undefined;
+    /** Gets or sets the Name localized text. */
+    name?: string | undefined;
+    /** Gets or sets the No localized text. */
+    no?: string | undefined;
+    /** Gets or sets the Save localized text. */
+    save?: string | undefined;
+    /** Gets or sets the SearchPlaceholder localized text. */
+    searchPlaceholder?: string | undefined;
+    /** Gets or sets the ShownItems localized text. */
+    shownItems?: string | undefined;
+    /** Gets or sets the Yes localized text. */
+    yes?: string | undefined;
 }
 
 export class ApiException extends Error {
