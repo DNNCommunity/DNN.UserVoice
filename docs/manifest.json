@@ -1,0 +1,2729 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/DNN.UserVoice/DNN.UserVoice/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Common.Globals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Common.Globals.html",
+          "hash": "YjgqaIfqFC7L4SKObJU5BQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Common.html",
+          "hash": "GNb6i1nu8Fimi+R6EvlN4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.ItemController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.ItemController.html",
+          "hash": "auHNOl6ye/82ub3A5csnmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.LocalizationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.LocalizationController.html",
+          "hash": "PANgTupTbFiHK6nvembCsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.ModuleApiController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.ModuleApiController.html",
+          "hash": "+PO0k2Ig/4BROCK3Bu8u9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.ServiceRouteMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.ServiceRouteMapper.html",
+          "hash": "L9vx1ylt6JLWnJCb40g7xA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Controllers.html",
+          "hash": "nDGJoP6dZdH+0dyn3V5cRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.DTO.CreateItemDTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.DTO.CreateItemDTO.html",
+          "hash": "itOFhipGfanh1uQXCR/YHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.DTO.GetItemsPageDTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.DTO.GetItemsPageDTO.html",
+          "hash": "z7E1Q1jPi4lEF67IENmyEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.DTO.UpdateItemDTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.DTO.UpdateItemDTO.html",
+          "hash": "j0o8EN9Jlxb9TZSfjkBPbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.DTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.DTO.html",
+          "hash": "ajq1QyspBvS3m2UlrnOk4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.BaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.BaseEntity.html",
+          "hash": "OZs+kXkB5lO+CCuj79R6lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.IEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.IEntity.html",
+          "hash": "/lg/0YhwRSWzE0yJiJ/UrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.Item.html",
+          "hash": "N0U2+xlqi0mz+HSP8hQ59Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Entities.html",
+          "hash": "mQDAapg6YS0vJIOuXE3Okw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.ModuleDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.ModuleDbContext.html",
+          "hash": "cFn2FhJneiQL7TEvWp4LCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Repositories.IRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Repositories.IRepository-1.html",
+          "hash": "ENIucn/ONuBjTgFdNf6KDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Repositories.Repository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Repositories.Repository-1.html",
+          "hash": "pUDvSKjCqfj8VHU1p6jrXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.Repositories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.Repositories.html",
+          "hash": "0hd58vU9b6z9UJdbu+tiHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Data.html",
+          "hash": "o9JabmTZlLC3g281HDcevQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Services.IItemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Services.IItemService.html",
+          "hash": "8MZmP0Qa+ndXz0w3vGAJxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Services.ILocalizationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Services.ILocalizationService.html",
+          "hash": "qDVYbNsL8x0Rr/7YDUB/qQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Services.ItemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Services.ItemService.html",
+          "hash": "DmgwGj12O2bWcLmcX53YEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Services.LocalizationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Services.LocalizationService.html",
+          "hash": "SpZbPIi37lG9rwDA09+umw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Services.html",
+          "hash": "CeUdDHp3tsLEM3nlGnocJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.Startup.html",
+          "hash": "mF02u3ilQ5bT6gKdAyugNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.ItemViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.ItemViewModel.html",
+          "hash": "1HowDkflWDyaXv791V7aKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.ItemsPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.ItemsPageViewModel.html",
+          "hash": "avcNUDLPLUJi2DvWGsE+mQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.LocalizationViewModel.ModelValidationInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.LocalizationViewModel.ModelValidationInfo.html",
+          "hash": "XZylt572mjybKmbUblYaTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.LocalizationViewModel.UIInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.LocalizationViewModel.UIInfo.html",
+          "hash": "qf8X4CDdSCwe7PKJfiP5YQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.LocalizationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.LocalizationViewModel.html",
+          "hash": "A02w1B+gx8zNBHnhjzef7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.ViewModels.html",
+          "hash": "aqJsXUVk5K1KqlsGsKA3pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.DnnUserVoice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.DnnUserVoice.html",
+          "hash": "dyILNCPUbhZgytB8gXwPFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "KtqxPzGWP8ggJXUE+07TMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "8biDIclC+O6Lmm+7d1z1Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/git.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/git.html",
+          "hash": "cOFnAkZrcrXAS3GEwfZz+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "6qR4tn1TPhvP60/q1pI3NQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/project-architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/project-architecture.html",
+          "hash": "aM7tdYySQ+EbIaIoxK4lCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "E2zehL9R44b3qURfeD5rTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception._constructor_.html",
+          "hash": "x9AwoeyIP1i3ew/6BtpoGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.headers.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.headers.html",
+          "hash": "HUJx5foq9NcLzsCmZ/i4tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.isapiexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.isapiexception.html",
+          "hash": "DCzTO5AdmaIsT5zKFXqMOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.html",
+          "hash": "+hYXl5l8/PkBmuEke93VPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.message.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.message.html",
+          "hash": "OzVcFDN8zuBdgcwlXYAkUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.response.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.response.html",
+          "hash": "WAW127fgJHmBaDixRLmIHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.result.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.result.html",
+          "hash": "VqgOBfnesm3Q4LY1370qAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.apiexception.status.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.apiexception.status.html",
+          "hash": "L/91AKl4cAwE83CqMdVedw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception._constructor_.html",
+          "hash": "RAJRs0bow2JSnWLP60AVjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception.fromjs.html",
+          "hash": "e5C8TU1EBoRnrWNKu3PaKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception.init.html",
+          "hash": "EfgRteRhJvSjv6FY6N6HSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception.html",
+          "hash": "dooSB2YuV8NXYkFk99u8Ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception.message.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception.message.html",
+          "hash": "oqAB7b6OyqGAeN/p67l3TA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception.paramname.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception.paramname.html",
+          "hash": "IV8ClWsChIVK15Hh+lbfgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.argumentexception.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.argumentexception.tojson.html",
+          "hash": "lkodxNy28Qd84zwg4WoFaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.clientbase._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.clientbase._constructor_.html",
+          "hash": "3a+6MTHM7ei0EPEYoZqj2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.clientbase.getbaseurl.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.clientbase.getbaseurl.html",
+          "hash": "qqWm2CDtHSLGu+97fmH8zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.clientbase.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.clientbase.html",
+          "hash": "hJLGawogihpiooSMfn+NMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.clientbase.transformoptions.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.clientbase.transformoptions.html",
+          "hash": "eEeL7rl2U2/rHQuilP2uUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.configurerequest.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.configurerequest.html",
+          "hash": "diDJf2mdZrBy7bqNPqxEiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.configurerequest.moduleid.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.configurerequest.moduleid.html",
+          "hash": "gzYIJ9AP5yEJWYlxLtGuNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto._constructor_.html",
+          "hash": "PGC+bkwcllMsnsTiHXBbNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto.description.html",
+          "hash": "9r8Iq7bQFZmbvXlC5YUhow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto.fromjs.html",
+          "hash": "3BdHWyy4BZuJBt4gIJLE2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto.init.html",
+          "hash": "oiaeZ8u9iX0LPJVUABR5rA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto.html",
+          "hash": "7Cy9033vnTvfFPKzboO1SQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto.name.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto.name.html",
+          "hash": "LhKENDkOo8QpSUXP3qaoIg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.createitemdto.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.createitemdto.tojson.html",
+          "hash": "Z+8QaBVZpqtn0KdXdvwJMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception._constructor_.html",
+          "hash": "J8NdTjw05BksvuGlT3Jk2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.fromjs.html",
+          "hash": "r4QxRxrFWv+dXr64PrJzMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.init.html",
+          "hash": "CP2ii68kfvZAfMAMseO/wA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.innerexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.innerexception.html",
+          "hash": "O/yAfTquhKNXkiq22EQZRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.html",
+          "hash": "pJYk11V6N0+NqP/yhTFP3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.message.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.message.html",
+          "hash": "bT0W1YrUERUF+KhyGZuAPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.source.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.source.html",
+          "hash": "fTPzOIXq+v05IHAVqnpCOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.stacktrace.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.stacktrace.html",
+          "hash": "BvPvVPijrBy8ByCQ+ck6Rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.exception.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.exception.tojson.html",
+          "hash": "1xGsfI7zIewVMU1jTTJIYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iargumentexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iargumentexception.html",
+          "hash": "GYr9MUSYKW/KgWlxpsmExw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iargumentexception.message.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iargumentexception.message.html",
+          "hash": "Cxsilg9bNwnpXsHP5q1DhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iargumentexception.paramname.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iargumentexception.paramname.html",
+          "hash": "vPKOqrqWz2ElX/tfo1X9fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.icreateitemdto.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.icreateitemdto.description.html",
+          "hash": "VUkPWj9KHhwIn0vEwLLqOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.icreateitemdto.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.icreateitemdto.html",
+          "hash": "2iFPX8Qwh9aRREvsowiLhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.icreateitemdto.name.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.icreateitemdto.name.html",
+          "hash": "kvH8mnhFJMiGeZlnPeckkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iexception.innerexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iexception.innerexception.html",
+          "hash": "guOLf7tQ8UQRcS8gXzmaQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iexception.html",
+          "hash": "/zls35J5WMRCpsqbHKyprA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iexception.message.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iexception.message.html",
+          "hash": "f8Lh69OntOV+scmCLrzk7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iexception.source.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iexception.source.html",
+          "hash": "T7KSJkF3hKmuhgBrYSeewg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iexception.stacktrace.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iexception.stacktrace.html",
+          "hash": "Vfq74n/tNaWMa/hXu8ZkrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemspageviewmodel.items.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemspageviewmodel.items.html",
+          "hash": "atwuQurkT9Rr38oYgCjUMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemspageviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemspageviewmodel.html",
+          "hash": "KGtog7Dc0yCuNj8TxNomew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemspageviewmodel.page.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemspageviewmodel.page.html",
+          "hash": "88vTkMoadkuLN89bgMiU5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemspageviewmodel.pagecount.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemspageviewmodel.pagecount.html",
+          "hash": "meBfMsAC7XluQakSif6Xcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemspageviewmodel.resultcount.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemspageviewmodel.resultcount.html",
+          "hash": "wAECBtiIG4McglYRBf+e/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemviewmodel.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemviewmodel.description.html",
+          "hash": "tlWqI2O/Hlhm2LflIKXuqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemviewmodel.id.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemviewmodel.id.html",
+          "hash": "EgvYh0QzaU5OSEv//cRdpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemviewmodel.html",
+          "hash": "a0F/uuxRRNU3S2Lbm7PXhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iitemviewmodel.name.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iitemviewmodel.name.html",
+          "hash": "asd5lQBku9iWBCeJZFOmfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.ilocalizationviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.ilocalizationviewmodel.html",
+          "hash": "g8xmAtz5Co+imMlXXQhVQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.ilocalizationviewmodel.modelvalidation.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.ilocalizationviewmodel.modelvalidation.html",
+          "hash": "cXbIXOdE5P6Nb6655COWBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.ilocalizationviewmodel.ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.ilocalizationviewmodel.ui.html",
+          "hash": "Oq3IK5ZiBBcXs7zlujHvOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.imodelvalidationinfo.idgreaterthanzero.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.imodelvalidationinfo.idgreaterthanzero.html",
+          "hash": "hQufw3M86Vx85bBaPVJusA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.imodelvalidationinfo.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.imodelvalidationinfo.html",
+          "hash": "tCw1pM3Kd+NWcjxt3yBWYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.imodelvalidationinfo.namerequired.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.imodelvalidationinfo.namerequired.html",
+          "hash": "XBO77I473NywRXDnDjbrfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.isystemexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.isystemexception.html",
+          "hash": "MQISkJrKN5j/mUHf+KiErw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient._constructor_.html",
+          "hash": "JDbhW45cy3flZoh2wcjsqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.createitem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.createitem.html",
+          "hash": "96eL4zfRuy3yHFu/ZsXEcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.deleteitem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.deleteitem.html",
+          "hash": "GEFXr2d4dqgETkgGYvUfDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.getitemspage.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.getitemspage.html",
+          "hash": "s9GRxdyd3OTQ0h1q6Jr+bg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.jsonparsereviver.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.jsonparsereviver.html",
+          "hash": "B+0wtBsjXDKwEH5PHgR8+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.html",
+          "hash": "iA/JHiG9ar510L1jaSOlCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.processcreateitem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.processcreateitem.html",
+          "hash": "qp2+Nc3SuxDaEQPPAbIriw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.processdeleteitem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.processdeleteitem.html",
+          "hash": "oc5fa/zRpFlDYPlnqEcZXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.processgetitemspage.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.processgetitemspage.html",
+          "hash": "GWKgq/ulmvTkwzzGRQNDIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.processupdateitem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.processupdateitem.html",
+          "hash": "psn50+TNol3EY9Bwoj4U5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.processusercanedit.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.processusercanedit.html",
+          "hash": "QYdNswl5uajmND/L1kQIPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.updateitem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.updateitem.html",
+          "hash": "4R4q1l0oJxzFiwzVK4qkPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemclient.usercanedit.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemclient.usercanedit.html",
+          "hash": "rA2GwItgAIhyKYS907xaFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel._constructor_.html",
+          "hash": "gf9grG7pFXUJ1hFs5pXYog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.fromjs.html",
+          "hash": "xkLIqyvG2gTqGI3izhXAQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.init.html",
+          "hash": "rgYUOqLhGUoexXQ+WUxFFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.items.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.items.html",
+          "hash": "vVUmALErrvJN4OEJvyRXFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.html",
+          "hash": "0kZdTOC2eiNkMLa9pppEcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.page.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.page.html",
+          "hash": "P17cC8lS+nSjjt9koDXacw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.pagecount.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.pagecount.html",
+          "hash": "9dueyg3BAD3Hf/NU9Z4Npw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.resultcount.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.resultcount.html",
+          "hash": "oJW+gOfNpcXj5TF+g9D0cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemspageviewmodel.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemspageviewmodel.tojson.html",
+          "hash": "e+XbZXq57Jzd8orTXBfT/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel._constructor_.html",
+          "hash": "YOHH0TfGe5B8wfBVESQOsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.description.html",
+          "hash": "H9KZz7wIPq4otBPWEyQXqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.fromjs.html",
+          "hash": "i1h+fiACmIgva/86VG4oDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.id.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.id.html",
+          "hash": "L35tdkNAJeJsVaxhG8KoVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.init.html",
+          "hash": "c5l37mIf1XQKI6wmhikS5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.html",
+          "hash": "L6zN3M3SG+5KGgPHP5eLWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.name.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.name.html",
+          "hash": "9nkUz3U0ymA9SeZgOqJc7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.itemviewmodel.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.itemviewmodel.tojson.html",
+          "hash": "HVlJu22m8MksvspKUXIlbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.additem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.additem.html",
+          "hash": "LHFI2e2lXvtmeUJdNLY2dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.cancel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.cancel.html",
+          "hash": "4V7gMWzDw7pswLN+IE1C4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.create.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.create.html",
+          "hash": "6jL/rtU7ZHK7PCdrQMsD3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.delete.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.delete.html",
+          "hash": "IYQLFermps35n0iKsaUPFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.deleteitemconfirm.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.deleteitemconfirm.html",
+          "hash": "kR+1x6LTiCHv10Bm4G5IOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.description.html",
+          "hash": "BI9SLbVrmEaEYrbv0lHA/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.edit.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.edit.html",
+          "hash": "BPNWBkY2/E1xW3MyBi3yzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.loadmore.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.loadmore.html",
+          "hash": "ZvEfmS/DP3143bGj06NSSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.html",
+          "hash": "cQQ1V4NqL7qGuiNz+tlF1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.name.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.name.html",
+          "hash": "+N489wwtmvfGs5s8SFMi7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.no.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.no.html",
+          "hash": "lzL4yOhaUHSpg87JbZkE1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.save.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.save.html",
+          "hash": "fuj0+pizXkwOJxpGgVlLoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.searchplaceholder.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.searchplaceholder.html",
+          "hash": "WtV1GacsG/Fx5dqaXjydxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.shownitems.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.shownitems.html",
+          "hash": "ISyP0D71IaE6HDxW6jpsZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iuiinfo.yes.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iuiinfo.yes.html",
+          "hash": "/pxn5GKda0KEMb/1i3sOUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iupdateitemdto.id.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iupdateitemdto.id.html",
+          "hash": "AS55HLtZGe95Tra1EHDj8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.iupdateitemdto.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.iupdateitemdto.html",
+          "hash": "HozQ6Rpd/SYakb74X6pyrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationclient._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationclient._constructor_.html",
+          "hash": "TqDbLcVQBZ2fWlFraOhTbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationclient.getlocalization.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationclient.getlocalization.html",
+          "hash": "hMNTUMZ2u+cOzZwYO4jBtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationclient.jsonparsereviver.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationclient.jsonparsereviver.html",
+          "hash": "YAw7xlPUW4Cdv7RfWwbV3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationclient.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationclient.html",
+          "hash": "ZTcFCS0x3kApJW5bJHwGsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationclient.processgetlocalization.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationclient.processgetlocalization.html",
+          "hash": "Q0PW8lsirPOua1S6WJPahA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel._constructor_.html",
+          "hash": "ZOn2MsO5WXisIVvf3XE3pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel.fromjs.html",
+          "hash": "5zrdmmHKYqp5A/1LyzMsEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel.init.html",
+          "hash": "DoEpaogy6UeZi80e1BksZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel.html",
+          "hash": "Ir+YZHb7kri/M3H8MIwJIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel.modelvalidation.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel.modelvalidation.html",
+          "hash": "LjsJlsjYUwFX4k0HREX7Gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel.tojson.html",
+          "hash": "TuBlzffLFBzJmf3yxUEt2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.localizationviewmodel.ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.localizationviewmodel.ui.html",
+          "hash": "/tVjWr12kmiC+LHZUB46RQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.html",
+          "hash": "nNvRpaP9lUbvoxWPK9fMkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo._constructor_.html",
+          "hash": "d4ARwisu9JoT2ORyLNtykw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo.fromjs.html",
+          "hash": "YtkAIiYWQT9irGV/e3Bh1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo.idgreaterthanzero.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo.idgreaterthanzero.html",
+          "hash": "kDMTipz6gR6WmQ6TuOhQqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo.init.html",
+          "hash": "f925WTjYTZ0kt37UMpjq/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo.html",
+          "hash": "7c4UaPlL+Z4lafzj5JpVvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo.namerequired.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo.namerequired.html",
+          "hash": "D43i7ytnUVixT6zuLioWsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.modelvalidationinfo.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.modelvalidationinfo.tojson.html",
+          "hash": "BL4niM4gq0LaWoWuPAkQLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.systemexception._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.systemexception._constructor_.html",
+          "hash": "IbDlzzldB4J77qaiXoAz5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.systemexception.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.systemexception.fromjs.html",
+          "hash": "3p4RkzA9kmebd/Trb+Aa9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.systemexception.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.systemexception.init.html",
+          "hash": "5/ym3Pad1c+JJn2rKgUiVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.systemexception.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.systemexception.html",
+          "hash": "mEu3vaHA48DdcjjqkMHyzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.systemexception.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.systemexception.tojson.html",
+          "hash": "0L0CQWuf/fCBKGdakHs6qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo._constructor_.html",
+          "hash": "cTXtkJYILm1IYmPHHmzt+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.additem.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.additem.html",
+          "hash": "3EDBvQrLdEkhHq7RXzAuyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.cancel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.cancel.html",
+          "hash": "zEbiEF8TMSF7voUqQI4zwg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.create.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.create.html",
+          "hash": "AWNBMkp9r1lJofvVY6MY8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.delete.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.delete.html",
+          "hash": "h8qqUqvCGdhZv2eV9GvyOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.deleteitemconfirm.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.deleteitemconfirm.html",
+          "hash": "6g0pxDBSd0m3Y+IUTDe1aQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.description.html",
+          "hash": "2jYPXHPEqJ0RUdvCDTtQHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.edit.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.edit.html",
+          "hash": "ugx5f6ENXuODa4WBZKSVgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.fromjs.html",
+          "hash": "rIeR53B60QTkx20LZodexw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.init.html",
+          "hash": "DxFaEKybKRIG77dIxuL56w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.loadmore.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.loadmore.html",
+          "hash": "GnD0xj3S7Am/AVRJZlf4dQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.html",
+          "hash": "758v2sVHqm+aryIpXD+/AQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.name.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.name.html",
+          "hash": "FYzVmJ1rGKAdzZ1VTYnJyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.no.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.no.html",
+          "hash": "8vWpWiYbr3DJB0nL6LKAFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.save.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.save.html",
+          "hash": "6NIs4ZHfPKEBvLM61qx4ZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.searchplaceholder.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.searchplaceholder.html",
+          "hash": "CN1LUnisAsr9TvqZ3wYgiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.shownitems.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.shownitems.html",
+          "hash": "OnqKdq0BDq62csVhzwywIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.tojson.html",
+          "hash": "WilXZMVon9MQmNGjFq+sEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.uiinfo.yes.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.uiinfo.yes.html",
+          "hash": "f7UNVOh4p7flCEDYnXz2Jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.updateitemdto._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.updateitemdto._constructor_.html",
+          "hash": "GPe3M2erpeCC4MhppC0+tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.updateitemdto.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.updateitemdto.fromjs.html",
+          "hash": "HD9HCB1e3eToT4OAwlIq4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.updateitemdto.id.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.updateitemdto.id.html",
+          "hash": "jq0WB5RysI0E+MgKcMUq3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.updateitemdto.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.updateitemdto.init.html",
+          "hash": "WUr61WCzeNJ0nThUa+5ZfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.updateitemdto.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.updateitemdto.html",
+          "hash": "p50zSImp3ccgZF0j3twiXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-uservoice.updateitemdto.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-uservoice.updateitemdto.tojson.html",
+          "hash": "JpBqQafjN/s03c/ZIb1+uQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/index.html",
+          "hash": "nDJqGImHKKzF6n860ZCoqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "client/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/toc.html",
+          "hash": "ngtbNNjtD54hKdcw2twXPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "components/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/index.html",
+          "hash": "XrTg5ewtu1zKPIpEIFIkNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "components/my-component.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/my-component.html",
+          "hash": "mfSXueHUplS92qyKi3rTbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "components/my-create.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/my-create.html",
+          "hash": "eTCByFvxZ8zrugLkDvKogA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "components/my-edit.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/my-edit.html",
+          "hash": "9VV5evnCg6gmSHlqUF5mSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "components/my-item-details.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/my-item-details.html",
+          "hash": "IH2zQQKApkHbdzr91fJmaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "components/my-items-list.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/my-items-list.html",
+          "hash": "awQ/LKE+DsTODyY1UybMdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "components/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/toc.html",
+          "hash": "cTtxrMM5YtDOIo1mlNjFkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Package.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Package.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-beta-release.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-beta-release.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-develop-branch.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-develop-branch.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-pull-request.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-pull-request.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-release.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-release.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/initial-commit.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/initial-commit.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/install-module.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/install-module.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "44p/w5RcJ+eNfMSDlougbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "rest/rest-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "rest/rest-api.html",
+          "hash": "5xV1SvHUXrUdwmOgDBh3Jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "rest/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "rest/toc.html",
+          "hash": "G9YMZ1tBN6dUh3wjAxz+lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "vJDvCT6x/U2SiHeda+VXxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 174,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 33,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
