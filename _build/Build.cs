@@ -42,21 +42,21 @@ using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 [GitHubActions(
     "Release",
     GitHubActionsImage.WindowsLatest,
-    EnableGitHubContext = true,
+    ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "main", "release/*" },
     InvokedTargets = new[] { nameof(Release) }
 )]
 [GitHubActions(
     "PR_Validation",
     GitHubActionsImage.WindowsLatest,
-    EnableGitHubContext = true,
+    ImportSecrets = new[] { nameof(GitHubToken) },
     OnPullRequestBranches = new[] { "master", "main", "develop", "development", "release/*" },
     InvokedTargets = new[] { nameof(Package) }
 )]
 [GitHubActions(
     "Build",
     GitHubActionsImage.WindowsLatest,
-    EnableGitHubContext = true,
+    ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "develop", "release/*" },
     InvokedTargets = new[] { nameof(DeployGeneratedFiles) }
     )]
@@ -70,6 +70,9 @@ internal class Build : NukeBuild
     ///   - Microsoft VSCode           https://nuke.build/vscode
 
     public static int Main() => Execute<Build>(x => x.Package);
+
+    [Parameter("GitHub token")]
+    readonly string GitHubToken;
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
@@ -410,7 +413,7 @@ internal class Build : NukeBuild
         });
 
     Target SetupGitHubClient => _ => _
-        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubActions.Instance.Token))
+        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubToken))
         .OnlyWhenDynamic(() => GitRepository != null)
         .DependsOn(UpdateTokens)
         .Executes(() =>
@@ -419,14 +422,14 @@ internal class Build : NukeBuild
             if (GitRepository.IsOnMainOrMasterBranch())
             {
                 gitHubClient = new GitHubClient(new ProductHeaderValue("Nuke"));
-                var tokenAuth = new Credentials(GitHubActions.Instance.Token);
+                var tokenAuth = new Credentials(GitHubToken);
                 gitHubClient.Credentials = tokenAuth;
             }
         });
 
     Target GenerateReleaseNotes => _ => _
         .OnlyWhenDynamic(() => GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnReleaseBranch())
-        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubActions.Instance.Token))
+        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubToken))
         .DependsOn(SetupGitHubClient)
         .DependsOn(UpdateTokens)
         .Executes(() =>
@@ -484,13 +487,13 @@ internal class Build : NukeBuild
 
     Target TagRelease => _ => _
         .OnlyWhenDynamic(() => GitRepository != null && (GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnReleaseBranch()))
-        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubActions.Instance.Token))
+        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubToken))
         .DependsOn(SetupGitHubClient)
         .DependsOn(UpdateTokens)
         .Before(Compile)
         .Executes(() =>
         {
-            Git($"remote set-url origin https://{GitRepository.GetGitHubOwner()}:{GitHubActions.Instance.Token}@github.com/{GitRepository.GetGitHubOwner()}/{GitRepository.GetGitHubName()}.git");
+            Git($"remote set-url origin https://{GitRepository.GetGitHubOwner()}:{GitHubToken}@github.com/{GitRepository.GetGitHubOwner()}/{GitRepository.GetGitHubName()}.git");
             var version = GitRepository.IsOnMainOrMasterBranch() ? GitVersion.MajorMinorPatch : GitVersion.SemVer;
             GitLogger = (type, output) => Serilog.Log.Information(output);
             Git($"tag v{version}");
@@ -499,7 +502,7 @@ internal class Build : NukeBuild
 
     Target Release => _ => _
         .OnlyWhenDynamic(() => GitRepository != null && (GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnReleaseBranch()))
-        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubActions.Instance.Token))
+        .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubToken))
         .DependsOn(UpdateTokens)
         .DependsOn(SetupGitHubClient)
         .DependsOn(GenerateReleaseNotes)
@@ -762,7 +765,7 @@ internal class Build : NukeBuild
         .Executes(() =>
         {
             var gitHubClient = new GitHubClient(new ProductHeaderValue("Nuke"));
-            var authToken = new Credentials(GitHubActions.Instance.Token);
+            var authToken = new Credentials(GitHubToken);
             gitHubClient.Credentials = authToken;
 
             var repo = gitHubClient.Repository.Get(GitRepository.GetGitHubOwner(), GitRepository.GetGitHubName()).Result;
@@ -770,7 +773,7 @@ internal class Build : NukeBuild
             {
                 Git($"config --global user.name '{GitRepository.GetGitHubOwner()}'");
                 Git($"config --global user.email '{Helpers.GetManifestOwnerEmail(GlobFiles(RootDirectory / "*.dnn").FirstOrDefault())}'");
-                Git($"remote set-url origin https://{GitRepository.GetGitHubOwner()}:{GitHubActions.Instance.Token}@github.com/{GitRepository.GetGitHubOwner()}/{GitRepository.GetGitHubName()}.git");
+                Git($"remote set-url origin https://{GitRepository.GetGitHubOwner()}:{GitHubToken}@github.com/{GitRepository.GetGitHubOwner()}/{GitRepository.GetGitHubName()}.git");
                 Git("status");
                 Git("add docs -f");
                 Git("add IntegrationTests/history -f");
