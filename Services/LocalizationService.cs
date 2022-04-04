@@ -35,7 +35,7 @@ namespace DNN.Modules.DnnUserVoice.Services
                 if (string.IsNullOrWhiteSpace(this.resourceFileRoot))
                 {
                     this.resourceFileRoot = HostingEnvironment.MapPath(
-                        "~/DesktopModules/Dnn.UserVoice/resources/App_LocalResources/");
+                        "~/DesktopModules/DNN.UserVoice/resources/App_LocalResources/");
                 }
 
                 return this.resourceFileRoot;
