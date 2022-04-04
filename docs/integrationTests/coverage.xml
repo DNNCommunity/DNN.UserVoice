@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.5642" branch-rate="0.5" version="1.9" timestamp="1649039507" lines-covered="180" lines-valid="319" branches-covered="30" branches-valid="60">
+<coverage line-rate="0.5642" branch-rate="0.5" version="1.9" timestamp="1649039900" lines-covered="180" lines-valid="319" branches-covered="30" branches-valid="60">
   <sources>
     <source>D:\a\DNN.UserVoice\DNN.UserVoice\</source>
   </sources>
