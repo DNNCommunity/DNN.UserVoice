@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ItemController </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ItemController ">
+    
+    <meta name="description" content="Provides Web API access for items.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search main-content">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DNN.Modules.UserVoice.Controllers.ItemController">
+
+
+
+  <h1 id="DNN_Modules_UserVoice_Controllers_ItemController" data-uid="DNN.Modules.UserVoice.Controllers.ItemController" class="text-break">Class ItemController</h1>
+  <div class="markdown level0 summary"><p>Provides Web API access for items.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller">ApiController</a></div>
+    <div class="level2"><span class="xref">DnnApiController</span></div>
+    <div class="level3"><a class="xref" href="DNN.Modules.UserVoice.Controllers.ModuleApiController.html">ModuleApiController</a></div>
+    <div class="level4"><span class="xref">ItemController</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.controllers.ihttpcontroller">IHttpController</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DNN.Modules.UserVoice.Controllers.ModuleApiController.UserInfo.html#DNN_Modules_UserVoice_Controllers_ModuleApiController_UserInfo">ModuleApiController.UserInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="DNN.Modules.UserVoice.Controllers.ModuleApiController.CanEdit.html#DNN_Modules_UserVoice_Controllers_ModuleApiController_CanEdit">ModuleApiController.CanEdit</a>
+    </div>
+    <div>
+      <span class="xref">DnnApiController.PortalSettings</span>
+    </div>
+    <div>
+      <span class="xref">DnnApiController.ActiveModule</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.executeasync">ApiController.ExecuteAsync(HttpControllerContext, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.validate#system-web-http-apicontroller-validate-1(-0)">ApiController.Validate&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.validate#system-web-http-apicontroller-validate-1(-0-system-string)">ApiController.Validate&lt;TEntity&gt;(TEntity, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.badrequest#system-web-http-apicontroller-badrequest">ApiController.BadRequest()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.badrequest#system-web-http-apicontroller-badrequest(system-string)">ApiController.BadRequest(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.badrequest#system-web-http-apicontroller-badrequest(system-web-http-modelbinding-modelstatedictionary)">ApiController.BadRequest(ModelStateDictionary)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.conflict">ApiController.Conflict()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.content#system-web-http-apicontroller-content-1(system-net-httpstatuscode-0)">ApiController.Content&lt;T&gt;(HttpStatusCode, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.content#system-web-http-apicontroller-content-1(system-net-httpstatuscode-0-system-net-http-formatting-mediatypeformatter)">ApiController.Content&lt;T&gt;(HttpStatusCode, T, MediaTypeFormatter)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.content#system-web-http-apicontroller-content-1(system-net-httpstatuscode-0-system-net-http-formatting-mediatypeformatter-system-string)">ApiController.Content&lt;T&gt;(HttpStatusCode, T, MediaTypeFormatter, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.content#system-web-http-apicontroller-content-1(system-net-httpstatuscode-0-system-net-http-formatting-mediatypeformatter-system-net-http-headers-mediatypeheadervalue)">ApiController.Content&lt;T&gt;(HttpStatusCode, T, MediaTypeFormatter, MediaTypeHeaderValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.created#system-web-http-apicontroller-created-1(system-string-0)">ApiController.Created&lt;T&gt;(string, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.created#system-web-http-apicontroller-created-1(system-uri-0)">ApiController.Created&lt;T&gt;(Uri, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.createdatroute#system-web-http-apicontroller-createdatroute-1(system-string-system-object-0)">ApiController.CreatedAtRoute&lt;T&gt;(string, object, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.createdatroute#system-web-http-apicontroller-createdatroute-1(system-string-system-collections-generic-idictionary((system-string-system-object))-0)">ApiController.CreatedAtRoute&lt;T&gt;(string, IDictionary&lt;string, object&gt;, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.internalservererror#system-web-http-apicontroller-internalservererror">ApiController.InternalServerError()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.internalservererror#system-web-http-apicontroller-internalservererror(system-exception)">ApiController.InternalServerError(Exception)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.json#system-web-http-apicontroller-json-1(-0)">ApiController.Json&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.json#system-web-http-apicontroller-json-1(-0-newtonsoft-json-jsonserializersettings)">ApiController.Json&lt;T&gt;(T, JsonSerializerSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.json#system-web-http-apicontroller-json-1(-0-newtonsoft-json-jsonserializersettings-system-text-encoding)">ApiController.Json&lt;T&gt;(T, JsonSerializerSettings, Encoding)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.notfound">ApiController.NotFound()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.ok#system-web-http-apicontroller-ok">ApiController.Ok()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.ok#system-web-http-apicontroller-ok-1(-0)">ApiController.Ok&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.redirect#system-web-http-apicontroller-redirect(system-string)">ApiController.Redirect(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.redirect#system-web-http-apicontroller-redirect(system-uri)">ApiController.Redirect(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.redirecttoroute#system-web-http-apicontroller-redirecttoroute(system-string-system-object)">ApiController.RedirectToRoute(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.redirecttoroute#system-web-http-apicontroller-redirecttoroute(system-string-system-collections-generic-idictionary((system-string-system-object)))">ApiController.RedirectToRoute(string, IDictionary&lt;string, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.responsemessage">ApiController.ResponseMessage(HttpResponseMessage)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.statuscode">ApiController.StatusCode(HttpStatusCode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.unauthorized#system-web-http-apicontroller-unauthorized(system-net-http-headers-authenticationheadervalue())">ApiController.Unauthorized(params AuthenticationHeaderValue[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.unauthorized#system-web-http-apicontroller-unauthorized(system-collections-generic-ienumerable((system-net-http-headers-authenticationheadervalue)))">ApiController.Unauthorized(IEnumerable&lt;AuthenticationHeaderValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.initialize">ApiController.Initialize(HttpControllerContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.dispose#system-web-http-apicontroller-dispose">ApiController.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.dispose#system-web-http-apicontroller-dispose(system-boolean)">ApiController.Dispose(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.configuration">ApiController.Configuration</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.controllercontext">ApiController.ControllerContext</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.actioncontext">ApiController.ActionContext</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.modelstate">ApiController.ModelState</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.request">ApiController.Request</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.requestcontext">ApiController.RequestContext</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.url">ApiController.Url</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.http.apicontroller.user">ApiController.User</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DNN.html">DNN</a>.<a class="xref" href="DNN.Modules.html">Modules</a>.<a class="xref" href="DNN.Modules.UserVoice.html">UserVoice</a>.<a class="xref" href="DNN.Modules.UserVoice.Controllers.html">Controllers</a></h6>
+  <h6><strong>Assembly</strong>: DNN.Modules.UserVoice.dll</h6>
+  <h5 id="DNN_Modules_UserVoice_Controllers_ItemController_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ItemController : ModuleApiController, IHttpController, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DNN_Modules_UserVoice_Controllers_ItemController__ctor_DNN_Modules_UserVoice_Services_Items_IItemService_" data-uid="DNN.Modules.UserVoice.Controllers.ItemController.#ctor(DNN.Modules.UserVoice.Services.Items.IItemService)">
+          <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.-ctor.html#DNN_Modules_UserVoice_Controllers_ItemController__ctor_DNN_Modules_UserVoice_Services_Items_IItemService_">ItemController(IItemService)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.html">ItemController</a> class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DNN_Modules_UserVoice_Controllers_ItemController_CreateItem_DNN_Modules_UserVoice_Services_Items_CreateItemDTO_" data-uid="DNN.Modules.UserVoice.Controllers.ItemController.CreateItem(DNN.Modules.UserVoice.Services.Items.CreateItemDTO)">
+          <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.CreateItem.html#DNN_Modules_UserVoice_Controllers_ItemController_CreateItem_DNN_Modules_UserVoice_Services_Items_CreateItemDTO_">CreateItem(CreateItemDTO)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new item.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DNN_Modules_UserVoice_Controllers_ItemController_DeleteItem_System_Int32_" data-uid="DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem(System.Int32)">
+          <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem.html#DNN_Modules_UserVoice_Controllers_ItemController_DeleteItem_System_Int32_">DeleteItem(int)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes an existing item.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DNN_Modules_UserVoice_Controllers_ItemController_GetItemsPage_DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_" data-uid="DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage(DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO)">
+          <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage.html#DNN_Modules_UserVoice_Controllers_ItemController_GetItemsPage_DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_">GetItemsPage(GetItemsPageDTO)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a paged and sorted list of items matching a certain query.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DNN_Modules_UserVoice_Controllers_ItemController_UpdateItem_DNN_Modules_UserVoice_Services_Items_UpdateItemDTO_" data-uid="DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO)">
+          <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem.html#DNN_Modules_UserVoice_Controllers_ItemController_UpdateItem_DNN_Modules_UserVoice_Services_Items_UpdateItemDTO_">UpdateItem(UpdateItemDTO)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates an existing item.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DNN_Modules_UserVoice_Controllers_ItemController_UserCanEdit" data-uid="DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit">
+          <a class="xref" href="DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit.html#DNN_Modules_UserVoice_Controllers_ItemController_UserCanEdit">UserCanEdit()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if a user can edit the current items.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/new/develop/apiSpec/new?filename=DNN_Modules_UserVoice_Controllers_ItemController.md&amp;value=---%0Auid%3A%20DNN.Modules.UserVoice.Controllers.ItemController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/Controllers/ItemController.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      ﻿
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="toggle-mode pull-right">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+              <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+            </div>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/mermaid.min.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>  </body>
+</html>

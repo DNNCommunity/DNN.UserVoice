@@ -1,21 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Git support </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Git support ">
-    <meta name="generator" content="docfx 2.56.6.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Git support </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Git support ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="../">
     
@@ -23,7 +23,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
           <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search main-content">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -85,22 +85,31 @@
 <p>Git and Github are 2 different things. Git is a version control system that works locally and supports having remotes. Github is one of these possible remotes.</p>
 </div>
 <h2 id="create-a-git-repository">Create a git repository</h2>
+<h2 id="push-and-create-new-repository">Push and create new repository</h2>
 <div class="TIP">
 <h5>Tip</h5>
 <p>You can do the next steps using any git client (even the command line), however in this tutorial we'll be using <a href="https://visualstudio.github.com/">Github Extensions for VisualStudio</a>. If you did not select this option when you installed VisualStudio you can download this extension at the link above.
-Commit your module to Github by clicking the <code>Add to Source Control</code>button in the lower right corner of VisualStudio and complete the wizard that opens.</p>
+Create you repository by heading to View &gt; Git Changes, the Git Changes side bar menu will appear and you can press on <code>Push</code> to have your repository created.</p>
 </div>
+<p><img src="../images/Push-Selection.png" alt="Push Selection"></p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>You may be asked to login if it's the first time you are using Github integration in Visual Studio. If you are asked to login, it is recommended to create a <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">Personal Access Token</a> instead of using your login/password. Also the Github automations support both private and public repositories.
 <img src="../images/initial-commit.gif" alt="Initial Commit"></p>
 </div>
+<h2 id="first-ci-build">First CI Build</h2>
+<p>In a few minutes you should see that github actinos has run your first build automatically.
+This first build will fail because the repository is new and actions don't yet have permissions to write to the repository.
+In your repository settings, go to 'Actions' then 'Workflows' and enable &quot;Read/Write&quot; access.</p>
 <h2 id="automated-releases">Automated releases</h2>
-<p>In a few minutes if you navigate to your repository on Github, you will notice there is a draft release for v0.1.0. It has no release notes yet but it does have the fully packaged module ready for production install.</p>
-<div class="TIP">
-<h5>Tip</h5>
-<p>This is a draft an the public won't see it as an available release yet. Since this is probably not ready for production, you can delete the release and the tag if you don't want to keep it (and reserve the v0.1.0 version from future use). If you do want to keep it, you can edit it and publish it. Each push to the <code>main</code> or <code>master</code> branch will trigger a draf release that is non-beta, this is how we will do releases in the future.</p>
-</div>
+<p>When you feel you are ready for a beta release, you can create a release branch.
+The branch name should include the version number you want, such as <code>release/0.1.0</code>.
+A few minutes later if you navigate to your repository on Github, you will notice there is a draft release for v0.1.0.
+It has auto-generated release notes wrote from the title of all the PRs that went into a milestone of the save version.
+It also has the fully packaged module ready for install from testers.
+Each additional push or merge into that release branch will produce a new beta release for you automatically.
+When you are ready for production, you can simply merge that release branch into <code>main</code> or <code>master</code> and it will produce a final release for you (non-beta).
+If you had any last minute fixes on the release branch that don't exist in <code>develop</code> don't forget to merge that branch into <code>develop</code> too.</p>
 <h2 id="automatic-versioning">Automatic Versioning</h2>
 <p>The template uses <a href="https://github.com/GitTools/GitVersion">GitVersion</a> and the <a href="https://gitversion.net/docs/git-branching-strategies/gitflow">GitFlow</a> branching strategy in order to manage versions and releases.</p>
 <p>This means:</p>
@@ -148,20 +157,21 @@ Commit your module to Github by clicking the <code>Add to Source Control</code>b
 <img src="../images/setup-git-docs.gif" alt="Setup Github Docs"></p>
 </div>
 <p>What you are seeing in Visual Studio now is only some snippets to get you started until the full documentation is published, now that this is done, you can view the full documentation at <a href="https://DNNCommunity.github.io/DNN.UserVoice/articles/git.html#documentation">https://DNNCommunity.github.io/DNN.UserVoice</a></p>
+
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/docfx_project/articles/git.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/docfx_project/articles/git.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -169,7 +179,7 @@ Commit your module to Github by clicking the <code>Add to Source Control</code>b
         </div>
       </div>
       ﻿
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -190,13 +200,13 @@ Commit your module to Github by clicking the <code>Add to Source Control</code>b
               </div>
               <script type="text/javascript" src="../styles/toggle-theme.js"></script>
             </div>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/mermaid.min.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>  </body>

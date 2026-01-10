@@ -1,21 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Getting Started </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Getting Started ">
-    <meta name="generator" content="docfx 2.56.6.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Getting Started </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Getting Started ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="../">
     
@@ -23,7 +23,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
           <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search main-content">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -82,12 +82,26 @@
 <p>Welcome to you new module template!</p>
 <h2 id="first-build">First build</h2>
 <ul>
+<li><p><strong>Before you start</strong></p>
+<p>This module template makes a few assumptions about your environment, make sure you have the following installed:</p>
+<ul>
+<li>Latest version of Visual Studio, and updates (Free community edition is fine)</li>
+<li>Latest version of .NET Core SDK (LST)</li>
+<li>A test site that uses the latest version of DNN (you can target older versions but out-of-the-box this template is set to the latest)</li>
+<li>The solution and the project are expected to be in the same folder.
+If you move the project to a different folder, you will need to update the paths in the <code>Build.cs</code> file.</li>
+</ul>
+</li>
 <li><p><strong>Package your module</strong></p>
 <p>Build tasks are placed in the launch profiles menu in Visual Studio,
 click the debug button with the <strong>Package</strong> profile selected.
 This will fire up a console application to run the module build and will
 create a Dnn extension package in the website under the <code>install\modules</code> folder.</p>
 <p>Don't worry about opening up that folder, see next step.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If for some reason you do not see the <code>Package</code> target, go to the Solution Explorer and ensure that the build project is set as the startup project for the solution.</p>
+</div>
 <div class="NOTE">
 <h5>Note</h5>
 <p>The build script is simply a console application in the <em>build</em> project, it uses <a href="https://nuke.build/" target="_blank">Nuke</a> to help with utilities.
@@ -106,21 +120,22 @@ You can later customize that process simply by editing the <em>Build.cs</em> fil
 </li>
 </ul>
 <p>Congratulations, you have a working module!</p>
-<p>Now let's make it a <a href="git.html">git</a> repository.</p>
+<p>Now let's make it a git repository. <a href="git.html">Learn How</a></p>
+
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/docfx_project/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/docfx_project/articles/intro.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -128,7 +143,7 @@ You can later customize that process simply by editing the <em>Build.cs</em> fil
         </div>
       </div>
       ﻿
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -149,13 +164,13 @@ You can later customize that process simply by editing the <em>Build.cs</em> fil
               </div>
               <script type="text/javascript" src="../styles/toggle-theme.js"></script>
             </div>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/mermaid.min.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>  </body>

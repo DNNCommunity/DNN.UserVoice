@@ -1,21 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Project Architecture </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Project Architecture ">
-    <meta name="generator" content="docfx 2.56.6.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Project Architecture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Project Architecture ">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="../">
     
@@ -23,7 +23,7 @@
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
-        
+
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
+
               <a class="navbar-brand" href="../index.html">
                 <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
@@ -47,7 +47,7 @@
             </div>
           </div>
         </nav>
-        
+
         <div class="subnav navbar navbar-default">
           <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
@@ -57,17 +57,17 @@
         </div>
       </header>
       <div class="container body-content">
-        
+
         <div id="search-results">
           <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search main-content">
-        
+
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
@@ -148,6 +148,8 @@ An entity represents one database table row.</p>
     ItemClient[FrontEnd&lt;br/&gt;ItemClient] --&gt;|CreateItemDTO as JSON&lt;br /&gt;Name and Description| ItemController[Backend&lt;br/&gt;ItemController]
     ItemController --&gt;|CreateItemDTO&lt;br/&gt;UserId| ItemService
     ItemService --&gt;|Item| Repository[Repository&lt;Item&gt;]
+    ItemService --&gt;|Validate| Validator[IValidator&lt;CreateItemDto&gt;]
+    Validator --&gt; ItemService
     Repository --&gt;|Item| DataContext[DataContext&lt;br/&gt;Entity Framework] 
     DataContext --&gt;|SQL INSERT ...| Database
     Database --&gt;|Table row| DataContext
@@ -168,14 +170,25 @@ An entity represents one database table row.</p>
 <h3 id="our-backend-code">Our backend code</h3>
 <p>The below diagram explains the backend code that is part of the module. We will see each class in more details later, but this sequence diagram explain in a bit more details how the data flows.</p>
 <p>As we saw earlier, to create an item, the minimum information needed is only the <code>Name</code> and <code>Description</code>. The <code>ItemController</code> adds the acting user id and asks the <code>ItemService</code> to create the item.</p>
-<p>Then the <code>Repository</code> adds the information each entity should have like the creation data and others and will save the data to the database (more on this later). It then knows about the <code>Id</code> of the recently created item and can return a fully populated <code>Item</code> back to the <code>ItemService</code>.</p>
+<p>The IValidator class is used to ensure the data is valid and to provide user friendly localized messages if it is not.</p>
+<p>If the data is valid, then the <code>Repository</code> adds the information each entity should have like the creation data and others and will save the data to the database (more on this later). It then knows about the <code>Id</code> of the recently created item and can return a fully populated <code>Item</code> back to the <code>ItemService</code>.</p>
 <p>Because we don't need all this information for this view, it converts it into an <code>ItemViewModel</code> that only has the Id, Name and Description. The <code>ItemController</code> then serializes this <code>ItemViewModel</code> as json and returns it to the frontend.</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     ItemController -&gt;&gt; ItemService: CreateItem(&lt;br/&gt;CreateItemDTO item = {&lt;br/&gt;Name = &quot;First Item&quot;,&lt;br/&gt;Description = &quot;This is the first item&quot;},&lt;br/&gt;UserId userId = 123)
+    ItemService -&gt;&gt; IValidator#lt;T#gt;: ValidateAsync(createItemDto)
+    IValidator#lt;T#gt; -&gt;&gt; ItemService: ValidationResult.IsValid
     ItemService -&gt;&gt; Repository#lt;T#gt;: Create&lt;T&gt;(Item item = {&lt;br/&gt;Name = &quot;First Item&quot;,&lt;br/&gt;Description = &quot;This is the first item&quot;})
     Repository#lt;T#gt; -&gt;&gt; ItemService: returns Item item = {&lt;br/&gt;Id = 10,&lt;br/&gt;CreatedAt = 2021-01-23 18:05:30,&lt;br/&gt;CreatedByUserId = 123,&lt;br/&gt;UpdatedAt = 2021-01-23 18:05:30,&lt;br/&gt;UpdatedByUserId = 123,&lt;br/&gt;Name = &quot;First Item&quot;,&lt;br/&gt;Description = &quot;This is the first item&quot;}
     ItemService -&gt;&gt; ItemController: returns&lt;br/&gt;ItemViewModel item = {&lt;br/&gt;Id = 10,&lt;br/&gt;Name = &quot;First Item&quot;,&lt;br/&gt;Description = &quot;This is the first item&quot;}
 </code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>What if the data is not valid?</strong>
+We use <a href="https://www.nuget.org/packages/OneOf">OneOf</a> to return either a Success or an Error as a &quot;discriminated union&quot;.
+Basically the consumer of a OneOf with have to handle either a .Switch or .Match method to handle all possible return scenarios.
+Each of these scenarios may be a different object as a success and an error are wildly different things.
+In our case, should the DTO not be valid we have an Error&lt;string&gt; with localized errors (one per line) that are user friendly and we return a BadRequest from our controller.</p>
+</div>
 <h3 id="external-code">External code</h3>
 <p>This module uses <a href="https://www.entityframeworktutorial.net/what-is-entityframework.aspx">Entity Framework</a> for the data layer. This means amongst other things that we define all our data entities from code using attributes and do not need SQL Scripts in the Dnn extension package. In combination with the <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design">Repository Pattern</a> it allows in most cases to also not need complex stored procedures. It also uses IQueryable to combine many filtering/sorting requests and only actually touch the database when needed with a very optimized single query. EF (Entity Framework) supports many different types of databases, this unlinks the module logic from any type of data infrastructure. Right now, this module uses the Dnn database but it can easily be changed to a separate database or even another database type altogether.</p>
 <div class="WARNING">
@@ -205,6 +218,7 @@ An entity represents one database table row.</p>
 <li>Provide Dnn context information about the module, the portal and the user for the current request</li>
 </ul>
 <p>As you can see, this class has more than one responsability and inherits from other base classes that are not under our control. One of them, <code>DnnApiController</code> was not built with unit testing in mind. For those reasons, as part of our unit tests, we exclude the <code>Controllers</code> folder.</p>
+<p>We use OneOf here to return a result that can be only one of many things. This avoids having to handle exceptions which are not great for performance and have no ways to force consumer implementations. In this case, we ensure that we always have to implement what to do for a success or a failure.</p>
 <h4 id="inheritance">Inheritance</h4>
 <p>The <code>ItemController</code> inherits from <code>ModuleApiController</code> which provides properties and methods we want to be available in all our controllers. For instance here, we provide an interface for logging and whether or not the user has module edit rights.</p>
 <p>The <code>ModuleApiController</code> then inherits from <code>DnnApiController</code> which provides us Dnn specific information about the module, the portal and the user.</p>
@@ -291,22 +305,10 @@ public class ItemController : ModuleApiController
     ...
     public IHttpActionResult CreateItem(CreateItemDTO item)
     {
-        try
-        {
-            return this.Ok(this.itemService.CreateItem(item, this.UserInfo.UserID));
-        }
-        catch (ArgumentNullException ex)
-        {
-            this.Logger.Error(ex.Message, ex);
-            return this.BadRequest(ex.Message);
-        }
-        catch (Exception ex)
-        {
-            string message = &quot;An unexpected error occured while trying to create the item&quot;;
-            this.Logger.Error(message, ex);
-            return this.InternalServerError(new Exception(message));
-            throw;
-        }
+        var result = await this.itemService.CreateItemAsync(item, this.UserInfo.UserID);
+            return result.Match&lt;IHttpActionResult&gt;(
+                success =&gt; this.Ok(success.Value),
+                error =&gt; this.BadRequest(string.Join(System.Environment.NewLine, error.Value.Select(e =&gt; e.ErrorMessage))));
     }
     ...
 }
@@ -315,7 +317,8 @@ public class ItemController : ModuleApiController
 <h4 id="responsability-1">Responsability</h4>
 <p>Service classes are core of our business logic in this pattern. In this case it should enclose all the the requirements that relate to an Item. For instance we could do custom validation or sanitization on values, enforce ralations, etc.</p>
 <h4 id="inheritance-1">Inheritance</h4>
-<p>The <code>ItemController</code> inherits from the <code>IItemController</code> interface, again this is to allow using dependency injection where we need it and also help out with unit tests and decoupling classes for easier maintenance.</p>
+<p>The <code>ItemController</code> inherits from the <code>IItemController</code> interface, again this is to allow using dependency injection where we need it and also help out with unit tests and decoupling classes for easier maintenance.
+We also use <a href="https://www.nuget.org/packages/FluentValidation">FluentValidation</a> here to extract validation into its own class (single responsability principle).</p>
 <h4 id="dependencies-1">Dependencies</h4>
 <p>Again we only depend on interfaces and data-objects. For instance here we never create an instance of the <code>Repository</code>, we get in injected in the constructor from whowever calls this service.</p>
 <pre><code class="lang-mermaid">classDiagram
@@ -330,14 +333,16 @@ public class ItemController : ModuleApiController
 
     class ItemService
         ItemService: -IRepository&lt;Item&gt; itemRepository
+        ItemService: -IValidator&lt;CreateItemDto&gt; createItemDtoValidator
         ItemService: +ItemService(IRepository&lt;Item&gt; itemRepository)
         ItemService: +CreateItem(CreateItemDTO item, int userId) ItemViewModel
         ItemService: +GetItemsPage(GetItemsPageDTO request) ItemsPageViewModel
         ItemService: +DeleteItem(int itemId)
-    ItemService ..&gt; CreateItemDTO
-    ItemService ..&gt; ItemViewModel
-    ItemService ..&gt; IRepository~T~
-    ItemService ..&gt; Item
+        ItemService ..&gt; CreateItemDTO
+        ItemService ..&gt; ItemViewModel
+        ItemService ..&gt; IRepository~T~
+        ItemService ..&gt; Item
+        ItemService ..&gt; IValidator~T~
 
     class IItemService
         &lt;&lt;interface&gt;&gt; IItemService
@@ -373,6 +378,14 @@ public class ItemController : ModuleApiController
         IEntity: +DateTime UpdatedAt
         IEntity: +int UpdatedByUserId
     IEntity &lt;|-- BaseEntity
+
+    class SaveItemDtoValidator
+        SaveItemDtoValidator: +ValidationResult Validate
+
+    class IValidator~T~
+        &lt;&lt;interface&gt;&gt; IValidator~T~
+
+    IValidator~T~ &lt;|-- SaveItemDtoValidator
 </code></pre>
 <pre><code class="lang-cs">/// &lt;summary&gt;
 /// Provides services to manage items.
@@ -394,20 +407,18 @@ public class ItemService : IItemService
     /// &lt;exception cref=&quot;ArgumentNullException&quot;&gt; is thrown if the item or one of its required properties are missing.&lt;/exception&gt;
     public ItemViewModel CreateItem(CreateItemDTO item, int userId)
     {
-        if (item == null)
-        {
-            throw new ArgumentNullException(nameof(item));
-        }
+        var validationResult = await this.createItemDtoValidator.ValidateAsync(item);
 
-        if (string.IsNullOrWhiteSpace(item.Name))
+        if (!validationResult.IsValid)
         {
-            throw new ArgumentNullException(&quot;The item name is required.&quot;, nameof(item.Name));
+            return new Error&lt;List&lt;ValidationFailure&gt;&gt;(validationResult.Errors);
         }
 
         var newItem = new Item() { Name = item.Name, Description = item.Description };
-        this.itemRepository.Create(newItem, userId);
+        await this.itemRepository.CreateAsync(newItem, userId);
 
-        return new ItemViewModel(newItem);
+        var vm = new ItemViewModel(newItem);
+        return new Success&lt;ItemViewModel&gt;(vm);
     }
 
     ...
@@ -510,20 +521,21 @@ public class Repository&lt;T&gt; : IRepository&lt;T&gt;
     }
 }
 </code></pre>
+
 </article>
           </div>
-          
+
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/docfx_project/articles/project-architecture.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/docfx_project/articles/project-architecture.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
@@ -531,7 +543,7 @@ public class Repository&lt;T&gt; : IRepository&lt;T&gt;
         </div>
       </div>
       ﻿
-      
+
       <footer>
         <div class="grad-bottom"></div>
         <div class="footer">
@@ -552,13 +564,13 @@ public class Repository&lt;T&gt; : IRepository&lt;T&gt;
               </div>
               <script type="text/javascript" src="../styles/toggle-theme.js"></script>
             </div>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/mermaid.min.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>  </body>
