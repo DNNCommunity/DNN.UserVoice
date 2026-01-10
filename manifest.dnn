@@ -2,8 +2,8 @@
 <dotnetnuke version="5.0" type="Package">
   <packages>
     <package name="DNNCommunity_UserVoice" type="Module" version="00.01.00">
-      <friendlyName>User Module</friendlyName>
-      <description>User Module</description>
+      <friendlyName>User Voice Module</friendlyName>
+      <description>User Voice Module</description>
       <iconFile>~/DesktopModules/Dnn.UserVoice/resources/images/module-icon.png</iconFile>
       <owner>
         <name>DNN Community</name>
@@ -64,11 +64,11 @@
         </component>
         <component type="Module">
           <desktopModule>
-            <moduleName>User Module</moduleName>
+            <moduleName>User Voice Module</moduleName>
             <foldername>Dnn.UserVoice</foldername>
             <moduleDefinitions>
               <moduleDefinition>
-                <friendlyName>User Module</friendlyName>
+                <friendlyName>User Voice Module</friendlyName>
                 <defaultCacheTime>0</defaultCacheTime>
                 <moduleControls>
                   <moduleControl>
