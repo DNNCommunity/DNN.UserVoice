@@ -1,4 +1,4 @@
 {
   "$schema": "./build.schema.json",
-  "Solution": "Dnn.UserVoice.sln"
+  "Solution": "./Dnn.UserVoice.sln"
 }
