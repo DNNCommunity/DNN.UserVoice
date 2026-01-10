@@ -76,10 +76,6 @@
           "type": "boolean",
           "description": "Indicates to continue a previously failed build attempt"
         },
-        "GitHubToken": {
-          "type": "string",
-          "description": "GitHub token"
-        },
         "Help": {
           "type": "boolean",
           "description": "Shows the help text for this build assembly"
