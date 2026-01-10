@@ -1,6 +1,6 @@
 # my-component
 
-Root component that does all the module rendering.
+
 
 <!-- Auto Generated Below -->
 
@@ -55,21 +55,21 @@ Simply load the javascript library, provide it a module id and you are good to g
 ### Depends on
 
 - dnn-searchbox
-- [my-create](../my-create)
+- dnn-button
 - [my-items-list](../my-items-list)
+- dnn-modal
+- [my-edit](../my-edit)
 
 ### Graph
 ```mermaid
 graph TD;
   my-component --> dnn-searchbox
-  my-component --> my-create
+  my-component --> dnn-button
   my-component --> my-items-list
-  my-create --> dnn-button
-  my-create --> dnn-modal
-  my-create --> my-edit
+  my-component --> dnn-modal
+  my-component --> my-edit
   dnn-button --> dnn-modal
   dnn-button --> dnn-button
-  my-edit --> dnn-button
   my-items-list --> dnn-chevron
   my-items-list --> dnn-collapsible
   my-items-list --> my-item-details
@@ -77,6 +77,11 @@ graph TD;
   my-item-details --> dnn-button
   my-item-details --> dnn-modal
   my-item-details --> my-edit
+  my-edit --> dnn-input
+  my-edit --> dnn-textarea
+  my-edit --> dnn-button
+  dnn-input --> dnn-fieldset
+  dnn-textarea --> dnn-fieldset
   style my-component fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

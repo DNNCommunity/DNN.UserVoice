@@ -1,5 +1,5 @@
-import { Debounce } from '@eraware/dnn-elements';
-import { Component, Host, h, State, Prop, Element } from '@stencil/core';
+import { Debounce } from '@dnncommunity/dnn-elements';
+import { Component, Host, h, State, Prop, Element, Listen } from '@stencil/core';
 import { ItemClient, UIInfo } from '../../services/services';
 import state, { localizationState } from '../../store/state';
 
@@ -19,9 +19,14 @@ export class MyItemsList {
 
   @Element() el: HTMLMyItemsListElement;
 
+  @Listen("itemCreated")
+  handleItemCreated() {
+    this.preload();
+  }
+
   private itemClient!: ItemClient;
   private abortController: AbortController;
-  private resx: UIInfo;
+  private resx: UIInfo | undefined;
 
   constructor() {
     this.itemClient = new ItemClient({
@@ -39,7 +44,9 @@ export class MyItemsList {
   }
 
   componentDidLoad() {
-    this.preload();
+    requestAnimationFrame(() => {
+      this.preload();
+    })
   }
 
   componentDidUpdate() {
@@ -67,44 +74,50 @@ export class MyItemsList {
   @Debounce()
   private handleScroll() {
     if (this.el.getBoundingClientRect().bottom - window.innerHeight < this.preloadPixels) {
-      this.loadMore();
+      void this.loadMore();
     }
   }
 
   private loadMore() {
     return new Promise<void>((resolve, reject) => {
       if (state.items.length == 0 || state.items.length < state.availableItems) {
-        this.loading = true;
-        this.abortController?.abort();
-        this.abortController = new AbortController();
-        this.itemClient.getItemsPage(
-          state.searchQuery,
-          state.lastFetchedPage + 1,
-          this.pageSize,
-          false,
-          this.abortController.signal)
-          .then(results => {
-            state.items = [...state.items, ...results.items];
-            state.availableItems = results.resultCount;
-            state.lastFetchedPage = results.page;
-            state.totalPages = results.pageCount;
-            this.loading = false;
-            if (state.items.length === results.resultCount) {
-              state.allLoaded = true;
-            }
-            resolve();
-          }, rejectReason => {
-            if (rejectReason instanceof DOMException && rejectReason.code === rejectReason.ABORT_ERR) {
-              reject(() => { });
-              return;
-            }
-            alert(rejectReason);
-            reject(rejectReason);
-          })
-          .catch(rejectReason => {
-            alert(rejectReason);
-            reject(rejectReason);
-          });
+        requestAnimationFrame(() => {
+          this.loading = true;
+          this.abortController?.abort();
+          this.abortController = new AbortController();
+          this.itemClient.getItemsPage(
+            state.searchQuery,
+            state.lastFetchedPage + 1,
+            this.pageSize,
+            false,
+            this.abortController.signal)
+            .then(results => {
+              if (!results) {
+                reject(new Error('No results returned'));
+                return;
+              }
+              state.items = [...state.items, ...results.items ?? []];
+              state.availableItems = results.resultCount ?? 0;
+              state.lastFetchedPage = results.page ?? 0;
+              state.totalPages = results.pageCount ?? 0;
+              this.loading = false;
+              if (state.items.length === results.resultCount) {
+                state.allLoaded = true;
+              }
+              resolve();
+            }, rejectReason => {
+              if (rejectReason instanceof DOMException && rejectReason.code === rejectReason.ABORT_ERR) {
+                reject(new Error('Request was aborted'));
+                return;
+              }
+              alert(rejectReason);
+              reject(rejectReason instanceof Error ? rejectReason : new Error(String(rejectReason)));
+            })
+            .catch(rejectReason => {
+              alert(rejectReason);
+              reject(rejectReason instanceof Error ? rejectReason : new Error(String(rejectReason)));
+            });
+        });
       }
     });
   }
@@ -120,7 +133,7 @@ export class MyItemsList {
                 if (state.expandedItemId === item.id) {
                   state.expandedItemId = -1;
                 } else {
-                  state.expandedItemId = item.id;
+                  state.expandedItemId = item.id ?? -1;
                 }
               }}
             >
@@ -140,12 +153,12 @@ export class MyItemsList {
           <div class="loading"></div>
         }
         <div class="footer">
-          <p>{this.resx.shownItems.replace("{0}", state.items.length.toString()).replace("{1}", state.availableItems.toString())}</p>
+          <p>{this.resx?.shownItems?.replace("{0}", state.items.length.toString()).replace("{1}", state.availableItems.toString())}</p>
           {!this.loading && state.items.length < state.availableItems &&
-            <dnn-button type="primary" reversed
-              onClick={() => this.loadMore()}
+            <dnn-button appearance="primary" reversed
+              onClick={() => void this.loadMore()}
             >
-              {this.resx.loadMore || "Load More"}
+              {this.resx?.loadMore || "Load More"}
             </dnn-button>
           }
         </div>

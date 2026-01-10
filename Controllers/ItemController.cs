@@ -1,17 +1,16 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DNN.Modules.DnnUserVoice.DTO;
-using DNN.Modules.DnnUserVoice.Services;
-using DNN.Modules.DnnUserVoice.ViewModels;
+using DNN.Modules.UserVoice.Services.Items;
 using DotNetNuke.Security;
 using DotNetNuke.Web.Api;
 using NSwag.Annotations;
-using System;
+using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace DNN.Modules.DnnUserVoice.Controllers
+namespace DNN.Modules.UserVoice.Controllers
 {
     /// <summary>
     /// Provides Web API access for items.
@@ -39,11 +38,12 @@ namespace DNN.Modules.DnnUserVoice.Controllers
         [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Edit)]
         [SwaggerResponse(HttpStatusCode.OK, typeof(ItemViewModel), Description = "OK")]
         [SwaggerResponse(HttpStatusCode.BadRequest, typeof(string), Description = "Bad Request")]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, typeof(Exception), Description = "Error")]
-        public IHttpActionResult CreateItem(CreateItemDTO item)
+        public async Task<IHttpActionResult> CreateItem(CreateItemDTO item)
         {
-            var result = this.itemService.CreateItem(item, this.UserInfo.UserID);
-            return this.Ok(result);
+            var result = await this.itemService.CreateItemAsync(item, this.UserInfo.UserID);
+            return result.Match<IHttpActionResult>(
+                success => this.Ok(success.Value),
+                error => this.BadRequest(string.Join(System.Environment.NewLine, error.Value.Select(e => e.ErrorMessage))));
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace DNN.Modules.DnnUserVoice.Controllers
             HttpStatusCode.OK,
             typeof(ItemsPageViewModel),
             Description = "OK")]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, typeof(Exception), Description = "Error")]
-        public IHttpActionResult GetItemsPage([FromUri] GetItemsPageDTO dto)
+        public async Task<IHttpActionResult> GetItemsPage([FromUri] GetItemsPageDTO dto)
         {
-            return this.Ok(this.itemService.GetItemsPage(dto.Query, dto.Page, dto.PageSize, dto.Descending));
+            var page = await this.itemService.GetItemsPageAsync(dto.Query, dto.Page, dto.PageSize, dto.Descending);
+            return this.Ok(page);
         }
 
         /// <summary>
@@ -72,10 +72,9 @@ namespace DNN.Modules.DnnUserVoice.Controllers
         [ValidateAntiForgeryToken]
         [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Edit)]
         [SwaggerResponse(HttpStatusCode.OK, typeof(void), Description = "OK")]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, typeof(Exception), Description = "Error")]
-        public IHttpActionResult DeleteItem(int itemId)
+        public async Task<IHttpActionResult> DeleteItem(int itemId)
         {
-            this.itemService.DeleteItem(itemId);
+            await this.itemService.DeleteItemAsync(itemId);
             return this.Ok();
         }
 
@@ -86,7 +85,6 @@ namespace DNN.Modules.DnnUserVoice.Controllers
         [HttpGet]
         [AllowAnonymous]
         [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = "OK")]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, typeof(Exception), Description = "Error")]
         public IHttpActionResult UserCanEdit()
         {
             return this.Ok(this.CanEdit);
@@ -101,12 +99,12 @@ namespace DNN.Modules.DnnUserVoice.Controllers
         [ValidateAntiForgeryToken]
         [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Edit)]
         [SwaggerResponse(HttpStatusCode.OK, null, Description = "OK")]
-        [SwaggerResponse(HttpStatusCode.BadRequest, typeof(ArgumentException), Description = "Malformed request")]
-        [SwaggerResponse(HttpStatusCode.InternalServerError, typeof(Exception), Description = "Error")]
-        public IHttpActionResult UpdateItem(UpdateItemDTO item)
+        public async Task<IHttpActionResult> UpdateItem(UpdateItemDTO item)
         {
-            this.itemService.UpdateItem(item, this.UserInfo.UserID);
-            return this.Ok();
+            var result = await this.itemService.UpdateItemAsync(item, this.UserInfo.UserID);
+            return result.Match<IHttpActionResult>(
+                success => this.Ok(),
+                error => this.BadRequest(string.Join(System.Environment.NewLine, error.Value.Select(e => e.ErrorMessage))));
         }
     }
 }

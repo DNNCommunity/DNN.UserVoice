@@ -1,13 +1,12 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DNN.Modules.DnnUserVoice.Services;
-using DNN.Modules.DnnUserVoice.ViewModels;
+using DNN.Modules.UserVoice.Services.Localization;
 using NSwag.Annotations;
 using System.Net;
 using System.Web.Http;
 
-namespace DNN.Modules.DnnUserVoice.Controllers
+namespace DNN.Modules.UserVoice.Controllers
 {
     /// <summary>
     /// Provides localization related web services.

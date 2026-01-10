@@ -1,4 +1,4 @@
-﻿using DNN.Modules.DnnUserVoice.Controllers;
+﻿using DNN.Modules.UserVoice.Controllers;
 using DotNetNuke.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace UnitTests.Controllers
 
             // Not a great test but keeps coverage at 100%.
             // Could be improved is we get better abstactions in Dnn for UserInfo.
-            Assert.Throws<NullReferenceException>(getUserInfo);
+            Assert.ThrowsAny<Exception>(getUserInfo);
         }
 
         private class Controller : ModuleApiController

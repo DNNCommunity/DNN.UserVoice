@@ -1,8 +1,7 @@
-﻿using DNN.Modules.DnnUserVoice.Controllers;
-using DNN.Modules.DnnUserVoice.Services;
-using DNN.Modules.DnnUserVoice.ViewModels;
+﻿using DNN.Modules.UserVoice.Controllers;
+using DNN.Modules.UserVoice.Services.Localization;
 using DotNetNuke.Entities.Users;
-using Moq;
+using NSubstitute;
 using System.Web.Http.Results;
 using Xunit;
 
@@ -10,21 +9,20 @@ namespace UnitTests.Controllers
 {
     public class LocalizationControllerTests
     {
-        private readonly Mock<ILocalizationService> localizationService;
+        private readonly ILocalizationService localizationService;
         private readonly LocalizationController localizationController;
 
         public LocalizationControllerTests()
         {
-            this.localizationService = new Mock<ILocalizationService>();
-            this.localizationController = new FakeLocalizationController(this.localizationService.Object);
+            this.localizationService = Substitute.For<ILocalizationService>();
+            this.localizationController = new FakeLocalizationController(this.localizationService);
         }
 
         [Fact]
         public void GetLocalization_CallsLocalizationService()
         {
             var expectedResponse = new LocalizationViewModel();
-            this.localizationService.Setup(s => s.ViewModel)
-                .Returns(expectedResponse);
+            this.localizationService.ViewModel.Returns(expectedResponse);
 
             var result = this.localizationController.GetLocalization();
 

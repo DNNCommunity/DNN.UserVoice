@@ -2,8 +2,9 @@
 // Copyright DNN Community
 
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace DNN.Modules.DnnUserVoice.Data.Entities
+namespace DNN.Modules.UserVoice.Data.Entities
 {
     /// <summary>
     /// Ensures entities have some common properties.
@@ -13,6 +14,7 @@ namespace DNN.Modules.DnnUserVoice.Data.Entities
         /// <summary>
         /// Gets or sets the entity id.
         /// </summary>
+        [Key]
         int Id { get; set; }
 
         /// <summary>

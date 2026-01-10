@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2026-01-09_22-45-30" tag="">
+  <assembly name="DNN.Modules.UserVoice">
+    <class name="DNN.Modules.UserVoice.Common.Extensions.IQueryableExtensions" coveredlines="0" coverablelines="3" totallines="33" coveredbranches="0" totalbranches="2" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Controllers.ItemController" coveredlines="20" coverablelines="20" totallines="110" coveredbranches="0" totalbranches="0" coveredcodeelements="6" fullcoveredcodeelements="6" totalcodeelements="6" />
+    <class name="DNN.Modules.UserVoice.Controllers.LocalizationController" coveredlines="0" coverablelines="4" totallines="42" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Controllers.ModuleApiController" coveredlines="4" coverablelines="5" totallines="46" coveredbranches="0" totalbranches="0" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Controllers.ServiceRouteMapper" coveredlines="2" coverablelines="2" totallines="19" coveredbranches="2" totalbranches="2" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Data.Entities.BaseEntity" coveredlines="5" coverablelines="5" totallines="30" coveredbranches="0" totalbranches="0" coveredcodeelements="5" fullcoveredcodeelements="5" totalcodeelements="5" />
+    <class name="DNN.Modules.UserVoice.Data.Entities.Item" coveredlines="2" coverablelines="2" totallines="29" coveredbranches="0" totalbranches="0" coveredcodeelements="2" fullcoveredcodeelements="2" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Data.Repositories.ItemRepository" coveredlines="2" coverablelines="2" totallines="22" coveredbranches="0" totalbranches="0" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Data.Repositories.PagedList`1" coveredlines="16" coverablelines="17" totallines="61" coveredbranches="0" totalbranches="0" coveredcodeelements="5" fullcoveredcodeelements="5" totalcodeelements="6" />
+    <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1" coveredlines="57" coverablelines="64" totallines="166" coveredbranches="15" totalbranches="20" coveredcodeelements="6" fullcoveredcodeelements="3" totalcodeelements="8" />
+    <class name="DNN.Modules.UserVoice.Providers.DateTimeProvider" coveredlines="0" coverablelines="1" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Services.Items.CreateItemDTO" coveredlines="2" coverablelines="2" totallines="21" coveredbranches="0" totalbranches="0" coveredcodeelements="2" fullcoveredcodeelements="2" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator" coveredlines="6" coverablelines="6" totallines="27" coveredbranches="0" totalbranches="0" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO" coveredlines="4" coverablelines="4" totallines="30" coveredbranches="0" totalbranches="0" coveredcodeelements="4" fullcoveredcodeelements="4" totalcodeelements="4" />
+    <class name="DNN.Modules.UserVoice.Services.Items.ItemService" coveredlines="45" coverablelines="47" totallines="112" coveredbranches="2" totalbranches="4" coveredcodeelements="5" fullcoveredcodeelements="3" totalcodeelements="5" />
+    <class name="DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel" coveredlines="4" coverablelines="4" totallines="34" coveredbranches="0" totalbranches="0" coveredcodeelements="4" fullcoveredcodeelements="4" totalcodeelements="4" />
+    <class name="DNN.Modules.UserVoice.Services.Items.ItemViewModel" coveredlines="10" coverablelines="10" totallines="48" coveredbranches="0" totalbranches="0" coveredcodeelements="5" fullcoveredcodeelements="5" totalcodeelements="5" />
+    <class name="DNN.Modules.UserVoice.Services.Items.UpdateItemDTO" coveredlines="1" coverablelines="1" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Services.Items.UpdateItemDtoValidator" coveredlines="7" coverablelines="7" totallines="29" coveredbranches="0" totalbranches="0" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="1" />
+  </assembly>
+</coverage>

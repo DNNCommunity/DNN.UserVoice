@@ -1,6 +1,13 @@
-﻿using DNN.Modules.DnnUserVoice.Data;
+﻿using DNN.Modules.UserVoice.Data;
+using DNN.Modules.UserVoice.Data.Entities;
+using DNN.Modules.UserVoice.Data.Repositories;
+using DNN.Modules.UserVoice.Providers;
 using Effort.Provider;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Common;
+using System.Data.Entity;
 
 namespace UnitTests
 {
@@ -43,6 +50,44 @@ namespace UnitTests
             this.connection = null;
 
             _disposed = true;
+        }
+    }
+
+    public class TestDataContext : ModuleDbContext
+    {
+        public TestDataContext(DbConnection connection)
+            : base(connection)
+        {
+        }
+
+        public DbSet<Category> categories { get; set; }
+        public DbSet<Product> products { get; set; }
+    }
+
+    public class Category : BaseEntity
+    {
+        public Category()
+        {
+            this.Products = new HashSet<Product>();
+        }
+        [Required]
+        public string Name { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
+    }
+
+    public class Product : BaseEntity
+    {
+        public string Name { get; set; }
+
+        public virtual Category Category { get; set; }
+    }
+
+    public class ProductRepository : Repository<Product>
+    {
+        public ProductRepository(ModuleDbContext context, IDateTimeProvider dateTimeProvider)
+            : base(context, dateTimeProvider)
+        {
         }
     }
 }

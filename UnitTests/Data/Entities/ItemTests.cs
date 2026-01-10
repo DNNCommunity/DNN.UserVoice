@@ -1,4 +1,4 @@
-﻿using DNN.Modules.DnnUserVoice.Data.Entities;
+﻿using DNN.Modules.UserVoice.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

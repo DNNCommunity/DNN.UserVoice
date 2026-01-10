@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RootNamespace></RootNamespace>
     <IsPackable>False</IsPackable>
@@ -11,19 +11,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.CommandLine" Version="6.0.0">
+	<PackageDownload Include="WebApiToOpenApiReflector" Version="[1.3.0]" />
+	<PackageReference Include="NuGet.CommandLine" Version="7.0.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Nuke.Common" Version="10.1.0" />
+    <PackageReference Include="ReportGenerator" Version="5.5.1" />
+    <PackageReference Include="xunit.runner.console" Version="2.9.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Nuke.Common" Version="6.0.1" />
-    <PackageReference Include="ReportGenerator" Version="5.1.4" />
-    <PackageReference Include="xunit.runner.console" Version="2.4.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="NSwag.MSBuild" Version="13.15.10" />
-    <PackageDownload Include="docfx.console" Version="[2.56.6]" />
-    <PackageDownload Include="GitVersion.Tool" Version="[5.8.1]" />
+    <PackageReference Include="NSwag.MSBuild" Version="14.6.3" />
+	<PackageDownload Include="docfx" Version="[2.78.3]" />
+    <PackageDownload Include="GitVersion.Tool" Version="[5.10.1]" />
     <PackageDownload Include="coverlet.console" Version="[1.7.2]" />
   </ItemGroup>
 
@@ -43,6 +44,9 @@
     <None Include="App.config" LinkBase="config" Condition="Exists('App.config')" />
     <None Include="..\.github\dependabot.yml" LinkBase="config" Condition="Exists('..\.github\dependabot.yml')" />
     <None Include="..\.github\mergeable.yml" LinkBase="config" Condition="Exists('..\.github\mergeable.yml')" />
+	<None Include="..\.github\workflows\Build.yml" LinkBase="config" Condition="Exists('..\.github\workflows\Build.yml')" />
+	<None Include="..\.github\workflows\PR_Validation.yml" LinkBase="config" Condition="Exists('..\.github\workflows\PR_Validation.yml')" />
+	<None Include="..\.github\workflows\Release.yml" LinkBase="config" Condition="Exists('..\.github\workflows\Release.yml')" />
     
     <None Include="Build.cs" />
     <None Include="Configuration.cs" />

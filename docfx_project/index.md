@@ -1,4 +1,4 @@
-﻿# DNN Community User Voice Documentation.
+﻿# DNN Community User Module Documentation.
 
 [Getting Started](articles/intro.md)
 
