@@ -4,6 +4,16 @@ Welcome to you new module template!
 
 ## First build
 
+-   **Before you start**
+
+    This module template makes a few assumptions about your environment, make sure you have the following installed:
+    - Latest version of Visual Studio, and updates (Free community edition is fine)
+    - Latest version of .NET Core SDK (LST)
+    - A test site that uses the latest version of DNN (you can target older versions but out-of-the-box this template is set to the latest)
+    - The solution and the project are expected to be in the same folder.
+      If you move the project to a different folder, you will need to update the paths in the `Build.cs` file.
+
+
 -   **Package your module**
 
     Build tasks are placed in the launch profiles menu in Visual Studio,
@@ -12,6 +22,9 @@ Welcome to you new module template!
     create a Dnn extension package in the website under the `install\modules` folder.
 
     Don't worry about opening up that folder, see next step.
+    
+    > [!NOTE]
+    > If for some reason you do not see the `Package` target, go to the Solution Explorer and ensure that the build project is set as the startup project for the solution.
 
     > [!NOTE]
     > The build script is simply a console application in the <em>build</em> project, it uses <a href="https://nuke.build/" target="_blank">Nuke</a> to help with utilities.
@@ -30,4 +43,4 @@ Welcome to you new module template!
 
 Congratulations, you have a working module!
 
-Now let's make it a [git](./git.md) repository.
+Now let's make it a git repository. [Learn How](./git.md)

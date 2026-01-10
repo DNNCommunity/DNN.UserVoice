@@ -1,8 +1,6 @@
-import { Component, h, Prop, Host, Element, Listen } from "@stencil/core";
-import "@eraware/dnn-elements";
+import { Component, h, Prop, Host, Listen } from "@stencil/core";
 import { ItemClient, LocalizationClient, LocalizationViewModel } from "../../services/services";
 import state, { localizationState } from "../../store/state";
-import alertError from "../../services/alert-error";
 
 @Component({
   tag: 'my-component',
@@ -13,6 +11,8 @@ export class MyComponent {
   private service: ItemClient;
   private localizationService: LocalizationClient;
   private resx: LocalizationViewModel;
+  private modal: HTMLDnnModalElement;
+  private editForm: HTMLMyEditElement;
 
   constructor() {
     this.service = new ItemClient({ moduleId: this.moduleId });
@@ -20,28 +20,18 @@ export class MyComponent {
     this.localizationService = new LocalizationClient({ moduleId: this.moduleId });
   }
 
-  @Element() el: HTMLMyComponentElement;
-
   /** The Dnn module id, required in order to access web services. */
   @Prop() moduleId!: number;
 
-  componentWillLoad() {
-    return new Promise<void>((resolve, reject) => {
-      this.localizationService.getLocalization()
-        .then(l => {
-          localizationState.viewModel = l;
-          this.resx = localizationState.viewModel;
-          resolve();
-        })
-        .catch(reason => {
-          alertError(reason);
-          reject();
-        });
-    })
+  async componentWillLoad() {
+
+    const vm = await this.localizationService.getLocalization();
+    localizationState.viewModel = vm!;
+    this.resx = localizationState.viewModel;
   }
 
-  componentDidLoad(): void {
-    this.service.userCanEdit().then(canEdit => state.userCanEdit = canEdit);
+  async componentDidLoad() {
+    state.userCanEdit = await this.service.userCanEdit();
   }
 
   @Listen("itemCreated")
@@ -49,15 +39,38 @@ export class MyComponent {
     state.searchQuery = "";
   }
 
+  private async handleAdd() {
+    await this.modal.show();
+    await this.editForm.setFocus();
+  }
+
   render() {
     return <Host>
       <div class="header">
-        <dnn-searchbox placeholder={this.resx.uI.searchPlaceholder || "Search"} onQueryChanged={e => state.searchQuery = e.detail} />
+        <dnn-searchbox placeholder={this.resx?.uI?.searchPlaceholder || "Search"} onQueryChanged={e => state.searchQuery = e.detail} />
         {state.userCanEdit &&
-          <my-create />
+          <dnn-button
+            class="add"
+            onClick={() => void this.handleAdd()}
+          >
+            {this.resx?.uI?.addItem}
+          </dnn-button>
         }
       </div>
       <my-items-list />
+      <dnn-modal
+        ref={e => this.modal = e!}
+        showCloseButton={false}
+        backdropDismiss={false}
+      >
+        <my-edit ref={e => this.editForm = e!} item={
+          {
+            id: -1,
+            name: "",
+            description: "",
+          }
+        } />
+      </dnn-modal>
     </Host>;
   }
 }

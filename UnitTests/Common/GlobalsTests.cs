@@ -1,4 +1,4 @@
-﻿using DNN.Modules.DnnUserVoice.Common;
+﻿using DNN.Modules.UserVoice.Common;
 using System;
 using Xunit;
 

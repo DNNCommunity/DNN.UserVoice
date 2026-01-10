@@ -32,8 +32,6 @@
     <Content Include="src\components\my-component\readme.md" />
     <Content Include="src\components\my-component\usage\dnn.md" />
     <Content Include="src\components\my-component\usage\javascript.md" />
-    <Content Include="src\components\my-create\my-create.scss" />
-    <Content Include="src\components\my-create\my-create.tsx" />
     <Content Include="src\components\my-edit\my-edit.scss" />
     <Content Include="src\components\my-edit\my-edit.tsx" />
     <Content Include="src\components\my-item-details\my-item-details.scss" />
@@ -46,9 +44,10 @@
     <Content Include="src\services\client-base.ts" />
     <Content Include="src\services\services.ts" />
     <Content Include="src\store\state.ts" />
-    <Content Include=".eslintrc.json" />
     <Content Include=".editorconfig" />
+    <Content Include=".hintrc" />
     <Content Include=".gitignore" />
+    <Content Include="eslint.config.ts" />
     <Content Include="api-extractor.json" />
     <Content Include="LICENSE" />
     <Content Include="package.json" />
@@ -61,7 +60,6 @@
     <Folder Include="src\components\" />
     <Folder Include="src\components\my-component\" />
     <Folder Include="src\components\my-component\usage\" />
-    <Folder Include="src\components\my-create\" />
     <Folder Include="src\components\my-edit\" />
     <Folder Include="src\components\my-item-details\" />
     <Folder Include="src\components\my-items-list\" />

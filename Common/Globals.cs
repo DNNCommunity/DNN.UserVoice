@@ -1,6 +1,6 @@
 ﻿// MIT License
 // Copyright DNN Community
-namespace DNN.Modules.DnnUserVoice.Common
+namespace DNN.Modules.UserVoice.Common
 {
     /// <summary>
     /// Global values, constants and methods.

@@ -7,13 +7,11 @@ using DotNetNuke.Web.Api;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace DNN.Modules.DnnUserVoice.Controllers
+namespace DNN.Modules.UserVoice.Controllers
 {
     /// <summary>
     /// Provides common features to all module controller.
     /// </summary>
-    [ModuleExceptionFilter]
-    [ValidateModel]
     public abstract class ModuleApiController : DnnApiController
     {
         /// <summary>

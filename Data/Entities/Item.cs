@@ -1,11 +1,11 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DNN.Modules.DnnUserVoice.Common;
+using DNN.Modules.UserVoice.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DNN.Modules.DnnUserVoice.Data.Entities
+namespace DNN.Modules.UserVoice.Data.Entities
 {
     /// <summary>
     /// Represents an item entity.

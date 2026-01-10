@@ -46,20 +46,26 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [my-create](../my-create)
+ - [my-component](../my-component)
  - [my-item-details](../my-item-details)
 
 ### Depends on
 
+- dnn-input
+- dnn-textarea
 - dnn-button
 
 ### Graph
 ```mermaid
 graph TD;
+  my-edit --> dnn-input
+  my-edit --> dnn-textarea
   my-edit --> dnn-button
+  dnn-input --> dnn-fieldset
+  dnn-textarea --> dnn-fieldset
   dnn-button --> dnn-modal
   dnn-button --> dnn-button
-  my-create --> my-edit
+  my-component --> my-edit
   my-item-details --> my-edit
   style my-edit fill:#f9f,stroke:#333,stroke-width:4px
 ```

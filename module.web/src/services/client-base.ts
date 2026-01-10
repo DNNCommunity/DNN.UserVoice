@@ -1,4 +1,4 @@
-import { DnnServicesFramework } from '@eraware/dnn-elements';
+import { DnnServicesFramework } from '@dnncommunity/dnn-elements';
 export class ClientBase {
 
   private sf: DnnServicesFramework;
@@ -10,7 +10,7 @@ export class ClientBase {
   }
 
   protected getBaseUrl(_defaultUrl: string, baseUrl?: string): string {
-    baseUrl = this.sf.getServiceRoot("DNN_UserVoice");
+    baseUrl = this.sf.getServiceRoot("DNNCommunity_UserVoice");
 
     // Strips the last / if present for future concatenations
     baseUrl = baseUrl.replace(/\/$/, "");
@@ -21,9 +21,22 @@ export class ClientBase {
   protected transformOptions(options: RequestInit): Promise<RequestInit> {
     const dnnHeaders = this.sf.getModuleHeaders();
 
+    let headers: Headers;
+    if (!options.headers) {
+      headers = new Headers();
+    } else if (options.headers instanceof Headers) {
+      headers = options.headers;
+    } else if (Array.isArray(options.headers)) {
+      headers = new Headers(options.headers);
+    } else {
+      headers = new Headers(Object.entries(options.headers));
+    }
+
     dnnHeaders.forEach((value, key) => {
-      options.headers[key] = value;
+      headers.append(key, value);
     });
+
+    options.headers = headers;
 
     return Promise.resolve(options);
   }

@@ -19,24 +19,31 @@ name: Build
 on:
   push:
     branches:
+      - main
       - master
       - develop
       - 'release/*'
+  pull_request:
+    branches:
+      - develop
+      - main
+      - master
+      - 'release/*'
 
 jobs:
-  windows-latest:
-    name: windows-latest
-    runs-on: windows-latest
+  ubuntu-22_04:
+    name: ubuntu-22_04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v1
-      - name: Cache .nuke/temp, ~/.nuget/packages
-        uses: actions/cache@v2
+      - uses: actions/checkout@v6
         with:
-          path: |
-            .nuke/temp
-            ~/.nuget/packages
-          key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
-      - name: Run './build.cmd DeployGeneratedFiles'
-        run: ./build.cmd DeployGeneratedFiles
+          fetch-depth: 0
+      - name: 'Run: Package, DeployGeneratedFiles, Release'
+        run: ./build.cmd Package DeployGeneratedFiles Release
         env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
+          GitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Publish: artifacts'
+        uses: actions/upload-artifact@v5
+        with:
+          name: artifacts
+          path: artifacts

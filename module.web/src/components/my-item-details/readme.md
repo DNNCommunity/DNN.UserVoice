@@ -32,7 +32,11 @@ graph TD;
   my-item-details --> my-edit
   dnn-button --> dnn-modal
   dnn-button --> dnn-button
+  my-edit --> dnn-input
+  my-edit --> dnn-textarea
   my-edit --> dnn-button
+  dnn-input --> dnn-fieldset
+  dnn-textarea --> dnn-fieldset
   my-items-list --> my-item-details
   style my-item-details fill:#f9f,stroke:#333,stroke-width:4px
 ```

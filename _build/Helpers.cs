@@ -1,28 +1,21 @@
-﻿using Newtonsoft.Json;
-using Nuke.Common;
-using Nuke.Common.IO;
-using System;
-using System.CodeDom;
-using System.CodeDom.Compiler;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
-using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.IO.PathConstruction;
-using static Nuke.Common.IO.TextTasks;
+using Newtonsoft.Json;
+using Nuke.Common;
+using Nuke.Common.IO;
 using static Nuke.Common.IO.XmlTasks;
 
 namespace BuildHelpers
 {
     public class Helpers : NukeBuild
     {
-        public static void CopyFileToDirectoryIfChanged(string source, string target)
+        public static void CopyFileToDirectoryIfChanged(AbsolutePath source, AbsolutePath target)
         {
             var sourceFile = new FileInfo(source);
             var destinationFile = new FileInfo(Path.Combine(target, sourceFile.Name));
@@ -44,8 +37,8 @@ namespace BuildHelpers
 
             if (!destinationExists || !sameSize || !sameContent)
             {
-                CopyFileToDirectory(source, target, Nuke.Common.IO.FileExistsPolicy.OverwriteIfNewer);
-                Logger.Success("Copied {0} to {1}", sourceFile.FullName, destinationFile.FullName);
+                source.CopyToDirectory(target, ExistsPolicy.FileOverwriteIfNewer);
+                Serilog.Log.Information("Copied {0} to {1}", sourceFile.FullName, destinationFile.FullName);
             }
             else
             {
@@ -53,7 +46,7 @@ namespace BuildHelpers
             }
         }
 
-        // Fast but accurate way to check if two files are difference (safer than write time for when rebuilding without changes).
+        // Fast but accurate way to check if two files are different (safer than write time for when rebuilding without changes).
         private static bool FilesAreEqual(FileInfo first, FileInfo second)
         {
             const int BYTES_TO_READ = sizeof(Int64);
@@ -91,9 +84,9 @@ namespace BuildHelpers
             return true;
         }
 
-        public static void AddFilesToZip(string zipPath, string[] files)
+        public static void AddFilesToZip(string zipPath, List<AbsolutePath> files)
         {
-            if (files == null || files.Length == 0)
+            if (files == null || files.Count == 0)
             {
                 return;
             }
@@ -127,9 +120,9 @@ namespace BuildHelpers
             return assemblies;
         }
 
-        public static void CleanCodeCoverageHistoryFiles(string directory)
+        public static void CleanCodeCoverageHistoryFiles(AbsolutePath directory)
         {
-            var files = GlobFiles(directory, "*.xml");
+            var files = directory.GlobFiles("*.xml");
             if (files == null || files.Count() < 2)
             {
                 return;
@@ -173,15 +166,15 @@ namespace BuildHelpers
                     fileA.CoveredBranches == fileB.CoveredBranches &&
                     fileA.TotalBranches == fileB.TotalBranches)
                 {
-                    DeleteFile(fileB.FileName);
+                    ((AbsolutePath)fileB.FileName).DeleteFile();
                 }
             }
         }
 
         public static void GenerateLocalizationFiles(string rootNamespace)
         {
-            var localizationFiles = GlobFiles(RootDirectory / "resources" / "App_LocalResources", "*.resx")
-                .Where(l => Regex.Matches(l, @"\.").Count == 1).ToList();
+            var localizationFiles = (RootDirectory / "resources" / "App_LocalResources").GlobFiles("*.resx")
+                .Where(l => Regex.Matches(new FileInfo(l).Name, @"\.").Count == 1).ToList();
             var generatedComment = GetGeneratedComment();
             var vm = new StringBuilder();
             vm.AppendLine(GetGeneratedComment());
@@ -191,8 +184,8 @@ namespace BuildHelpers
             svc.AppendLine(GetGeneratedComment());
             svc.AppendLine(GenerateLocalizationService(rootNamespace, localizationFiles));
 
-            File.WriteAllText(RootDirectory / "ViewModels" / "LocalizationViewModel.cs", vm.ToString());
-            File.WriteAllText(RootDirectory / "Services" / "LocalizationService.cs", svc.ToString());
+            File.WriteAllText(RootDirectory / "Services" / "Localization" / "LocalizationViewModel.cs", vm.ToString());
+            File.WriteAllText(RootDirectory / "Services" / "Localization" / "LocalizationService.cs", svc.ToString());
         }
 
         public static string GetManifestOwnerName(string manifestPath)
@@ -211,20 +204,19 @@ namespace BuildHelpers
             return node.InnerText;
         }
 
-        private static string GenerateLocalizationService(string rootNamespace, List<string> localizationFiles)
+        private static string GenerateLocalizationService(string rootNamespace, List<AbsolutePath> localizationFiles)
         {
             var moduleFolderName = new DirectoryInfo(RootDirectory).Name;
             var sb = new StringBuilder();
             sb
-                .AppendLine($"namespace {rootNamespace}.Services")
+                .AppendLine($"namespace {rootNamespace}.Services.Localization")
                  .AppendLine("{")
                  .AppendLine("    using DotNetNuke.Common.Utilities;")
                 .AppendLine($"    using DotNetNuke.Services.Localization;")
-                .AppendLine($"    using {rootNamespace}.ViewModels;")
                 .AppendLine($"    using System.Diagnostics.CodeAnalysis;")
                 .AppendLine($"    using System.Web.Hosting;")
                 .AppendLine($"    using System.Threading;")
-                .AppendLine($"    using static {rootNamespace}.ViewModels.LocalizationViewModel;")
+                .AppendLine($"    using static {rootNamespace}.Services.Localization.LocalizationViewModel;")
                 .AppendLine()
                 .AppendLine($"    /// <summary>")
                 .AppendLine($"    /// Provides strongly typed localization services for this module.")
@@ -243,8 +235,7 @@ namespace BuildHelpers
                  .AppendLine("            {")
                 .AppendLine($"                if (string.IsNullOrWhiteSpace(this.resourceFileRoot))")
                  .AppendLine("                {")
-                .AppendLine($"                    this.resourceFileRoot = HostingEnvironment.MapPath(")
-                .AppendLine($"                        \"~/DesktopModules/{moduleFolderName}/resources/App_LocalResources/\");")
+                .AppendLine($"                    this.resourceFileRoot = \"~/DesktopModules/{moduleFolderName}/resources/App_LocalResources/\";")
                  .AppendLine("                }")
                  .AppendLine()
                  .AppendLine("                return this.resourceFileRoot;")
@@ -293,7 +284,7 @@ namespace BuildHelpers
             return sb.ToString();
         }
 
-        private static string GetLocalizationFilesForViewModel(List<string> localizationFiles)
+        private static string GetLocalizationFilesForViewModel(List<AbsolutePath> localizationFiles)
         {
             var sb = new StringBuilder();
             foreach (var file in localizationFiles)
@@ -330,11 +321,11 @@ namespace BuildHelpers
             return sb.ToString();
         }
 
-        private static string GenerateLocalizationViewModel(string rootNamespace, List<string> localizationFiles)
+        private static string GenerateLocalizationViewModel(string rootNamespace, List<AbsolutePath> localizationFiles)
         {
             var sb = new StringBuilder();
             sb
-                .AppendLine($"namespace {rootNamespace}.ViewModels")
+                .AppendLine($"namespace {rootNamespace}.Services.Localization")
                 .AppendLine("{")
                 .AppendLine("    using System.Diagnostics.CodeAnalysis;")
                 .AppendLine()
@@ -350,7 +341,7 @@ namespace BuildHelpers
             return sb.ToString();
         }
 
-        private static string GetLocalizationViewModelClass(List<string> localizationFiles)
+        private static string GetLocalizationViewModelClass(List<AbsolutePath> localizationFiles)
         {
             var sb = new StringBuilder();
             for (int i = 0; i < localizationFiles.Count(); i++)
@@ -367,7 +358,7 @@ namespace BuildHelpers
             return sb.ToString();
         }
 
-        private static string GetLocalizationFilePropertiesClasses(List<string> localizationFiles)
+        private static string GetLocalizationFilePropertiesClasses(List<AbsolutePath> localizationFiles)
         {
             var sb = new StringBuilder();
             for (int i = 0; i < localizationFiles.Count(); i++)

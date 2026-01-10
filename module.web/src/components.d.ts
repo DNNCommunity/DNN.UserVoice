@@ -6,14 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IItemViewModel } from "./services/services";
+export { IItemViewModel } from "./services/services";
 export namespace Components {
     interface MyComponent {
         /**
           * The Dnn module id, required in order to access web services.
          */
         "moduleId": number;
-    }
-    interface MyCreate {
     }
     interface MyEdit {
         /**
@@ -38,13 +37,19 @@ export namespace Components {
     interface MyItemsList {
         /**
           * Defines how many items to fetch per request.
+          * @default 100
          */
         "pageSize": number;
         /**
           * Defines how many pixels under the fold to preload.
+          * @default 1000
          */
         "preloadPixels": number;
     }
+}
+export interface MyEditCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMyEditElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -53,13 +58,18 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLMyCreateElement extends Components.MyCreate, HTMLStencilElement {
+    interface HTMLMyEditElementEventMap {
+        "itemCreated": any;
     }
-    var HTMLMyCreateElement: {
-        prototype: HTMLMyCreateElement;
-        new (): HTMLMyCreateElement;
-    };
     interface HTMLMyEditElement extends Components.MyEdit, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMyEditElementEventMap>(type: K, listener: (this: HTMLMyEditElement, ev: MyEditCustomEvent<HTMLMyEditElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMyEditElementEventMap>(type: K, listener: (this: HTMLMyEditElement, ev: MyEditCustomEvent<HTMLMyEditElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMyEditElement: {
         prototype: HTMLMyEditElement;
@@ -79,7 +89,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
-        "my-create": HTMLMyCreateElement;
         "my-edit": HTMLMyEditElement;
         "my-item-details": HTMLMyItemDetailsElement;
         "my-items-list": HTMLMyItemsListElement;
@@ -92,8 +101,6 @@ declare namespace LocalJSX {
          */
         "moduleId": number;
     }
-    interface MyCreate {
-    }
     interface MyEdit {
         /**
           * The item to create or edit.
@@ -102,7 +109,7 @@ declare namespace LocalJSX {
         /**
           * Fires up when an item got created.
          */
-        "onItemCreated"?: (event: CustomEvent<any>) => void;
+        "onItemCreated"?: (event: MyEditCustomEvent<any>) => void;
     }
     interface MyItemDetails {
         /**
@@ -113,16 +120,17 @@ declare namespace LocalJSX {
     interface MyItemsList {
         /**
           * Defines how many items to fetch per request.
+          * @default 100
          */
         "pageSize"?: number;
         /**
           * Defines how many pixels under the fold to preload.
+          * @default 1000
          */
         "preloadPixels"?: number;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
-        "my-create": MyCreate;
         "my-edit": MyEdit;
         "my-item-details": MyItemDetails;
         "my-items-list": MyItemsList;
@@ -133,7 +141,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-create": LocalJSX.MyCreate & JSXBase.HTMLAttributes<HTMLMyCreateElement>;
             "my-edit": LocalJSX.MyEdit & JSXBase.HTMLAttributes<HTMLMyEditElement>;
             "my-item-details": LocalJSX.MyItemDetails & JSXBase.HTMLAttributes<HTMLMyItemDetailsElement>;
             "my-items-list": LocalJSX.MyItemsList & JSXBase.HTMLAttributes<HTMLMyItemsListElement>;

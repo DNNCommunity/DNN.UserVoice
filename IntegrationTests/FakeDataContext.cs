@@ -1,4 +1,4 @@
-﻿using DNN.Modules.DnnUserVoice.Data;
+﻿using DNN.Modules.UserVoice.Data;
 using Effort.Provider;
 using System;
 

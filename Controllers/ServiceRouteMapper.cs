@@ -3,7 +3,7 @@
 
 using DotNetNuke.Web.Api;
 
-namespace DNN.Modules.DnnUserVoice.Controllers
+namespace DNN.Modules.UserVoice.Controllers
 {
     /// <summary>
     /// Implements the Dnn IServiceRouteMapper to register this module routes.
@@ -13,7 +13,7 @@ namespace DNN.Modules.DnnUserVoice.Controllers
         /// <inheritdoc/>
         public void RegisterRoutes(IMapRoute mapRouteManager)
         {
-            mapRouteManager?.MapHttpRoute("DNN_UserVoice", "default", "{controller}/{action}", new[] { typeof(ServiceRouteMapper).Namespace });
+            mapRouteManager?.MapHttpRoute("DNNCommunity_UserVoice", "default", "{controller}/{action}", new[] { typeof(ServiceRouteMapper).Namespace });
         }
     }
 }
