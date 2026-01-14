@@ -47,10 +47,6 @@ namespace DNN.Modules.UserVoice.Services.Localization
         /// </summary>
         public class UIInfo
         {
-            /// <summary>Gets or sets the AddItem localized text.</summary>
-            /// <example>Add Item</example>
-            public string AddItem { get; set; }
-
             /// <summary>Gets or sets the Cancel localized text.</summary>
             /// <example>Cancel</example>
             public string Cancel { get; set; }
@@ -62,26 +58,6 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <summary>Gets or sets the Delete localized text.</summary>
             /// <example>Delete</example>
             public string Delete { get; set; }
-
-            /// <summary>Gets or sets the DeleteItemConfirm localized text.</summary>
-            /// <example>Are you sure you want to delete this item?</example>
-            public string DeleteItemConfirm { get; set; }
-
-            /// <summary>Gets or sets the Description localized text.</summary>
-            /// <example>Description</example>
-            public string Description { get; set; }
-
-            /// <summary>Gets or sets the Edit localized text.</summary>
-            /// <example>Edit</example>
-            public string Edit { get; set; }
-
-            /// <summary>Gets or sets the LoadMore localized text.</summary>
-            /// <example>Load More</example>
-            public string LoadMore { get; set; }
-
-            /// <summary>Gets or sets the Name localized text.</summary>
-            /// <example>Name</example>
-            public string Name { get; set; }
 
             /// <summary>Gets or sets the No localized text.</summary>
             /// <example>No</example>

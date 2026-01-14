@@ -17,14 +17,15 @@ namespace UnitTests
     public class FakeDataContext : IDisposable
     {
         public EffortConnection connection;
-        public ModuleDbContext dataContext;
+        public TestDataContext testDataContext;
+        public ModuleDbContext dataContext => testDataContext;
 
         private bool _disposed = false;
 
         public FakeDataContext()
         {
             this.connection = Effort.DbConnectionFactory.CreateTransient();
-            this.dataContext = new ModuleDbContext(this.connection);
+            this.testDataContext = new TestDataContext(this.connection);
         }
 
         public void Dispose()
@@ -42,11 +43,11 @@ namespace UnitTests
 
             if (disposing)
             {
-                this.dataContext.Dispose();
+                this.testDataContext.Dispose();
                 this.connection.Dispose();
             }
 
-            this.dataContext = null;
+            this.testDataContext = null;
             this.connection = null;
 
             _disposed = true;
@@ -60,30 +61,30 @@ namespace UnitTests
         {
         }
 
-        public DbSet<Category> categories { get; set; }
-        public DbSet<Product> products { get; set; }
+        public DbSet<TestCategory> TestCategories { get; set; }
+        public DbSet<TestProduct> TestProducts { get; set; }
     }
 
-    public class Category : BaseEntity
+    public class TestCategory : BaseEntity
     {
-        public Category()
+        public TestCategory()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<TestProduct>();
         }
         [Required]
         public string Name { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<TestProduct> Products { get; set; }
     }
 
-    public class Product : BaseEntity
+    public class TestProduct : BaseEntity
     {
         public string Name { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual TestCategory Category { get; set; }
     }
 
-    public class ProductRepository : Repository<Product>
+    public class ProductRepository : Repository<TestProduct>
     {
         public ProductRepository(ModuleDbContext context, IDateTimeProvider dateTimeProvider)
             : base(context, dateTimeProvider)

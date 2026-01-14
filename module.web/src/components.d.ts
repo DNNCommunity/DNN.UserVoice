@@ -5,145 +5,33 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IItemViewModel } from "./services/services";
-export { IItemViewModel } from "./services/services";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The Dnn module id, required in order to access web services.
-         */
-        "moduleId": number;
+    interface DnnuvUservoice {
     }
-    interface MyEdit {
-        /**
-          * The item to create or edit.
-         */
-        "item": IItemViewModel;
-        /**
-          * Resets the form to insert a new item.
-         */
-        "resetForm": () => Promise<void>;
-        /**
-          * Sets focus on the first form element
-         */
-        "setFocus": () => Promise<void>;
-    }
-    interface MyItemDetails {
-        /**
-          * The item to display
-         */
-        "item": IItemViewModel;
-    }
-    interface MyItemsList {
-        /**
-          * Defines how many items to fetch per request.
-          * @default 100
-         */
-        "pageSize": number;
-        /**
-          * Defines how many pixels under the fold to preload.
-          * @default 1000
-         */
-        "preloadPixels": number;
-    }
-}
-export interface MyEditCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMyEditElement;
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLDnnuvUservoiceElement extends Components.DnnuvUservoice, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLMyEditElementEventMap {
-        "itemCreated": any;
-    }
-    interface HTMLMyEditElement extends Components.MyEdit, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLMyEditElementEventMap>(type: K, listener: (this: HTMLMyEditElement, ev: MyEditCustomEvent<HTMLMyEditElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLMyEditElementEventMap>(type: K, listener: (this: HTMLMyEditElement, ev: MyEditCustomEvent<HTMLMyEditElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLMyEditElement: {
-        prototype: HTMLMyEditElement;
-        new (): HTMLMyEditElement;
-    };
-    interface HTMLMyItemDetailsElement extends Components.MyItemDetails, HTMLStencilElement {
-    }
-    var HTMLMyItemDetailsElement: {
-        prototype: HTMLMyItemDetailsElement;
-        new (): HTMLMyItemDetailsElement;
-    };
-    interface HTMLMyItemsListElement extends Components.MyItemsList, HTMLStencilElement {
-    }
-    var HTMLMyItemsListElement: {
-        prototype: HTMLMyItemsListElement;
-        new (): HTMLMyItemsListElement;
+    var HTMLDnnuvUservoiceElement: {
+        prototype: HTMLDnnuvUservoiceElement;
+        new (): HTMLDnnuvUservoiceElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "my-edit": HTMLMyEditElement;
-        "my-item-details": HTMLMyItemDetailsElement;
-        "my-items-list": HTMLMyItemsListElement;
+        "dnnuv-uservoice": HTMLDnnuvUservoiceElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The Dnn module id, required in order to access web services.
-         */
-        "moduleId": number;
-    }
-    interface MyEdit {
-        /**
-          * The item to create or edit.
-         */
-        "item"?: IItemViewModel;
-        /**
-          * Fires up when an item got created.
-         */
-        "onItemCreated"?: (event: MyEditCustomEvent<any>) => void;
-    }
-    interface MyItemDetails {
-        /**
-          * The item to display
-         */
-        "item": IItemViewModel;
-    }
-    interface MyItemsList {
-        /**
-          * Defines how many items to fetch per request.
-          * @default 100
-         */
-        "pageSize"?: number;
-        /**
-          * Defines how many pixels under the fold to preload.
-          * @default 1000
-         */
-        "preloadPixels"?: number;
+    interface DnnuvUservoice {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
-        "my-edit": MyEdit;
-        "my-item-details": MyItemDetails;
-        "my-items-list": MyItemsList;
+        "dnnuv-uservoice": DnnuvUservoice;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-edit": LocalJSX.MyEdit & JSXBase.HTMLAttributes<HTMLMyEditElement>;
-            "my-item-details": LocalJSX.MyItemDetails & JSXBase.HTMLAttributes<HTMLMyItemDetailsElement>;
-            "my-items-list": LocalJSX.MyItemsList & JSXBase.HTMLAttributes<HTMLMyItemsListElement>;
+            "dnnuv-uservoice": LocalJSX.DnnuvUservoice & JSXBase.HTMLAttributes<HTMLDnnuvUservoiceElement>;
         }
     }
 }

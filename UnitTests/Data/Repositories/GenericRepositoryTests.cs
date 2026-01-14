@@ -1,7 +1,4 @@
-﻿using DNN.Modules.UserVoice.Data;
-using DNN.Modules.UserVoice.Data.Entities;
-using DNN.Modules.UserVoice.Data.Repositories;
-using DNN.Modules.UserVoice.Providers;
+﻿using DNN.Modules.UserVoice.Providers;
 using Newtonsoft.Json;
 using NSubstitute;
 using System;
@@ -24,7 +21,7 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public void GenericRepositoryConstructs()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
 
             Assert.NotNull(dataContext);
             Assert.NotNull(repository);
@@ -33,8 +30,8 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public async Task GenericRepositoryCreatesAndGetsById()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            var expectedItem = new Item() { Id = 1, Name = "Name", Description = "Description" };
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            var expectedItem = new TestProduct() { Id = 1, Name = "Name" };
             await repository.CreateAsync(expectedItem);
 
             var returnedItem = await repository.GetByIdAsync(1);
@@ -45,8 +42,8 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public async Task GenericRepositoryDeletes()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            var item = new Item() { Id = 1, Name = "Name", Description = "Description" };
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            var item = new TestProduct() { Id = 1, Name = "Name" };
             await repository.CreateAsync(item);
 
             await repository.DeleteAsync(item.Id);
@@ -57,9 +54,10 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public void GenericRepositoryGet()
         {
-            this.dataContext.Items.Add(new Item() { Id = 1, Name = "Name", Description = "Description" });
-            this.dataContext.SaveChanges();
-            var repository = new TestRepository(this.dataContext, this.dateTimeProvider);
+            var context = this.dataContext as TestDataContext;
+            context.TestProducts.Add(new TestProduct() { Id = 1, Name = "Name" });
+            context.SaveChanges();
+            var repository = new ProductRepository(context, this.dateTimeProvider);
 
             var items = repository.Get();
 
@@ -73,10 +71,10 @@ namespace UnitTests.Data.Repositories
         [InlineData(3)]
         public async Task GenericRepositoryGetsAll(int iterations)
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
             for (int i = 1; i <= iterations; i++)
             {
-                var item = new Item() { Id = i, Name = $"Name {i}", Description = $"Description {i}" };
+                var item = new TestProduct() { Id = i, Name = $"Name {i}" };
                 await repository.CreateAsync(item);
             }
 
@@ -91,25 +89,23 @@ namespace UnitTests.Data.Repositories
         {
             var createdTime = new DateTime(2022, 1, 1);
             this.dateTimeProvider.GetUtcNow().Returns(createdTime);
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            await repository.CreateAsync(new Item() { Id = 1, Name = "Original Name", Description = "Original Description" });
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            await repository.CreateAsync(new TestProduct() { Id = 1, Name = "Original Name" });
             var entity = await repository.GetByIdAsync(1);
             entity.Name = "New Name";
-            entity.Description = "New Description";
             var updatedTime = createdTime.AddDays(1);
             this.dateTimeProvider.GetUtcNow().Returns(updatedTime);
 
             await repository.UpdateAsync(entity);
 
             Assert.Equal("New Name", entity.Name);
-            Assert.Equal("New Description", entity.Description);
             Assert.True(entity.UpdatedAt > entity.CreatedAt);
         }
 
         [Fact]
         public async Task GenericRepositoryCreate_ThrowsWithNullEntity()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
 
             Task create() => repository.CreateAsync(null);
 
@@ -120,7 +116,7 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public async Task GenericRepositoryUpdate_ThrowsWithNullEntity()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
 
             Task update() => repository.UpdateAsync(null);
 
@@ -131,8 +127,8 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public async Task Repository_Create_DefaultAudit()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            var item = new Item() { Name = "Name", Description = "Description" };
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            var item = new TestProduct() { Name = "Name" };
 
             await repository.CreateAsync(item);
 
@@ -146,8 +142,8 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public async Task Repository_Create_UsesUserId()
         {
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            var item = new Item() { Name = "Name", Description = "Description" };
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            var item = new TestProduct() { Name = "Name" };
 
             await repository.CreateAsync(item, 123);
 
@@ -159,13 +155,12 @@ namespace UnitTests.Data.Repositories
         public async Task Repository_Update_DefaultAudit()
         {
             var currentTime = this.dateTimeProvider.GetUtcNow();
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            var item = new Item() { Name = "Name", Description = "Description" };
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            var item = new TestProduct() { Name = "Name" };
             var id = await repository.CreateAsync(item);
             this.dateTimeProvider.GetUtcNow().Returns(currentTime.AddDays(1));
             var itemToUpdate = await repository.GetByIdAsync(id);
             itemToUpdate.Name = "New Name";
-            itemToUpdate.Description = "New Description";
 
             await repository.UpdateAsync(itemToUpdate);
 
@@ -178,11 +173,10 @@ namespace UnitTests.Data.Repositories
         public async Task Repository_Update_UsesUserId()
         {
             var now = this.dateTimeProvider.GetUtcNow();
-            var repository = new TestRepository(dataContext, this.dateTimeProvider);
-            var item = new Item() { Name = "Name", Description = "Description" };
+            var repository = new ProductRepository(dataContext, this.dateTimeProvider);
+            var item = new TestProduct() { Name = "Name" };
             await repository.CreateAsync(item);
             item.Name = "New Name";
-            item.Description = "New Description";
             this.dateTimeProvider.GetUtcNow().Returns(now.AddDays(1));
 
             await repository.UpdateAsync(item, 123);
@@ -198,7 +192,7 @@ namespace UnitTests.Data.Repositories
         [Fact]
         public async Task Repository_DeleteMissing_DoesNotThrow()
         {
-            var repository = new TestRepository(this.dataContext, this.dateTimeProvider);
+            var repository = new ProductRepository(this.dataContext, this.dateTimeProvider);
 
             await repository.DeleteAsync(1);
         }
@@ -213,8 +207,8 @@ namespace UnitTests.Data.Repositories
             int expectedItems,
             int expectedPages)
         {
-            this.CreateItems(100);
-            var repository = new TestRepository(this.dataContext, this.dateTimeProvider);
+            this.CreateProducts(100);
+            var repository = new ProductRepository(this.dataContext, this.dateTimeProvider);
 
             var result = await repository.GetPageAsync(
                 page,
@@ -237,17 +231,17 @@ namespace UnitTests.Data.Repositories
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    var newCategory = new Category { Name = $"Category {i}" };
-                    context.categories.Add(newCategory);
+                    var newCategory = new TestCategory { Name = $"Category {i}" };
+                    context.TestCategories.Add(newCategory);
                     await context.SaveChangesAsync();
                     for (int j = 0; j < 10; j++)
                     {
-                        var newProduct = new Product
+                        var newProduct = new TestProduct
                         {
                             Name = $"Product {j}",
                             Category = newCategory,
                         };
-                        context.products.Add(newProduct);
+                        context.TestProducts.Add(newProduct);
                     }
                     await context.SaveChangesAsync();
                 }
@@ -261,33 +255,16 @@ namespace UnitTests.Data.Repositories
             }
         }
 
-        public class TestRepository : Repository<Item>
-        {
-            public TestRepository(ModuleDbContext context, IDateTimeProvider dateTimeProvider)
-                : base(context, dateTimeProvider)
-            {
-            }
-        }
-
-        private void CreateItems(int count)
+        private void CreateProducts(int count)
         {
             for (int i = 0; i < count; i++)
             {
-                this.dataContext.Items.Add(new Item()
+                this.testDataContext.TestProducts.Add(new TestProduct()
                 {
                     Name = i % 2 == 0 ? $"Test Name {i}" : $"Name {i}",
-                    Description = $"Test description {i}",
                 });
             }
-            this.dataContext.SaveChanges();
-        }
-
-        public class ProductRepository : Repository<Product>
-        {
-            public ProductRepository(ModuleDbContext context, IDateTimeProvider dateTimeProvider)
-                : base(context, dateTimeProvider)
-            {
-            }
+            this.testDataContext.SaveChanges();
         }
     }
 }
