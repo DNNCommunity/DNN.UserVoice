@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8377" branch-rate="0.4523" version="1.9" timestamp="1768023721" lines-covered="191" lines-valid="228" branches-covered="19" branches-valid="42">
+<coverage line-rate="0.015700000000000002" branch-rate="0.0526" version="1.9" timestamp="1768370105" lines-covered="2" lines-valid="127" branches-covered="2" branches-valid="38">
   <sources>
     <source>/home/runner/work/DNN.UserVoice/DNN.UserVoice/</source>
   </sources>
   <packages>
-    <package name="DNN.Modules.UserVoice" line-rate="0.8377" branch-rate="0.4523" complexity="103">
+    <package name="DNN.Modules.UserVoice" line-rate="0.015700000000000002" branch-rate="0.0526" complexity="65">
       <classes>
         <class name="DNN.Modules.UserVoice.Providers.DateTimeProvider" filename="Providers/DateTimeProvider.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -18,484 +18,150 @@
             <line number="14" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator" filename="Services/Items/CreateItemDtoValidator.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions" filename="Extensions/ServiceCollectionExtensions.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Services.Localization.ILocalizationService)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="AddModuleData" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="46" branch="False" />
-                <line number="20" hits="46" branch="False" />
-                <line number="22" hits="46" branch="False" />
-                <line number="23" hits="46" branch="False" />
-                <line number="24" hits="46" branch="False" />
-                <line number="25" hits="46" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="AddModuleServices" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="18" hits="46" branch="False" />
-            <line number="20" hits="46" branch="False" />
-            <line number="22" hits="46" branch="False" />
-            <line number="23" hits="46" branch="False" />
-            <line number="24" hits="46" branch="False" />
-            <line number="25" hits="46" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO" filename="Services/Items/GetItemsPageDTO.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="DNN.Modules.UserVoice.Data.ModuleDbContext" filename="Data/ModuleDbContext.cs" line-rate="0" branch-rate="0" complexity="16">
           <methods>
-            <method name="get_Query" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="13" hits="51" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Page" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="18" hits="51" branch="False" />
-              </lines>
-            </method>
-            <method name="get_PageSize" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="23" hits="51" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Descending" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="28" hits="24" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="13" hits="51" branch="False" />
-            <line number="18" hits="51" branch="False" />
-            <line number="23" hits="51" branch="False" />
-            <line number="28" hits="24" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.CreateItemDTO" filename="Services/Items/CreateItemDTO.cs" line-rate="1" branch-rate="1" complexity="2">
-          <methods>
-            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="14" hits="9" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Description" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="19" hits="6" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="14" hits="9" branch="False" />
-            <line number="19" hits="6" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.UpdateItemDTO" filename="Services/Items/UpdateItemDTO.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="14" hits="3" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="14" hits="3" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.UpdateItemDtoValidator" filename="Services/Items/UpdateItemDtoValidator.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Services.Localization.ILocalizationService)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="18" hits="23" branch="False" />
-                <line number="20" hits="23" branch="False" />
-                <line number="22" hits="23" branch="False" />
-                <line number="24" hits="23" branch="False" />
-                <line number="25" hits="23" branch="False" />
-                <line number="26" hits="23" branch="False" />
-                <line number="27" hits="23" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="18" hits="23" branch="False" />
-            <line number="20" hits="23" branch="False" />
-            <line number="22" hits="23" branch="False" />
-            <line number="24" hits="23" branch="False" />
-            <line number="25" hits="23" branch="False" />
-            <line number="26" hits="23" branch="False" />
-            <line number="27" hits="23" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemService" filename="Services/Items/ItemService.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Data.Repositories.IItemRepository,FluentValidation.IValidator`1&lt;DNN.Modules.UserVoice.Services.Items.CreateItemDTO&gt;,FluentValidation.IValidator`1&lt;DNN.Modules.UserVoice.Services.Items.UpdateItemDTO&gt;)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="34" hits="23" branch="False" />
-                <line number="35" hits="23" branch="False" />
-                <line number="36" hits="23" branch="False" />
-                <line number="37" hits="23" branch="False" />
-                <line number="39" hits="23" branch="False" />
-                <line number="40" hits="23" branch="False" />
-                <line number="41" hits="23" branch="False" />
-                <line number="42" hits="23" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="34" hits="23" branch="False" />
-            <line number="35" hits="23" branch="False" />
-            <line number="36" hits="23" branch="False" />
-            <line number="37" hits="23" branch="False" />
-            <line number="39" hits="23" branch="False" />
-            <line number="40" hits="23" branch="False" />
-            <line number="41" hits="23" branch="False" />
-            <line number="42" hits="23" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemService/&lt;CreateItemAsync&gt;d__4" filename="Services/Items/ItemService.cs" line-rate="0.875" branch-rate="0.5" complexity="2">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0.875" branch-rate="0.5" complexity="2">
-              <lines>
-                <line number="47" hits="2" branch="False" />
-                <line number="49" hits="2" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="146" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
-                <line number="51" hits="0" branch="False" />
-                <line number="54" hits="2" branch="False" />
-                <line number="55" hits="2" branch="False" />
-                <line number="57" hits="2" branch="False" />
-                <line number="58" hits="2" branch="False" />
-                <line number="59" hits="2" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="47" hits="2" branch="False" />
-            <line number="49" hits="2" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="146" type="jump" coverage="50%" />
-              </conditions>
-            </line>
-            <line number="51" hits="0" branch="False" />
-            <line number="54" hits="2" branch="False" />
-            <line number="55" hits="2" branch="False" />
-            <line number="57" hits="2" branch="False" />
-            <line number="58" hits="2" branch="False" />
-            <line number="59" hits="2" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemService/&lt;&gt;c" filename="Services/Items/ItemService.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="&lt;GetItemsPageAsync&gt;b__5_2" signature="(DNN.Modules.UserVoice.Data.Entities.Item)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="73" hits="141" branch="False" />
-                <line number="74" hits="141" branch="False" />
-                <line number="75" hits="141" branch="False" />
-                <line number="76" hits="141" branch="False" />
-                <line number="77" hits="141" branch="False" />
-                <line number="78" hits="141" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="73" hits="141" branch="False" />
-            <line number="74" hits="141" branch="False" />
-            <line number="75" hits="141" branch="False" />
-            <line number="76" hits="141" branch="False" />
-            <line number="77" hits="141" branch="False" />
-            <line number="78" hits="141" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemService/&lt;GetItemsPageAsync&gt;d__5" filename="Services/Items/ItemService.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="64" hits="17" branch="False" />
-                <line number="65" hits="17" branch="False" />
-                <line number="66" hits="17" branch="False" />
-                <line number="67" hits="17" branch="False" />
-                <line number="68" hits="17" branch="False" />
-                <line number="69" hits="17" branch="False" />
-                <line number="71" hits="17" branch="False" />
-                <line number="72" hits="17" branch="False" />
-                <line number="79" hits="17" branch="False" />
-                <line number="80" hits="17" branch="False" />
-                <line number="81" hits="17" branch="False" />
-                <line number="82" hits="17" branch="False" />
-                <line number="84" hits="17" branch="False" />
-                <line number="85" hits="17" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="64" hits="17" branch="False" />
-            <line number="65" hits="17" branch="False" />
-            <line number="66" hits="17" branch="False" />
-            <line number="67" hits="17" branch="False" />
-            <line number="68" hits="17" branch="False" />
-            <line number="69" hits="17" branch="False" />
-            <line number="71" hits="17" branch="False" />
-            <line number="72" hits="17" branch="False" />
-            <line number="79" hits="17" branch="False" />
-            <line number="80" hits="17" branch="False" />
-            <line number="81" hits="17" branch="False" />
-            <line number="82" hits="17" branch="False" />
-            <line number="84" hits="17" branch="False" />
-            <line number="85" hits="17" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemService/&lt;DeleteItemAsync&gt;d__6" filename="Services/Items/ItemService.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="90" hits="2" branch="False" />
-                <line number="91" hits="2" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="90" hits="2" branch="False" />
-            <line number="91" hits="2" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemService/&lt;UpdateItemAsync&gt;d__7" filename="Services/Items/ItemService.cs" line-rate="0.8887999999999999" branch-rate="0.5" complexity="2">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0.8887999999999999" branch-rate="0.5" complexity="2">
-              <lines>
-                <line number="96" hits="1" branch="False" />
-                <line number="98" hits="1" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="154" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
-                <line number="100" hits="0" branch="False" />
-                <line number="103" hits="1" branch="False" />
-                <line number="104" hits="1" branch="False" />
-                <line number="105" hits="1" branch="False" />
-                <line number="107" hits="1" branch="False" />
-                <line number="109" hits="1" branch="False" />
-                <line number="110" hits="1" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="96" hits="1" branch="False" />
-            <line number="98" hits="1" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="154" type="jump" coverage="50%" />
-              </conditions>
-            </line>
-            <line number="100" hits="0" branch="False" />
-            <line number="103" hits="1" branch="False" />
-            <line number="104" hits="1" branch="False" />
-            <line number="105" hits="1" branch="False" />
-            <line number="107" hits="1" branch="False" />
-            <line number="109" hits="1" branch="False" />
-            <line number="110" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel" filename="Services/Items/ItemsPageViewModel.cs" line-rate="1" branch-rate="1" complexity="4">
-          <methods>
-            <method name="get_Items" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="17" hits="36" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Page" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="22" hits="25" branch="False" />
-              </lines>
-            </method>
-            <method name="get_ResultCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="27" hits="25" branch="False" />
-              </lines>
-            </method>
-            <method name="get_PageCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="32" hits="23" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="17" hits="36" branch="False" />
-            <line number="22" hits="25" branch="False" />
-            <line number="27" hits="25" branch="False" />
-            <line number="32" hits="23" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Services.Items.ItemViewModel" filename="Services/Items/ItemViewModel.cs" line-rate="1" branch-rate="1" complexity="5">
-          <methods>
-            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="35" hits="151" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="41" hits="145" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Description" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="46" hits="145" branch="False" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="17" hits="141" branch="False" />
-                <line number="19" hits="141" branch="False" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Data.Entities.Item)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="2" branch="False" />
-                <line number="27" hits="2" branch="False" />
-                <line number="28" hits="2" branch="False" />
-                <line number="29" hits="2" branch="False" />
-                <line number="30" hits="2" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="35" hits="151" branch="False" />
-            <line number="41" hits="145" branch="False" />
-            <line number="46" hits="145" branch="False" />
-            <line number="17" hits="141" branch="False" />
-            <line number="19" hits="141" branch="False" />
-            <line number="25" hits="2" branch="False" />
-            <line number="27" hits="2" branch="False" />
-            <line number="28" hits="2" branch="False" />
-            <line number="29" hits="2" branch="False" />
-            <line number="30" hits="2" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Data.ModuleDbContext" filename="Data/ModuleDbContext.cs" line-rate="0.1818" branch-rate="0" complexity="17">
-          <methods>
-            <method name="get_Items" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="44" hits="1076" branch="False" />
-              </lines>
-            </method>
             <method name="GetConnectionString" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="52" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
               </lines>
             </method>
             <method name="ComputeConnectionString" signature="()" line-rate="0" branch-rate="0" complexity="12">
               <lines>
-                <line number="63" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="57" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="5" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="65" hits="0" branch="False" />
-                <line number="69" hits="0" branch="False" />
-                <line number="70" hits="0" branch="False" />
-                <line number="71" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="59" hits="0" branch="False" />
+                <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
+                <line number="65" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="92" type="jump" coverage="0%" />
                     <condition number="89" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="73" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="45" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="74" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="68" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="58" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="76" hits="0" branch="False" />
+                <line number="70" hits="0" branch="False" />
+                <line number="73" hits="0" branch="False" />
+                <line number="77" hits="0" branch="False" />
+                <line number="78" hits="0" branch="False" />
                 <line number="79" hits="0" branch="False" />
-                <line number="83" hits="0" branch="False" />
-                <line number="84" hits="0" branch="False" />
-                <line number="85" hits="0" branch="False" />
-                <line number="86" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="80" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="134" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="87" hits="0" branch="False" />
-                <line number="88" hits="0" branch="False" />
+                <line number="81" hits="0" branch="False" />
+                <line number="82" hits="0" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="28" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.Data.Common.DbConnection)" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(System.Data.Common.DbConnection)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="37" hits="23" branch="False" />
-                <line number="39" hits="23" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
               </lines>
             </method>
-            <method name=".cctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="22" hits="1" branch="False" />
+                <line number="21" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="44" hits="1076" branch="False" />
-            <line number="52" hits="0" branch="False" />
-            <line number="63" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="46" hits="0" branch="False" />
+            <line number="57" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="5" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="65" hits="0" branch="False" />
-            <line number="69" hits="0" branch="False" />
-            <line number="70" hits="0" branch="False" />
-            <line number="71" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="59" hits="0" branch="False" />
+            <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
+            <line number="65" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="92" type="jump" coverage="0%" />
                 <condition number="89" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="73" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="67" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="45" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="74" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="68" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="58" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="76" hits="0" branch="False" />
+            <line number="70" hits="0" branch="False" />
+            <line number="73" hits="0" branch="False" />
+            <line number="77" hits="0" branch="False" />
+            <line number="78" hits="0" branch="False" />
             <line number="79" hits="0" branch="False" />
-            <line number="83" hits="0" branch="False" />
-            <line number="84" hits="0" branch="False" />
-            <line number="85" hits="0" branch="False" />
-            <line number="86" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="80" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="134" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="87" hits="0" branch="False" />
-            <line number="88" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="37" hits="23" branch="False" />
-            <line number="39" hits="23" branch="False" />
-            <line number="22" hits="1" branch="False" />
+            <line number="81" hits="0" branch="False" />
+            <line number="82" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="21" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.PagedList`1" filename="Data/Repositories/PagedList{T}.cs" line-rate="0.9411" branch-rate="1" complexity="6">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.PagedList`1" filename="Data/Repositories/PagedList{T}.cs" line-rate="0" branch-rate="1" complexity="6">
           <methods>
-            <method name="get_Items" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_Items" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="39" hits="17" branch="False" />
+                <line number="39" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_Page" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_Page" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="44" hits="17" branch="False" />
+                <line number="44" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_PageSize" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -503,84 +169,84 @@
                 <line number="49" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_ResultCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_ResultCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="54" hits="17" branch="False" />
+                <line number="54" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_PageCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_PageCount" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="59" hits="17" branch="False" />
+                <line number="59" hits="0" branch="False" />
               </lines>
             </method>
-            <method name=".ctor" signature="(System.Collections.Generic.IEnumerable`1&lt;T&gt;,System.Int32,System.Int32,System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(System.Collections.Generic.IEnumerable`1&lt;T&gt;,System.Int32,System.Int32,System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="22" hits="17" branch="False" />
-                <line number="23" hits="17" branch="False" />
-                <line number="24" hits="17" branch="False" />
-                <line number="25" hits="17" branch="False" />
-                <line number="26" hits="17" branch="False" />
-                <line number="27" hits="17" branch="False" />
-                <line number="29" hits="17" branch="False" />
-                <line number="30" hits="17" branch="False" />
-                <line number="31" hits="17" branch="False" />
-                <line number="32" hits="17" branch="False" />
-                <line number="33" hits="17" branch="False" />
-                <line number="34" hits="17" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+                <line number="25" hits="0" branch="False" />
+                <line number="26" hits="0" branch="False" />
+                <line number="27" hits="0" branch="False" />
+                <line number="29" hits="0" branch="False" />
+                <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="39" hits="17" branch="False" />
-            <line number="44" hits="17" branch="False" />
+            <line number="39" hits="0" branch="False" />
+            <line number="44" hits="0" branch="False" />
             <line number="49" hits="0" branch="False" />
-            <line number="54" hits="17" branch="False" />
-            <line number="59" hits="17" branch="False" />
-            <line number="22" hits="17" branch="False" />
-            <line number="23" hits="17" branch="False" />
-            <line number="24" hits="17" branch="False" />
-            <line number="25" hits="17" branch="False" />
-            <line number="26" hits="17" branch="False" />
-            <line number="27" hits="17" branch="False" />
-            <line number="29" hits="17" branch="False" />
-            <line number="30" hits="17" branch="False" />
-            <line number="31" hits="17" branch="False" />
-            <line number="32" hits="17" branch="False" />
-            <line number="33" hits="17" branch="False" />
-            <line number="34" hits="17" branch="False" />
+            <line number="54" hits="0" branch="False" />
+            <line number="59" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="26" hits="0" branch="False" />
+            <line number="27" hits="0" branch="False" />
+            <line number="29" hits="0" branch="False" />
+            <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1" filename="Data/Repositories/Repository.cs" line-rate="0.875" branch-rate="1" complexity="2">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="Get" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
                 <line number="50" hits="0" branch="False" />
               </lines>
             </method>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Data.ModuleDbContext,DNN.Modules.UserVoice.Providers.IDateTimeProvider)" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(DNN.Modules.UserVoice.Data.ModuleDbContext,DNN.Modules.UserVoice.Providers.IDateTimeProvider)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="32" hits="23" branch="False" />
-                <line number="33" hits="23" branch="False" />
-                <line number="34" hits="23" branch="False" />
-                <line number="36" hits="23" branch="False" />
-                <line number="37" hits="23" branch="False" />
-                <line number="38" hits="23" branch="False" />
-                <line number="39" hits="23" branch="False" />
+                <line number="32" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
+                <line number="38" hits="0" branch="False" />
+                <line number="39" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="50" hits="0" branch="False" />
-            <line number="32" hits="23" branch="False" />
-            <line number="33" hits="23" branch="False" />
-            <line number="34" hits="23" branch="False" />
-            <line number="36" hits="23" branch="False" />
-            <line number="37" hits="23" branch="False" />
-            <line number="38" hits="23" branch="False" />
-            <line number="39" hits="23" branch="False" />
+            <line number="32" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
+            <line number="38" hits="0" branch="False" />
+            <line number="39" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;GetAllAsync&gt;d__4" filename="Data/Repositories/Repository.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;GetAllAsync&gt;d__4" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -594,21 +260,21 @@
             <line number="45" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;GetByIdAsync&gt;d__6" filename="Data/Repositories/Repository.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;GetByIdAsync&gt;d__6" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="56" hits="1" branch="False" />
-                <line number="57" hits="1" branch="False" />
+                <line number="56" hits="0" branch="False" />
+                <line number="57" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="56" hits="1" branch="False" />
-            <line number="57" hits="1" branch="False" />
+            <line number="56" hits="0" branch="False" />
+            <line number="57" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;&gt;c" filename="Data/Repositories/Repository.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;&gt;c" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="&lt;GetPageAsync&gt;b__7_0" signature="(System.Linq.IQueryable`1&lt;T&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;T,System.Object&gt;&gt;)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -620,288 +286,256 @@
             <line number="84" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;GetPageAsync&gt;d__7" filename="Data/Repositories/Repository.cs" line-rate="0.9629000000000001" branch-rate="0.6875" complexity="16">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;GetPageAsync&gt;d__7" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="0" complexity="16">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0.9629000000000001" branch-rate="0.6875" complexity="16">
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="16">
               <lines>
-                <line number="69" hits="17" branch="True" condition-coverage="100% (2/2)">
+                <line number="69" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="34" type="jump" coverage="100%" />
+                    <condition number="34" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="71" hits="1" branch="False" />
-                <line number="74" hits="17" branch="True" condition-coverage="100% (2/2)">
+                <line number="71" hits="0" branch="False" />
+                <line number="74" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="50" type="jump" coverage="100%" />
+                    <condition number="50" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="76" hits="1" branch="False" />
-                <line number="79" hits="17" branch="False" />
-                <line number="82" hits="17" branch="True" condition-coverage="50% (2/4)">
+                <line number="76" hits="0" branch="False" />
+                <line number="79" hits="0" branch="False" />
+                <line number="82" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
-                    <condition number="78" type="jump" coverage="50%" />
-                    <condition number="89" type="jump" coverage="50%" />
+                    <condition number="78" type="jump" coverage="0%" />
+                    <condition number="89" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="88" hits="17" branch="True" condition-coverage="100% (2/2)">
+                <line number="88" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="151" type="jump" coverage="100%" />
+                    <condition number="151" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="90" hits="17" branch="False" />
-                <line number="94" hits="17" branch="True" condition-coverage="50% (1/2)">
+                <line number="90" hits="0" branch="False" />
+                <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="182" type="jump" coverage="50%" />
+                    <condition number="182" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="96" hits="0" branch="False" />
-                <line number="99" hits="17" branch="True" condition-coverage="100% (2/2)">
+                <line number="99" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="272" type="jump" coverage="100%" />
+                    <condition number="272" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="100" hits="17" branch="False" />
-                <line number="101" hits="17" branch="False" />
-                <line number="104" hits="17" branch="False" />
-                <line number="105" hits="17" branch="False" />
-                <line number="106" hits="17" branch="False" />
-                <line number="107" hits="17" branch="False" />
-                <line number="108" hits="17" branch="False" />
-                <line number="109" hits="17" branch="False" />
-                <line number="110" hits="17" branch="False" />
-                <line number="112" hits="17" branch="False" />
-                <line number="113" hits="17" branch="False" />
-                <line number="114" hits="17" branch="False" />
-                <line number="115" hits="17" branch="False" />
-                <line number="116" hits="17" branch="False" />
-                <line number="117" hits="17" branch="False" />
-                <line number="118" hits="17" branch="False" />
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="False" />
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="106" hits="0" branch="False" />
+                <line number="107" hits="0" branch="False" />
+                <line number="108" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
+                <line number="110" hits="0" branch="False" />
+                <line number="112" hits="0" branch="False" />
+                <line number="113" hits="0" branch="False" />
+                <line number="114" hits="0" branch="False" />
+                <line number="115" hits="0" branch="False" />
+                <line number="116" hits="0" branch="False" />
+                <line number="117" hits="0" branch="False" />
+                <line number="118" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="69" hits="17" branch="True" condition-coverage="100% (2/2)">
+            <line number="69" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="34" type="jump" coverage="100%" />
+                <condition number="34" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="71" hits="1" branch="False" />
-            <line number="74" hits="17" branch="True" condition-coverage="100% (2/2)">
+            <line number="71" hits="0" branch="False" />
+            <line number="74" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="50" type="jump" coverage="100%" />
+                <condition number="50" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="76" hits="1" branch="False" />
-            <line number="79" hits="17" branch="False" />
-            <line number="82" hits="17" branch="True" condition-coverage="50% (2/4)">
+            <line number="76" hits="0" branch="False" />
+            <line number="79" hits="0" branch="False" />
+            <line number="82" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
-                <condition number="78" type="jump" coverage="50%" />
-                <condition number="89" type="jump" coverage="50%" />
+                <condition number="78" type="jump" coverage="0%" />
+                <condition number="89" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="88" hits="17" branch="True" condition-coverage="100% (2/2)">
+            <line number="88" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="151" type="jump" coverage="100%" />
+                <condition number="151" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="90" hits="17" branch="False" />
-            <line number="94" hits="17" branch="True" condition-coverage="50% (1/2)">
+            <line number="90" hits="0" branch="False" />
+            <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="182" type="jump" coverage="50%" />
+                <condition number="182" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="96" hits="0" branch="False" />
-            <line number="99" hits="17" branch="True" condition-coverage="100% (2/2)">
+            <line number="99" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="272" type="jump" coverage="100%" />
+                <condition number="272" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="100" hits="17" branch="False" />
-            <line number="101" hits="17" branch="False" />
-            <line number="104" hits="17" branch="False" />
-            <line number="105" hits="17" branch="False" />
-            <line number="106" hits="17" branch="False" />
-            <line number="107" hits="17" branch="False" />
-            <line number="108" hits="17" branch="False" />
-            <line number="109" hits="17" branch="False" />
-            <line number="110" hits="17" branch="False" />
-            <line number="112" hits="17" branch="False" />
-            <line number="113" hits="17" branch="False" />
-            <line number="114" hits="17" branch="False" />
-            <line number="115" hits="17" branch="False" />
-            <line number="116" hits="17" branch="False" />
-            <line number="117" hits="17" branch="False" />
-            <line number="118" hits="17" branch="False" />
+            <line number="100" hits="0" branch="False" />
+            <line number="101" hits="0" branch="False" />
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="107" hits="0" branch="False" />
+            <line number="108" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="110" hits="0" branch="False" />
+            <line number="112" hits="0" branch="False" />
+            <line number="113" hits="0" branch="False" />
+            <line number="114" hits="0" branch="False" />
+            <line number="115" hits="0" branch="False" />
+            <line number="116" hits="0" branch="False" />
+            <line number="117" hits="0" branch="False" />
+            <line number="118" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;CreateAsync&gt;d__8" filename="Data/Repositories/Repository.cs" line-rate="0.9" branch-rate="0.5" complexity="2">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;CreateAsync&gt;d__8" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0.9" branch-rate="0.5" complexity="2">
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="123" hits="2" branch="True" condition-coverage="50% (1/2)">
+                <line number="123" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="31" type="jump" coverage="50%" />
+                    <condition number="31" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="125" hits="0" branch="False" />
-                <line number="128" hits="2" branch="False" />
-                <line number="129" hits="2" branch="False" />
-                <line number="130" hits="2" branch="False" />
-                <line number="131" hits="2" branch="False" />
-                <line number="132" hits="2" branch="False" />
-                <line number="133" hits="2" branch="False" />
-                <line number="134" hits="2" branch="False" />
-                <line number="135" hits="2" branch="False" />
+                <line number="128" hits="0" branch="False" />
+                <line number="129" hits="0" branch="False" />
+                <line number="130" hits="0" branch="False" />
+                <line number="131" hits="0" branch="False" />
+                <line number="132" hits="0" branch="False" />
+                <line number="133" hits="0" branch="False" />
+                <line number="134" hits="0" branch="False" />
+                <line number="135" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="123" hits="2" branch="True" condition-coverage="50% (1/2)">
+            <line number="123" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="31" type="jump" coverage="50%" />
+                <condition number="31" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="125" hits="0" branch="False" />
-            <line number="128" hits="2" branch="False" />
-            <line number="129" hits="2" branch="False" />
-            <line number="130" hits="2" branch="False" />
-            <line number="131" hits="2" branch="False" />
-            <line number="132" hits="2" branch="False" />
-            <line number="133" hits="2" branch="False" />
-            <line number="134" hits="2" branch="False" />
-            <line number="135" hits="2" branch="False" />
+            <line number="128" hits="0" branch="False" />
+            <line number="129" hits="0" branch="False" />
+            <line number="130" hits="0" branch="False" />
+            <line number="131" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+            <line number="133" hits="0" branch="False" />
+            <line number="134" hits="0" branch="False" />
+            <line number="135" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;UpdateAsync&gt;d__9" filename="Data/Repositories/Repository.cs" line-rate="0.875" branch-rate="0.5" complexity="2">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;UpdateAsync&gt;d__9" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0.875" branch-rate="0.5" complexity="2">
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="140" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="140" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="31" type="jump" coverage="50%" />
+                    <condition number="31" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="142" hits="0" branch="False" />
-                <line number="145" hits="1" branch="False" />
-                <line number="146" hits="1" branch="False" />
-                <line number="148" hits="1" branch="False" />
-                <line number="149" hits="1" branch="False" />
-                <line number="150" hits="1" branch="False" />
-                <line number="151" hits="1" branch="False" />
+                <line number="145" hits="0" branch="False" />
+                <line number="146" hits="0" branch="False" />
+                <line number="148" hits="0" branch="False" />
+                <line number="149" hits="0" branch="False" />
+                <line number="150" hits="0" branch="False" />
+                <line number="151" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="140" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="140" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="31" type="jump" coverage="50%" />
+                <condition number="31" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="142" hits="0" branch="False" />
-            <line number="145" hits="1" branch="False" />
-            <line number="146" hits="1" branch="False" />
-            <line number="148" hits="1" branch="False" />
-            <line number="149" hits="1" branch="False" />
-            <line number="150" hits="1" branch="False" />
-            <line number="151" hits="1" branch="False" />
+            <line number="145" hits="0" branch="False" />
+            <line number="146" hits="0" branch="False" />
+            <line number="148" hits="0" branch="False" />
+            <line number="149" hits="0" branch="False" />
+            <line number="150" hits="0" branch="False" />
+            <line number="151" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;DeleteAsync&gt;d__10" filename="Data/Repositories/Repository.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1/&lt;DeleteAsync&gt;d__10" filename="Data/Repositories/Repository{T}.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="156" hits="2" branch="False" />
-                <line number="157" hits="2" branch="True" condition-coverage="100% (2/2)">
+                <line number="156" hits="0" branch="False" />
+                <line number="157" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="153" type="jump" coverage="100%" />
+                    <condition number="153" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="159" hits="1" branch="False" />
-                <line number="162" hits="1" branch="False" />
-                <line number="163" hits="1" branch="False" />
-                <line number="164" hits="2" branch="False" />
+                <line number="159" hits="0" branch="False" />
+                <line number="162" hits="0" branch="False" />
+                <line number="163" hits="0" branch="False" />
+                <line number="164" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="156" hits="2" branch="False" />
-            <line number="157" hits="2" branch="True" condition-coverage="100% (2/2)">
+            <line number="156" hits="0" branch="False" />
+            <line number="157" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="153" type="jump" coverage="100%" />
+                <condition number="153" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="159" hits="1" branch="False" />
-            <line number="162" hits="1" branch="False" />
-            <line number="163" hits="1" branch="False" />
-            <line number="164" hits="2" branch="False" />
+            <line number="159" hits="0" branch="False" />
+            <line number="162" hits="0" branch="False" />
+            <line number="163" hits="0" branch="False" />
+            <line number="164" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Data.Repositories.ItemRepository" filename="Data/Repositories/ItemRepository.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DNN.Modules.UserVoice.Data.Entities.BaseEntity" filename="Data/Entities/BaseEntity.cs" line-rate="0" branch-rate="1" complexity="5">
           <methods>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Data.ModuleDbContext,DNN.Modules.UserVoice.Providers.IDateTimeProvider)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="23" branch="False" />
-                <line number="20" hits="23" branch="False" />
+                <line number="16" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CreatedAt" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UpdatedAt" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_CreatedByUserId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UpdatedByUserId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="18" hits="23" branch="False" />
-            <line number="20" hits="23" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Data.Entities.BaseEntity" filename="Data/Entities/BaseEntity.cs" line-rate="1" branch-rate="1" complexity="5">
-          <methods>
-            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="16" hits="8623" branch="False" />
-              </lines>
-            </method>
-            <method name="get_CreatedAt" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="19" hits="3219" branch="False" />
-              </lines>
-            </method>
-            <method name="get_UpdatedAt" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="22" hits="3221" branch="False" />
-              </lines>
-            </method>
-            <method name="get_CreatedByUserId" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="25" hits="3219" branch="False" />
-              </lines>
-            </method>
-            <method name="get_UpdatedByUserId" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="28" hits="3221" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="16" hits="8623" branch="False" />
-            <line number="19" hits="3219" branch="False" />
-            <line number="22" hits="3221" branch="False" />
-            <line number="25" hits="3219" branch="False" />
-            <line number="28" hits="3221" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Data.Entities.Item" filename="Data/Entities/Item.cs" line-rate="1" branch-rate="1" complexity="2">
-          <methods>
-            <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="21" hits="5471" branch="False" />
-              </lines>
-            </method>
-            <method name="get_Description" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="27" hits="4418" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="21" hits="5471" branch="False" />
-            <line number="27" hits="4418" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="19" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="25" hits="0" branch="False" />
+            <line number="28" hits="0" branch="False" />
           </lines>
         </class>
         <class name="DNN.Modules.UserVoice.Controllers.LocalizationController" filename="Controllers/LocalizationController.cs" line-rate="0" branch-rate="1" complexity="2">
@@ -926,138 +560,28 @@
             <line number="25" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Controllers.ItemController" filename="Controllers/ItemController.cs" line-rate="1" branch-rate="1" complexity="6">
-          <methods>
-            <method name="UserCanEdit" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="90" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method name="&lt;CreateItem&gt;b__2_0" signature="(OneOf.Types.Success`1&lt;DNN.Modules.UserVoice.Services.Items.ItemViewModel&gt;)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="45" hits="2" branch="False" />
-              </lines>
-            </method>
-            <method name="&lt;CreateItem&gt;b__2_1" signature="(OneOf.Types.Error`1&lt;System.Collections.Generic.List`1&lt;FluentValidation.Results.ValidationFailure&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="46" hits="2" branch="False" />
-              </lines>
-            </method>
-            <method name="&lt;UpdateItem&gt;b__6_0" signature="(OneOf.Types.Success)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="106" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method name="&lt;UpdateItem&gt;b__6_1" signature="(OneOf.Types.Error`1&lt;System.Collections.Generic.List`1&lt;FluentValidation.Results.ValidationFailure&gt;&gt;)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="107" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(DNN.Modules.UserVoice.Services.Items.IItemService)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="26" hits="23" branch="False" />
-                <line number="28" hits="23" branch="False" />
-                <line number="29" hits="23" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="90" hits="1" branch="False" />
-            <line number="45" hits="2" branch="False" />
-            <line number="46" hits="2" branch="False" />
-            <line number="106" hits="1" branch="False" />
-            <line number="107" hits="1" branch="False" />
-            <line number="26" hits="23" branch="False" />
-            <line number="28" hits="23" branch="False" />
-            <line number="29" hits="23" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Controllers.ItemController/&lt;CreateItem&gt;d__2" filename="Controllers/ItemController.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="43" hits="2" branch="False" />
-                <line number="44" hits="2" branch="False" />
-                <line number="47" hits="2" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="43" hits="2" branch="False" />
-            <line number="44" hits="2" branch="False" />
-            <line number="47" hits="2" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Controllers.ItemController/&lt;GetItemsPage&gt;d__3" filename="Controllers/ItemController.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="62" hits="17" branch="False" />
-                <line number="63" hits="17" branch="False" />
-                <line number="64" hits="17" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="62" hits="17" branch="False" />
-            <line number="63" hits="17" branch="False" />
-            <line number="64" hits="17" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Controllers.ItemController/&lt;DeleteItem&gt;d__4" filename="Controllers/ItemController.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="77" hits="2" branch="False" />
-                <line number="78" hits="2" branch="False" />
-                <line number="79" hits="2" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="77" hits="2" branch="False" />
-            <line number="78" hits="2" branch="False" />
-            <line number="79" hits="2" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Controllers.ItemController/&lt;UpdateItem&gt;d__6" filename="Controllers/ItemController.cs" line-rate="1" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="104" hits="1" branch="False" />
-                <line number="105" hits="1" branch="False" />
-                <line number="108" hits="1" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="104" hits="1" branch="False" />
-            <line number="105" hits="1" branch="False" />
-            <line number="108" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class name="DNN.Modules.UserVoice.Controllers.ModuleApiController" filename="Controllers/ModuleApiController.cs" line-rate="0.8" branch-rate="1" complexity="2">
+        <class name="DNN.Modules.UserVoice.Controllers.ModuleApiController" filename="Controllers/ModuleApiController.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="get_UserInfo" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
                 <line number="20" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_CanEdit" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_CanEdit" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="31" hits="1" branch="False" />
-                <line number="33" hits="1" branch="False" />
-                <line number="35" hits="1" branch="False" />
-                <line number="37" hits="1" branch="False" />
+                <line number="31" hits="0" branch="False" />
+                <line number="33" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="37" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="20" hits="0" branch="False" />
-            <line number="31" hits="1" branch="False" />
-            <line number="33" hits="1" branch="False" />
-            <line number="35" hits="1" branch="False" />
-            <line number="37" hits="1" branch="False" />
+            <line number="31" hits="0" branch="False" />
+            <line number="33" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="37" hits="0" branch="False" />
           </lines>
         </class>
         <class name="DNN.Modules.UserVoice.Controllers.ServiceRouteMapper" filename="Controllers/ServiceRouteMapper.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -1082,7 +606,7 @@
             <line number="17" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="DNN.Modules.UserVoice.Common.Extensions.IQueryableExtensions" filename="Common/Extensions/IQueryableExtensions.cs" line-rate="0" branch-rate="0" complexity="2">
+        <class name="DNN.Modules.UserVoice.Common.Extensions.IQueryableExtensions" filename="Extensions/IQueryableExtensions.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="Order" signature="(System.Linq.IQueryable`1&lt;T&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;T,TKey&gt;&gt;,System.Boolean)" line-rate="0" branch-rate="0" complexity="2">
               <lines>

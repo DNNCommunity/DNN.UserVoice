@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class Item </title>
+      <title>Class ServiceCollectionExtensions </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class Item ">
+      <meta name="title" content="Class ServiceCollectionExtensions ">
     
-    <meta name="description" content="Represents an item entity.">
+    <meta name="description" content="Provides extension methods for configuring and managing services in an .">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -76,41 +76,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DNN.Modules.UserVoice.Data.Entities.Item">
+            <article class="content wrap" id="_content" data-uid="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions">
 
 
 
-  <h1 id="DNN_Modules_UserVoice_Data_Entities_Item" data-uid="DNN.Modules.UserVoice.Data.Entities.Item" class="text-break">Class Item</h1>
-  <div class="markdown level0 summary"><p>Represents an item entity.</p>
+  <h1 id="DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions" data-uid="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions" class="text-break">Class ServiceCollectionExtensions</h1>
+  <div class="markdown level0 summary"><p>Provides extension methods for configuring and managing services in an <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="DNN.Modules.UserVoice.Data.Entities.BaseEntity.html">BaseEntity</a></div>
-    <div class="level2"><span class="xref">Item</span></div>
-  </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="DNN.Modules.UserVoice.Data.Entities.IEntity.html">IEntity</a></div>
+    <div class="level1"><span class="xref">ServiceCollectionExtensions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.BaseEntity.Id.html#DNN_Modules_UserVoice_Data_Entities_BaseEntity_Id">BaseEntity.Id</a>
-    </div>
-    <div>
-      <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt.html#DNN_Modules_UserVoice_Data_Entities_BaseEntity_CreatedAt">BaseEntity.CreatedAt</a>
-    </div>
-    <div>
-      <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.BaseEntity.UpdatedAt.html#DNN_Modules_UserVoice_Data_Entities_BaseEntity_UpdatedAt">BaseEntity.UpdatedAt</a>
-    </div>
-    <div>
-      <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedByUserId.html#DNN_Modules_UserVoice_Data_Entities_BaseEntity_CreatedByUserId">BaseEntity.CreatedByUserId</a>
-    </div>
-    <div>
-      <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.BaseEntity.UpdatedByUserId.html#DNN_Modules_UserVoice_Data_Entities_BaseEntity_UpdatedByUserId">BaseEntity.UpdatedByUserId</a>
-    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -133,14 +113,13 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DNN.html">DNN</a>.<a class="xref" href="DNN.Modules.html">Modules</a>.<a class="xref" href="DNN.Modules.UserVoice.html">UserVoice</a>.<a class="xref" href="DNN.Modules.UserVoice.Data.html">Data</a>.<a class="xref" href="DNN.Modules.UserVoice.Data.Entities.html">Entities</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DNN.html">DNN</a>.<a class="xref" href="DNN.Modules.html">Modules</a>.<a class="xref" href="DNN.Modules.UserVoice.html">UserVoice</a>.<a class="xref" href="DNN.Modules.UserVoice.Extensions.html">Extensions</a></h6>
   <h6><strong>Assembly</strong>: DNN.Modules.UserVoice.dll</h6>
-  <h5 id="DNN_Modules_UserVoice_Data_Entities_Item_syntax">Syntax</h5>
+  <h5 id="DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Table(&quot;DNN_UserVoice_Items&quot;)]
-public class Item : BaseEntity, IEntity</code></pre>
+    <pre><code class="lang-csharp hljs">public static class ServiceCollectionExtensions</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="methods">Methods
 </h3>
   <table class="table table-bordered table-condensed">
     <thead>
@@ -151,17 +130,17 @@ public class Item : BaseEntity, IEntity</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td id="DNN_Modules_UserVoice_Data_Entities_Item_Description" data-uid="DNN.Modules.UserVoice.Data.Entities.Item.Description">
-          <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.Item.Description.html#DNN_Modules_UserVoice_Data_Entities_Item_Description">Description</a>
+        <td id="DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_AddModuleData_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+          <a class="xref" href="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html#DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_AddModuleData_Microsoft_Extensions_DependencyInjection_IServiceCollection_">AddModuleData(IServiceCollection)</a>
         </td>
-        <td class="markdown level1 summary"><p>Gets or sets the item description.</p>
+        <td class="markdown level1 summary"><p>Adds module-specific data layer (dbcontext, repositories, etc.)</p>
 </td>
       </tr>
       <tr>
-        <td id="DNN_Modules_UserVoice_Data_Entities_Item_Name" data-uid="DNN.Modules.UserVoice.Data.Entities.Item.Name">
-          <a class="xref" href="DNN.Modules.UserVoice.Data.Entities.Item.Name.html#DNN_Modules_UserVoice_Data_Entities_Item_Name">Name</a>
+        <td id="DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_AddModuleServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+          <a class="xref" href="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices.html#DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_AddModuleServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_">AddModuleServices(IServiceCollection)</a>
         </td>
-        <td class="markdown level1 summary"><p>Gets or sets the item name.</p>
+        <td class="markdown level1 summary"><p>Adds module-specific services to the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a> for dependency injection.</p>
 </td>
       </tr>
     </tbody>
@@ -175,10 +154,10 @@ public class Item : BaseEntity, IEntity</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/new/develop/apiSpec/new?filename=DNN_Modules_UserVoice_Data_Entities_Item.md&amp;value=---%0Auid%3A%20DNN.Modules.UserVoice.Data.Entities.Item%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/new/develop/apiSpec/new?filename=DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions.md&amp;value=---%0Auid%3A%20DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/Data/Entities/Item.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DNNCommunity/DNN.UserVoice/blob/develop/Extensions/ServiceCollectionExtensions.cs/#L14" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

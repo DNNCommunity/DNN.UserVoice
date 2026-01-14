@@ -31,93 +31,6 @@ references:
   commentId: N:DNN.Modules.UserVoice.Controllers
   fullName: DNN.Modules.UserVoice.Controllers
   nameWithType: DNN.Modules.UserVoice.Controllers
-- uid: DNN.Modules.UserVoice.Controllers.ItemController
-  name: ItemController
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.html
-  commentId: T:DNN.Modules.UserVoice.Controllers.ItemController
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController
-  nameWithType: ItemController
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.#ctor(DNN.Modules.UserVoice.Services.Items.IItemService)
-  name: ItemController(IItemService)
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.-ctor.html#DNN_Modules_UserVoice_Controllers_ItemController__ctor_DNN_Modules_UserVoice_Services_Items_IItemService_
-  commentId: M:DNN.Modules.UserVoice.Controllers.ItemController.#ctor(DNN.Modules.UserVoice.Services.Items.IItemService)
-  name.vb: New(IItemService)
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.ItemController(DNN.Modules.UserVoice.Services.Items.IItemService)
-  fullName.vb: DNN.Modules.UserVoice.Controllers.ItemController.New(DNN.Modules.UserVoice.Services.Items.IItemService)
-  nameWithType: ItemController.ItemController(IItemService)
-  nameWithType.vb: ItemController.New(IItemService)
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.#ctor*
-  name: ItemController
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.-ctor.html
-  commentId: Overload:DNN.Modules.UserVoice.Controllers.ItemController.#ctor
-  name.vb: New
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.ItemController
-  fullName.vb: DNN.Modules.UserVoice.Controllers.ItemController.New
-  nameWithType: ItemController.ItemController
-  nameWithType.vb: ItemController.New
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.CreateItem(DNN.Modules.UserVoice.Services.Items.CreateItemDTO)
-  name: CreateItem(CreateItemDTO)
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.CreateItem.html#DNN_Modules_UserVoice_Controllers_ItemController_CreateItem_DNN_Modules_UserVoice_Services_Items_CreateItemDTO_
-  commentId: M:DNN.Modules.UserVoice.Controllers.ItemController.CreateItem(DNN.Modules.UserVoice.Services.Items.CreateItemDTO)
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.CreateItem(DNN.Modules.UserVoice.Services.Items.CreateItemDTO)
-  nameWithType: ItemController.CreateItem(CreateItemDTO)
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.CreateItem*
-  name: CreateItem
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.CreateItem.html
-  commentId: Overload:DNN.Modules.UserVoice.Controllers.ItemController.CreateItem
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.CreateItem
-  nameWithType: ItemController.CreateItem
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem(System.Int32)
-  name: DeleteItem(int)
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem.html#DNN_Modules_UserVoice_Controllers_ItemController_DeleteItem_System_Int32_
-  commentId: M:DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem(System.Int32)
-  name.vb: DeleteItem(Integer)
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem(int)
-  fullName.vb: DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem(Integer)
-  nameWithType: ItemController.DeleteItem(int)
-  nameWithType.vb: ItemController.DeleteItem(Integer)
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem*
-  name: DeleteItem
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem.html
-  commentId: Overload:DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem
-  nameWithType: ItemController.DeleteItem
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage(DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO)
-  name: GetItemsPage(GetItemsPageDTO)
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage.html#DNN_Modules_UserVoice_Controllers_ItemController_GetItemsPage_DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_
-  commentId: M:DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage(DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO)
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage(DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO)
-  nameWithType: ItemController.GetItemsPage(GetItemsPageDTO)
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage*
-  name: GetItemsPage
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage.html
-  commentId: Overload:DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage
-  nameWithType: ItemController.GetItemsPage
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO)
-  name: UpdateItem(UpdateItemDTO)
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem.html#DNN_Modules_UserVoice_Controllers_ItemController_UpdateItem_DNN_Modules_UserVoice_Services_Items_UpdateItemDTO_
-  commentId: M:DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO)
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO)
-  nameWithType: ItemController.UpdateItem(UpdateItemDTO)
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem*
-  name: UpdateItem
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem.html
-  commentId: Overload:DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem
-  nameWithType: ItemController.UpdateItem
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit
-  name: UserCanEdit()
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit.html#DNN_Modules_UserVoice_Controllers_ItemController_UserCanEdit
-  commentId: M:DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit()
-  nameWithType: ItemController.UserCanEdit()
-- uid: DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit*
-  name: UserCanEdit
-  href: api/DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit.html
-  commentId: Overload:DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit
-  fullName: DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit
-  nameWithType: ItemController.UserCanEdit
 - uid: DNN.Modules.UserVoice.Controllers.LocalizationController
   name: LocalizationController
   href: api/DNN.Modules.UserVoice.Controllers.LocalizationController.html
@@ -346,36 +259,6 @@ references:
   commentId: Overload:DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId
   fullName: DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId
   nameWithType: IEntity.UpdatedByUserId
-- uid: DNN.Modules.UserVoice.Data.Entities.Item
-  name: Item
-  href: api/DNN.Modules.UserVoice.Data.Entities.Item.html
-  commentId: T:DNN.Modules.UserVoice.Data.Entities.Item
-  fullName: DNN.Modules.UserVoice.Data.Entities.Item
-  nameWithType: Item
-- uid: DNN.Modules.UserVoice.Data.Entities.Item.Description
-  name: Description
-  href: api/DNN.Modules.UserVoice.Data.Entities.Item.Description.html#DNN_Modules_UserVoice_Data_Entities_Item_Description
-  commentId: P:DNN.Modules.UserVoice.Data.Entities.Item.Description
-  fullName: DNN.Modules.UserVoice.Data.Entities.Item.Description
-  nameWithType: Item.Description
-- uid: DNN.Modules.UserVoice.Data.Entities.Item.Description*
-  name: Description
-  href: api/DNN.Modules.UserVoice.Data.Entities.Item.Description.html
-  commentId: Overload:DNN.Modules.UserVoice.Data.Entities.Item.Description
-  fullName: DNN.Modules.UserVoice.Data.Entities.Item.Description
-  nameWithType: Item.Description
-- uid: DNN.Modules.UserVoice.Data.Entities.Item.Name
-  name: Name
-  href: api/DNN.Modules.UserVoice.Data.Entities.Item.Name.html#DNN_Modules_UserVoice_Data_Entities_Item_Name
-  commentId: P:DNN.Modules.UserVoice.Data.Entities.Item.Name
-  fullName: DNN.Modules.UserVoice.Data.Entities.Item.Name
-  nameWithType: Item.Name
-- uid: DNN.Modules.UserVoice.Data.Entities.Item.Name*
-  name: Name
-  href: api/DNN.Modules.UserVoice.Data.Entities.Item.Name.html
-  commentId: Overload:DNN.Modules.UserVoice.Data.Entities.Item.Name
-  fullName: DNN.Modules.UserVoice.Data.Entities.Item.Name
-  nameWithType: Item.Name
 - uid: DNN.Modules.UserVoice.Data.ModuleDbContext
   name: ModuleDbContext
   href: api/DNN.Modules.UserVoice.Data.ModuleDbContext.html
@@ -409,30 +292,12 @@ references:
   fullName.vb: DNN.Modules.UserVoice.Data.ModuleDbContext.New
   nameWithType: ModuleDbContext.ModuleDbContext
   nameWithType.vb: ModuleDbContext.New
-- uid: DNN.Modules.UserVoice.Data.ModuleDbContext.Items
-  name: Items
-  href: api/DNN.Modules.UserVoice.Data.ModuleDbContext.Items.html#DNN_Modules_UserVoice_Data_ModuleDbContext_Items
-  commentId: P:DNN.Modules.UserVoice.Data.ModuleDbContext.Items
-  fullName: DNN.Modules.UserVoice.Data.ModuleDbContext.Items
-  nameWithType: ModuleDbContext.Items
-- uid: DNN.Modules.UserVoice.Data.ModuleDbContext.Items*
-  name: Items
-  href: api/DNN.Modules.UserVoice.Data.ModuleDbContext.Items.html
-  commentId: Overload:DNN.Modules.UserVoice.Data.ModuleDbContext.Items
-  fullName: DNN.Modules.UserVoice.Data.ModuleDbContext.Items
-  nameWithType: ModuleDbContext.Items
 - uid: DNN.Modules.UserVoice.Data.Repositories
   name: DNN.Modules.UserVoice.Data.Repositories
   href: api/DNN.Modules.UserVoice.Data.Repositories.html
   commentId: N:DNN.Modules.UserVoice.Data.Repositories
   fullName: DNN.Modules.UserVoice.Data.Repositories
   nameWithType: DNN.Modules.UserVoice.Data.Repositories
-- uid: DNN.Modules.UserVoice.Data.Repositories.IItemRepository
-  name: IItemRepository
-  href: api/DNN.Modules.UserVoice.Data.Repositories.IItemRepository.html
-  commentId: T:DNN.Modules.UserVoice.Data.Repositories.IItemRepository
-  fullName: DNN.Modules.UserVoice.Data.Repositories.IItemRepository
-  nameWithType: IItemRepository
 - uid: DNN.Modules.UserVoice.Data.Repositories.IRepository`1
   name: IRepository<T>
   href: api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.html
@@ -810,6 +675,42 @@ references:
   fullName.vb: DNN.Modules.UserVoice.Data.Repositories.Repository(Of T).UpdateAsync
   nameWithType: Repository<T>.UpdateAsync
   nameWithType.vb: Repository(Of T).UpdateAsync
+- uid: DNN.Modules.UserVoice.Extensions
+  name: DNN.Modules.UserVoice.Extensions
+  href: api/DNN.Modules.UserVoice.Extensions.html
+  commentId: N:DNN.Modules.UserVoice.Extensions
+  fullName: DNN.Modules.UserVoice.Extensions
+  nameWithType: DNN.Modules.UserVoice.Extensions
+- uid: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  href: api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.html
+  commentId: T:DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions
+  fullName: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+- uid: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: AddModuleData(IServiceCollection)
+  href: api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html#DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_AddModuleData_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddModuleData(IServiceCollection)
+- uid: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData*
+  name: AddModuleData
+  href: api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html
+  commentId: Overload:DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData
+  fullName: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData
+  nameWithType: ServiceCollectionExtensions.AddModuleData
+- uid: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: AddModuleServices(IServiceCollection)
+  href: api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices.html#DNN_Modules_UserVoice_Extensions_ServiceCollectionExtensions_AddModuleServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddModuleServices(IServiceCollection)
+- uid: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices*
+  name: AddModuleServices
+  href: api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices.html
+  commentId: Overload:DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices
+  fullName: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices
+  nameWithType: ServiceCollectionExtensions.AddModuleServices
 - uid: DNN.Modules.UserVoice.Providers
   name: DNN.Modules.UserVoice.Providers
   href: api/DNN.Modules.UserVoice.Providers.html
@@ -834,414 +735,6 @@ references:
   commentId: Overload:DNN.Modules.UserVoice.Providers.IDateTimeProvider.GetUtcNow
   fullName: DNN.Modules.UserVoice.Providers.IDateTimeProvider.GetUtcNow
   nameWithType: IDateTimeProvider.GetUtcNow
-- uid: DNN.Modules.UserVoice.Services
-  name: DNN.Modules.UserVoice.Services
-  href: api/DNN.Modules.UserVoice.Services.html
-- uid: DNN.Modules.UserVoice.Services.Items
-  name: DNN.Modules.UserVoice.Services.Items
-  href: api/DNN.Modules.UserVoice.Services.Items.html
-  commentId: N:DNN.Modules.UserVoice.Services.Items
-  fullName: DNN.Modules.UserVoice.Services.Items
-  nameWithType: DNN.Modules.UserVoice.Services.Items
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDTO
-  name: CreateItemDTO
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.CreateItemDTO
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDTO
-  nameWithType: CreateItemDTO
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description
-  name: Description
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description.html#DNN_Modules_UserVoice_Services_Items_CreateItemDTO_Description
-  commentId: P:DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description
-  nameWithType: CreateItemDTO.Description
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description*
-  name: Description
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description
-  nameWithType: CreateItemDTO.Description
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name
-  name: Name
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name.html#DNN_Modules_UserVoice_Services_Items_CreateItemDTO_Name
-  commentId: P:DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name
-  nameWithType: CreateItemDTO.Name
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name*
-  name: Name
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name
-  nameWithType: CreateItemDTO.Name
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator
-  name: CreateItemDtoValidator
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator
-  nameWithType: CreateItemDtoValidator
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.#ctor(DNN.Modules.UserVoice.Services.Localization.ILocalizationService)
-  name: CreateItemDtoValidator(ILocalizationService)
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.-ctor.html#DNN_Modules_UserVoice_Services_Items_CreateItemDtoValidator__ctor_DNN_Modules_UserVoice_Services_Localization_ILocalizationService_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.#ctor(DNN.Modules.UserVoice.Services.Localization.ILocalizationService)
-  name.vb: New(ILocalizationService)
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.CreateItemDtoValidator(DNN.Modules.UserVoice.Services.Localization.ILocalizationService)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.New(DNN.Modules.UserVoice.Services.Localization.ILocalizationService)
-  nameWithType: CreateItemDtoValidator.CreateItemDtoValidator(ILocalizationService)
-  nameWithType.vb: CreateItemDtoValidator.New(ILocalizationService)
-- uid: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.#ctor*
-  name: CreateItemDtoValidator
-  href: api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.-ctor.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.#ctor
-  name.vb: New
-  fullName: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.CreateItemDtoValidator
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.New
-  nameWithType: CreateItemDtoValidator.CreateItemDtoValidator
-  nameWithType.vb: CreateItemDtoValidator.New
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO
-  name: GetItemsPageDTO
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO
-  nameWithType: GetItemsPageDTO
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending
-  name: Descending
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending.html#DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_Descending
-  commentId: P:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending
-  nameWithType: GetItemsPageDTO.Descending
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending*
-  name: Descending
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending
-  nameWithType: GetItemsPageDTO.Descending
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page
-  name: Page
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page.html#DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_Page
-  commentId: P:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page
-  nameWithType: GetItemsPageDTO.Page
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page*
-  name: Page
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page
-  nameWithType: GetItemsPageDTO.Page
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize
-  name: PageSize
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize.html#DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_PageSize
-  commentId: P:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize
-  nameWithType: GetItemsPageDTO.PageSize
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize*
-  name: PageSize
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize
-  nameWithType: GetItemsPageDTO.PageSize
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query
-  name: Query
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query.html#DNN_Modules_UserVoice_Services_Items_GetItemsPageDTO_Query
-  commentId: P:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query
-  nameWithType: GetItemsPageDTO.Query
-- uid: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query*
-  name: Query
-  href: api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query
-  fullName: DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query
-  nameWithType: GetItemsPageDTO.Query
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService
-  name: IItemService
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.IItemService
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService
-  nameWithType: IItemService
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name: CreateItemAsync(CreateItemDTO, int, CancellationToken)
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync.html#DNN_Modules_UserVoice_Services_Items_IItemService_CreateItemAsync_DNN_Modules_UserVoice_Services_Items_CreateItemDTO_System_Int32_System_Threading_CancellationToken_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name.vb: CreateItemAsync(CreateItemDTO, Integer, CancellationToken)
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO, int, System.Threading.CancellationToken)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO, Integer, System.Threading.CancellationToken)
-  nameWithType: IItemService.CreateItemAsync(CreateItemDTO, int, CancellationToken)
-  nameWithType.vb: IItemService.CreateItemAsync(CreateItemDTO, Integer, CancellationToken)
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync*
-  name: CreateItemAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync
-  nameWithType: IItemService.CreateItemAsync
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync(System.Int32)
-  name: DeleteItemAsync(int)
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync.html#DNN_Modules_UserVoice_Services_Items_IItemService_DeleteItemAsync_System_Int32_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync(System.Int32)
-  name.vb: DeleteItemAsync(Integer)
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync(int)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync(Integer)
-  nameWithType: IItemService.DeleteItemAsync(int)
-  nameWithType.vb: IItemService.DeleteItemAsync(Integer)
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync*
-  name: DeleteItemAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync
-  nameWithType: IItemService.DeleteItemAsync
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync(System.String,System.Int32,System.Int32,System.Boolean)
-  name: GetItemsPageAsync(string, int, int, bool)
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync.html#DNN_Modules_UserVoice_Services_Items_IItemService_GetItemsPageAsync_System_String_System_Int32_System_Int32_System_Boolean_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync(System.String,System.Int32,System.Int32,System.Boolean)
-  name.vb: GetItemsPageAsync(String, Integer, Integer, Boolean)
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync(string, int, int, bool)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync(String, Integer, Integer, Boolean)
-  nameWithType: IItemService.GetItemsPageAsync(string, int, int, bool)
-  nameWithType.vb: IItemService.GetItemsPageAsync(String, Integer, Integer, Boolean)
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync*
-  name: GetItemsPageAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync
-  nameWithType: IItemService.GetItemsPageAsync
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name: UpdateItemAsync(UpdateItemDTO, int, CancellationToken)
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync.html#DNN_Modules_UserVoice_Services_Items_IItemService_UpdateItemAsync_DNN_Modules_UserVoice_Services_Items_UpdateItemDTO_System_Int32_System_Threading_CancellationToken_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name.vb: UpdateItemAsync(UpdateItemDTO, Integer, CancellationToken)
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO, int, System.Threading.CancellationToken)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO, Integer, System.Threading.CancellationToken)
-  nameWithType: IItemService.UpdateItemAsync(UpdateItemDTO, int, CancellationToken)
-  nameWithType.vb: IItemService.UpdateItemAsync(UpdateItemDTO, Integer, CancellationToken)
-- uid: DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync*
-  name: UpdateItemAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync
-  nameWithType: IItemService.UpdateItemAsync
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService
-  name: ItemService
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.ItemService
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService
-  nameWithType: ItemService
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.#ctor(DNN.Modules.UserVoice.Data.Repositories.IItemRepository,FluentValidation.IValidator{DNN.Modules.UserVoice.Services.Items.CreateItemDTO},FluentValidation.IValidator{DNN.Modules.UserVoice.Services.Items.UpdateItemDTO})
-  name: ItemService(IItemRepository, IValidator<CreateItemDTO>, IValidator<UpdateItemDTO>)
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.-ctor.html#DNN_Modules_UserVoice_Services_Items_ItemService__ctor_DNN_Modules_UserVoice_Data_Repositories_IItemRepository_FluentValidation_IValidator_DNN_Modules_UserVoice_Services_Items_CreateItemDTO__FluentValidation_IValidator_DNN_Modules_UserVoice_Services_Items_UpdateItemDTO__
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemService.#ctor(DNN.Modules.UserVoice.Data.Repositories.IItemRepository,FluentValidation.IValidator{DNN.Modules.UserVoice.Services.Items.CreateItemDTO},FluentValidation.IValidator{DNN.Modules.UserVoice.Services.Items.UpdateItemDTO})
-  name.vb: New(IItemRepository, IValidator(Of CreateItemDTO), IValidator(Of UpdateItemDTO))
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.ItemService(DNN.Modules.UserVoice.Data.Repositories.IItemRepository, FluentValidation.IValidator<DNN.Modules.UserVoice.Services.Items.CreateItemDTO>, FluentValidation.IValidator<DNN.Modules.UserVoice.Services.Items.UpdateItemDTO>)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemService.New(DNN.Modules.UserVoice.Data.Repositories.IItemRepository, FluentValidation.IValidator(Of DNN.Modules.UserVoice.Services.Items.CreateItemDTO), FluentValidation.IValidator(Of DNN.Modules.UserVoice.Services.Items.UpdateItemDTO))
-  nameWithType: ItemService.ItemService(IItemRepository, IValidator<CreateItemDTO>, IValidator<UpdateItemDTO>)
-  nameWithType.vb: ItemService.New(IItemRepository, IValidator(Of CreateItemDTO), IValidator(Of UpdateItemDTO))
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.#ctor*
-  name: ItemService
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.-ctor.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemService.#ctor
-  name.vb: New
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.ItemService
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemService.New
-  nameWithType: ItemService.ItemService
-  nameWithType.vb: ItemService.New
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name: CreateItemAsync(CreateItemDTO, int, CancellationToken)
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync.html#DNN_Modules_UserVoice_Services_Items_ItemService_CreateItemAsync_DNN_Modules_UserVoice_Services_Items_CreateItemDTO_System_Int32_System_Threading_CancellationToken_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name.vb: CreateItemAsync(CreateItemDTO, Integer, CancellationToken)
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO, int, System.Threading.CancellationToken)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync(DNN.Modules.UserVoice.Services.Items.CreateItemDTO, Integer, System.Threading.CancellationToken)
-  nameWithType: ItemService.CreateItemAsync(CreateItemDTO, int, CancellationToken)
-  nameWithType.vb: ItemService.CreateItemAsync(CreateItemDTO, Integer, CancellationToken)
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync*
-  name: CreateItemAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync
-  nameWithType: ItemService.CreateItemAsync
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync(System.Int32)
-  name: DeleteItemAsync(int)
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync.html#DNN_Modules_UserVoice_Services_Items_ItemService_DeleteItemAsync_System_Int32_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync(System.Int32)
-  name.vb: DeleteItemAsync(Integer)
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync(int)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync(Integer)
-  nameWithType: ItemService.DeleteItemAsync(int)
-  nameWithType.vb: ItemService.DeleteItemAsync(Integer)
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync*
-  name: DeleteItemAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync
-  nameWithType: ItemService.DeleteItemAsync
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync(System.String,System.Int32,System.Int32,System.Boolean)
-  name: GetItemsPageAsync(string, int, int, bool)
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync.html#DNN_Modules_UserVoice_Services_Items_ItemService_GetItemsPageAsync_System_String_System_Int32_System_Int32_System_Boolean_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync(System.String,System.Int32,System.Int32,System.Boolean)
-  name.vb: GetItemsPageAsync(String, Integer, Integer, Boolean)
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync(string, int, int, bool)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync(String, Integer, Integer, Boolean)
-  nameWithType: ItemService.GetItemsPageAsync(string, int, int, bool)
-  nameWithType.vb: ItemService.GetItemsPageAsync(String, Integer, Integer, Boolean)
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync*
-  name: GetItemsPageAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync
-  nameWithType: ItemService.GetItemsPageAsync
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name: UpdateItemAsync(UpdateItemDTO, int, CancellationToken)
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync.html#DNN_Modules_UserVoice_Services_Items_ItemService_UpdateItemAsync_DNN_Modules_UserVoice_Services_Items_UpdateItemDTO_System_Int32_System_Threading_CancellationToken_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO,System.Int32,System.Threading.CancellationToken)
-  name.vb: UpdateItemAsync(UpdateItemDTO, Integer, CancellationToken)
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO, int, System.Threading.CancellationToken)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync(DNN.Modules.UserVoice.Services.Items.UpdateItemDTO, Integer, System.Threading.CancellationToken)
-  nameWithType: ItemService.UpdateItemAsync(UpdateItemDTO, int, CancellationToken)
-  nameWithType.vb: ItemService.UpdateItemAsync(UpdateItemDTO, Integer, CancellationToken)
-- uid: DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync*
-  name: UpdateItemAsync
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync
-  nameWithType: ItemService.UpdateItemAsync
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel
-  name: ItemViewModel
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.ItemViewModel
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel
-  nameWithType: ItemViewModel
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.#ctor
-  name: ItemViewModel()
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.-ctor.html#DNN_Modules_UserVoice_Services_Items_ItemViewModel__ctor
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemViewModel.#ctor
-  name.vb: New()
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.ItemViewModel()
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemViewModel.New()
-  nameWithType: ItemViewModel.ItemViewModel()
-  nameWithType.vb: ItemViewModel.New()
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.#ctor(DNN.Modules.UserVoice.Data.Entities.Item)
-  name: ItemViewModel(Item)
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.-ctor.html#DNN_Modules_UserVoice_Services_Items_ItemViewModel__ctor_DNN_Modules_UserVoice_Data_Entities_Item_
-  commentId: M:DNN.Modules.UserVoice.Services.Items.ItemViewModel.#ctor(DNN.Modules.UserVoice.Data.Entities.Item)
-  name.vb: New(Item)
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.ItemViewModel(DNN.Modules.UserVoice.Data.Entities.Item)
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemViewModel.New(DNN.Modules.UserVoice.Data.Entities.Item)
-  nameWithType: ItemViewModel.ItemViewModel(Item)
-  nameWithType.vb: ItemViewModel.New(Item)
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.#ctor*
-  name: ItemViewModel
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.-ctor.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemViewModel.#ctor
-  name.vb: New
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.ItemViewModel
-  fullName.vb: DNN.Modules.UserVoice.Services.Items.ItemViewModel.New
-  nameWithType: ItemViewModel.ItemViewModel
-  nameWithType.vb: ItemViewModel.New
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description
-  name: Description
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description.html#DNN_Modules_UserVoice_Services_Items_ItemViewModel_Description
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description
-  nameWithType: ItemViewModel.Description
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description*
-  name: Description
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description
-  nameWithType: ItemViewModel.Description
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id
-  name: Id
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id.html#DNN_Modules_UserVoice_Services_Items_ItemViewModel_Id
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id
-  nameWithType: ItemViewModel.Id
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id*
-  name: Id
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id
-  nameWithType: ItemViewModel.Id
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name
-  name: Name
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name.html#DNN_Modules_UserVoice_Services_Items_ItemViewModel_Name
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name
-  nameWithType: ItemViewModel.Name
-- uid: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name*
-  name: Name
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name
-  nameWithType: ItemViewModel.Name
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel
-  name: ItemsPageViewModel
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel
-  nameWithType: ItemsPageViewModel
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items
-  name: Items
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items.html#DNN_Modules_UserVoice_Services_Items_ItemsPageViewModel_Items
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items
-  nameWithType: ItemsPageViewModel.Items
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items*
-  name: Items
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items
-  nameWithType: ItemsPageViewModel.Items
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page
-  name: Page
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page.html#DNN_Modules_UserVoice_Services_Items_ItemsPageViewModel_Page
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page
-  nameWithType: ItemsPageViewModel.Page
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page*
-  name: Page
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page
-  nameWithType: ItemsPageViewModel.Page
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount
-  name: PageCount
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount.html#DNN_Modules_UserVoice_Services_Items_ItemsPageViewModel_PageCount
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount
-  nameWithType: ItemsPageViewModel.PageCount
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount*
-  name: PageCount
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount
-  nameWithType: ItemsPageViewModel.PageCount
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount
-  name: ResultCount
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount.html#DNN_Modules_UserVoice_Services_Items_ItemsPageViewModel_ResultCount
-  commentId: P:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount
-  nameWithType: ItemsPageViewModel.ResultCount
-- uid: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount*
-  name: ResultCount
-  href: api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount
-  fullName: DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount
-  nameWithType: ItemsPageViewModel.ResultCount
-- uid: DNN.Modules.UserVoice.Services.Items.UpdateItemDTO
-  name: UpdateItemDTO
-  href: api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.html
-  commentId: T:DNN.Modules.UserVoice.Services.Items.UpdateItemDTO
-  fullName: DNN.Modules.UserVoice.Services.Items.UpdateItemDTO
-  nameWithType: UpdateItemDTO
-- uid: DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id
-  name: Id
-  href: api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id.html#DNN_Modules_UserVoice_Services_Items_UpdateItemDTO_Id
-  commentId: P:DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id
-  fullName: DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id
-  nameWithType: UpdateItemDTO.Id
-- uid: DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id*
-  name: Id
-  href: api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id
-  fullName: DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id
-  nameWithType: UpdateItemDTO.Id
 - uid: DNN.Modules.UserVoice.Services.Localization
   name: DNN.Modules.UserVoice.Services.Localization
   href: api/DNN.Modules.UserVoice.Services.Localization.html
@@ -1368,18 +861,6 @@ references:
   commentId: T:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo
   fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo
   nameWithType: LocalizationViewModel.UIInfo
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem
-  name: AddItem
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_AddItem
-  commentId: P:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem
-  nameWithType: LocalizationViewModel.UIInfo.AddItem
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem*
-  name: AddItem
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem
-  nameWithType: LocalizationViewModel.UIInfo.AddItem
 - uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Cancel
   name: Cancel
   href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Cancel.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_Cancel
@@ -1416,66 +897,6 @@ references:
   commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Delete
   fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Delete
   nameWithType: LocalizationViewModel.UIInfo.Delete
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm
-  name: DeleteItemConfirm
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_DeleteItemConfirm
-  commentId: P:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm
-  nameWithType: LocalizationViewModel.UIInfo.DeleteItemConfirm
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm*
-  name: DeleteItemConfirm
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm
-  nameWithType: LocalizationViewModel.UIInfo.DeleteItemConfirm
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description
-  name: Description
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_Description
-  commentId: P:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description
-  nameWithType: LocalizationViewModel.UIInfo.Description
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description*
-  name: Description
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description
-  nameWithType: LocalizationViewModel.UIInfo.Description
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit
-  name: Edit
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_Edit
-  commentId: P:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit
-  nameWithType: LocalizationViewModel.UIInfo.Edit
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit*
-  name: Edit
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit
-  nameWithType: LocalizationViewModel.UIInfo.Edit
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore
-  name: LoadMore
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_LoadMore
-  commentId: P:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore
-  nameWithType: LocalizationViewModel.UIInfo.LoadMore
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore*
-  name: LoadMore
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore
-  nameWithType: LocalizationViewModel.UIInfo.LoadMore
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name
-  name: Name
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_Name
-  commentId: P:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name
-  nameWithType: LocalizationViewModel.UIInfo.Name
-- uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name*
-  name: Name
-  href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name.html
-  commentId: Overload:DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name
-  fullName: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name
-  nameWithType: LocalizationViewModel.UIInfo.Name
 - uid: DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No
   name: No
   href: api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No.html#DNN_Modules_UserVoice_Services_Localization_LocalizationViewModel_UIInfo_No

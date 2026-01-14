@@ -14,41 +14,6 @@
     "title": "Namespace DNN.Modules.UserVoice.Common",
     "summary": "Namespace DNN.Modules.UserVoice.Common Classes Globals Global values, constants and methods."
   },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.-ctor.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.-ctor.html",
-    "title": "Constructor ItemController",
-    "summary": "Constructor ItemController | Edit this page View Source ItemController(IItemService) Initializes a new instance of the ItemController class. Declaration public ItemController(IItemService itemService) Parameters Type Name Description IItemService itemService The items reposioty."
-  },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.CreateItem.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.CreateItem.html",
-    "title": "Method CreateItem",
-    "summary": "Method CreateItem | Edit this page View Source CreateItem(CreateItemDTO) Creates a new item. Declaration [HttpPost] [ValidateAntiForgeryToken] [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Edit)] [SwaggerResponse(HttpStatusCode.OK, typeof(ItemViewModel), Description = \"OK\")] [SwaggerResponse(HttpStatusCode.BadRequest, typeof(string), Description = \"Bad Request\")] public Task<IHttpActionResult> CreateItem(CreateItemDTO item) Parameters Type Name Description CreateItemDTO item The item to create. Returns Type Description Task<IHttpActionResult> Nothing."
-  },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.DeleteItem.html",
-    "title": "Method DeleteItem",
-    "summary": "Method DeleteItem | Edit this page View Source DeleteItem(int) Deletes an existing item. Declaration [HttpPost] [ValidateAntiForgeryToken] [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Edit)] [SwaggerResponse(HttpStatusCode.OK, typeof(void), Description = \"OK\")] public Task<IHttpActionResult> DeleteItem(int itemId) Parameters Type Name Description int itemId The id of the item to delete. Returns Type Description Task<IHttpActionResult> Nothing."
-  },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.GetItemsPage.html",
-    "title": "Method GetItemsPage",
-    "summary": "Method GetItemsPage | Edit this page View Source GetItemsPage(GetItemsPageDTO) Gets a paged and sorted list of items matching a certain query. Declaration [HttpGet] [AllowAnonymous] [SwaggerResponse(HttpStatusCode.OK, typeof(ItemsPageViewModel), Description = \"OK\")] public Task<IHttpActionResult> GetItemsPage(GetItemsPageDTO dto) Parameters Type Name Description GetItemsPageDTO dto The details of the query, GetItemsPageDTO. Returns Type Description Task<IHttpActionResult> List of pages + paging information."
-  },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.UpdateItem.html",
-    "title": "Method UpdateItem",
-    "summary": "Method UpdateItem | Edit this page View Source UpdateItem(UpdateItemDTO) Updates an existing item. Declaration [HttpPost] [ValidateAntiForgeryToken] [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Edit)] [SwaggerResponse(HttpStatusCode.OK, null, Description = \"OK\")] public Task<IHttpActionResult> UpdateItem(UpdateItemDTO item) Parameters Type Name Description UpdateItemDTO item The new information about the item, UpdateItemDTO. Returns Type Description Task<IHttpActionResult> Only a status code and no data."
-  },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.UserCanEdit.html",
-    "title": "Method UserCanEdit",
-    "summary": "Method UserCanEdit | Edit this page View Source UserCanEdit() Checks if a user can edit the current items. Declaration [HttpGet] [AllowAnonymous] [SwaggerResponse(HttpStatusCode.OK, typeof(bool), Description = \"OK\")] public IHttpActionResult UserCanEdit() Returns Type Description IHttpActionResult A boolean indicating whether the user can edit the current items."
-  },
-  "api/DNN.Modules.UserVoice.Controllers.ItemController.html": {
-    "href": "api/DNN.Modules.UserVoice.Controllers.ItemController.html",
-    "title": "Class ItemController",
-    "summary": "Class ItemController Provides Web API access for items. Inheritance object ApiController DnnApiController ModuleApiController ItemController Implements IHttpController IDisposable Inherited Members ModuleApiController.UserInfo ModuleApiController.CanEdit DnnApiController.PortalSettings DnnApiController.ActiveModule ApiController.ExecuteAsync(HttpControllerContext, CancellationToken) ApiController.Validate<TEntity>(TEntity) ApiController.Validate<TEntity>(TEntity, string) ApiController.BadRequest() ApiController.BadRequest(string) ApiController.BadRequest(ModelStateDictionary) ApiController.Conflict() ApiController.Content<T>(HttpStatusCode, T) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter, string) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter, MediaTypeHeaderValue) ApiController.Created<T>(string, T) ApiController.Created<T>(Uri, T) ApiController.CreatedAtRoute<T>(string, object, T) ApiController.CreatedAtRoute<T>(string, IDictionary<string, object>, T) ApiController.InternalServerError() ApiController.InternalServerError(Exception) ApiController.Json<T>(T) ApiController.Json<T>(T, JsonSerializerSettings) ApiController.Json<T>(T, JsonSerializerSettings, Encoding) ApiController.NotFound() ApiController.Ok() ApiController.Ok<T>(T) ApiController.Redirect(string) ApiController.Redirect(Uri) ApiController.RedirectToRoute(string, object) ApiController.RedirectToRoute(string, IDictionary<string, object>) ApiController.ResponseMessage(HttpResponseMessage) ApiController.StatusCode(HttpStatusCode) ApiController.Unauthorized(params AuthenticationHeaderValue[]) ApiController.Unauthorized(IEnumerable<AuthenticationHeaderValue>) ApiController.Initialize(HttpControllerContext) ApiController.Dispose() ApiController.Dispose(bool) ApiController.Configuration ApiController.ControllerContext ApiController.ActionContext ApiController.ModelState ApiController.Request ApiController.RequestContext ApiController.Url ApiController.User object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Controllers Assembly: DNN.Modules.UserVoice.dll Syntax public class ItemController : ModuleApiController, IHttpController, IDisposable Constructors Name Description ItemController(IItemService) Initializes a new instance of the ItemController class. Methods Name Description CreateItem(CreateItemDTO) Creates a new item. DeleteItem(int) Deletes an existing item. GetItemsPage(GetItemsPageDTO) Gets a paged and sorted list of items matching a certain query. UpdateItem(UpdateItemDTO) Updates an existing item. UserCanEdit() Checks if a user can edit the current items."
-  },
   "api/DNN.Modules.UserVoice.Controllers.LocalizationController.-ctor.html": {
     "href": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.-ctor.html",
     "title": "Constructor LocalizationController",
@@ -77,7 +42,7 @@
   "api/DNN.Modules.UserVoice.Controllers.ModuleApiController.html": {
     "href": "api/DNN.Modules.UserVoice.Controllers.ModuleApiController.html",
     "title": "Class ModuleApiController",
-    "summary": "Class ModuleApiController Provides common features to all module controller. Inheritance object ApiController DnnApiController ModuleApiController ItemController LocalizationController Implements IHttpController IDisposable Inherited Members DnnApiController.PortalSettings DnnApiController.ActiveModule ApiController.ExecuteAsync(HttpControllerContext, CancellationToken) ApiController.Validate<TEntity>(TEntity) ApiController.Validate<TEntity>(TEntity, string) ApiController.BadRequest() ApiController.BadRequest(string) ApiController.BadRequest(ModelStateDictionary) ApiController.Conflict() ApiController.Content<T>(HttpStatusCode, T) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter, string) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter, MediaTypeHeaderValue) ApiController.Created<T>(string, T) ApiController.Created<T>(Uri, T) ApiController.CreatedAtRoute<T>(string, object, T) ApiController.CreatedAtRoute<T>(string, IDictionary<string, object>, T) ApiController.InternalServerError() ApiController.InternalServerError(Exception) ApiController.Json<T>(T) ApiController.Json<T>(T, JsonSerializerSettings) ApiController.Json<T>(T, JsonSerializerSettings, Encoding) ApiController.NotFound() ApiController.Ok() ApiController.Ok<T>(T) ApiController.Redirect(string) ApiController.Redirect(Uri) ApiController.RedirectToRoute(string, object) ApiController.RedirectToRoute(string, IDictionary<string, object>) ApiController.ResponseMessage(HttpResponseMessage) ApiController.StatusCode(HttpStatusCode) ApiController.Unauthorized(params AuthenticationHeaderValue[]) ApiController.Unauthorized(IEnumerable<AuthenticationHeaderValue>) ApiController.Initialize(HttpControllerContext) ApiController.Dispose() ApiController.Dispose(bool) ApiController.Configuration ApiController.ControllerContext ApiController.ActionContext ApiController.ModelState ApiController.Request ApiController.RequestContext ApiController.Url ApiController.User object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Controllers Assembly: DNN.Modules.UserVoice.dll Syntax public abstract class ModuleApiController : DnnApiController, IHttpController, IDisposable Properties Name Description CanEdit Gets or sets a value indicating whether the user can edit this module. UserInfo Gets information about the Dnn user."
+    "summary": "Class ModuleApiController Provides common features to all module controller. Inheritance object ApiController DnnApiController ModuleApiController LocalizationController Implements IHttpController IDisposable Inherited Members DnnApiController.PortalSettings DnnApiController.ActiveModule ApiController.ExecuteAsync(HttpControllerContext, CancellationToken) ApiController.Validate<TEntity>(TEntity) ApiController.Validate<TEntity>(TEntity, string) ApiController.BadRequest() ApiController.BadRequest(string) ApiController.BadRequest(ModelStateDictionary) ApiController.Conflict() ApiController.Content<T>(HttpStatusCode, T) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter, string) ApiController.Content<T>(HttpStatusCode, T, MediaTypeFormatter, MediaTypeHeaderValue) ApiController.Created<T>(string, T) ApiController.Created<T>(Uri, T) ApiController.CreatedAtRoute<T>(string, object, T) ApiController.CreatedAtRoute<T>(string, IDictionary<string, object>, T) ApiController.InternalServerError() ApiController.InternalServerError(Exception) ApiController.Json<T>(T) ApiController.Json<T>(T, JsonSerializerSettings) ApiController.Json<T>(T, JsonSerializerSettings, Encoding) ApiController.NotFound() ApiController.Ok() ApiController.Ok<T>(T) ApiController.Redirect(string) ApiController.Redirect(Uri) ApiController.RedirectToRoute(string, object) ApiController.RedirectToRoute(string, IDictionary<string, object>) ApiController.ResponseMessage(HttpResponseMessage) ApiController.StatusCode(HttpStatusCode) ApiController.Unauthorized(params AuthenticationHeaderValue[]) ApiController.Unauthorized(IEnumerable<AuthenticationHeaderValue>) ApiController.Initialize(HttpControllerContext) ApiController.Dispose() ApiController.Dispose(bool) ApiController.Configuration ApiController.ControllerContext ApiController.ActionContext ApiController.ModelState ApiController.Request ApiController.RequestContext ApiController.Url ApiController.User object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Controllers Assembly: DNN.Modules.UserVoice.dll Syntax public abstract class ModuleApiController : DnnApiController, IHttpController, IDisposable Properties Name Description CanEdit Gets or sets a value indicating whether the user can edit this module. UserInfo Gets information about the Dnn user."
   },
   "api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.RegisterRoutes.html": {
     "href": "api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.RegisterRoutes.html",
@@ -92,7 +57,7 @@
   "api/DNN.Modules.UserVoice.Controllers.html": {
     "href": "api/DNN.Modules.UserVoice.Controllers.html",
     "title": "Namespace DNN.Modules.UserVoice.Controllers",
-    "summary": "Namespace DNN.Modules.UserVoice.Controllers Classes ItemController Provides Web API access for items. LocalizationController Provides localization related web services. ModuleApiController Provides common features to all module controller. ServiceRouteMapper Implements the Dnn IServiceRouteMapper to register this module routes."
+    "summary": "Namespace DNN.Modules.UserVoice.Controllers Classes LocalizationController Provides localization related web services. ModuleApiController Provides common features to all module controller. ServiceRouteMapper Implements the Dnn IServiceRouteMapper to register this module routes."
   },
   "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt.html",
@@ -122,7 +87,7 @@
   "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.html",
     "title": "Class BaseEntity",
-    "summary": "Class BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Inheritance object BaseEntity Item Implements IEntity Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax public class BaseEntity : IEntity Properties Name Description CreatedAt Gets or sets the date and time the entity was first created. CreatedByUserId Gets or sets the Dnn user ID that created the entity. Id Gets or sets the entity id. UpdatedAt Gets or sets the date and time the entity was last updated. UpdatedByUserId Gets or sets the Dnn user ID that last updated the entity."
+    "summary": "Class BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Inheritance object BaseEntity Implements IEntity Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax public class BaseEntity : IEntity Properties Name Description CreatedAt Gets or sets the date and time the entity was first created. CreatedByUserId Gets or sets the Dnn user ID that created the entity. Id Gets or sets the entity id. UpdatedAt Gets or sets the date and time the entity was last updated. UpdatedByUserId Gets or sets the Dnn user ID that last updated the entity."
   },
   "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt.html",
@@ -154,45 +119,20 @@
     "title": "Interface IEntity",
     "summary": "Interface IEntity Ensures entities have some common properties. Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax public interface IEntity Properties Name Description CreatedAt Gets or sets the date and time the entity was first created. CreatedByUserId Gets or sets the Dnn user ID that created the entity. Id Gets or sets the entity id. UpdatedAt Gets or sets the date and time the entity was last updated. UpdatedByUserId Gets or sets the Dnn user ID that last updated the entity."
   },
-  "api/DNN.Modules.UserVoice.Data.Entities.Item.Description.html": {
-    "href": "api/DNN.Modules.UserVoice.Data.Entities.Item.Description.html",
-    "title": "Property Description",
-    "summary": "Property Description | Edit this page View Source Description Gets or sets the item description. Declaration [StringLength(250)] public string Description { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Data.Entities.Item.Name.html": {
-    "href": "api/DNN.Modules.UserVoice.Data.Entities.Item.Name.html",
-    "title": "Property Name",
-    "summary": "Property Name | Edit this page View Source Name Gets or sets the item name. Declaration [Required] [StringLength(50)] public string Name { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Data.Entities.Item.html": {
-    "href": "api/DNN.Modules.UserVoice.Data.Entities.Item.html",
-    "title": "Class Item",
-    "summary": "Class Item Represents an item entity. Inheritance object BaseEntity Item Implements IEntity Inherited Members BaseEntity.Id BaseEntity.CreatedAt BaseEntity.UpdatedAt BaseEntity.CreatedByUserId BaseEntity.UpdatedByUserId object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax [Table(\"DNN_UserVoice_Items\")] public class Item : BaseEntity, IEntity Properties Name Description Description Gets or sets the item description. Name Gets or sets the item name."
-  },
   "api/DNN.Modules.UserVoice.Data.Entities.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.html",
     "title": "Namespace DNN.Modules.UserVoice.Data.Entities",
-    "summary": "Namespace DNN.Modules.UserVoice.Data.Entities Classes BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Item Represents an item entity. Interfaces IEntity Ensures entities have some common properties."
+    "summary": "Namespace DNN.Modules.UserVoice.Data.Entities Classes BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Interfaces IEntity Ensures entities have some common properties."
   },
   "api/DNN.Modules.UserVoice.Data.ModuleDbContext.-ctor.html": {
     "href": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.-ctor.html",
     "title": "Constructor ModuleDbContext",
     "summary": "Constructor ModuleDbContext | Edit this page View Source ModuleDbContext() Initializes a new instance of the ModuleDbContext class. Declaration public ModuleDbContext() | Edit this page View Source ModuleDbContext(DbConnection) Initializes a new instance of the ModuleDbContext class. Declaration public ModuleDbContext(DbConnection connection) Parameters Type Name Description DbConnection connection An existing DbConnection."
   },
-  "api/DNN.Modules.UserVoice.Data.ModuleDbContext.Items.html": {
-    "href": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.Items.html",
-    "title": "Property Items",
-    "summary": "Property Items | Edit this page View Source Items Gets or sets the module items. Declaration public DbSet<Item> Items { get; set; } Property Value Type Description DbSet<Item>"
-  },
   "api/DNN.Modules.UserVoice.Data.ModuleDbContext.html": {
     "href": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.html",
     "title": "Class ModuleDbContext",
-    "summary": "Class ModuleDbContext The data context for this module. Inheritance object DbContext ModuleDbContext Implements IDisposable IObjectContextAdapter Inherited Members DbContext.OnModelCreating(DbModelBuilder) DbContext.Set<TEntity>() DbContext.Set(Type) DbContext.SaveChanges() DbContext.SaveChangesAsync() DbContext.SaveChangesAsync(CancellationToken) DbContext.GetValidationErrors() DbContext.ShouldValidateEntity(DbEntityEntry) DbContext.ValidateEntity(DbEntityEntry, IDictionary<object, object>) DbContext.Entry<TEntity>(TEntity) DbContext.Entry(object) DbContext.Dispose() DbContext.Dispose(bool) DbContext.Database DbContext.ChangeTracker DbContext.Configuration object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data Assembly: DNN.Modules.UserVoice.dll Syntax public class ModuleDbContext : DbContext, IDisposable, IObjectContextAdapter Constructors Name Description ModuleDbContext() Initializes a new instance of the ModuleDbContext class. ModuleDbContext(DbConnection) Initializes a new instance of the ModuleDbContext class. Properties Name Description Items Gets or sets the module items."
-  },
-  "api/DNN.Modules.UserVoice.Data.Repositories.IItemRepository.html": {
-    "href": "api/DNN.Modules.UserVoice.Data.Repositories.IItemRepository.html",
-    "title": "Interface IItemRepository",
-    "summary": "Interface IItemRepository Provides data-access to the Item entity. Inherited Members IRepository<Item>.GetAllAsync(CancellationToken) IRepository<Item>.Get() IRepository<Item>.GetByIdAsync(int, CancellationToken) IRepository<Item>.GetPageAsync(int, int, Expression<Func<Item, bool>>, Expression<Func<Item, object>>, bool, CancellationToken, params Expression<Func<Item, object>>[]) IRepository<Item>.CreateAsync(Item, int, CancellationToken) IRepository<Item>.UpdateAsync(Item, int, CancellationToken) IRepository<Item>.DeleteAsync(int, CancellationToken) Namespace: DNN.Modules.UserVoice.Data.Repositories Assembly: DNN.Modules.UserVoice.dll Syntax public interface IItemRepository : IRepository<Item>"
+    "summary": "Class ModuleDbContext The data context for this module. Inheritance object DbContext ModuleDbContext Implements IDisposable IObjectContextAdapter Inherited Members DbContext.OnModelCreating(DbModelBuilder) DbContext.Set<TEntity>() DbContext.Set(Type) DbContext.SaveChanges() DbContext.SaveChangesAsync() DbContext.SaveChangesAsync(CancellationToken) DbContext.GetValidationErrors() DbContext.ShouldValidateEntity(DbEntityEntry) DbContext.ValidateEntity(DbEntityEntry, IDictionary<object, object>) DbContext.Entry<TEntity>(TEntity) DbContext.Entry(object) DbContext.Dispose() DbContext.Dispose(bool) DbContext.Database DbContext.ChangeTracker DbContext.Configuration object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data Assembly: DNN.Modules.UserVoice.dll Syntax public class ModuleDbContext : DbContext, IDisposable, IObjectContextAdapter Constructors Name Description ModuleDbContext() Initializes a new instance of the ModuleDbContext class. ModuleDbContext(DbConnection) Initializes a new instance of the ModuleDbContext class."
   },
   "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.CreateAsync.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.CreateAsync.html",
@@ -317,12 +257,32 @@
   "api/DNN.Modules.UserVoice.Data.Repositories.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Repositories.html",
     "title": "Namespace DNN.Modules.UserVoice.Data.Repositories",
-    "summary": "Namespace DNN.Modules.UserVoice.Data.Repositories Classes PagedList<T> Presents a list of entities in pages. Repository<T> Provides common generic data access methods for entities. Interfaces IItemRepository Provides data-access to the Item entity. IRepository<T> Provides generic data access features for entities."
+    "summary": "Namespace DNN.Modules.UserVoice.Data.Repositories Classes PagedList<T> Presents a list of entities in pages. Repository<T> Provides common generic data access methods for entities. Interfaces IRepository<T> Provides generic data access features for entities."
   },
   "api/DNN.Modules.UserVoice.Data.html": {
     "href": "api/DNN.Modules.UserVoice.Data.html",
     "title": "Namespace DNN.Modules.UserVoice.Data",
     "summary": "Namespace DNN.Modules.UserVoice.Data Namespaces DNN.Modules.UserVoice.Data.Entities DNN.Modules.UserVoice.Data.Repositories Classes ModuleDbContext The data context for this module."
+  },
+  "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html": {
+    "href": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html",
+    "title": "Method AddModuleData",
+    "summary": "Method AddModuleData | Edit this page View Source AddModuleData(IServiceCollection) Adds module-specific data layer (dbcontext, repositories, etc.) Declaration public static void AddModuleData(this IServiceCollection services) Parameters Type Name Description IServiceCollection services The service collection to configure."
+  },
+  "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices.html": {
+    "href": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices.html",
+    "title": "Method AddModuleServices",
+    "summary": "Method AddModuleServices | Edit this page View Source AddModuleServices(IServiceCollection) Adds module-specific services to the specified IServiceCollection for dependency injection. Declaration public static void AddModuleServices(this IServiceCollection services) Parameters Type Name Description IServiceCollection services The IServiceCollection to which the module services will be added. Cannot be null."
+  },
+  "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.html": {
+    "href": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.html",
+    "title": "Class ServiceCollectionExtensions",
+    "summary": "Class ServiceCollectionExtensions Provides extension methods for configuring and managing services in an IServiceCollection. Inheritance object ServiceCollectionExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Extensions Assembly: DNN.Modules.UserVoice.dll Syntax public static class ServiceCollectionExtensions Methods Name Description AddModuleData(IServiceCollection) Adds module-specific data layer (dbcontext, repositories, etc.) AddModuleServices(IServiceCollection) Adds module-specific services to the specified IServiceCollection for dependency injection."
+  },
+  "api/DNN.Modules.UserVoice.Extensions.html": {
+    "href": "api/DNN.Modules.UserVoice.Extensions.html",
+    "title": "Namespace DNN.Modules.UserVoice.Extensions",
+    "summary": "Namespace DNN.Modules.UserVoice.Extensions Classes ServiceCollectionExtensions Provides extension methods for configuring and managing services in an IServiceCollection."
   },
   "api/DNN.Modules.UserVoice.Providers.IDateTimeProvider.GetUtcNow.html": {
     "href": "api/DNN.Modules.UserVoice.Providers.IDateTimeProvider.GetUtcNow.html",
@@ -338,176 +298,6 @@
     "href": "api/DNN.Modules.UserVoice.Providers.html",
     "title": "Namespace DNN.Modules.UserVoice.Providers",
     "summary": "Namespace DNN.Modules.UserVoice.Providers Interfaces IDateTimeProvider Provides a testable version of DateTime."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Description.html",
-    "title": "Property Description",
-    "summary": "Property Description | Edit this page View Source Description Gets or sets the description of the item. Declaration public string Description { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.Name.html",
-    "title": "Property Name",
-    "summary": "Property Name | Edit this page View Source Name Gets or sets the name for the item. Declaration public string Name { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.CreateItemDTO.html",
-    "title": "Class CreateItemDTO",
-    "summary": "Class CreateItemDTO Data transfer object to create a new item. Inheritance object CreateItemDTO UpdateItemDTO Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class CreateItemDTO Properties Name Description Description Gets or sets the description of the item. Name Gets or sets the name for the item."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.-ctor.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.-ctor.html",
-    "title": "Constructor CreateItemDtoValidator",
-    "summary": "Constructor CreateItemDtoValidator | Edit this page View Source CreateItemDtoValidator(ILocalizationService) Initializes a new instance of the CreateItemDtoValidator class. Declaration public CreateItemDtoValidator(ILocalizationService localizationService) Parameters Type Name Description ILocalizationService localizationService The localization service."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.CreateItemDtoValidator.html",
-    "title": "Class CreateItemDtoValidator",
-    "summary": "Class CreateItemDtoValidator Validates the CreateItemDTO. Inheritance object AbstractValidator<CreateItemDTO> CreateItemDtoValidator Implements IValidator<CreateItemDTO> IValidator IEnumerable<IValidationRule> IEnumerable Inherited Members AbstractValidator<CreateItemDTO>.Validate(CreateItemDTO) AbstractValidator<CreateItemDTO>.ValidateAsync(CreateItemDTO, CancellationToken) AbstractValidator<CreateItemDTO>.Validate(ValidationContext<CreateItemDTO>) AbstractValidator<CreateItemDTO>.ValidateAsync(ValidationContext<CreateItemDTO>, CancellationToken) AbstractValidator<CreateItemDTO>.CreateDescriptor() AbstractValidator<CreateItemDTO>.RuleFor<TProperty>(Expression<Func<CreateItemDTO, TProperty>>) AbstractValidator<CreateItemDTO>.Transform<TProperty, TTransformed>(Expression<Func<CreateItemDTO, TProperty>>, Func<TProperty, TTransformed>) AbstractValidator<CreateItemDTO>.Transform<TProperty, TTransformed>(Expression<Func<CreateItemDTO, TProperty>>, Func<CreateItemDTO, TProperty, TTransformed>) AbstractValidator<CreateItemDTO>.RuleForEach<TElement>(Expression<Func<CreateItemDTO, IEnumerable<TElement>>>) AbstractValidator<CreateItemDTO>.TransformForEach<TElement, TTransformed>(Expression<Func<CreateItemDTO, IEnumerable<TElement>>>, Func<TElement, TTransformed>) AbstractValidator<CreateItemDTO>.TransformForEach<TElement, TTransformed>(Expression<Func<CreateItemDTO, IEnumerable<TElement>>>, Func<CreateItemDTO, TElement, TTransformed>) AbstractValidator<CreateItemDTO>.RuleSet(string, Action) AbstractValidator<CreateItemDTO>.When(Func<CreateItemDTO, bool>, Action) AbstractValidator<CreateItemDTO>.When(Func<CreateItemDTO, ValidationContext<CreateItemDTO>, bool>, Action) AbstractValidator<CreateItemDTO>.Unless(Func<CreateItemDTO, bool>, Action) AbstractValidator<CreateItemDTO>.Unless(Func<CreateItemDTO, ValidationContext<CreateItemDTO>, bool>, Action) AbstractValidator<CreateItemDTO>.WhenAsync(Func<CreateItemDTO, CancellationToken, Task<bool>>, Action) AbstractValidator<CreateItemDTO>.WhenAsync(Func<CreateItemDTO, ValidationContext<CreateItemDTO>, CancellationToken, Task<bool>>, Action) AbstractValidator<CreateItemDTO>.UnlessAsync(Func<CreateItemDTO, CancellationToken, Task<bool>>, Action) AbstractValidator<CreateItemDTO>.UnlessAsync(Func<CreateItemDTO, ValidationContext<CreateItemDTO>, CancellationToken, Task<bool>>, Action) AbstractValidator<CreateItemDTO>.Include(IValidator<CreateItemDTO>) AbstractValidator<CreateItemDTO>.Include<TValidator>(Func<CreateItemDTO, TValidator>) AbstractValidator<CreateItemDTO>.GetEnumerator() AbstractValidator<CreateItemDTO>.EnsureInstanceNotNull(object) AbstractValidator<CreateItemDTO>.PreValidate(ValidationContext<CreateItemDTO>, ValidationResult) AbstractValidator<CreateItemDTO>.RaiseValidationException(ValidationContext<CreateItemDTO>, ValidationResult) AbstractValidator<CreateItemDTO>.OnRuleAdded(IValidationRule<CreateItemDTO>) AbstractValidator<CreateItemDTO>.CascadeMode AbstractValidator<CreateItemDTO>.ClassLevelCascadeMode AbstractValidator<CreateItemDTO>.RuleLevelCascadeMode object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class CreateItemDtoValidator : AbstractValidator<CreateItemDTO>, IValidator<CreateItemDTO>, IValidator, IEnumerable<IValidationRule>, IEnumerable Constructors Name Description CreateItemDtoValidator(ILocalizationService) Initializes a new instance of the CreateItemDtoValidator class."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Descending.html",
-    "title": "Property Descending",
-    "summary": "Property Descending | Edit this page View Source Descending Gets or sets a value indicating whether the items should be ordered descending. Declaration public bool Descending { get; set; } Property Value Type Description bool"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Page.html",
-    "title": "Property Page",
-    "summary": "Property Page | Edit this page View Source Page Gets or sets the page number to get. Declaration public int Page { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.PageSize.html",
-    "title": "Property PageSize",
-    "summary": "Property PageSize | Edit this page View Source PageSize Gets or sets the size of pages. Declaration public int PageSize { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.Query.html",
-    "title": "Property Query",
-    "summary": "Property Query | Edit this page View Source Query Gets or sets the optional search query. Declaration public string Query { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.GetItemsPageDTO.html",
-    "title": "Class GetItemsPageDTO",
-    "summary": "Class GetItemsPageDTO The data object to request a paged list of items. Inheritance object GetItemsPageDTO Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class GetItemsPageDTO Properties Name Description Descending Gets or sets a value indicating whether the items should be ordered descending. Page Gets or sets the page number to get. PageSize Gets or sets the size of pages. Query Gets or sets the optional search query."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.IItemService.CreateItemAsync.html",
-    "title": "Method CreateItemAsync",
-    "summary": "Method CreateItemAsync | Edit this page View Source CreateItemAsync(CreateItemDTO, int, CancellationToken) Creates a new item. Declaration Task<OneOf<Success<ItemViewModel>, Error<List<ValidationFailure>>>> CreateItemAsync(CreateItemDTO item, int userId, CancellationToken token = default) Parameters Type Name Description CreateItemDTO item The item to create. int userId The acting user id. CancellationToken token A token that can be used to abort the request early. Returns Type Description Task<OneOf<Success<ItemViewModel>, Error<List<ValidationFailure>>>> Either a success of Item of an error of string."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.IItemService.DeleteItemAsync.html",
-    "title": "Method DeleteItemAsync",
-    "summary": "Method DeleteItemAsync | Edit this page View Source DeleteItemAsync(int) Deletes an item. Declaration Task DeleteItemAsync(int itemId) Parameters Type Name Description int itemId The id of the item to delete. Returns Type Description Task An awaitable task."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.IItemService.GetItemsPageAsync.html",
-    "title": "Method GetItemsPageAsync",
-    "summary": "Method GetItemsPageAsync | Edit this page View Source GetItemsPageAsync(string, int, int, bool) Gets a list of items paged. Declaration Task<ItemsPageViewModel> GetItemsPageAsync(string query, int page = 1, int pageSize = 10, bool descending = false) Parameters Type Name Description string query An optional search query. int page The page to get. int pageSize How many items are including per page. bool descending If true, sorts the results in descending order, if false in ascending order. Returns Type Description Task<ItemsPageViewModel> ItemsPageViewModel."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.IItemService.UpdateItemAsync.html",
-    "title": "Method UpdateItemAsync",
-    "summary": "Method UpdateItemAsync | Edit this page View Source UpdateItemAsync(UpdateItemDTO, int, CancellationToken) Updates an existing item. Declaration Task<OneOf<Success, Error<List<ValidationFailure>>>> UpdateItemAsync(UpdateItemDTO item, int userId, CancellationToken token = default) Parameters Type Name Description UpdateItemDTO item The item to edit with its new details. int userId The id of the acting DNN user. CancellationToken token A token that can be used to abort the request early. Returns Type Description Task<OneOf<Success, Error<List<ValidationFailure>>>> An awaitable task."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.IItemService.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.IItemService.html",
-    "title": "Interface IItemService",
-    "summary": "Interface IItemService Provides services to manage items. Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public interface IItemService Methods Name Description CreateItemAsync(CreateItemDTO, int, CancellationToken) Creates a new item. DeleteItemAsync(int) Deletes an item. GetItemsPageAsync(string, int, int, bool) Gets a list of items paged. UpdateItemAsync(UpdateItemDTO, int, CancellationToken) Updates an existing item."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemService.-ctor.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemService.-ctor.html",
-    "title": "Constructor ItemService",
-    "summary": "Constructor ItemService | Edit this page View Source ItemService(IItemRepository, IValidator<CreateItemDTO>, IValidator<UpdateItemDTO>) Initializes a new instance of the ItemService class. Declaration public ItemService(IItemRepository itemRepository, IValidator<CreateItemDTO> createItemDtoValidator, IValidator<UpdateItemDTO> updateItemDtoValidator) Parameters Type Name Description IItemRepository itemRepository The items repository. IValidator<CreateItemDTO> createItemDtoValidator The validator for the CreateItemDTO entity. IValidator<UpdateItemDTO> updateItemDtoValidator The validator for the UpdateItemDTO entity."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemService.CreateItemAsync.html",
-    "title": "Method CreateItemAsync",
-    "summary": "Method CreateItemAsync | Edit this page View Source CreateItemAsync(CreateItemDTO, int, CancellationToken) Creates a new item. Declaration public Task<OneOf<Success<ItemViewModel>, Error<List<ValidationFailure>>>> CreateItemAsync(CreateItemDTO item, int userId, CancellationToken token = default) Parameters Type Name Description CreateItemDTO item The item to create. int userId The acting user id. CancellationToken token A token that can be used to abort the request early. Returns Type Description Task<OneOf<Success<ItemViewModel>, Error<List<ValidationFailure>>>> Either a success of Item of an error of string. Implements IItemService.CreateItemAsync(CreateItemDTO, int, CancellationToken)"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemService.DeleteItemAsync.html",
-    "title": "Method DeleteItemAsync",
-    "summary": "Method DeleteItemAsync | Edit this page View Source DeleteItemAsync(int) Deletes an item. Declaration public Task DeleteItemAsync(int itemId) Parameters Type Name Description int itemId The id of the item to delete. Returns Type Description Task An awaitable task. Implements IItemService.DeleteItemAsync(int)"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemService.GetItemsPageAsync.html",
-    "title": "Method GetItemsPageAsync",
-    "summary": "Method GetItemsPageAsync | Edit this page View Source GetItemsPageAsync(string, int, int, bool) Gets a list of items paged. Declaration public Task<ItemsPageViewModel> GetItemsPageAsync(string query, int page = 1, int pageSize = 10, bool descending = false) Parameters Type Name Description string query An optional search query. int page The page to get. int pageSize How many items are including per page. bool descending If true, sorts the results in descending order, if false in ascending order. Returns Type Description Task<ItemsPageViewModel> ItemsPageViewModel. Implements IItemService.GetItemsPageAsync(string, int, int, bool)"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemService.UpdateItemAsync.html",
-    "title": "Method UpdateItemAsync",
-    "summary": "Method UpdateItemAsync | Edit this page View Source UpdateItemAsync(UpdateItemDTO, int, CancellationToken) Updates an existing item. Declaration public Task<OneOf<Success, Error<List<ValidationFailure>>>> UpdateItemAsync(UpdateItemDTO dto, int userId, CancellationToken token = default) Parameters Type Name Description UpdateItemDTO dto int userId The id of the acting DNN user. CancellationToken token A token that can be used to abort the request early. Returns Type Description Task<OneOf<Success, Error<List<ValidationFailure>>>> An awaitable task. Implements IItemService.UpdateItemAsync(UpdateItemDTO, int, CancellationToken)"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemService.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemService.html",
-    "title": "Class ItemService",
-    "summary": "Class ItemService Provides services to manage items. Inheritance object ItemService Implements IItemService Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class ItemService : IItemService Constructors Name Description ItemService(IItemRepository, IValidator<CreateItemDTO>, IValidator<UpdateItemDTO>) Initializes a new instance of the ItemService class. Methods Name Description CreateItemAsync(CreateItemDTO, int, CancellationToken) Creates a new item. DeleteItemAsync(int) Deletes an item. GetItemsPageAsync(string, int, int, bool) Gets a list of items paged. UpdateItemAsync(UpdateItemDTO, int, CancellationToken) Updates an existing item."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.-ctor.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.-ctor.html",
-    "title": "Constructor ItemViewModel",
-    "summary": "Constructor ItemViewModel | Edit this page View Source ItemViewModel() Initializes a new instance of the ItemViewModel class. Declaration public ItemViewModel() | Edit this page View Source ItemViewModel(Item) Initializes a new instance of the ItemViewModel class. Declaration public ItemViewModel(Item item) Parameters Type Name Description Item item An Item entity."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Description.html",
-    "title": "Property Description",
-    "summary": "Property Description | Edit this page View Source Description Gets or sets the item description. Declaration public string Description { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Id.html",
-    "title": "Property Id",
-    "summary": "Property Id | Edit this page View Source Id Gets or sets the id of the item. Declaration public int Id { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.Name.html",
-    "title": "Property Name",
-    "summary": "Property Name | Edit this page View Source Name Gets or sets the name of the item. Declaration [Required] public string Name { get; set; } Property Value Type Description string"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemViewModel.html",
-    "title": "Class ItemViewModel",
-    "summary": "Class ItemViewModel Represents the basic information about an item. Inheritance object ItemViewModel Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class ItemViewModel Constructors Name Description ItemViewModel() Initializes a new instance of the ItemViewModel class. ItemViewModel(Item) Initializes a new instance of the ItemViewModel class. Properties Name Description Description Gets or sets the item description. Id Gets or sets the id of the item. Name Gets or sets the name of the item."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Items.html",
-    "title": "Property Items",
-    "summary": "Property Items | Edit this page View Source Items Gets or sets a list of items for this page. Declaration public List<ItemViewModel> Items { get; set; } Property Value Type Description List<ItemViewModel>"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.Page.html",
-    "title": "Property Page",
-    "summary": "Property Page | Edit this page View Source Page Gets or sets the current page number. Declaration public int Page { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.PageCount.html",
-    "title": "Property PageCount",
-    "summary": "Property PageCount | Edit this page View Source PageCount Gets or sets the total amount of pages available. Declaration public int PageCount { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.ResultCount.html",
-    "title": "Property ResultCount",
-    "summary": "Property ResultCount | Edit this page View Source ResultCount Gets or sets the total amount of results found. Declaration public int ResultCount { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.ItemsPageViewModel.html",
-    "title": "Class ItemsPageViewModel",
-    "summary": "Class ItemsPageViewModel Represents a page of items, Item. Inheritance object ItemsPageViewModel Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class ItemsPageViewModel Properties Name Description Items Gets or sets a list of items for this page. Page Gets or sets the current page number. PageCount Gets or sets the total amount of pages available. ResultCount Gets or sets the total amount of results found."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.Id.html",
-    "title": "Property Id",
-    "summary": "Property Id | Edit this page View Source Id Gets or sets the id of the item to edit. Declaration public int Id { get; set; } Property Value Type Description int"
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.UpdateItemDTO.html",
-    "title": "Class UpdateItemDTO",
-    "summary": "Class UpdateItemDTO Data transfer object used to update an item. Inheritance object CreateItemDTO UpdateItemDTO Inherited Members CreateItemDTO.Name CreateItemDTO.Description object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Items Assembly: DNN.Modules.UserVoice.dll Syntax public class UpdateItemDTO : CreateItemDTO Properties Name Description Id Gets or sets the id of the item to edit."
-  },
-  "api/DNN.Modules.UserVoice.Services.Items.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Items.html",
-    "title": "Namespace DNN.Modules.UserVoice.Services.Items",
-    "summary": "Namespace DNN.Modules.UserVoice.Services.Items Classes CreateItemDTO Data transfer object to create a new item. CreateItemDtoValidator Validates the CreateItemDTO. GetItemsPageDTO The data object to request a paged list of items. ItemService Provides services to manage items. ItemViewModel Represents the basic information about an item. ItemsPageViewModel Represents a page of items, Item. UpdateItemDTO Data transfer object used to update an item. Interfaces IItemService Provides services to manage items."
   },
   "api/DNN.Modules.UserVoice.Services.Localization.ILocalizationService.ViewModel.html": {
     "href": "api/DNN.Modules.UserVoice.Services.Localization.ILocalizationService.ViewModel.html",
@@ -559,11 +349,6 @@
     "title": "Property UI",
     "summary": "Property UI | Edit this page View Source UI Localized strings present the UI resources. Declaration public LocalizationViewModel.UIInfo UI { get; set; } Property Value Type Description LocalizationViewModel.UIInfo"
   },
-  "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.AddItem.html",
-    "title": "Property AddItem",
-    "summary": "Property AddItem | Edit this page View Source AddItem Gets or sets the AddItem localized text. Declaration public string AddItem { get; set; } Property Value Type Description string Examples Add Item"
-  },
   "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Cancel.html": {
     "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Cancel.html",
     "title": "Property Cancel",
@@ -578,31 +363,6 @@
     "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Delete.html",
     "title": "Property Delete",
     "summary": "Property Delete | Edit this page View Source Delete Gets or sets the Delete localized text. Declaration public string Delete { get; set; } Property Value Type Description string Examples Delete"
-  },
-  "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.DeleteItemConfirm.html",
-    "title": "Property DeleteItemConfirm",
-    "summary": "Property DeleteItemConfirm | Edit this page View Source DeleteItemConfirm Gets or sets the DeleteItemConfirm localized text. Declaration public string DeleteItemConfirm { get; set; } Property Value Type Description string Examples Are you sure you want to delete this item?"
-  },
-  "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Description.html",
-    "title": "Property Description",
-    "summary": "Property Description | Edit this page View Source Description Gets or sets the Description localized text. Declaration public string Description { get; set; } Property Value Type Description string Examples Description"
-  },
-  "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Edit.html",
-    "title": "Property Edit",
-    "summary": "Property Edit | Edit this page View Source Edit Gets or sets the Edit localized text. Declaration public string Edit { get; set; } Property Value Type Description string Examples Edit"
-  },
-  "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.LoadMore.html",
-    "title": "Property LoadMore",
-    "summary": "Property LoadMore | Edit this page View Source LoadMore Gets or sets the LoadMore localized text. Declaration public string LoadMore { get; set; } Property Value Type Description string Examples Load More"
-  },
-  "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Name.html",
-    "title": "Property Name",
-    "summary": "Property Name | Edit this page View Source Name Gets or sets the Name localized text. Declaration public string Name { get; set; } Property Value Type Description string Examples Name"
   },
   "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No.html": {
     "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No.html",
@@ -632,7 +392,7 @@
   "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.html": {
     "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.html",
     "title": "Class LocalizationViewModel.UIInfo",
-    "summary": "Class LocalizationViewModel.UIInfo Localized strings for the UI resources. Inheritance object LocalizationViewModel.UIInfo Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Localization Assembly: DNN.Modules.UserVoice.dll Syntax public class LocalizationViewModel.UIInfo Properties Name Description AddItem Gets or sets the AddItem localized text. Cancel Gets or sets the Cancel localized text. Create Gets or sets the Create localized text. Delete Gets or sets the Delete localized text. DeleteItemConfirm Gets or sets the DeleteItemConfirm localized text. Description Gets or sets the Description localized text. Edit Gets or sets the Edit localized text. LoadMore Gets or sets the LoadMore localized text. Name Gets or sets the Name localized text. No Gets or sets the No localized text. Save Gets or sets the Save localized text. SearchPlaceholder Gets or sets the SearchPlaceholder localized text. ShownItems Gets or sets the ShownItems localized text. Yes Gets or sets the Yes localized text."
+    "summary": "Class LocalizationViewModel.UIInfo Localized strings for the UI resources. Inheritance object LocalizationViewModel.UIInfo Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Services.Localization Assembly: DNN.Modules.UserVoice.dll Syntax public class LocalizationViewModel.UIInfo Properties Name Description Cancel Gets or sets the Cancel localized text. Create Gets or sets the Create localized text. Delete Gets or sets the Delete localized text. No Gets or sets the No localized text. Save Gets or sets the Save localized text. SearchPlaceholder Gets or sets the SearchPlaceholder localized text. ShownItems Gets or sets the ShownItems localized text. Yes Gets or sets the Yes localized text."
   },
   "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.html": {
     "href": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.html",
@@ -643,11 +403,6 @@
     "href": "api/DNN.Modules.UserVoice.Services.Localization.html",
     "title": "Namespace DNN.Modules.UserVoice.Services.Localization",
     "summary": "Namespace DNN.Modules.UserVoice.Services.Localization Classes LocalizationService Provides strongly typed localization services for this module. LocalizationViewModel A viewmodel that exposes all resource keys in strong types. LocalizationViewModel.ModelValidationInfo Localized strings for the ModelValidation resources. LocalizationViewModel.UIInfo Localized strings for the UI resources. Interfaces ILocalizationService Provides strongly typed localization services for this module."
-  },
-  "api/DNN.Modules.UserVoice.Services.html": {
-    "href": "api/DNN.Modules.UserVoice.Services.html",
-    "title": "Namespace DNN.Modules.UserVoice.Services",
-    "summary": "Namespace DNN.Modules.UserVoice.Services Namespaces DNN.Modules.UserVoice.Services.Items DNN.Modules.UserVoice.Services.Localization"
   },
   "api/DNN.Modules.UserVoice.Startup.ConfigureServices.html": {
     "href": "api/DNN.Modules.UserVoice.Startup.ConfigureServices.html",
@@ -662,7 +417,7 @@
   "api/DNN.Modules.UserVoice.html": {
     "href": "api/DNN.Modules.UserVoice.html",
     "title": "Namespace DNN.Modules.UserVoice",
-    "summary": "Namespace DNN.Modules.UserVoice Namespaces DNN.Modules.UserVoice.Common DNN.Modules.UserVoice.Controllers DNN.Modules.UserVoice.Data DNN.Modules.UserVoice.Providers DNN.Modules.UserVoice.Services Classes Startup Implements the IDnnStartup interface to run at application start."
+    "summary": "Namespace DNN.Modules.UserVoice Namespaces DNN.Modules.UserVoice.Common DNN.Modules.UserVoice.Controllers DNN.Modules.UserVoice.Data DNN.Modules.UserVoice.Extensions DNN.Modules.UserVoice.Providers DNN.Modules.UserVoice.Services.Localization Classes Startup Implements the IDnnStartup interface to run at application start."
   },
   "api/index.html": {
     "href": "api/index.html",
