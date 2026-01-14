@@ -1,14 +1,14 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DotNetNuke.Entities.Users;
-using DotNetNuke.Security.Permissions;
-using DotNetNuke.Web.Api;
-using System;
-using System.Diagnostics.CodeAnalysis;
-
 namespace DNN.Modules.UserVoice.Controllers
 {
+    using DotNetNuke.Entities.Users;
+    using DotNetNuke.Security.Permissions;
+    using DotNetNuke.Web.Api;
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+
     /// <summary>
     /// Provides common features to all module controller.
     /// </summary>

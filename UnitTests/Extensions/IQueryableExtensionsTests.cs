@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace UnitTests.Common.Extensions
+namespace UnitTests.Extensions
 {
     public class IQueryableExtensionsTests
     {

@@ -1,16 +1,15 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DNN.Modules.UserVoice.Data.Entities;
-using System;
-using System.Configuration;
-using System.Data.Common;
-using System.Data.Entity;
-using System.IO;
-using System.Web;
-
 namespace DNN.Modules.UserVoice.Data
 {
+    using System;
+    using System.Configuration;
+    using System.Data.Common;
+    using System.Data.Entity;
+    using System.IO;
+    using System.Web;
+
     /// <summary>
     /// The data context for this module.
     /// </summary>
@@ -37,11 +36,6 @@ namespace DNN.Modules.UserVoice.Data
             : base(connection, true)
         {
         }
-
-        /// <summary>
-        /// Gets or sets the module items.
-        /// </summary>
-        public DbSet<Item> Items { get; set; }
 
         /// <summary>
         /// Gets the connection string, using cached value after first call.

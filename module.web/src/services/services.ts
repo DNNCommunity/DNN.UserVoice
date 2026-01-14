@@ -104,257 +104,6 @@ export class LocalizationClient extends ClientBase {
     }
 }
 
-export class ItemClient extends ClientBase {
-    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
-    private baseUrl: string;
-    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
-
-    constructor(configuration: ConfigureRequest, baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
-        super(configuration);
-        this.http = http ? http : window as any;
-        this.baseUrl = this.getBaseUrl("", baseUrl);
-    }
-
-    /**
-     * Creates a new item.
-     * @param item (optional) The item to create.
-     * @return OK
-     */
-    createItem(item: CreateItemDTO | null | undefined, signal?: AbortSignal): Promise<ItemViewModel | null> {
-        let url_ = this.baseUrl + "/Item/CreateItem";
-        url_ = url_.replace(/[?&]$/, "");
-
-        const content_ = JSON.stringify(item);
-
-        let options_: RequestInit = {
-            body: content_,
-            method: "POST",
-            signal,
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            }
-        };
-
-        return this.transformOptions(options_).then(transformedOptions_ => {
-            return this.http.fetch(url_, transformedOptions_);
-        }).then((_response: Response) => {
-            return this.processCreateItem(_response);
-        });
-    }
-
-    protected processCreateItem(response: Response): Promise<ItemViewModel | null> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            let result200: any = null;
-            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = resultData200 ? ItemViewModel.fromJS(resultData200) : null as any;
-            return result200;
-            });
-        } else if (status === 400) {
-            return response.text().then((_responseText) => {
-            let result400: any = null;
-            let resultData400 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-                result400 = resultData400 !== undefined ? resultData400 : null as any;
-    
-            return throwException("Bad Request", status, _responseText, _headers, result400);
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<ItemViewModel | null>(null as any);
-    }
-
-    /**
-     * Gets a paged and sorted list of items matching a certain query.
-     * @param query (optional) Gets or sets the optional search query.
-     * @param page (optional) Gets or sets the page number to get.
-     * @param pageSize (optional) Gets or sets the size of pages.
-     * @param descending (optional) Gets or sets a value indicating whether the items should be ordered descending.
-     * @return OK
-     */
-    getItemsPage(query: string | null | undefined, page: number | undefined, pageSize: number | undefined, descending: boolean | undefined, signal?: AbortSignal): Promise<ItemsPageViewModel | null> {
-        let url_ = this.baseUrl + "/Item/GetItemsPage?";
-        if (query !== undefined && query !== null)
-            url_ += "Query=" + encodeURIComponent("" + query) + "&";
-        if (page === null)
-            throw new globalThis.Error("The parameter 'page' cannot be null.");
-        else if (page !== undefined)
-            url_ += "Page=" + encodeURIComponent("" + page) + "&";
-        if (pageSize === null)
-            throw new globalThis.Error("The parameter 'pageSize' cannot be null.");
-        else if (pageSize !== undefined)
-            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
-        if (descending === null)
-            throw new globalThis.Error("The parameter 'descending' cannot be null.");
-        else if (descending !== undefined)
-            url_ += "Descending=" + encodeURIComponent("" + descending) + "&";
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_: RequestInit = {
-            method: "GET",
-            signal,
-            headers: {
-                "Accept": "application/json"
-            }
-        };
-
-        return this.transformOptions(options_).then(transformedOptions_ => {
-            return this.http.fetch(url_, transformedOptions_);
-        }).then((_response: Response) => {
-            return this.processGetItemsPage(_response);
-        });
-    }
-
-    protected processGetItemsPage(response: Response): Promise<ItemsPageViewModel | null> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            let result200: any = null;
-            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = resultData200 ? ItemsPageViewModel.fromJS(resultData200) : null as any;
-            return result200;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<ItemsPageViewModel | null>(null as any);
-    }
-
-    /**
-     * Deletes an existing item.
-     * @param itemId The id of the item to delete.
-     * @return OK
-     */
-    deleteItem(itemId: number, signal?: AbortSignal): Promise<void> {
-        let url_ = this.baseUrl + "/Item/DeleteItem?";
-        if (itemId === undefined || itemId === null)
-            throw new globalThis.Error("The parameter 'itemId' must be defined and cannot be null.");
-        else
-            url_ += "itemId=" + encodeURIComponent("" + itemId) + "&";
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_: RequestInit = {
-            method: "POST",
-            signal,
-            headers: {
-            }
-        };
-
-        return this.transformOptions(options_).then(transformedOptions_ => {
-            return this.http.fetch(url_, transformedOptions_);
-        }).then((_response: Response) => {
-            return this.processDeleteItem(_response);
-        });
-    }
-
-    protected processDeleteItem(response: Response): Promise<void> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            return;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<void>(null as any);
-    }
-
-    /**
-     * Checks if a user can edit the current items.
-     * @return OK
-     */
-    userCanEdit(signal?: AbortSignal): Promise<boolean> {
-        let url_ = this.baseUrl + "/Item/UserCanEdit";
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_: RequestInit = {
-            method: "GET",
-            signal,
-            headers: {
-                "Accept": "application/json"
-            }
-        };
-
-        return this.transformOptions(options_).then(transformedOptions_ => {
-            return this.http.fetch(url_, transformedOptions_);
-        }).then((_response: Response) => {
-            return this.processUserCanEdit(_response);
-        });
-    }
-
-    protected processUserCanEdit(response: Response): Promise<boolean> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            let result200: any = null;
-            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-                result200 = resultData200 !== undefined ? resultData200 : null as any;
-    
-            return result200;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<boolean>(null as any);
-    }
-
-    /**
-     * Updates an existing item.
-     * @param item (optional) The new information about the item, UpdateItemDTO.
-     * @return OK
-     */
-    updateItem(item: UpdateItemDTO | null | undefined, signal?: AbortSignal): Promise<void> {
-        let url_ = this.baseUrl + "/Item/UpdateItem";
-        url_ = url_.replace(/[?&]$/, "");
-
-        const content_ = JSON.stringify(item);
-
-        let options_: RequestInit = {
-            body: content_,
-            method: "POST",
-            signal,
-            headers: {
-                "Content-Type": "application/json",
-            }
-        };
-
-        return this.transformOptions(options_).then(transformedOptions_ => {
-            return this.http.fetch(url_, transformedOptions_);
-        }).then((_response: Response) => {
-            return this.processUpdateItem(_response);
-        });
-    }
-
-    protected processUpdateItem(response: Response): Promise<void> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            return;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<void>(null as any);
-    }
-}
-
 /** A viewmodel that exposes all resource keys in strong types. */
 export class LocalizationViewModel implements ILocalizationViewModel {
     /** Localized strings present the ModelValidation resources. */
@@ -449,24 +198,12 @@ export interface IModelValidationInfo {
 
 /** Localized strings for the UI resources. */
 export class UIInfo implements IUIInfo {
-    /** Gets or sets the AddItem localized text. */
-    addItem?: string | undefined;
     /** Gets or sets the Cancel localized text. */
     cancel?: string | undefined;
     /** Gets or sets the Create localized text. */
     create?: string | undefined;
     /** Gets or sets the Delete localized text. */
     delete?: string | undefined;
-    /** Gets or sets the DeleteItemConfirm localized text. */
-    deleteItemConfirm?: string | undefined;
-    /** Gets or sets the Description localized text. */
-    description?: string | undefined;
-    /** Gets or sets the Edit localized text. */
-    edit?: string | undefined;
-    /** Gets or sets the LoadMore localized text. */
-    loadMore?: string | undefined;
-    /** Gets or sets the Name localized text. */
-    name?: string | undefined;
     /** Gets or sets the No localized text. */
     no?: string | undefined;
     /** Gets or sets the Save localized text. */
@@ -489,15 +226,9 @@ export class UIInfo implements IUIInfo {
 
     init(_data?: any) {
         if (_data) {
-            this.addItem = _data["AddItem"];
             this.cancel = _data["Cancel"];
             this.create = _data["Create"];
             this.delete = _data["Delete"];
-            this.deleteItemConfirm = _data["DeleteItemConfirm"];
-            this.description = _data["Description"];
-            this.edit = _data["Edit"];
-            this.loadMore = _data["LoadMore"];
-            this.name = _data["Name"];
             this.no = _data["No"];
             this.save = _data["Save"];
             this.searchPlaceholder = _data["SearchPlaceholder"];
@@ -515,15 +246,9 @@ export class UIInfo implements IUIInfo {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["AddItem"] = this.addItem;
         data["Cancel"] = this.cancel;
         data["Create"] = this.create;
         data["Delete"] = this.delete;
-        data["DeleteItemConfirm"] = this.deleteItemConfirm;
-        data["Description"] = this.description;
-        data["Edit"] = this.edit;
-        data["LoadMore"] = this.loadMore;
-        data["Name"] = this.name;
         data["No"] = this.no;
         data["Save"] = this.save;
         data["SearchPlaceholder"] = this.searchPlaceholder;
@@ -535,24 +260,12 @@ export class UIInfo implements IUIInfo {
 
 /** Localized strings for the UI resources. */
 export interface IUIInfo {
-    /** Gets or sets the AddItem localized text. */
-    addItem?: string | undefined;
     /** Gets or sets the Cancel localized text. */
     cancel?: string | undefined;
     /** Gets or sets the Create localized text. */
     create?: string | undefined;
     /** Gets or sets the Delete localized text. */
     delete?: string | undefined;
-    /** Gets or sets the DeleteItemConfirm localized text. */
-    deleteItemConfirm?: string | undefined;
-    /** Gets or sets the Description localized text. */
-    description?: string | undefined;
-    /** Gets or sets the Edit localized text. */
-    edit?: string | undefined;
-    /** Gets or sets the LoadMore localized text. */
-    loadMore?: string | undefined;
-    /** Gets or sets the Name localized text. */
-    name?: string | undefined;
     /** Gets or sets the No localized text. */
     no?: string | undefined;
     /** Gets or sets the Save localized text. */
@@ -563,207 +276,6 @@ export interface IUIInfo {
     shownItems?: string | undefined;
     /** Gets or sets the Yes localized text. */
     yes?: string | undefined;
-}
-
-/** Represents the basic information about an item. */
-export class ItemViewModel implements IItemViewModel {
-    /** Gets or sets the id of the item. */
-    id?: number;
-    /** Gets or sets the name of the item. */
-    name!: string;
-    /** Gets or sets the item description. */
-    description?: string | undefined;
-
-    constructor(data?: IItemViewModel) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (this as any)[property] = (data as any)[property];
-            }
-        }
-    }
-
-    init(_data?: any) {
-        if (_data) {
-            this.id = _data["Id"];
-            this.name = _data["Name"];
-            this.description = _data["Description"];
-        }
-    }
-
-    static fromJS(data: any): ItemViewModel {
-        data = typeof data === 'object' ? data : {};
-        let result = new ItemViewModel();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["Id"] = this.id;
-        data["Name"] = this.name;
-        data["Description"] = this.description;
-        return data;
-    }
-}
-
-/** Represents the basic information about an item. */
-export interface IItemViewModel {
-    /** Gets or sets the id of the item. */
-    id?: number;
-    /** Gets or sets the name of the item. */
-    name: string;
-    /** Gets or sets the item description. */
-    description?: string | undefined;
-}
-
-/** Data transfer object to create a new item. */
-export class CreateItemDTO implements ICreateItemDTO {
-    /** Gets or sets the name for the item. */
-    name?: string | undefined;
-    /** Gets or sets the description of the item. */
-    description?: string | undefined;
-
-    constructor(data?: ICreateItemDTO) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (this as any)[property] = (data as any)[property];
-            }
-        }
-    }
-
-    init(_data?: any) {
-        if (_data) {
-            this.name = _data["Name"];
-            this.description = _data["Description"];
-        }
-    }
-
-    static fromJS(data: any): CreateItemDTO {
-        data = typeof data === 'object' ? data : {};
-        let result = new CreateItemDTO();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["Name"] = this.name;
-        data["Description"] = this.description;
-        return data;
-    }
-}
-
-/** Data transfer object to create a new item. */
-export interface ICreateItemDTO {
-    /** Gets or sets the name for the item. */
-    name?: string | undefined;
-    /** Gets or sets the description of the item. */
-    description?: string | undefined;
-}
-
-/** Represents a page of items, Item. */
-export class ItemsPageViewModel implements IItemsPageViewModel {
-    /** Gets or sets a list of items for this page. */
-    items?: ItemViewModel[] | undefined;
-    /** Gets or sets the current page number. */
-    page?: number;
-    /** Gets or sets the total amount of results found. */
-    resultCount?: number;
-    /** Gets or sets the total amount of pages available. */
-    pageCount?: number;
-
-    constructor(data?: IItemsPageViewModel) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (this as any)[property] = (data as any)[property];
-            }
-        }
-    }
-
-    init(_data?: any) {
-        if (_data) {
-            if (Array.isArray(_data["Items"])) {
-                this.items = [] as any;
-                for (let item of _data["Items"])
-                    this.items!.push(ItemViewModel.fromJS(item));
-            }
-            this.page = _data["Page"];
-            this.resultCount = _data["ResultCount"];
-            this.pageCount = _data["PageCount"];
-        }
-    }
-
-    static fromJS(data: any): ItemsPageViewModel {
-        data = typeof data === 'object' ? data : {};
-        let result = new ItemsPageViewModel();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        if (Array.isArray(this.items)) {
-            data["Items"] = [];
-            for (let item of this.items)
-                data["Items"].push(item ? item.toJSON() : undefined as any);
-        }
-        data["Page"] = this.page;
-        data["ResultCount"] = this.resultCount;
-        data["PageCount"] = this.pageCount;
-        return data;
-    }
-}
-
-/** Represents a page of items, Item. */
-export interface IItemsPageViewModel {
-    /** Gets or sets a list of items for this page. */
-    items?: ItemViewModel[] | undefined;
-    /** Gets or sets the current page number. */
-    page?: number;
-    /** Gets or sets the total amount of results found. */
-    resultCount?: number;
-    /** Gets or sets the total amount of pages available. */
-    pageCount?: number;
-}
-
-/** Data transfer object used to update an item. */
-export class UpdateItemDTO extends CreateItemDTO implements IUpdateItemDTO {
-    /** Gets or sets the id of the item to edit. */
-    id?: number;
-
-    constructor(data?: IUpdateItemDTO) {
-        super(data);
-    }
-
-    override init(_data?: any) {
-        super.init(_data);
-        if (_data) {
-            this.id = _data["Id"];
-        }
-    }
-
-    static override fromJS(data: any): UpdateItemDTO {
-        data = typeof data === 'object' ? data : {};
-        let result = new UpdateItemDTO();
-        result.init(data);
-        return result;
-    }
-
-    override toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["Id"] = this.id;
-        super.toJSON(data);
-        return data;
-    }
-}
-
-/** Data transfer object used to update an item. */
-export interface IUpdateItemDTO extends ICreateItemDTO {
-    /** Gets or sets the id of the item to edit. */
-    id?: number;
 }
 
 export class ApiException extends Error {

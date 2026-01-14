@@ -84,15 +84,9 @@ namespace DNN.Modules.UserVoice.Services.Localization
             viewModel.ModelValidation = modelvalidation;
             var ui = new UIInfo
             {
-                AddItem = this.GetString("AddItem", "UI.resx"),
                 Cancel = this.GetString("Cancel", "UI.resx"),
                 Create = this.GetString("Create", "UI.resx"),
                 Delete = this.GetString("Delete", "UI.resx"),
-                DeleteItemConfirm = this.GetString("DeleteItemConfirm", "UI.resx"),
-                Description = this.GetString("Description", "UI.resx"),
-                Edit = this.GetString("Edit", "UI.resx"),
-                LoadMore = this.GetString("LoadMore", "UI.resx"),
-                Name = this.GetString("Name", "UI.resx"),
                 No = this.GetString("No", "UI.resx"),
                 Save = this.GetString("Save", "UI.resx"),
                 SearchPlaceholder = this.GetString("SearchPlaceholder", "UI.resx"),
