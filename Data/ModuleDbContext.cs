@@ -3,6 +3,7 @@
 
 namespace DNN.Modules.UserVoice.Data
 {
+    using DNN.Modules.UserVoice.Data.Entities;
     using System;
     using System.Configuration;
     using System.Data.Common;
@@ -26,6 +27,7 @@ namespace DNN.Modules.UserVoice.Data
         public ModuleDbContext()
             : base(GetConnectionString())
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModuleDbContext, Migrations.Configuration>());
         }
 
         /// <summary>
@@ -35,7 +37,14 @@ namespace DNN.Modules.UserVoice.Data
         public ModuleDbContext(DbConnection connection)
             : base(connection, true)
         {
+            Database.SetInitializer(new NullDatabaseInitializer<ModuleDbContext>());
+            this.Database.CreateIfNotExists();
         }
+
+        /// <summary>
+        /// Gets or sets the ideas.
+        /// </summary>
+        public virtual DbSet<Idea> Ideas { get; set; }
 
         /// <summary>
         /// Gets the connection string, using cached value after first call.
