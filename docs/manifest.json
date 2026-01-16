@@ -57,14 +57,14 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.-ctor.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Controllers.LocalizationController.LocalizationController",
-      "Summary": null
+      "Title": "DNN.Modules.UserVoice.Controllers.LocalizationController",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Controllers.LocalizationController.yml\" sourcestartlinenumber=\"1\">Provides localization related web services.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -85,27 +85,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Controllers.LocalizationController.-ctor.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Controllers.LocalizationController",
-      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Controllers.LocalizationController.yml\" sourcestartlinenumber=\"1\">Provides localization related web services.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Controllers.ModuleApiController.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Controllers.ModuleApiController.UserInfo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Controllers.ModuleApiController.UserInfo",
+      "Title": "DNN.Modules.UserVoice.Controllers.LocalizationController.LocalizationController",
       "Summary": null
     },
     {
@@ -138,16 +124,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.yml",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Controllers.ModuleApiController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.RegisterRoutes.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Controllers.ModuleApiController.UserInfo.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.RegisterRoutes",
+      "Title": "DNN.Modules.UserVoice.Controllers.ModuleApiController.UserInfo",
       "Summary": null
     },
     {
@@ -163,6 +149,20 @@
       "IsMRef": true,
       "Title": "DNN.Modules.UserVoice.Controllers.ServiceRouteMapper",
       "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.yml\" sourcestartlinenumber=\"1\">Implements the Dnn IServiceRouteMapper to register this module routes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.RegisterRoutes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Controllers.ServiceRouteMapper.RegisterRoutes",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -183,13 +183,27 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedByUserId.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedByUserId",
+      "Title": "DNN.Modules.UserVoice.Data.Entities.BaseEntity",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.yml\" sourcestartlinenumber=\"1\">Base entity to provide common properties to other entities and allow it's usage in generic repositories.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt",
       "Summary": null
     },
     {
@@ -211,14 +225,14 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedByUserId.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.BaseEntity",
-      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.yml\" sourcestartlinenumber=\"1\">Base entity to provide common properties to other entities and allow it's usage in generic repositories.</p>\n"
+      "Title": "DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedByUserId",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -250,58 +264,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.BaseEntity.CreatedAt",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedByUserId.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.Id.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.Id",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt",
+      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedByUserId",
       "Summary": null
     },
     {
@@ -323,13 +295,41 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedByUserId.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedByUserId",
+      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.Id.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.Id",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId",
       "Summary": null
     },
     {
@@ -345,6 +345,48 @@
       "IsMRef": true,
       "Title": "DNN.Modules.UserVoice.Data.Entities.IEntity",
       "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Data.Entities.IEntity.yml\" sourcestartlinenumber=\"1\">Ensures entities have some common properties.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.Idea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.Idea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Entities.Idea",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Data.Entities.Idea.yml\" sourcestartlinenumber=\"1\">Represents an idea.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.Idea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.Idea.Description.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Entities.Idea.Description",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Entities.Idea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Entities.Idea.Title.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Entities.Idea.Title",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -390,58 +432,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.GetPageAsync.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.GetPageAsync",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.CreateAsync.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.CreateAsync",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.GetAllAsync.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.GetAllAsync",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.GetByIdAsync.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.GetByIdAsync",
+      "Title": "DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas",
       "Summary": null
     },
     {
@@ -463,14 +463,14 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.GetByIdAsync.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>",
-      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml\" sourcestartlinenumber=\"1\">Provides generic data access features for entities.</p>\n"
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.GetByIdAsync",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -502,16 +502,72 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.yml",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.Page.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.PagedList<T>.Page",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml\" sourcestartlinenumber=\"1\">Provides generic data access features for entities.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.GetPageAsync.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.GetPageAsync",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.GetAllAsync.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.GetAllAsync",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.CreateAsync.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.IRepository<T>.CreateAsync",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.PagedList<T>.PagedList",
       "Summary": null
     },
     {
@@ -533,13 +589,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.PageSize.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.Page.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.PagedList<T>.PageSize",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.PagedList<T>.Page",
       "Summary": null
     },
     {
@@ -547,13 +603,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.-ctor.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.PagedList-1.PageSize.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.PagedList<T>.PagedList",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.PagedList<T>.PageSize",
       "Summary": null
     },
     {
@@ -603,13 +659,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.GetPageAsync.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.GetByIdAsync.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.GetPageAsync",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.GetByIdAsync",
       "Summary": null
     },
     {
@@ -631,13 +687,27 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.GetAllAsync.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.CreateAsync.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.GetAllAsync",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.CreateAsync",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.GetPageAsync.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.GetPageAsync",
       "Summary": null
     },
     {
@@ -659,13 +729,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.DeleteAsync.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.GetAllAsync.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.DeleteAsync",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.GetAllAsync",
       "Summary": null
     },
     {
@@ -687,27 +757,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.CreateAsync.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.DeleteAsync.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.CreateAsync",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Data.Repositories.Repository-1.GetByIdAsync.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.GetByIdAsync",
+      "Title": "DNN.Modules.UserVoice.Data.Repositories.Repository<T>.DeleteAsync",
       "Summary": null
     },
     {
@@ -757,14 +813,14 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions",
-      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for configuring and managing services in an <xref href=\"Microsoft.Extensions.DependencyInjection.IServiceCollection\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Title": "DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -785,14 +841,14 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleData",
-      "Summary": null
+      "Title": "DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for configuring and managing services in an <xref href=\"Microsoft.Extensions.DependencyInjection.IServiceCollection\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -806,6 +862,62 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DNN.Modules.UserVoice.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.Up.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Migrations.InitialCreate.Up",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.Down.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Migrations.InitialCreate.Down",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Migrations.InitialCreate",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Migrations.InitialCreate.yml\" sourcestartlinenumber=\"1\">Represents the initial database migration for creating the DNN_UserVoice_Items table schema.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Migrations",
       "Summary": null
     },
     {
@@ -925,20 +1037,6 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.NameRequired.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.NameRequired",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.yml",
-      "output": {
-        ".html": {
           "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.html"
         }
       },
@@ -953,6 +1051,20 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.yml",
       "output": {
         ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.NameRequired.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.NameRequired",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.IdGreaterThanZero.html"
         }
       },
@@ -960,20 +1072,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidationInfo.IdGreaterThanZero",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Save.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Save",
       "Summary": null
     },
     {
@@ -995,13 +1093,13 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.ShownItems.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No",
+      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.ShownItems",
       "Summary": null
     },
     {
@@ -1023,13 +1121,41 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.ShownItems.html"
+          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.ShownItems",
+      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo",
+      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml\" sourcestartlinenumber=\"1\">Localized strings for the UI resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Save.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Save",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.No",
       "Summary": null
     },
     {
@@ -1045,20 +1171,6 @@
       "IsMRef": true,
       "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.Yes",
       "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo",
-      "Summary": "<p sourcefile=\"api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UIInfo.yml\" sourcestartlinenumber=\"1\">Localized strings for the UI resources.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1093,20 +1205,6 @@
       "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UI.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UI",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.yml",
-      "output": {
-        ".html": {
           "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidation.html"
         }
       },
@@ -1114,6 +1212,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.ModelValidation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UI.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel.UI",
       "Summary": null
     },
     {

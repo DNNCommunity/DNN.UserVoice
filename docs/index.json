@@ -87,7 +87,7 @@
   "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.BaseEntity.html",
     "title": "Class BaseEntity",
-    "summary": "Class BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Inheritance object BaseEntity Implements IEntity Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax public class BaseEntity : IEntity Properties Name Description CreatedAt Gets or sets the date and time the entity was first created. CreatedByUserId Gets or sets the Dnn user ID that created the entity. Id Gets or sets the entity id. UpdatedAt Gets or sets the date and time the entity was last updated. UpdatedByUserId Gets or sets the Dnn user ID that last updated the entity."
+    "summary": "Class BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Inheritance object BaseEntity Idea Implements IEntity Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax public class BaseEntity : IEntity Properties Name Description CreatedAt Gets or sets the date and time the entity was first created. CreatedByUserId Gets or sets the Dnn user ID that created the entity. Id Gets or sets the entity id. UpdatedAt Gets or sets the date and time the entity was last updated. UpdatedByUserId Gets or sets the Dnn user ID that last updated the entity."
   },
   "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.IEntity.CreatedAt.html",
@@ -119,20 +119,40 @@
     "title": "Interface IEntity",
     "summary": "Interface IEntity Ensures entities have some common properties. Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax public interface IEntity Properties Name Description CreatedAt Gets or sets the date and time the entity was first created. CreatedByUserId Gets or sets the Dnn user ID that created the entity. Id Gets or sets the entity id. UpdatedAt Gets or sets the date and time the entity was last updated. UpdatedByUserId Gets or sets the Dnn user ID that last updated the entity."
   },
+  "api/DNN.Modules.UserVoice.Data.Entities.Idea.Description.html": {
+    "href": "api/DNN.Modules.UserVoice.Data.Entities.Idea.Description.html",
+    "title": "Property Description",
+    "summary": "Property Description | Edit this page View Source Description Gets or sets the description of the idea. Declaration [Required(AllowEmptyStrings = false)] [StringLength(2000)] public string Description { get; set; } Property Value Type Description string"
+  },
+  "api/DNN.Modules.UserVoice.Data.Entities.Idea.Title.html": {
+    "href": "api/DNN.Modules.UserVoice.Data.Entities.Idea.Title.html",
+    "title": "Property Title",
+    "summary": "Property Title | Edit this page View Source Title Gets or sets the title of the idea. Declaration [Required(AllowEmptyStrings = false)] [StringLength(200)] public string Title { get; set; } Property Value Type Description string"
+  },
+  "api/DNN.Modules.UserVoice.Data.Entities.Idea.html": {
+    "href": "api/DNN.Modules.UserVoice.Data.Entities.Idea.html",
+    "title": "Class Idea",
+    "summary": "Class Idea Represents an idea. Inheritance object BaseEntity Idea Implements IEntity Inherited Members BaseEntity.Id BaseEntity.CreatedAt BaseEntity.UpdatedAt BaseEntity.CreatedByUserId BaseEntity.UpdatedByUserId object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data.Entities Assembly: DNN.Modules.UserVoice.dll Syntax [TableName(\"DNN_UserVoice_Ideas\")] public class Idea : BaseEntity, IEntity Properties Name Description Description Gets or sets the description of the idea. Title Gets or sets the title of the idea."
+  },
   "api/DNN.Modules.UserVoice.Data.Entities.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Entities.html",
     "title": "Namespace DNN.Modules.UserVoice.Data.Entities",
-    "summary": "Namespace DNN.Modules.UserVoice.Data.Entities Classes BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Interfaces IEntity Ensures entities have some common properties."
+    "summary": "Namespace DNN.Modules.UserVoice.Data.Entities Classes BaseEntity Base entity to provide common properties to other entities and allow it's usage in generic repositories. Idea Represents an idea. Interfaces IEntity Ensures entities have some common properties."
   },
   "api/DNN.Modules.UserVoice.Data.ModuleDbContext.-ctor.html": {
     "href": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.-ctor.html",
     "title": "Constructor ModuleDbContext",
     "summary": "Constructor ModuleDbContext | Edit this page View Source ModuleDbContext() Initializes a new instance of the ModuleDbContext class. Declaration public ModuleDbContext() | Edit this page View Source ModuleDbContext(DbConnection) Initializes a new instance of the ModuleDbContext class. Declaration public ModuleDbContext(DbConnection connection) Parameters Type Name Description DbConnection connection An existing DbConnection."
   },
+  "api/DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas.html": {
+    "href": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas.html",
+    "title": "Property Ideas",
+    "summary": "Property Ideas | Edit this page View Source Ideas Gets or sets the ideas. Declaration public virtual DbSet<Idea> Ideas { get; set; } Property Value Type Description DbSet<Idea>"
+  },
   "api/DNN.Modules.UserVoice.Data.ModuleDbContext.html": {
     "href": "api/DNN.Modules.UserVoice.Data.ModuleDbContext.html",
     "title": "Class ModuleDbContext",
-    "summary": "Class ModuleDbContext The data context for this module. Inheritance object DbContext ModuleDbContext Implements IDisposable IObjectContextAdapter Inherited Members DbContext.OnModelCreating(DbModelBuilder) DbContext.Set<TEntity>() DbContext.Set(Type) DbContext.SaveChanges() DbContext.SaveChangesAsync() DbContext.SaveChangesAsync(CancellationToken) DbContext.GetValidationErrors() DbContext.ShouldValidateEntity(DbEntityEntry) DbContext.ValidateEntity(DbEntityEntry, IDictionary<object, object>) DbContext.Entry<TEntity>(TEntity) DbContext.Entry(object) DbContext.Dispose() DbContext.Dispose(bool) DbContext.Database DbContext.ChangeTracker DbContext.Configuration object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data Assembly: DNN.Modules.UserVoice.dll Syntax public class ModuleDbContext : DbContext, IDisposable, IObjectContextAdapter Constructors Name Description ModuleDbContext() Initializes a new instance of the ModuleDbContext class. ModuleDbContext(DbConnection) Initializes a new instance of the ModuleDbContext class."
+    "summary": "Class ModuleDbContext The data context for this module. Inheritance object DbContext ModuleDbContext Implements IDisposable IObjectContextAdapter Inherited Members DbContext.OnModelCreating(DbModelBuilder) DbContext.Set<TEntity>() DbContext.Set(Type) DbContext.SaveChanges() DbContext.SaveChangesAsync() DbContext.SaveChangesAsync(CancellationToken) DbContext.GetValidationErrors() DbContext.ShouldValidateEntity(DbEntityEntry) DbContext.ValidateEntity(DbEntityEntry, IDictionary<object, object>) DbContext.Entry<TEntity>(TEntity) DbContext.Entry(object) DbContext.Dispose() DbContext.Dispose(bool) DbContext.Database DbContext.ChangeTracker DbContext.Configuration object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Data Assembly: DNN.Modules.UserVoice.dll Syntax public class ModuleDbContext : DbContext, IDisposable, IObjectContextAdapter Constructors Name Description ModuleDbContext() Initializes a new instance of the ModuleDbContext class. ModuleDbContext(DbConnection) Initializes a new instance of the ModuleDbContext class. Properties Name Description Ideas Gets or sets the ideas."
   },
   "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.CreateAsync.html": {
     "href": "api/DNN.Modules.UserVoice.Data.Repositories.IRepository-1.CreateAsync.html",
@@ -284,6 +304,26 @@
     "title": "Namespace DNN.Modules.UserVoice.Extensions",
     "summary": "Namespace DNN.Modules.UserVoice.Extensions Classes ServiceCollectionExtensions Provides extension methods for configuring and managing services in an IServiceCollection."
   },
+  "api/DNN.Modules.UserVoice.Migrations.InitialCreate.Down.html": {
+    "href": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.Down.html",
+    "title": "Method Down",
+    "summary": "Method Down | Edit this page View Source Down() Operations to be performed during the downgrade process. Declaration public override void Down() Overrides DbMigration.Down()"
+  },
+  "api/DNN.Modules.UserVoice.Migrations.InitialCreate.Up.html": {
+    "href": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.Up.html",
+    "title": "Method Up",
+    "summary": "Method Up | Edit this page View Source Up() Operations to be performed during the upgrade process. Declaration public override void Up() Overrides DbMigration.Up()"
+  },
+  "api/DNN.Modules.UserVoice.Migrations.InitialCreate.html": {
+    "href": "api/DNN.Modules.UserVoice.Migrations.InitialCreate.html",
+    "title": "Class InitialCreate",
+    "summary": "Class InitialCreate Represents the initial database migration for creating the DNN_UserVoice_Items table schema. Inheritance object DbMigration InitialCreate Implements IDbMigration IMigrationMetadata Inherited Members DbMigration.CreateStoredProcedure(string, string, object) DbMigration.CreateStoredProcedure<TParameters>(string, Func<ParameterBuilder, TParameters>, string, object) DbMigration.AlterStoredProcedure(string, string, object) DbMigration.AlterStoredProcedure<TParameters>(string, Func<ParameterBuilder, TParameters>, string, object) DbMigration.DropStoredProcedure(string, object) object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Namespace: DNN.Modules.UserVoice.Migrations Assembly: DNN.Modules.UserVoice.dll Syntax public sealed class InitialCreate : DbMigration, IDbMigration, IMigrationMetadata Methods Name Description Down() Operations to be performed during the downgrade process. Up() Operations to be performed during the upgrade process."
+  },
+  "api/DNN.Modules.UserVoice.Migrations.html": {
+    "href": "api/DNN.Modules.UserVoice.Migrations.html",
+    "title": "Namespace DNN.Modules.UserVoice.Migrations",
+    "summary": "Namespace DNN.Modules.UserVoice.Migrations Classes InitialCreate Represents the initial database migration for creating the DNN_UserVoice_Items table schema."
+  },
   "api/DNN.Modules.UserVoice.Providers.IDateTimeProvider.GetUtcNow.html": {
     "href": "api/DNN.Modules.UserVoice.Providers.IDateTimeProvider.GetUtcNow.html",
     "title": "Method GetUtcNow",
@@ -417,7 +457,7 @@
   "api/DNN.Modules.UserVoice.html": {
     "href": "api/DNN.Modules.UserVoice.html",
     "title": "Namespace DNN.Modules.UserVoice",
-    "summary": "Namespace DNN.Modules.UserVoice Namespaces DNN.Modules.UserVoice.Common DNN.Modules.UserVoice.Controllers DNN.Modules.UserVoice.Data DNN.Modules.UserVoice.Extensions DNN.Modules.UserVoice.Providers DNN.Modules.UserVoice.Services.Localization Classes Startup Implements the IDnnStartup interface to run at application start."
+    "summary": "Namespace DNN.Modules.UserVoice Namespaces DNN.Modules.UserVoice.Common DNN.Modules.UserVoice.Controllers DNN.Modules.UserVoice.Data DNN.Modules.UserVoice.Extensions DNN.Modules.UserVoice.Migrations DNN.Modules.UserVoice.Providers DNN.Modules.UserVoice.Services.Localization Classes Startup Implements the IDnnStartup interface to run at application start."
   },
   "api/index.html": {
     "href": "api/index.html",

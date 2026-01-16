@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="60ca72f4-506e-4fb9-bda2-8faaab9a4877" name="@runnervm4c2pk 2026-01-14 05:55:05" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2026-01-14T05:55:05.0819122+00:00" queuing="2026-01-14T05:55:05.0819123+00:00" start="2026-01-14T05:55:01.8190330+00:00" finish="2026-01-14T05:55:05.0866147+00:00" />
-  <TestSettings name="default" id="3a5e80fa-7fce-4d39-b81d-bc3f8b0f2eec">
-    <Deployment runDeploymentRoot="_runnervm4c2pk_2026-01-14_05_55_05" />
+<TestRun id="7274de6b-5476-44fa-9ee8-d54c09750631" name="@runnervmvatxw 2026-01-16 04:22:07" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-01-16T04:22:07.3279990+00:00" queuing="2026-01-16T04:22:07.3279991+00:00" start="2026-01-16T04:22:03.0373537+00:00" finish="2026-01-16T04:22:07.3329879+00:00" />
+  <TestSettings name="default" id="977c4d1f-4d55-43fd-9870-a15ce861358f">
+    <Deployment runDeploymentRoot="_runnervmvatxw_2026-01-16_04_22_07" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="fef796b1-8f08-4002-a13b-0919187fe9d1" testId="09a01a29-9f90-c98e-ccab-5c937defdc5a" testName="IntegrationTests.Controllers.ServiceRouteMapperTests.RegisterRoutes_RegistersAtLestOneRoute" computerName="runnervm4c2pk" duration="00:00:00.2050000" startTime="2026-01-14T05:55:04.6366710+00:00" endTime="2026-01-14T05:55:04.8483570+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fef796b1-8f08-4002-a13b-0919187fe9d1" />
+    <UnitTestResult executionId="7d478341-fb35-4ff3-80f3-4196fce99869" testId="09a01a29-9f90-c98e-ccab-5c937defdc5a" testName="IntegrationTests.Controllers.ServiceRouteMapperTests.RegisterRoutes_RegistersAtLestOneRoute" computerName="runnervmvatxw" duration="00:00:00.1860000" startTime="2026-01-16T04:22:06.9493550+00:00" endTime="2026-01-16T04:22:07.1066100+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d478341-fb35-4ff3-80f3-4196fce99869" />
   </Results>
   <TestDefinitions>
     <UnitTest name="IntegrationTests.Controllers.ServiceRouteMapperTests.RegisterRoutes_RegistersAtLestOneRoute" storage="/home/runner/work/dnn.uservoice/dnn.uservoice/integrationtests/bin/release/integrationtests.dll" id="09a01a29-9f90-c98e-ccab-5c937defdc5a">
-      <Execution id="fef796b1-8f08-4002-a13b-0919187fe9d1" />
+      <Execution id="7d478341-fb35-4ff3-80f3-4196fce99869" />
       <TestMethod codeBase="/home/runner/work/DNN.UserVoice/DNN.UserVoice/IntegrationTests/bin/Release/IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netfx/" className="IntegrationTests.Controllers.ServiceRouteMapperTests" name="RegisterRoutes_RegistersAtLestOneRoute" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="09a01a29-9f90-c98e-ccab-5c937defdc5a" executionId="fef796b1-8f08-4002-a13b-0919187fe9d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="09a01a29-9f90-c98e-ccab-5c937defdc5a" executionId="7d478341-fb35-4ff3-80f3-4196fce99869" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
@@ -24,10 +24,10 @@
     <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <Output>
       <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit Mono 6.12.0.200 (tarball Tue Jul 11 21:37:50 UTC 2023))
-[xUnit.net 00:00:00.92]   Discovering: IntegrationTests
-[xUnit.net 00:00:01.32]   Discovered:  IntegrationTests
-[xUnit.net 00:00:01.38]   Starting:    IntegrationTests
-[xUnit.net 00:00:01.66]   Finished:    IntegrationTests
+[xUnit.net 00:00:01.48]   Discovering: IntegrationTests
+[xUnit.net 00:00:02.43]   Discovered:  IntegrationTests
+[xUnit.net 00:00:02.49]   Starting:    IntegrationTests
+[xUnit.net 00:00:02.76]   Finished:    IntegrationTests
 </StdOut>
     </Output>
   </ResultSummary>

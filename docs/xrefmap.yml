@@ -259,6 +259,36 @@ references:
   commentId: Overload:DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId
   fullName: DNN.Modules.UserVoice.Data.Entities.IEntity.UpdatedByUserId
   nameWithType: IEntity.UpdatedByUserId
+- uid: DNN.Modules.UserVoice.Data.Entities.Idea
+  name: Idea
+  href: api/DNN.Modules.UserVoice.Data.Entities.Idea.html
+  commentId: T:DNN.Modules.UserVoice.Data.Entities.Idea
+  fullName: DNN.Modules.UserVoice.Data.Entities.Idea
+  nameWithType: Idea
+- uid: DNN.Modules.UserVoice.Data.Entities.Idea.Description
+  name: Description
+  href: api/DNN.Modules.UserVoice.Data.Entities.Idea.Description.html#DNN_Modules_UserVoice_Data_Entities_Idea_Description
+  commentId: P:DNN.Modules.UserVoice.Data.Entities.Idea.Description
+  fullName: DNN.Modules.UserVoice.Data.Entities.Idea.Description
+  nameWithType: Idea.Description
+- uid: DNN.Modules.UserVoice.Data.Entities.Idea.Description*
+  name: Description
+  href: api/DNN.Modules.UserVoice.Data.Entities.Idea.Description.html
+  commentId: Overload:DNN.Modules.UserVoice.Data.Entities.Idea.Description
+  fullName: DNN.Modules.UserVoice.Data.Entities.Idea.Description
+  nameWithType: Idea.Description
+- uid: DNN.Modules.UserVoice.Data.Entities.Idea.Title
+  name: Title
+  href: api/DNN.Modules.UserVoice.Data.Entities.Idea.Title.html#DNN_Modules_UserVoice_Data_Entities_Idea_Title
+  commentId: P:DNN.Modules.UserVoice.Data.Entities.Idea.Title
+  fullName: DNN.Modules.UserVoice.Data.Entities.Idea.Title
+  nameWithType: Idea.Title
+- uid: DNN.Modules.UserVoice.Data.Entities.Idea.Title*
+  name: Title
+  href: api/DNN.Modules.UserVoice.Data.Entities.Idea.Title.html
+  commentId: Overload:DNN.Modules.UserVoice.Data.Entities.Idea.Title
+  fullName: DNN.Modules.UserVoice.Data.Entities.Idea.Title
+  nameWithType: Idea.Title
 - uid: DNN.Modules.UserVoice.Data.ModuleDbContext
   name: ModuleDbContext
   href: api/DNN.Modules.UserVoice.Data.ModuleDbContext.html
@@ -292,6 +322,18 @@ references:
   fullName.vb: DNN.Modules.UserVoice.Data.ModuleDbContext.New
   nameWithType: ModuleDbContext.ModuleDbContext
   nameWithType.vb: ModuleDbContext.New
+- uid: DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas
+  name: Ideas
+  href: api/DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas.html#DNN_Modules_UserVoice_Data_ModuleDbContext_Ideas
+  commentId: P:DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas
+  fullName: DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas
+  nameWithType: ModuleDbContext.Ideas
+- uid: DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas*
+  name: Ideas
+  href: api/DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas.html
+  commentId: Overload:DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas
+  fullName: DNN.Modules.UserVoice.Data.ModuleDbContext.Ideas
+  nameWithType: ModuleDbContext.Ideas
 - uid: DNN.Modules.UserVoice.Data.Repositories
   name: DNN.Modules.UserVoice.Data.Repositories
   href: api/DNN.Modules.UserVoice.Data.Repositories.html
@@ -711,6 +753,42 @@ references:
   commentId: Overload:DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices
   fullName: DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions.AddModuleServices
   nameWithType: ServiceCollectionExtensions.AddModuleServices
+- uid: DNN.Modules.UserVoice.Migrations
+  name: DNN.Modules.UserVoice.Migrations
+  href: api/DNN.Modules.UserVoice.Migrations.html
+  commentId: N:DNN.Modules.UserVoice.Migrations
+  fullName: DNN.Modules.UserVoice.Migrations
+  nameWithType: DNN.Modules.UserVoice.Migrations
+- uid: DNN.Modules.UserVoice.Migrations.InitialCreate
+  name: InitialCreate
+  href: api/DNN.Modules.UserVoice.Migrations.InitialCreate.html
+  commentId: T:DNN.Modules.UserVoice.Migrations.InitialCreate
+  fullName: DNN.Modules.UserVoice.Migrations.InitialCreate
+  nameWithType: InitialCreate
+- uid: DNN.Modules.UserVoice.Migrations.InitialCreate.Down
+  name: Down()
+  href: api/DNN.Modules.UserVoice.Migrations.InitialCreate.Down.html#DNN_Modules_UserVoice_Migrations_InitialCreate_Down
+  commentId: M:DNN.Modules.UserVoice.Migrations.InitialCreate.Down
+  fullName: DNN.Modules.UserVoice.Migrations.InitialCreate.Down()
+  nameWithType: InitialCreate.Down()
+- uid: DNN.Modules.UserVoice.Migrations.InitialCreate.Down*
+  name: Down
+  href: api/DNN.Modules.UserVoice.Migrations.InitialCreate.Down.html
+  commentId: Overload:DNN.Modules.UserVoice.Migrations.InitialCreate.Down
+  fullName: DNN.Modules.UserVoice.Migrations.InitialCreate.Down
+  nameWithType: InitialCreate.Down
+- uid: DNN.Modules.UserVoice.Migrations.InitialCreate.Up
+  name: Up()
+  href: api/DNN.Modules.UserVoice.Migrations.InitialCreate.Up.html#DNN_Modules_UserVoice_Migrations_InitialCreate_Up
+  commentId: M:DNN.Modules.UserVoice.Migrations.InitialCreate.Up
+  fullName: DNN.Modules.UserVoice.Migrations.InitialCreate.Up()
+  nameWithType: InitialCreate.Up()
+- uid: DNN.Modules.UserVoice.Migrations.InitialCreate.Up*
+  name: Up
+  href: api/DNN.Modules.UserVoice.Migrations.InitialCreate.Up.html
+  commentId: Overload:DNN.Modules.UserVoice.Migrations.InitialCreate.Up
+  fullName: DNN.Modules.UserVoice.Migrations.InitialCreate.Up
+  nameWithType: InitialCreate.Up
 - uid: DNN.Modules.UserVoice.Providers
   name: DNN.Modules.UserVoice.Providers
   href: api/DNN.Modules.UserVoice.Providers.html
