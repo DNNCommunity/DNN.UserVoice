@@ -163,7 +163,7 @@ class Build : NukeBuild
                 .ResetVerbosity()
                 .EnableNoRestore());
 
-            DotNetTest(_ => _
+            var unitTestSettings = new DotNetTestSettings()
                 .SetConfiguration(Configuration)
                 .ResetVerbosity()
                 .SetResultsDirectory(UnitTestsResultsDirectory)
@@ -173,7 +173,19 @@ class Build : NukeBuild
                 .SetCoverletOutput(UnitTestsResultsDirectory / "coverage.xml")
                 .SetExcludeByFile("**/App_LocalResources/**/*")
                 .SetProjectFile(Solution.GetProject("UnitTests"))
-                .SetNoBuild(true));
+                .SetNoBuild(true);
+
+            if (!IsLocalBuild)
+            {
+                Serilog.Log.Information("Running in CI mode - disabling parallel test execution");
+                unitTestSettings = unitTestSettings
+                    .AddProcessAdditionalArguments("--")
+                    .AddProcessAdditionalArguments("xUnit.ParallelizeAssembly=false")
+                    .AddProcessAdditionalArguments("xUnit.ParallelizeTestCollections=false")
+                    .AddProcessAdditionalArguments("xUnit.MaxParallelThreads=1");
+            }
+
+            DotNetTest(unitTestSettings);
 
             ReportGenerator(_ => _
                 .SetReports(UnitTestsResultsDirectory / "*.xml")
@@ -204,7 +216,9 @@ class Build : NukeBuild
                 .ResetVerbosity()
                 .EnableNoRestore());
 
-            DotNetTest(_ => _
+
+
+            var integrationTestSettings = new DotNetTestSettings()
                 .SetConfiguration(Configuration)
                 .ResetVerbosity()
                 .SetResultsDirectory(IntegrationTestsResultsDirectory)
@@ -213,7 +227,19 @@ class Build : NukeBuild
                 .SetLoggers("trx;LogFileName=IntegrationTests.trx")
                 .SetCoverletOutput(IntegrationTestsResultsDirectory / "coverage.xml")
                 .SetProjectFile(Solution.GetProject("IntegrationTests"))
-                .SetNoBuild(true));
+                .SetNoBuild(true);
+
+            if (!IsLocalBuild)
+            {
+                Serilog.Log.Information("Running in CI mode - disabling parallel test execution");
+                integrationTestSettings = integrationTestSettings
+                    .AddProcessAdditionalArguments("--")
+                    .AddProcessAdditionalArguments("xUnit.ParallelizeAssembly=false")
+                    .AddProcessAdditionalArguments("xUnit.ParallelizeTestCollections=false")
+                    .AddProcessAdditionalArguments("xUnit.MaxParallelThreads=1");
+            }
+
+            DotNetTest(integrationTestSettings);
 
             ReportGenerator(_ => _
                 .SetReports(IntegrationTestsResultsDirectory / "*.xml")
