@@ -161,7 +161,7 @@ namespace UnitTests.Services.Ideas
                 var idea4 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, moduleId)
                     .With(i => i.Title, "Deleted SEO idea")
-                    .With(i => i.Description, "This idea mensions SEO but is deleted and should not be included.")
+                    .With(i => i.Description, "This idea mentions SEO but is deleted and should not be included.")
                     .With(i => i.DeletedOn, this.dateTimeProvider.GetUtcNow())
                     .Create();
                 var ideas = new[] { idea1, idea2, idea3, idea4 };
