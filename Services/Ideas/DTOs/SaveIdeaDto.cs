@@ -9,7 +9,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.DTOs
     public class SaveIdeaDto
     {
         /// <summary>
-        /// Gets or sets the unique identifier of the idea (only requireded for updates).
+        /// Gets or sets the unique identifier of the idea (only required for updates).
         /// </summary>
         public int Id { get; set; }
 
