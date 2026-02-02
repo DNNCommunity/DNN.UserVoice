@@ -61,10 +61,7 @@ namespace UnitTests.Services.Ideas
             // Assert
             result.Switch(
                 success => Assert.Fail("Expected an error."),
-                error =>
-                {
-                    var value = Assert.Single(error.Value);
-                });
+                error => Assert.Single(error.Value));
         }
 
         [Fact]
