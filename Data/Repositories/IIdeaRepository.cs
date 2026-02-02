@@ -13,7 +13,7 @@ namespace DNN.Modules.UserVoice.Data.Repositories
     public interface IIdeaRepository : IRepository<Idea>
     {
         /// <summary>
-        /// Checks if a title is uniue for the module.
+        /// Checks if a title is unique for the module.
         /// </summary>
         /// <param name="title">The title to check.</param>
         /// <param name="moduleId">The module identifier.</param>
