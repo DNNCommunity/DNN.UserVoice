@@ -17,25 +17,19 @@ using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.Coverlet;
-using Nuke.Common.Tools.DocFX;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitHub;
 using Nuke.Common.Tools.GitVersion;
-using Nuke.Common.Tools.MSBuild;
 using Nuke.Common.Tools.Npm;
 using Nuke.Common.Tools.NSwag;
 using Nuke.Common.Tools.ReportGenerator;
-using Nuke.Common.Tools.VSTest;
-using Nuke.Common.Tools.Xunit;
 using Nuke.Common.Utilities;
 using Nuke.Common.Utilities.Collections;
 using Octokit;
 using static Nuke.Common.EnvironmentInfo;
 using static Nuke.Common.IO.PathConstruction;
-using static Nuke.Common.IO.TextTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
-using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
 using static Nuke.Common.Tools.Npm.NpmTasks;
 using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 
@@ -73,9 +67,6 @@ class Build : NukeBuild
     [NuGetPackage("WebApiToOpenApiReflector", "WebApiToOpenApiReflector.dll")]
     readonly Tool WebApiToOpenApiReflector;
 
-    [NuGetPackage("docfx", "docfx.dll")]
-    readonly Tool DocFxTool;
-
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
     AbsolutePath InstallDirectory => RootDirectory.Parent.Parent / "Install" / "Module";
     AbsolutePath WebProjectDirectory => RootDirectory / "module.web";
@@ -87,7 +78,6 @@ class Build : NukeBuild
     AbsolutePath UnitTestBadgesDirectory => BadgesDirectory / "UnitTests";
     AbsolutePath IntegrationTestsBadgesDirectory => BadgesDirectory / "IntegrationTests";
     AbsolutePath ClientServicesDirectory => WebProjectDirectory / "src" / "services";
-    AbsolutePath DocFxProjectDirectory => RootDirectory / "docfx_project";
     AbsolutePath DocsDirectory => RootDirectory / "docs";
 
     private const string devViewsPath = "http://localhost:3333/build/";
@@ -167,11 +157,11 @@ class Build : NukeBuild
         .DependsOn(AdjustCasing)
         .Executes(() =>
         {
-            MSBuild(_ => _
+            DotNetBuild(_ => _
                 .SetConfiguration(Configuration)
                 .SetProjectFile(Solution.GetProject("UnitTests"))
-                .SetTargets("Build")
-                .ResetVerbosity());
+                .ResetVerbosity()
+                .EnableNoRestore());
 
             DotNetTest(_ => _
                 .SetConfiguration(Configuration)
@@ -208,11 +198,11 @@ class Build : NukeBuild
         .DependsOn(AdjustCasing)
         .Executes(() =>
         {
-            MSBuild(_ => _
+            DotNetBuild(_ => _
                 .SetConfiguration(Configuration)
                 .SetProjectFile(Solution.GetProject("IntegrationTests"))
-                .SetTargets("Build")
-                .ResetVerbosity());
+                .ResetVerbosity()
+                .EnableNoRestore());
 
             DotNetTest(_ => _
                 .SetConfiguration(Configuration)
@@ -269,23 +259,26 @@ class Build : NukeBuild
                 fileVersion = GitVersion.InformationalVersion;
             }
 
-            MSBuildTasks.MSBuild(s => s
+            DotNetBuild(s => s
                 .SetProjectFile(Solution.GetProject("Module"))
                 .SetConfiguration(Configuration)
                 .SetAssemblyVersion(assemblyVersion)
-                .SetFileVersion(fileVersion));
+                .SetFileVersion(fileVersion)
+                .EnableNoRestore());
 
-            MSBuildTasks.MSBuild(s => s
+            DotNetBuild(s => s
                 .SetProjectFile(Solution.GetProject("UnitTests"))
                 .SetConfiguration(Configuration)
                 .SetAssemblyVersion(assemblyVersion)
-                .SetFileVersion(fileVersion));
+                .SetFileVersion(fileVersion)
+                .EnableNoRestore());
 
-            MSBuildTasks.MSBuild(s => s
+            DotNetBuild(s => s
                 .SetProjectFile(Solution.GetProject("IntegrationTests"))
                 .SetConfiguration(Configuration)
                 .SetAssemblyVersion(assemblyVersion)
-                .SetFileVersion(fileVersion));
+                .SetFileVersion(fileVersion)
+                .EnableNoRestore());
         });
 
     Target SetManifestVersions => _ => _
@@ -623,7 +616,6 @@ class Build : NukeBuild
         .DependsOn(SetRelativeScripts)
         .DependsOn(Test)
         .DependsOn(UpdateTokens)
-        .DependsOn(Docs)
         .DependsOn(SetDependencyVersions)
         .Produces(ArtifactsDirectory / "*.zip")
         .Executes(() =>
@@ -709,7 +701,6 @@ class Build : NukeBuild
         });
 
     Target Swagger => _ => _
-        .Before(DocFx)
         .DependsOn(Compile)
         .Executes(() =>
         {
@@ -738,57 +729,12 @@ class Build : NukeBuild
 
     Target CleanDocsFolder => _ => _
         .Before(Swagger)
-        .Before(DocFx)
         .Executes(() =>
         {
             DocsDirectory.CreateOrCleanDirectory();
         });
 
-    Target DocFx => _ => _
-        .DependsOn(Compile)
-        .DependsOn(TsDoc)
-        .DependsOn(ComponentsDocs)
-        .DependsOn(Swagger)
-        .Executes(() =>
-        {
-            DocFxTool("metadata", workingDirectory: DocFxProjectDirectory);
-
-            var sb = new StringBuilder();
-            sb.AppendLine("# Backend API documentation")
-                .AppendLine()
-                .AppendLine("This section documents the APIs available in the backend (c#) code.")
-                .AppendLine()
-                .AppendLine("Please expand the namespaces to navigate through the APIs.");
-            (DocFxProjectDirectory / "api" / "index.md").WriteAllText(sb.ToString());
-
-            NpmTasks.NpmInstall(s => s
-                .SetProcessWorkingDirectory(DocFxProjectDirectory));
-
-            DocFxTool($"build --output={RootDirectory}", workingDirectory: DocFxProjectDirectory);
-        });
-
-    Target Docs => _ => _
-        .DependsOn(CleanDocsFolder)
-        .DependsOn(Swagger)
-        .DependsOn(ComponentsDocs)
-        .DependsOn(TestsDocs)
-        .DependsOn(TsDoc)
-        .DependsOn(DocFx)
-        .Executes(() =>
-        {
-            if (InvokedTargets.Contains(Docs))
-            {
-                NpmTasks.NpmInstall(s => s
-                    .SetProcessWorkingDirectory(DocFxProjectDirectory));
-
-                NpmTasks.NpmRun(s => s
-                    .SetProcessWorkingDirectory(DocFxProjectDirectory)
-                    .SetArguments("watch_docfx"));
-            }
-        });
-
     Target DeployGeneratedFiles => _ => _
-        .DependsOn(Docs)
         .DependsOn(Test)
         .OnlyWhenDynamic(() => GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnDevelopBranch() || GitRepository.IsOnReleaseBranch())
         .Executes(() =>
@@ -833,81 +779,6 @@ class Build : NukeBuild
             UnitTestsResultsDirectory.CopyToDirectory(
                unitTestsDocsDirectory,
                ExistsPolicy.MergeAndOverwrite);
-        });
-
-    Target TsDoc => _ => _
-        .Executes(() =>
-        {
-            var tempDirectory = WebProjectDirectory / "temp";
-            var tempMdDirectory = WebProjectDirectory / "tempmd";
-            var clientDocDirectory = DocFxProjectDirectory / "client";
-
-            tempDirectory.CreateOrCleanDirectory();
-            tempMdDirectory.CreateOrCleanDirectory();
-            clientDocDirectory.CreateOrCleanDirectory();
-
-            NpmRun(s => s
-                .SetProcessWorkingDirectory(WebProjectDirectory)
-                .SetArguments("tsdoc"));
-
-            tempMdDirectory.CopyToDirectory(
-                clientDocDirectory,
-                ExistsPolicy.MergeAndOverwrite);
-
-            // Create a table of content
-            var toc = new StringBuilder();
-
-            var files = clientDocDirectory.GlobFiles("**/*.md");
-            files = files
-                .OrderBy(f => f.Name.Split('.').Count())
-                .ThenBy(f => f.Name)
-                .ToList();
-
-            files.ForEach(file =>
-            {
-                var fileInfo = new FileInfo(file);
-                if (fileInfo.Name == "index.md" || fileInfo.Name.Split('.').Count() > 3)
-                {
-                    return;
-                }
-
-                var fileLines = file.ReadAllLines();
-                var cleanName = fileLines[4];
-                cleanName = string.Join(' ', cleanName.Split(' ').Skip(1).ToArray());
-                toc.AppendLine($"{new String('#', fileInfo.Name.Split('.').Count() - 1)} [{cleanName}](./{fileInfo.Name})");
-            });
-            (clientDocDirectory / "toc.md").WriteAllText(toc.ToString());
-
-            tempDirectory.DeleteDirectory();
-            tempMdDirectory.DeleteDirectory();
-        });
-
-    Target ComponentsDocs => _ => _
-        .DependsOn(BuildFrontEnd)
-        .Executes(() =>
-        {
-            var componentsDocsDirectory = DocFxProjectDirectory / "components";
-            componentsDocsDirectory.CreateOrCleanDirectory();
-            var componentsDirectory = WebProjectDirectory / "src" / "components";
-            var docFiles = componentsDirectory.GlobFiles("**/*.md");
-            var toc = new StringBuilder();
-            docFiles.ForEach(f =>
-            {
-                var fileInfo = new FileInfo(f);
-                if (fileInfo.Directory.Name == "usage")
-                {
-                    return;
-                }
-                var newFileName = fileInfo.Directory.Name + ".md";
-                f.CopyToDirectory(componentsDocsDirectory / newFileName, ExistsPolicy.MergeAndOverwrite, createDirectories: true);
-                toc.AppendLine($"# [{fileInfo.Directory.Name}]({newFileName})");
-            });
-            toc.AppendLine();
-            (componentsDocsDirectory / "toc.md").WriteAllText(toc.ToString());
-
-            var index = WebProjectDirectory.GlobFiles("readme.md").FirstOrDefault();
-            index.CopyToDirectory(componentsDocsDirectory, ExistsPolicy.MergeAndOverwrite, createDirectories: true);
-            (componentsDocsDirectory / "readme.md").Rename("index.md", ExistsPolicy.FileOverwrite);
         });
 
     Target EnsureBootstrapingScriptsAreExecutable => _ => _

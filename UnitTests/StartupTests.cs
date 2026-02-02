@@ -1,6 +1,10 @@
-﻿using DNN.Modules.UserVoice.Data;
+﻿using DNN.Modules.UserVoice.Adapters;
+using DNN.Modules.UserVoice.Data;
 using DNN.Modules.UserVoice.Providers;
+using DNN.Modules.UserVoice.Services.Ideas;
+using DNN.Modules.UserVoice.Services.Ideas.DTOs;
 using DNN.Modules.UserVoice.Services.Localization;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -18,9 +22,20 @@ namespace UnitTests
             var startup = new DNN.Modules.UserVoice.Startup();
             var types = new List<Type>()
             {
+                // Data
                 typeof(ModuleDbContext),
+                
+                // Services
                 typeof(ILocalizationService),
+                typeof(IIdeaService),
+
+                // Validators
+                typeof(IValidator<SaveIdeaDtoWithContext>),
+                typeof(IValidator<RequestIdeaDeletionDtoWithContext>),
+
+                // Adapters
                 typeof(IDateTimeProvider),
+                typeof(IUserControllerAdapter),
             };
 
             // Act

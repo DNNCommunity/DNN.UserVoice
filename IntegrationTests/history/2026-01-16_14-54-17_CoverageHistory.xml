@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2026-01-16_14-54-17" tag="">
+  <assembly name="DNN.Modules.UserVoice">
+    <class name="DNN.Modules.UserVoice.Common.Extensions.IQueryableExtensions" coveredlines="0" coverablelines="3" totallines="33" coveredbranches="0" totalbranches="2" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Controllers.LocalizationController" coveredlines="0" coverablelines="4" totallines="42" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Controllers.ModuleApiController" coveredlines="0" coverablelines="5" totallines="46" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Controllers.ServiceRouteMapper" coveredlines="2" coverablelines="2" totallines="19" coveredbranches="2" totalbranches="2" coveredcodeelements="1" fullcoveredcodeelements="1" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Data.Entities.BaseEntity" coveredlines="0" coverablelines="5" totallines="30" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="5" />
+    <class name="DNN.Modules.UserVoice.Data.Entities.Idea" coveredlines="0" coverablelines="3" totallines="36" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="3" />
+    <class name="DNN.Modules.UserVoice.Data.Repositories.IdeaRepository" coveredlines="0" coverablelines="2" totallines="23" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Data.Repositories.PagedList`1" coveredlines="0" coverablelines="17" totallines="61" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="6" />
+    <class name="DNN.Modules.UserVoice.Data.Repositories.Repository`1" coveredlines="0" coverablelines="64" totallines="166" coveredbranches="0" totalbranches="20" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="8" />
+    <class name="DNN.Modules.UserVoice.Extensions.ServiceCollectionExtensions" coveredlines="0" coverablelines="7" totallines="47" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="3" />
+    <class name="DNN.Modules.UserVoice.Migrations.Configuration" coveredlines="0" coverablelines="5" totallines="34" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Migrations.InitialCreate" coveredlines="0" coverablelines="20" totallines="66" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="6" />
+    <class name="DNN.Modules.UserVoice.Providers.DateTimeProvider" coveredlines="0" coverablelines="1" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="1" />
+    <class name="DNN.Modules.UserVoice.Services.Ideas.DTOs.SaveIdeaDto" coveredlines="0" coverablelines="2" totallines="21" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="2" />
+    <class name="DNN.Modules.UserVoice.Services.Ideas.DTOs.SaveIdeaDtoWithContext" coveredlines="0" coverablelines="3" totallines="26" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="3" />
+    <class name="DNN.Modules.UserVoice.Services.Ideas.Validators.SaveAssetDtoValidator" coveredlines="0" coverablelines="5" totallines="24" coveredbranches="0" totalbranches="0" coveredcodeelements="0" fullcoveredcodeelements="0" totalcodeelements="1" />
+  </assembly>
+</coverage>

@@ -77,8 +77,16 @@ namespace DNN.Modules.UserVoice.Services.Localization
         {
             var modelvalidation = new ModelValidationInfo
             {
+                CannotEditIdeaNotYours = this.GetString("CannotEditIdeaNotYours", "ModelValidation.resx"),
+                DescriptionRequired = this.GetString("DescriptionRequired", "ModelValidation.resx"),
+                DescriptionTooLong = this.GetString("DescriptionTooLong", "ModelValidation.resx"),
+                IdeaNotFound = this.GetString("IdeaNotFound", "ModelValidation.resx"),
                 IdGreaterThanZero = this.GetString("IdGreaterThanZero", "ModelValidation.resx"),
-                NameRequired = this.GetString("NameRequired", "ModelValidation.resx"),
+                ModuleRequired = this.GetString("ModuleRequired", "ModelValidation.resx"),
+                TitleRequired = this.GetString("TitleRequired", "ModelValidation.resx"),
+                TitleTooLong = this.GetString("TitleTooLong", "ModelValidation.resx"),
+                TitleUnique = this.GetString("TitleUnique", "ModelValidation.resx"),
+                UserRequired = this.GetString("UserRequired", "ModelValidation.resx"),
 
             };
             viewModel.ModelValidation = modelvalidation;

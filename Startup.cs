@@ -22,6 +22,8 @@ namespace DNN.Modules.UserVoice
         {
             services.AddModuleData();
             services.AddModuleServices();
+            services.AddValidators();
+            services.AddAdapters();
         }
     }
 }

@@ -1,0 +1,21 @@
+﻿// MIT License
+// Copyright DNN Community
+
+namespace DNN.Modules.UserVoice.Services.Ideas.DTOs
+{
+    /// <summary>
+    /// Basic information about an idea.
+    /// </summary>
+    public class IdeaViewModel
+    {
+        /// <summary>
+        /// Gets or sets the unique identifier for the idea.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title associated with the idea.
+        /// </summary>
+        public string Title { get; set; }
+    }
+}

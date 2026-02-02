@@ -18,26 +18,58 @@ namespace DNN.Modules.UserVoice.Services.Localization
     public class LocalizationViewModel
     {
         /// <summary>
-        /// Localized strings present the ModelValidation resources.
+        /// Localized strings present in the ModelValidation resources.
         /// </summary>
-        public ModelValidationInfo ModelValidation { get; set; }
+        public ModelValidationInfo ModelValidation { get; set; } = new ModelValidationInfo();
 
         /// <summary>
-        /// Localized strings present the UI resources.
+        /// Localized strings present in the UI resources.
         /// </summary>
-        public UIInfo UI { get; set; }
+        public UIInfo UI { get; set; } = new UIInfo();
         /// <summary>
         /// Localized strings for the ModelValidation resources.
         /// </summary>
         public class ModelValidationInfo
         {
+            /// <summary>Gets or sets the CannotEditIdeaNotYours localized text.</summary>
+            /// <example>You cannot edit this idea because it was not created by you</example>
+            public string CannotEditIdeaNotYours { get; set; } = "You cannot edit this idea because it was not created by you";
+
+            /// <summary>Gets or sets the DescriptionRequired localized text.</summary>
+            /// <example>A description is required</example>
+            public string DescriptionRequired { get; set; } = "A description is required";
+
+            /// <summary>Gets or sets the DescriptionTooLong localized text.</summary>
+            /// <example>The description is limited to {0} characters</example>
+            public string DescriptionTooLong { get; set; } = "The description is limited to {0} characters";
+
+            /// <summary>Gets or sets the IdeaNotFound localized text.</summary>
+            /// <example>The Idea specified was not found</example>
+            public string IdeaNotFound { get; set; } = "The Idea specified was not found";
+
             /// <summary>Gets or sets the IdGreaterThanZero localized text.</summary>
             /// <example>The Id must be an integer bigger than 0</example>
-            public string IdGreaterThanZero { get; set; }
+            public string IdGreaterThanZero { get; set; } = "The Id must be an integer bigger than 0";
 
-            /// <summary>Gets or sets the NameRequired localized text.</summary>
-            /// <example>The name is required</example>
-            public string NameRequired { get; set; }
+            /// <summary>Gets or sets the ModuleRequired localized text.</summary>
+            /// <example>A ModuleID is required</example>
+            public string ModuleRequired { get; set; } = "A ModuleID is required";
+
+            /// <summary>Gets or sets the TitleRequired localized text.</summary>
+            /// <example>The title is required</example>
+            public string TitleRequired { get; set; } = "The title is required";
+
+            /// <summary>Gets or sets the TitleTooLong localized text.</summary>
+            /// <example>The title is limited to {0} characters</example>
+            public string TitleTooLong { get; set; } = "The title is limited to {0} characters";
+
+            /// <summary>Gets or sets the TitleUnique localized text.</summary>
+            /// <example>Titles must be unique and another item already exists with this title</example>
+            public string TitleUnique { get; set; } = "Titles must be unique and another item already exists with this title";
+
+            /// <summary>Gets or sets the UserRequired localized text.</summary>
+            /// <example>The user is required</example>
+            public string UserRequired { get; set; } = "The user is required";
 
 
         }
@@ -49,35 +81,35 @@ namespace DNN.Modules.UserVoice.Services.Localization
         {
             /// <summary>Gets or sets the Cancel localized text.</summary>
             /// <example>Cancel</example>
-            public string Cancel { get; set; }
+            public string Cancel { get; set; } = "Cancel";
 
             /// <summary>Gets or sets the Create localized text.</summary>
             /// <example>Create</example>
-            public string Create { get; set; }
+            public string Create { get; set; } = "Create";
 
             /// <summary>Gets or sets the Delete localized text.</summary>
             /// <example>Delete</example>
-            public string Delete { get; set; }
+            public string Delete { get; set; } = "Delete";
 
             /// <summary>Gets or sets the No localized text.</summary>
             /// <example>No</example>
-            public string No { get; set; }
+            public string No { get; set; } = "No";
 
             /// <summary>Gets or sets the Save localized text.</summary>
             /// <example>Save</example>
-            public string Save { get; set; }
+            public string Save { get; set; } = "Save";
 
             /// <summary>Gets or sets the SearchPlaceholder localized text.</summary>
             /// <example>Search</example>
-            public string SearchPlaceholder { get; set; }
+            public string SearchPlaceholder { get; set; } = "Search";
 
             /// <summary>Gets or sets the ShownItems localized text.</summary>
             /// <example>Showing {0} of {1} items.</example>
-            public string ShownItems { get; set; }
+            public string ShownItems { get; set; } = "Showing {0} of {1} items.";
 
             /// <summary>Gets or sets the Yes localized text.</summary>
             /// <example>Yes</example>
-            public string Yes { get; set; }
+            public string Yes { get; set; } = "Yes";
 
 
         }
