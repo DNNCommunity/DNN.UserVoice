@@ -27,10 +27,15 @@ namespace DNN.Modules.UserVoice.Data.Repositories
         }
 
         /// <inheritdoc/>
-        public async Task<bool> IsTitleUniqueAsync(string title, int moduleId, CancellationToken token)
+        public async Task<bool> IsTitleUniqueAsync(string title, int moduleId, int ideaId, CancellationToken token)
         {
             var exists = await this.dataContext.Ideas
-                .AnyAsync(x => x.Title.Trim() == title.Trim() && x.ModuleId == moduleId, token);
+                .AnyAsync(
+                    x =>
+                        x.Title.Trim() == title.Trim() &&
+                        x.ModuleId == moduleId &&
+                        x.Id != ideaId,
+                    token);
             return !exists;
         }
     }

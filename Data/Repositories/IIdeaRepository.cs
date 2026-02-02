@@ -17,8 +17,9 @@ namespace DNN.Modules.UserVoice.Data.Repositories
         /// </summary>
         /// <param name="title">The title to check.</param>
         /// <param name="moduleId">The module identifier.</param>
+        /// <param name="ideaId">The idea identifier to exclude from the check.</param>
         /// <param name="token">The cancellation token.</param>
         /// <returns>True if the title is unique for the module, false otherwise.</returns>
-        Task<bool> IsTitleUniqueAsync(string title, int moduleId, CancellationToken token);
+        Task<bool> IsTitleUniqueAsync(string title, int moduleId, int ideaId, CancellationToken token);
     }
 }

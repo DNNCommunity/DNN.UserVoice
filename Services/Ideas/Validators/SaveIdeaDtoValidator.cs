@@ -87,7 +87,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
 
         private async Task<bool> TitleIsUnique(SaveIdeaDtoWithContext dto, string title, CancellationToken token)
         {
-            var isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, dto.ModuleId, token);
+            var isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, dto.ModuleId, dto.Dto.Id, token);
             return isUnique;
         }
     }

@@ -95,6 +95,7 @@ namespace UnitTests.Services.Ideas.Validators
                 .IsTitleUniqueAsync(
                     dto.Dto.Title,
                     dto.ModuleId,
+                    Arg.Any<int>(),
                     this.token)
                 .Returns(true);
 
@@ -136,6 +137,7 @@ namespace UnitTests.Services.Ideas.Validators
                 .IsTitleUniqueAsync(
                     dto.Dto.Title,
                     dto.ModuleId,
+                    Arg.Any<int>(),
                     this.token)
                 .Returns(true);
 
@@ -176,6 +178,7 @@ namespace UnitTests.Services.Ideas.Validators
                 .IsTitleUniqueAsync(
                     dto.Dto.Title,
                     dto.ModuleId,
+                    Arg.Any<int>(),
                     this.token)
                 .Returns(true);
             var user = Substitute.For<IUserInfo>();
@@ -264,7 +267,11 @@ namespace UnitTests.Services.Ideas.Validators
                 .With(x => x.Dto, dto)
                 .Create();
             this.ideaRepository
-                .IsTitleUniqueAsync(dto.Title, dtoWithContext.ModuleId, this.token)
+                .IsTitleUniqueAsync(
+                    dto.Title,
+                    dtoWithContext.ModuleId,
+                    Arg.Any<int>(),
+                    this.token)
                 .Returns(false);
 
             // Act
@@ -339,6 +346,7 @@ namespace UnitTests.Services.Ideas.Validators
                 .IsTitleUniqueAsync(
                     dtoWithContext.Dto.Title,
                     dtoWithContext.ModuleId,
+                    Arg.Any<int>(),
                     this.token)
                 .Returns(true);
             

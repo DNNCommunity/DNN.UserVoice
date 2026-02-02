@@ -47,7 +47,7 @@ namespace UnitTests.Data.Repositories
             await this.dataContext.SaveChangesAsync();
 
             // Act
-            bool isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, thisModuleId, this.token);
+            bool isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, thisModuleId, 123, this.token);
 
             // Assert
             Assert.True(isUnique);
@@ -67,10 +67,31 @@ namespace UnitTests.Data.Repositories
             await this.dataContext.SaveChangesAsync();
             
             // Act
-            bool isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, moduleId, this.token);
+            bool isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, moduleId, 123, this.token);
             
             // Assert
             Assert.False(isUnique);
+        }
+
+        [Fact]
+        public async Task IsTitleUnique_WhenItExistsForTheIdeaBeingEdited()
+        {
+            // Arrange
+            var title = fixture.Create<string>();
+            var moduleId = fixture.Create<int>();
+            var existingIdea = fixture.Build<DNN.Modules.UserVoice.Data.Entities.Idea>()
+                .With(x => x.Title, title)
+                .With(x => x.ModuleId, moduleId)
+                .Create();
+            this.dataContext.Ideas.Add(existingIdea);
+            await this.dataContext.SaveChangesAsync();
+            
+            // Act
+            bool isUnique = await this.ideaRepository.IsTitleUniqueAsync(title, moduleId, existingIdea.Id, this.token);
+            
+            // Assert
+            Assert.True(isUnique);
+
         }
     }
 }
