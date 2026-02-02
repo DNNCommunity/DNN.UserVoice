@@ -16,7 +16,7 @@
       <releaseNotes src="ReleaseNotes.html" />
       <azureCompatible>True</azureCompatible>
       <dependencies>
-        <dependency type="coreVersion">10.01.02</dependency>
+        <dependency type="coreVersion">10.02.01</dependency>
       </dependencies>
       <components>
         <component type="Assembly">
