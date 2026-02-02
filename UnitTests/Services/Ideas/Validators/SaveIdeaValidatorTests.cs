@@ -19,7 +19,7 @@ namespace UnitTests.Services.Ideas.Validators
     public class SaveIdeaValidatorTests
     {
         // Utilities
-        private Fixture fixture;
+        private readonly Fixture fixture;
         private CancellationToken token;
 
         // Dependencies
