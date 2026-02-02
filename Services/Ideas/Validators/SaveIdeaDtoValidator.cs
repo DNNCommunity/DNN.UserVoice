@@ -47,7 +47,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
                 .NotNull()
                 .DependentRules(() =>
                 {
-                    var titleMaxLength = MaxLenght.Of<Idea>(x => x.Title);
+                    var titleMaxLength = MaxLength.Of<Idea>(x => x.Title);
                     this.RuleFor(x => x.Dto.Title)
                         .NotEmpty()
                             .WithMessage(this.localization.ModelValidation.TitleRequired)
@@ -58,8 +58,8 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
                     this.RuleFor(x => x.Dto.Description)
                         .NotEmpty()
                             .WithMessage(this.localization.ModelValidation.DescriptionRequired)
-                        .MaximumLength(MaxLenght.Of<Idea>(x => x.Description))
-                            .WithMessage(string.Format(this.localization.ModelValidation.DescriptionTooLong, MaxLenght.Of<Idea>(x => x.Description)));
+                        .MaximumLength(MaxLength.Of<Idea>(x => x.Description))
+                            .WithMessage(string.Format(this.localization.ModelValidation.DescriptionTooLong, MaxLength.Of<Idea>(x => x.Description)));
                     this.RuleFor(x => x.ActingUserId)
                         .MustAsync(this.IsAllowedToEdit);
                 });

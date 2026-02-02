@@ -232,7 +232,7 @@ namespace UnitTests.Services.Ideas.Validators
         public async Task TitleTooLongFails()
         {
             // Arrange
-            var maxLength = MaxLenght.Of<Idea>(x => x.Title);
+            var maxLength = MaxLength.Of<Idea>(x => x.Title);
             var longTitle = new string('A', maxLength + 1);
             var dto = this.fixture.Build<SaveIdeaDto>()
                 .With(x => x.Title, longTitle)
@@ -300,7 +300,7 @@ namespace UnitTests.Services.Ideas.Validators
         public async Task DescriptionTooLongFails()
         {
             // Arrange
-            var maxLength = MaxLenght.Of<Idea>(x => x.Description);
+            var maxLength = MaxLength.Of<Idea>(x => x.Description);
             var longDescription = new string('A', maxLength + 1);
             var dto = this.fixture.Build<SaveIdeaDto>()
                 .With(x => x.Description, longDescription)

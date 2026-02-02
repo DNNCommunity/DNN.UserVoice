@@ -13,13 +13,13 @@ namespace DNN.Modules.UserVoice.Common.Utilities
     /// An utility class for maximum length constants.
     /// </summary>
     [ExcludeFromCodeCoverage]
-    internal static class MaxLenght
+    internal static class MaxLength
     {
         /// <summary>
-        /// Gets the maximum lenght supported by an entity decorated with StringLength attribute.
+        /// Gets the maximum length supported by an entity decorated with StringLength attribute.
         /// </summary>
         /// <typeparam name="T">The type of the property.</typeparam>
-        /// <param name="property">The property to get the max lenght for.</param>
+        /// <param name="property">The property to get the max length for.</param>
         /// <returns>The maximum supported length.</returns>
         public static int Of<T>(Expression<Func<T, string>> property)
         {
