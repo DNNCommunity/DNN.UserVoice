@@ -40,26 +40,6 @@ namespace DNN.Modules.UserVoice.Data.Repositories
         Task<T> GetByIdAsync(int id, CancellationToken token = default);
 
         /// <summary>
-        /// Gets a page of entities.
-        /// </summary>
-        /// <param name="page">The page number to get.</param>
-        /// <param name="pageSize">The size of each page.</param>
-        /// <param name="filter">An optional filtering expression.</param>
-        /// <param name="orderBy">An optional ordering expression.</param>
-        /// <param name="orderByDescending">If true, will order the results in descending order.</param>
-        /// <param name="token">A token that can be used to abort the request early.</param>
-        /// <param name="include">If specified, will include the defined related entities.</param>
-        /// <returns><see cref="PagedList{T}"/>.</returns>
-        Task<PagedList<T>> GetPageAsync(
-            int page,
-            int pageSize,
-            Expression<Func<T, bool>> filter = null,
-            Expression<Func<T, object>> orderBy = null,
-            bool orderByDescending = false,
-            CancellationToken token = default,
-            params Expression<Func<T, object>>[] include);
-
-        /// <summary>
         /// Creates an entity and saves it to the database.
         /// </summary>
         /// <param name="entity">The entity to save.</param>

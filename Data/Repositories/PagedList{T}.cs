@@ -1,10 +1,10 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using System.Collections.Generic;
-
 namespace DNN.Modules.UserVoice.Data.Repositories
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Presents a list of entities in pages.
     /// </summary>

@@ -1,18 +1,17 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DNN.Modules.UserVoice.Data.Entities;
-using DNN.Modules.UserVoice.Providers;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace DNN.Modules.UserVoice.Data.Repositories
 {
+    using DNN.Modules.UserVoice.Data.Entities;
+    using DNN.Modules.UserVoice.Providers;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Threading;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Provides common generic data access methods for entities.
     /// </summary>
@@ -54,67 +53,6 @@ namespace DNN.Modules.UserVoice.Data.Repositories
         public async Task<T> GetByIdAsync(int id, CancellationToken token = default)
         {
             return await this.entities.FindAsync(token, id);
-        }
-
-        /// <inheritdoc/>
-        public virtual async Task<PagedList<T>> GetPageAsync(
-            int page,
-            int pageSize,
-            Expression<Func<T, bool>> filter = null,
-            Expression<Func<T, object>> orderBy = null,
-            bool orderByDescending = false,
-            CancellationToken token = default,
-            params Expression<Func<T, object>>[] include)
-        {
-            if (page < 1)
-            {
-                page = 1;
-            }
-
-            if (pageSize < 1)
-            {
-                pageSize = 1;
-            }
-
-            IQueryable<T> query = this.entities;
-
-            // Includes
-            if (include?.Any() == true)
-            {
-                query = include.Aggregate(query, (current, inc) => current.Include(inc));
-            }
-
-            // Filter
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
-
-            // Sorting
-            if (orderBy == null)
-            {
-                orderBy = i => i.Id;
-            }
-
-            query = orderByDescending
-                ? query.OrderByDescending(orderBy)
-                : query.OrderBy(orderBy);
-
-            // Paging
-            var resultCount = await query.CountAsync();
-            int skip = pageSize * (page - 1);
-            var items = await query
-                .Skip(skip)
-                .Take(pageSize)
-                .ToListAsync();
-            var pageCount = (resultCount + pageSize - 1) / pageSize;
-
-            return new PagedList<T>(
-                items,
-                page,
-                pageSize,
-                resultCount,
-                pageCount);
         }
 
         /// <inheritdoc/>

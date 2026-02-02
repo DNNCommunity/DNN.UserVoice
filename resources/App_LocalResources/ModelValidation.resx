@@ -117,10 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IdGreaterThanZero.Text" xml:space="preserve">
+  <data name="CannotEditIdeaNotYours" xml:space="preserve">
+    <value>You cannot edit this idea because it was not created by you</value>
+  </data>
+  <data name="DescriptionRequired" xml:space="preserve">
+    <value>A description is required</value>
+  </data>
+  <data name="DescriptionTooLong" xml:space="preserve">
+    <value>The description is limited to {0} characters</value>
+  </data>
+  <data name="IdeaNotFound" xml:space="preserve">
+    <value>The Idea specified was not found</value>
+  </data>
+  <data name="IdGreaterThanZero" xml:space="preserve">
     <value>The Id must be an integer bigger than 0</value>
   </data>
-  <data name="NameRequired.Text" xml:space="preserve">
-    <value>The name is required</value>
+  <data name="ModuleRequired" xml:space="preserve">
+    <value>A ModuleID is required</value>
+  </data>
+  <data name="TitleRequired" xml:space="preserve">
+    <value>The title is required</value>
+  </data>
+  <data name="TitleTooLong" xml:space="preserve">
+    <value>The title is limited to {0} characters</value>
+  </data>
+  <data name="TitleUnique" xml:space="preserve">
+    <value>Titles must be unique and another item already exists with this title</value>
+  </data>
+  <data name="UserRequired" xml:space="preserve">
+    <value>The user is required</value>
   </data>
 </root>

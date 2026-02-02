@@ -106,9 +106,9 @@ export class LocalizationClient extends ClientBase {
 
 /** A viewmodel that exposes all resource keys in strong types. */
 export class LocalizationViewModel implements ILocalizationViewModel {
-    /** Localized strings present the ModelValidation resources. */
+    /** Localized strings present in the ModelValidation resources. */
     modelValidation?: ModelValidationInfo | undefined;
-    /** Localized strings present the UI resources. */
+    /** Localized strings present in the UI resources. */
     uI?: UIInfo | undefined;
 
     constructor(data?: ILocalizationViewModel) {
@@ -144,18 +144,34 @@ export class LocalizationViewModel implements ILocalizationViewModel {
 
 /** A viewmodel that exposes all resource keys in strong types. */
 export interface ILocalizationViewModel {
-    /** Localized strings present the ModelValidation resources. */
+    /** Localized strings present in the ModelValidation resources. */
     modelValidation?: ModelValidationInfo | undefined;
-    /** Localized strings present the UI resources. */
+    /** Localized strings present in the UI resources. */
     uI?: UIInfo | undefined;
 }
 
 /** Localized strings for the ModelValidation resources. */
 export class ModelValidationInfo implements IModelValidationInfo {
+    /** Gets or sets the CannotEditIdeaNotYours localized text. */
+    cannotEditIdeaNotYours?: string | undefined;
+    /** Gets or sets the DescriptionRequired localized text. */
+    descriptionRequired?: string | undefined;
+    /** Gets or sets the DescriptionTooLong localized text. */
+    descriptionTooLong?: string | undefined;
+    /** Gets or sets the IdeaNotFound localized text. */
+    ideaNotFound?: string | undefined;
     /** Gets or sets the IdGreaterThanZero localized text. */
     idGreaterThanZero?: string | undefined;
-    /** Gets or sets the NameRequired localized text. */
-    nameRequired?: string | undefined;
+    /** Gets or sets the ModuleRequired localized text. */
+    moduleRequired?: string | undefined;
+    /** Gets or sets the TitleRequired localized text. */
+    titleRequired?: string | undefined;
+    /** Gets or sets the TitleTooLong localized text. */
+    titleTooLong?: string | undefined;
+    /** Gets or sets the TitleUnique localized text. */
+    titleUnique?: string | undefined;
+    /** Gets or sets the UserRequired localized text. */
+    userRequired?: string | undefined;
 
     constructor(data?: IModelValidationInfo) {
         if (data) {
@@ -168,8 +184,16 @@ export class ModelValidationInfo implements IModelValidationInfo {
 
     init(_data?: any) {
         if (_data) {
+            this.cannotEditIdeaNotYours = _data["CannotEditIdeaNotYours"];
+            this.descriptionRequired = _data["DescriptionRequired"];
+            this.descriptionTooLong = _data["DescriptionTooLong"];
+            this.ideaNotFound = _data["IdeaNotFound"];
             this.idGreaterThanZero = _data["IdGreaterThanZero"];
-            this.nameRequired = _data["NameRequired"];
+            this.moduleRequired = _data["ModuleRequired"];
+            this.titleRequired = _data["TitleRequired"];
+            this.titleTooLong = _data["TitleTooLong"];
+            this.titleUnique = _data["TitleUnique"];
+            this.userRequired = _data["UserRequired"];
         }
     }
 
@@ -182,18 +206,42 @@ export class ModelValidationInfo implements IModelValidationInfo {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
+        data["CannotEditIdeaNotYours"] = this.cannotEditIdeaNotYours;
+        data["DescriptionRequired"] = this.descriptionRequired;
+        data["DescriptionTooLong"] = this.descriptionTooLong;
+        data["IdeaNotFound"] = this.ideaNotFound;
         data["IdGreaterThanZero"] = this.idGreaterThanZero;
-        data["NameRequired"] = this.nameRequired;
+        data["ModuleRequired"] = this.moduleRequired;
+        data["TitleRequired"] = this.titleRequired;
+        data["TitleTooLong"] = this.titleTooLong;
+        data["TitleUnique"] = this.titleUnique;
+        data["UserRequired"] = this.userRequired;
         return data;
     }
 }
 
 /** Localized strings for the ModelValidation resources. */
 export interface IModelValidationInfo {
+    /** Gets or sets the CannotEditIdeaNotYours localized text. */
+    cannotEditIdeaNotYours?: string | undefined;
+    /** Gets or sets the DescriptionRequired localized text. */
+    descriptionRequired?: string | undefined;
+    /** Gets or sets the DescriptionTooLong localized text. */
+    descriptionTooLong?: string | undefined;
+    /** Gets or sets the IdeaNotFound localized text. */
+    ideaNotFound?: string | undefined;
     /** Gets or sets the IdGreaterThanZero localized text. */
     idGreaterThanZero?: string | undefined;
-    /** Gets or sets the NameRequired localized text. */
-    nameRequired?: string | undefined;
+    /** Gets or sets the ModuleRequired localized text. */
+    moduleRequired?: string | undefined;
+    /** Gets or sets the TitleRequired localized text. */
+    titleRequired?: string | undefined;
+    /** Gets or sets the TitleTooLong localized text. */
+    titleTooLong?: string | undefined;
+    /** Gets or sets the TitleUnique localized text. */
+    titleUnique?: string | undefined;
+    /** Gets or sets the UserRequired localized text. */
+    userRequired?: string | undefined;
 }
 
 /** Localized strings for the UI resources. */

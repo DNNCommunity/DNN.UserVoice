@@ -349,9 +349,9 @@ namespace BuildHelpers
                 var fileName = new FileInfo(localizationFiles[i]).Name.Split('.')[0];
                 sb
                     .AppendLine("        /// <summary>")
-                   .AppendLine($"        /// Localized strings present the {fileName} resources.")
+                   .AppendLine($"        /// Localized strings present in the {fileName} resources.")
                     .AppendLine("        /// </summary>")
-                   .AppendLine($"        public {fileName}Info {fileName}" + " { get; set; }");
+                   .AppendLine($"        public {fileName}Info {fileName} {{ get; set; }} = new {fileName}Info();");
                 if (i < localizationFiles.Count() - 1) sb.AppendLine();
             }
             sb.AppendLine(GetLocalizationFilePropertiesClasses(localizationFiles));
@@ -395,7 +395,7 @@ namespace BuildHelpers
                 sb
                     .AppendLine($"            /// <summary>Gets or sets the {name} localized text.</summary>")
                     .AppendLine($"            /// <example>{value}</example>")
-                    .AppendLine($"            public string {name}" + " { get; set; }")
+                    .AppendLine($"            public string {name} {{ get; set; }} = \"{value}\";")
                     .AppendLine();
             }
             return sb.ToString();
