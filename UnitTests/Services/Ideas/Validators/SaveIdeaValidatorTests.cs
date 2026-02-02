@@ -20,7 +20,7 @@ namespace UnitTests.Services.Ideas.Validators
     {
         // Utilities
         private readonly Fixture fixture;
-        private CancellationToken token;
+        private readonly CancellationToken token;
 
         // Dependencies
         private readonly LocalizationViewModel localizationViewModel;
