@@ -17,7 +17,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
         /// identifier.
         /// </summary>
         /// <param name="dto">The data transfer object containing the idea's information.</param>
-        /// <returns>A new Idea object populated with values from the DTO..</returns>
+        /// <returns>A new Idea object populated with values from the DTO.</returns>
         public static Idea ToNewIdea(this SaveIdeaDtoWithContext dto)
         {
             return new Idea

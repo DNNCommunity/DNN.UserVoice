@@ -14,7 +14,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Provides validation logic for SaveIdeaDtoWithContext instances when saving asset data.
+    /// Provides validation logic for SaveIdeaDtoWithContext instances when saving data.
     /// </summary>
     internal class SaveIdeaDtoValidator : AbstractValidator<SaveIdeaDtoWithContext>
     {
@@ -26,7 +26,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
         /// Initializes a new instance of the <see cref="SaveIdeaDtoValidator"/> class.
         /// </summary>
         /// <param name="localizationService">Provides localization service.</param>
-        /// <param name="ideaRepository">Provides data-access to ideas..</param>
+        /// <param name="ideaRepository">Provides data-access to ideas.</param>
         /// <param name="userController">Provides services related to users.</param>
         public SaveIdeaDtoValidator(
             ILocalizationService localizationService,
