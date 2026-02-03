@@ -325,7 +325,7 @@ namespace IntegrationTests.Controllers
         }
 
         [Fact]
-        public async Task CannotDelteIdeasIfNotYours()
+        public async Task CannotDeleteIdeasIfNotYours()
         {
             // Arrange
             var idea = fixture.Build<Idea>()
