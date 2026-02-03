@@ -88,10 +88,10 @@ namespace DNN.Modules.UserVoice.Controllers.Context
                 return null;
             }
 
-            var moduleInfo = this.moduleController.GetModule(this.moduleId, this.tabId, false);
-            if (moduleInfo != null && moduleInfo.ModuleID > 0)
+            var localModuleInfo = this.moduleController.GetModule(this.moduleId, this.tabId, false);
+            if (localModuleInfo != null && localModuleInfo.ModuleID > 0)
             {
-                return moduleInfo;
+                return localModuleInfo;
             }
 
             return null;
