@@ -102,7 +102,7 @@ namespace DNN.Modules.UserVoice.Controllers
         [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.View)]
         [HttpPost]
         [SwaggerResponse(HttpStatusCode.OK, typeof(void), Description = "The idea deletion request was submitted successfully.")]
-        [SwaggerResponse(HttpStatusCode.BadRequest, typeof(ProblemDetails), Description = "An error has occured.")]
+        [SwaggerResponse(HttpStatusCode.BadRequest, typeof(ProblemDetails), Description = "An error has occurred.")]
         public async Task<IHttpActionResult> RequestIdeaDeletion(RequestIdeaDeletionDto dto, CancellationToken token)
         {
             var dtoWithContext = new RequestIdeaDeletionDtoWithContext
