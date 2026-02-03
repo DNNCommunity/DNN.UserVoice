@@ -51,6 +51,208 @@ export class ClientBase {
   }
 }
 
+export class IdeaClient extends ClientBase {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(configuration: ConfigureRequest, baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        super(configuration);
+        this.http = http ? http : window as any;
+        this.baseUrl = this.getBaseUrl("", baseUrl);
+    }
+
+    /**
+     * Saves (creates or updates) an idea.
+     * @param dto (optional) The information to save.
+     * @return The idea was saved successfully.
+     */
+    saveIdea(dto: SaveIdeaDto | null | undefined, signal?: AbortSignal): Promise<void> {
+        let url_ = this.baseUrl + "/Idea/SaveIdea";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(dto);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processSaveIdea(_response);
+        });
+    }
+
+    protected processSaveIdea(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status === 400) {
+            return response.text().then((_responseText) => {
+            let result400: any = null;
+            let resultData400 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result400 = resultData400 ? ProblemDetails.fromJS(resultData400) : null as any;
+            return throwException("An error has occured.", status, _responseText, _headers, result400);
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * Searches for ideas that match the specified criteria and returns a paged list of results.
+     * @param dto (optional) An object containing the search criteria to filter ideas. Cannot be null.
+     * @return The ideas were retrieved successfully.
+     */
+    searchIdeas(dto: SearchIdeasDto | null | undefined, signal?: AbortSignal): Promise<PagedListOfIdeaViewModel | null> {
+        let url_ = this.baseUrl + "/Idea/SearchIdeas";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(dto);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processSearchIdeas(_response);
+        });
+    }
+
+    protected processSearchIdeas(response: Response): Promise<PagedListOfIdeaViewModel | null> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? PagedListOfIdeaViewModel.fromJS(resultData200) : null as any;
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<PagedListOfIdeaViewModel | null>(null as any);
+    }
+
+    /**
+     * Submits a request to delete an idea based on the provided deletion details.
+     * @param dto (optional) An object containing the details required to request deletion of an idea. Cannot be null.
+     * @return The idea deletion request was submitted successfully.
+     */
+    requestIdeaDeletion(dto: RequestIdeaDeletionDto | null | undefined, signal?: AbortSignal): Promise<void> {
+        let url_ = this.baseUrl + "/Idea/RequestIdeaDeletion";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(dto);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processRequestIdeaDeletion(_response);
+        });
+    }
+
+    protected processRequestIdeaDeletion(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status === 400) {
+            return response.text().then((_responseText) => {
+            let result400: any = null;
+            let resultData400 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result400 = resultData400 ? ProblemDetails.fromJS(resultData400) : null as any;
+            return throwException("An error has occured.", status, _responseText, _headers, result400);
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * Retrieves the details of a specific idea by its unique identifier.
+     * @param id The unique identifier of the idea to retrieve. Must be a valid idea ID.
+     * @return The idea details were retrieved successfully.
+     */
+    getIdeaDetails(id: number, signal?: AbortSignal): Promise<IdeaDetailsViewModel | null> {
+        let url_ = this.baseUrl + "/Idea/GetIdeaDetails?";
+        if (id === undefined || id === null)
+            throw new globalThis.Error("The parameter 'id' must be defined and cannot be null.");
+        else
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            signal,
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processGetIdeaDetails(_response);
+        });
+    }
+
+    protected processGetIdeaDetails(response: Response): Promise<IdeaDetailsViewModel | null> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? IdeaDetailsViewModel.fromJS(resultData200) : null as any;
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<IdeaDetailsViewModel | null>(null as any);
+    }
+}
+
 export class LocalizationClient extends ClientBase {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
     private baseUrl: string;
@@ -102,6 +304,410 @@ export class LocalizationClient extends ClientBase {
         }
         return Promise.resolve<LocalizationViewModel | null>(null as any);
     }
+}
+
+/** Implements RFC 7807 Problem Details for HTTP APIs. */
+export class ProblemDetails implements IProblemDetails {
+    /** Gets or sets a URI that describes the type of problem. */
+    type?: string | undefined;
+    /** Gets or sets the title of the problem. */
+    title?: string | undefined;
+    /** Gets or sets the status code. */
+    status?: number;
+    /** Gets or sets a human readable string explaining the problem in more details. */
+    detail?: string | undefined;
+    /** Gets or sets the url that caused the instance of this problem. */
+    instance?: string | undefined;
+    /** Gets or sets the collection of error messages associated with the current operation or object. */
+    errors?: string[] | undefined;
+
+    constructor(data?: IProblemDetails) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.type = _data["Type"];
+            this.title = _data["Title"];
+            this.status = _data["Status"];
+            this.detail = _data["Detail"];
+            this.instance = _data["Instance"];
+            if (Array.isArray(_data["Errors"])) {
+                this.errors = [] as any;
+                for (let item of _data["Errors"])
+                    this.errors!.push(item);
+            }
+        }
+    }
+
+    static fromJS(data: any): ProblemDetails {
+        data = typeof data === 'object' ? data : {};
+        let result = new ProblemDetails();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Type"] = this.type;
+        data["Title"] = this.title;
+        data["Status"] = this.status;
+        data["Detail"] = this.detail;
+        data["Instance"] = this.instance;
+        if (Array.isArray(this.errors)) {
+            data["Errors"] = [];
+            for (let item of this.errors)
+                data["Errors"].push(item);
+        }
+        return data;
+    }
+}
+
+/** Implements RFC 7807 Problem Details for HTTP APIs. */
+export interface IProblemDetails {
+    /** Gets or sets a URI that describes the type of problem. */
+    type?: string | undefined;
+    /** Gets or sets the title of the problem. */
+    title?: string | undefined;
+    /** Gets or sets the status code. */
+    status?: number;
+    /** Gets or sets a human readable string explaining the problem in more details. */
+    detail?: string | undefined;
+    /** Gets or sets the url that caused the instance of this problem. */
+    instance?: string | undefined;
+    /** Gets or sets the collection of error messages associated with the current operation or object. */
+    errors?: string[] | undefined;
+}
+
+/** Represents the data transfer object used to submit or update an idea for saving operations. */
+export class SaveIdeaDto implements ISaveIdeaDto {
+    /** Gets or sets the unique identifier of the idea (only required for updates). */
+    id?: number;
+    /** Gets or sets the title associated with the idea. */
+    title?: string | undefined;
+    /** Gets or sets the descriptive text associated with the idea. */
+    description?: string | undefined;
+
+    constructor(data?: ISaveIdeaDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["Id"];
+            this.title = _data["Title"];
+            this.description = _data["Description"];
+        }
+    }
+
+    static fromJS(data: any): SaveIdeaDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new SaveIdeaDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Id"] = this.id;
+        data["Title"] = this.title;
+        data["Description"] = this.description;
+        return data;
+    }
+}
+
+/** Represents the data transfer object used to submit or update an idea for saving operations. */
+export interface ISaveIdeaDto {
+    /** Gets or sets the unique identifier of the idea (only required for updates). */
+    id?: number;
+    /** Gets or sets the title associated with the idea. */
+    title?: string | undefined;
+    /** Gets or sets the descriptive text associated with the idea. */
+    description?: string | undefined;
+}
+
+/** Presents a list of entities in pages. */
+export class PagedListOfIdeaViewModel implements IPagedListOfIdeaViewModel {
+    /** Gets the items for this page. */
+    items?: IdeaViewModel[] | undefined;
+    /** Gets the page number for the current page. */
+    page?: number;
+    /** Gets the amount of entities per page. */
+    pageSize?: number;
+    /** Gets the total number of entities available in all pages. */
+    resultCount?: number;
+    /** Gets the total number of available pages. */
+    pageCount?: number;
+
+    constructor(data?: IPagedListOfIdeaViewModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            if (Array.isArray(_data["Items"])) {
+                this.items = [] as any;
+                for (let item of _data["Items"])
+                    this.items!.push(IdeaViewModel.fromJS(item));
+            }
+            this.page = _data["Page"];
+            this.pageSize = _data["PageSize"];
+            this.resultCount = _data["ResultCount"];
+            this.pageCount = _data["PageCount"];
+        }
+    }
+
+    static fromJS(data: any): PagedListOfIdeaViewModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new PagedListOfIdeaViewModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        if (Array.isArray(this.items)) {
+            data["Items"] = [];
+            for (let item of this.items)
+                data["Items"].push(item ? item.toJSON() : undefined as any);
+        }
+        data["Page"] = this.page;
+        data["PageSize"] = this.pageSize;
+        data["ResultCount"] = this.resultCount;
+        data["PageCount"] = this.pageCount;
+        return data;
+    }
+}
+
+/** Presents a list of entities in pages. */
+export interface IPagedListOfIdeaViewModel {
+    /** Gets the items for this page. */
+    items?: IdeaViewModel[] | undefined;
+    /** Gets the page number for the current page. */
+    page?: number;
+    /** Gets the amount of entities per page. */
+    pageSize?: number;
+    /** Gets the total number of entities available in all pages. */
+    resultCount?: number;
+    /** Gets the total number of available pages. */
+    pageCount?: number;
+}
+
+/** Basic information about an idea. */
+export class IdeaViewModel implements IIdeaViewModel {
+    /** Gets or sets the unique identifier for the idea. */
+    id?: number;
+    /** Gets or sets the title associated with the idea. */
+    title?: string | undefined;
+
+    constructor(data?: IIdeaViewModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["Id"];
+            this.title = _data["Title"];
+        }
+    }
+
+    static fromJS(data: any): IdeaViewModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new IdeaViewModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Id"] = this.id;
+        data["Title"] = this.title;
+        return data;
+    }
+}
+
+/** Basic information about an idea. */
+export interface IIdeaViewModel {
+    /** Gets or sets the unique identifier for the idea. */
+    id?: number;
+    /** Gets or sets the title associated with the idea. */
+    title?: string | undefined;
+}
+
+/** The details about ideas search to perform. */
+export class SearchIdeasDto implements ISearchIdeasDto {
+    /** Gets or sets the current page number for paginated results. */
+    page?: number;
+    /** Gets or sets the number of items to include on each page of results. */
+    pageSize?: number;
+    /** Gets or sets the string to search for. */
+    query?: string | undefined;
+    /** Gets or sets a value indicating whether only ideas created by the current user are included. */
+    onlyMyIdeas?: boolean;
+
+    constructor(data?: ISearchIdeasDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.page = _data["Page"];
+            this.pageSize = _data["PageSize"];
+            this.query = _data["Query"];
+            this.onlyMyIdeas = _data["OnlyMyIdeas"];
+        }
+    }
+
+    static fromJS(data: any): SearchIdeasDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new SearchIdeasDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Page"] = this.page;
+        data["PageSize"] = this.pageSize;
+        data["Query"] = this.query;
+        data["OnlyMyIdeas"] = this.onlyMyIdeas;
+        return data;
+    }
+}
+
+/** The details about ideas search to perform. */
+export interface ISearchIdeasDto {
+    /** Gets or sets the current page number for paginated results. */
+    page?: number;
+    /** Gets or sets the number of items to include on each page of results. */
+    pageSize?: number;
+    /** Gets or sets the string to search for. */
+    query?: string | undefined;
+    /** Gets or sets a value indicating whether only ideas created by the current user are included. */
+    onlyMyIdeas?: boolean;
+}
+
+/** Information required to soft-delete an idea. */
+export class RequestIdeaDeletionDto implements IRequestIdeaDeletionDto {
+    /** Gets or sets the ID of the idea to be deleted. */
+    id?: number;
+
+    constructor(data?: IRequestIdeaDeletionDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["Id"];
+        }
+    }
+
+    static fromJS(data: any): RequestIdeaDeletionDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new RequestIdeaDeletionDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Id"] = this.id;
+        return data;
+    }
+}
+
+/** Information required to soft-delete an idea. */
+export interface IRequestIdeaDeletionDto {
+    /** Gets or sets the ID of the idea to be deleted. */
+    id?: number;
+}
+
+/** Represents the view model for displaying details related to an idea. */
+export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
+    /** Gets or sets the unique identifier for the entity. */
+    id?: number;
+    /** Gets or sets the title associated with the idea. */
+    title?: string | undefined;
+    /** Gets or sets the descriptive text associated with the idea. */
+    description?: string | undefined;
+    /** Gets or sets a value indicating whether the current user has permission to edit the idea. */
+    canEdit?: boolean;
+
+    constructor(data?: IIdeaDetailsViewModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["Id"];
+            this.title = _data["Title"];
+            this.description = _data["Description"];
+            this.canEdit = _data["CanEdit"];
+        }
+    }
+
+    static fromJS(data: any): IdeaDetailsViewModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new IdeaDetailsViewModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Id"] = this.id;
+        data["Title"] = this.title;
+        data["Description"] = this.description;
+        data["CanEdit"] = this.canEdit;
+        return data;
+    }
+}
+
+/** Represents the view model for displaying details related to an idea. */
+export interface IIdeaDetailsViewModel {
+    /** Gets or sets the unique identifier for the entity. */
+    id?: number;
+    /** Gets or sets the title associated with the idea. */
+    title?: string | undefined;
+    /** Gets or sets the descriptive text associated with the idea. */
+    description?: string | undefined;
+    /** Gets or sets a value indicating whether the current user has permission to edit the idea. */
+    canEdit?: boolean;
 }
 
 /** A viewmodel that exposes all resource keys in strong types. */
@@ -172,6 +778,8 @@ export class ModelValidationInfo implements IModelValidationInfo {
     titleUnique?: string | undefined;
     /** Gets or sets the UserRequired localized text. */
     userRequired?: string | undefined;
+    /** Gets or sets the ValidationErrorTitle localized text. */
+    validationErrorTitle?: string | undefined;
 
     constructor(data?: IModelValidationInfo) {
         if (data) {
@@ -194,6 +802,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
             this.titleTooLong = _data["TitleTooLong"];
             this.titleUnique = _data["TitleUnique"];
             this.userRequired = _data["UserRequired"];
+            this.validationErrorTitle = _data["ValidationErrorTitle"];
         }
     }
 
@@ -216,6 +825,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
         data["TitleTooLong"] = this.titleTooLong;
         data["TitleUnique"] = this.titleUnique;
         data["UserRequired"] = this.userRequired;
+        data["ValidationErrorTitle"] = this.validationErrorTitle;
         return data;
     }
 }
@@ -242,6 +852,8 @@ export interface IModelValidationInfo {
     titleUnique?: string | undefined;
     /** Gets or sets the UserRequired localized text. */
     userRequired?: string | undefined;
+    /** Gets or sets the ValidationErrorTitle localized text. */
+    validationErrorTitle?: string | undefined;
 }
 
 /** Localized strings for the UI resources. */

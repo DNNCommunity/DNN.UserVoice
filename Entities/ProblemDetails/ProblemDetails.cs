@@ -35,5 +35,10 @@ namespace DNN.Modules.UserVoice.Entities.ProblemDetails
         /// Gets or sets the url that caused the instance of this problem.
         /// </summary>
         public string Instance { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collection of error messages associated with the current operation or object.
+        /// </summary>
+        public IEnumerable<string> Errors { get; set; } = Array.Empty<string>();
     }
 }

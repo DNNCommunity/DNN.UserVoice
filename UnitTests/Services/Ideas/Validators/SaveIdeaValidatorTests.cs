@@ -103,7 +103,8 @@ namespace UnitTests.Services.Ideas.Validators
             var result = await this.saveAssetDtoValidator.TestValidateAsync(dto, cancellationToken: this.token);
 
             // Assert
-            result.ShouldHaveValidationErrorFor(x => x.ActingUserId);
+            result.ShouldHaveValidationErrorFor(x => x.ActingUserId)
+                .WithErrorMessage(this.localizationViewModel.ModelValidation.CannotEditIdeaNotYours);
         }
 
         [Fact]

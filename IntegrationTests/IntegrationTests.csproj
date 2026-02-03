@@ -24,6 +24,7 @@
 		<ProjectReference Include="..\Module.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="AutoFixture" Version="4.18.1" />
 		<PackageReference Include="coverlet.collector" Version="6.0.4">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>

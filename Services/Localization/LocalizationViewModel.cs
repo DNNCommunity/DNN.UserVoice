@@ -71,6 +71,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <example>The user is required</example>
             public string UserRequired { get; set; } = "The user is required";
 
+            /// <summary>Gets or sets the ValidationErrorTitle localized text.</summary>
+            /// <example>Validation Error</example>
+            public string ValidationErrorTitle { get; set; } = "Validation Error";
+
 
         }
 

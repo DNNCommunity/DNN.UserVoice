@@ -4,7 +4,9 @@
 namespace DNN.Modules.UserVoice.Extensions
 {
     using DNN.Modules.UserVoice.Adapters;
+    using DNN.Modules.UserVoice.Controllers.Context;
     using DNN.Modules.UserVoice.Data;
+    using DNN.Modules.UserVoice.Data.Repositories;
     using DNN.Modules.UserVoice.Providers;
     using DNN.Modules.UserVoice.Services.Ideas;
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;
@@ -25,6 +27,7 @@ namespace DNN.Modules.UserVoice.Extensions
         public static void AddModuleData(this IServiceCollection services)
         {
             services.AddScoped<ModuleDbContext, ModuleDbContext>();
+            services.AddScoped<IIdeaRepository, IdeaRepository>();
         }
 
         /// <summary>
@@ -55,6 +58,7 @@ namespace DNN.Modules.UserVoice.Extensions
         {
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserControllerAdapter, UserControllerAdapter>();
+            services.AddScoped<IDnnRequestContext, DnnRequestContext>();
         }
     }
 }
