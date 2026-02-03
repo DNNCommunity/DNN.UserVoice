@@ -367,7 +367,7 @@ namespace IntegrationTests.Controllers
             var response = await this.ideaController.RequestIdeaDeletion(dto, token);
 
             // Assert
-            var result = Assert.IsType<OkResult>(response);
+            Assert.IsType<OkResult>(response);
         }
 
         [Fact]
