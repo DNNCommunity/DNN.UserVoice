@@ -87,6 +87,7 @@ namespace DNN.Modules.UserVoice.Services.Localization
                 TitleTooLong = this.GetString("TitleTooLong", "ModelValidation.resx"),
                 TitleUnique = this.GetString("TitleUnique", "ModelValidation.resx"),
                 UserRequired = this.GetString("UserRequired", "ModelValidation.resx"),
+                ValidationErrorTitle = this.GetString("ValidationErrorTitle", "ModelValidation.resx"),
 
             };
             viewModel.ModelValidation = modelvalidation;

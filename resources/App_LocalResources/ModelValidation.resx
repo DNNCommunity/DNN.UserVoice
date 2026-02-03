@@ -147,4 +147,7 @@
   <data name="UserRequired" xml:space="preserve">
     <value>The user is required</value>
   </data>
+  <data name="ValidationErrorTitle" xml:space="preserve">
+    <value>Validation Error</value>
+  </data>
 </root>

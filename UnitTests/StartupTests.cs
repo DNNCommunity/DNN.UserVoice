@@ -1,5 +1,7 @@
 ﻿using DNN.Modules.UserVoice.Adapters;
+using DNN.Modules.UserVoice.Controllers.Context;
 using DNN.Modules.UserVoice.Data;
+using DNN.Modules.UserVoice.Data.Repositories;
 using DNN.Modules.UserVoice.Providers;
 using DNN.Modules.UserVoice.Services.Ideas;
 using DNN.Modules.UserVoice.Services.Ideas.DTOs;
@@ -24,6 +26,7 @@ namespace UnitTests
             {
                 // Data
                 typeof(ModuleDbContext),
+                typeof(IIdeaRepository),
                 
                 // Services
                 typeof(ILocalizationService),
@@ -36,6 +39,7 @@ namespace UnitTests
                 // Adapters
                 typeof(IDateTimeProvider),
                 typeof(IUserControllerAdapter),
+                typeof(IDnnRequestContext)
             };
 
             // Act

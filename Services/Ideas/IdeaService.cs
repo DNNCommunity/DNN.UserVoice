@@ -87,8 +87,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas
             if (dto.Dto.OnlyMyIdeas)
             {
                 query = query
-                    .Where(i => i.CreatedByUserId == dto.ActingUserId)
-                    .OrderByDescending(i => i.CreatedAt);
+                    .Where(i => i.CreatedByUserId == dto.ActingUserId);
             }
 
             var words = (dto.Dto.Query ?? string.Empty)
@@ -102,6 +101,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas
             if (words.Length == 0)
             {
                 var paged = await query
+                    .OrderByDescending(i => i.CreatedAt)
                     .ToPagedListAsync(dto.Dto.Page, dto.Dto.PageSize, token);
                 return new PagedList<IdeaViewModel>(
                     paged.Items.Select(i => i.ToIdeaViewModel()),

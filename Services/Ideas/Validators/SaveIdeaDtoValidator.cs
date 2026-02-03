@@ -61,7 +61,8 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
                         .MaximumLength(MaxLength.Of<Idea>(x => x.Description))
                             .WithMessage(string.Format(this.localization.ModelValidation.DescriptionTooLong, MaxLength.Of<Idea>(x => x.Description)));
                     this.RuleFor(x => x.ActingUserId)
-                        .MustAsync(this.IsAllowedToEdit);
+                        .MustAsync(this.IsAllowedToEdit)
+                        .WithMessage(this.localization.ModelValidation.CannotEditIdeaNotYours);
                 });
         }
 
