@@ -47,7 +47,7 @@ namespace DNN.Modules.UserVoice.Controllers
         /// Saves (creates or updates) an idea.
         /// </summary>
         /// <param name="dto">The information to save.</param>
-        /// <param name="token">A token that can be used to abort the requeset early.</param>
+        /// <param name="token">A token that can be used to abort the request early.</param>
         /// <returns>Either a success or an error with details.</returns>
         [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.View)]
         [HttpPost]
