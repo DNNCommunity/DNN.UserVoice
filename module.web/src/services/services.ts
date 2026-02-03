@@ -101,7 +101,7 @@ export class IdeaClient extends ClientBase {
             let result400: any = null;
             let resultData400 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
             result400 = resultData400 ? ProblemDetails.fromJS(resultData400) : null as any;
-            return throwException("An error has occured.", status, _responseText, _headers, result400);
+            return throwException("An error has occurred.", status, _responseText, _headers, result400);
             });
         } else if (status !== 200 && status !== 204) {
             return response.text().then((_responseText) => {
