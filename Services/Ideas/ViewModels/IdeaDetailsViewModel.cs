@@ -1,7 +1,10 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-namespace DNN.Modules.UserVoice.Services.Ideas.DTOs
+using System;
+using System.Collections.Generic;
+
+namespace DNN.Modules.UserVoice.Services.Ideas.ViewModels
 {
     /// <summary>
     /// Represents the view model for displaying details related to an idea.
@@ -27,5 +30,20 @@ namespace DNN.Modules.UserVoice.Services.Ideas.DTOs
         /// Gets or sets a value indicating whether the current user has permission to edit the idea.
         /// </summary>
         public bool CanEdit { get; set; }
+
+        /// <summary>
+        /// Gets or sets the display name of the user who created the entity.
+        /// </summary>
+        public string CreatedByUserDisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time when the idea was created.
+        /// </summary>
+        public DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating how long ago the idea was created, in a human-readable format (e.g., "2 hours ago").
+        /// </summary>
+        public string CreatedSince { get; set; }
     }
 }

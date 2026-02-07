@@ -514,6 +514,8 @@ export class IdeaViewModel implements IIdeaViewModel {
     id?: number;
     /** Gets or sets the title associated with the idea. */
     title?: string | undefined;
+    /** Gets or sets the description associated with the object. */
+    description?: string | undefined;
 
     constructor(data?: IIdeaViewModel) {
         if (data) {
@@ -528,6 +530,7 @@ export class IdeaViewModel implements IIdeaViewModel {
         if (_data) {
             this.id = _data["Id"];
             this.title = _data["Title"];
+            this.description = _data["Description"];
         }
     }
 
@@ -542,6 +545,7 @@ export class IdeaViewModel implements IIdeaViewModel {
         data = typeof data === 'object' ? data : {};
         data["Id"] = this.id;
         data["Title"] = this.title;
+        data["Description"] = this.description;
         return data;
     }
 }
@@ -552,6 +556,8 @@ export interface IIdeaViewModel {
     id?: number;
     /** Gets or sets the title associated with the idea. */
     title?: string | undefined;
+    /** Gets or sets the description associated with the object. */
+    description?: string | undefined;
 }
 
 /** The details about ideas search to perform. */
@@ -662,6 +668,12 @@ export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
     description?: string | undefined;
     /** Gets or sets a value indicating whether the current user has permission to edit the idea. */
     canEdit?: boolean;
+    /** Gets or sets the display name of the user who created the entity. */
+    createdByUserDisplayName?: string | undefined;
+    /** Gets or sets the date and time when the idea was created. */
+    createdAt?: Date;
+    /** Gets or sets a value indicating how long ago the idea was created, in a human-readable format (e.g., "2 hours ago"). */
+    createdSince?: string | undefined;
 
     constructor(data?: IIdeaDetailsViewModel) {
         if (data) {
@@ -678,6 +690,9 @@ export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
             this.title = _data["Title"];
             this.description = _data["Description"];
             this.canEdit = _data["CanEdit"];
+            this.createdByUserDisplayName = _data["CreatedByUserDisplayName"];
+            this.createdAt = _data["CreatedAt"] ? new Date(_data["CreatedAt"].toString()) : undefined as any;
+            this.createdSince = _data["CreatedSince"];
         }
     }
 
@@ -694,6 +709,9 @@ export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
         data["Title"] = this.title;
         data["Description"] = this.description;
         data["CanEdit"] = this.canEdit;
+        data["CreatedByUserDisplayName"] = this.createdByUserDisplayName;
+        data["CreatedAt"] = this.createdAt ? this.createdAt.toISOString() : undefined as any;
+        data["CreatedSince"] = this.createdSince;
         return data;
     }
 }
@@ -708,6 +726,12 @@ export interface IIdeaDetailsViewModel {
     description?: string | undefined;
     /** Gets or sets a value indicating whether the current user has permission to edit the idea. */
     canEdit?: boolean;
+    /** Gets or sets the display name of the user who created the entity. */
+    createdByUserDisplayName?: string | undefined;
+    /** Gets or sets the date and time when the idea was created. */
+    createdAt?: Date;
+    /** Gets or sets a value indicating how long ago the idea was created, in a human-readable format (e.g., "2 hours ago"). */
+    createdSince?: string | undefined;
 }
 
 /** A viewmodel that exposes all resource keys in strong types. */
@@ -858,20 +882,38 @@ export interface IModelValidationInfo {
 
 /** Localized strings for the UI resources. */
 export class UIInfo implements IUIInfo {
+    /** Gets or sets the BackToIdeas localized text. */
+    backToIdeas?: string | undefined;
     /** Gets or sets the Cancel localized text. */
     cancel?: string | undefined;
     /** Gets or sets the Create localized text. */
     create?: string | undefined;
+    /** Gets or sets the CreatedBy localized text. */
+    createdBy?: string | undefined;
     /** Gets or sets the Delete localized text. */
     delete?: string | undefined;
+    /** Gets or sets the Description localized text. */
+    description?: string | undefined;
+    /** Gets or sets the LoginToPost localized text. */
+    loginToPost?: string | undefined;
     /** Gets or sets the No localized text. */
     no?: string | undefined;
+    /** Gets or sets the PostIdea localized text. */
+    postIdea?: string | undefined;
     /** Gets or sets the Save localized text. */
     save?: string | undefined;
-    /** Gets or sets the SearchPlaceholder localized text. */
-    searchPlaceholder?: string | undefined;
-    /** Gets or sets the ShownItems localized text. */
-    shownItems?: string | undefined;
+    /** Gets or sets the SearchIdeasPlaceholder localized text. */
+    searchIdeasPlaceholder?: string | undefined;
+    /** Gets or sets the Submit localized text. */
+    submit?: string | undefined;
+    /** Gets or sets the Title localized text. */
+    title?: string | undefined;
+    /** Gets or sets the Vote localized text. */
+    vote?: string | undefined;
+    /** Gets or sets the Votes localized text. */
+    votes?: string | undefined;
+    /** Gets or sets the Withdraw localized text. */
+    withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
     yes?: string | undefined;
 
@@ -886,13 +928,22 @@ export class UIInfo implements IUIInfo {
 
     init(_data?: any) {
         if (_data) {
+            this.backToIdeas = _data["BackToIdeas"];
             this.cancel = _data["Cancel"];
             this.create = _data["Create"];
+            this.createdBy = _data["CreatedBy"];
             this.delete = _data["Delete"];
+            this.description = _data["Description"];
+            this.loginToPost = _data["LoginToPost"];
             this.no = _data["No"];
+            this.postIdea = _data["PostIdea"];
             this.save = _data["Save"];
-            this.searchPlaceholder = _data["SearchPlaceholder"];
-            this.shownItems = _data["ShownItems"];
+            this.searchIdeasPlaceholder = _data["SearchIdeasPlaceholder"];
+            this.submit = _data["Submit"];
+            this.title = _data["Title"];
+            this.vote = _data["Vote"];
+            this.votes = _data["Votes"];
+            this.withdraw = _data["Withdraw"];
             this.yes = _data["Yes"];
         }
     }
@@ -906,13 +957,22 @@ export class UIInfo implements IUIInfo {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
+        data["BackToIdeas"] = this.backToIdeas;
         data["Cancel"] = this.cancel;
         data["Create"] = this.create;
+        data["CreatedBy"] = this.createdBy;
         data["Delete"] = this.delete;
+        data["Description"] = this.description;
+        data["LoginToPost"] = this.loginToPost;
         data["No"] = this.no;
+        data["PostIdea"] = this.postIdea;
         data["Save"] = this.save;
-        data["SearchPlaceholder"] = this.searchPlaceholder;
-        data["ShownItems"] = this.shownItems;
+        data["SearchIdeasPlaceholder"] = this.searchIdeasPlaceholder;
+        data["Submit"] = this.submit;
+        data["Title"] = this.title;
+        data["Vote"] = this.vote;
+        data["Votes"] = this.votes;
+        data["Withdraw"] = this.withdraw;
         data["Yes"] = this.yes;
         return data;
     }
@@ -920,20 +980,38 @@ export class UIInfo implements IUIInfo {
 
 /** Localized strings for the UI resources. */
 export interface IUIInfo {
+    /** Gets or sets the BackToIdeas localized text. */
+    backToIdeas?: string | undefined;
     /** Gets or sets the Cancel localized text. */
     cancel?: string | undefined;
     /** Gets or sets the Create localized text. */
     create?: string | undefined;
+    /** Gets or sets the CreatedBy localized text. */
+    createdBy?: string | undefined;
     /** Gets or sets the Delete localized text. */
     delete?: string | undefined;
+    /** Gets or sets the Description localized text. */
+    description?: string | undefined;
+    /** Gets or sets the LoginToPost localized text. */
+    loginToPost?: string | undefined;
     /** Gets or sets the No localized text. */
     no?: string | undefined;
+    /** Gets or sets the PostIdea localized text. */
+    postIdea?: string | undefined;
     /** Gets or sets the Save localized text. */
     save?: string | undefined;
-    /** Gets or sets the SearchPlaceholder localized text. */
-    searchPlaceholder?: string | undefined;
-    /** Gets or sets the ShownItems localized text. */
-    shownItems?: string | undefined;
+    /** Gets or sets the SearchIdeasPlaceholder localized text. */
+    searchIdeasPlaceholder?: string | undefined;
+    /** Gets or sets the Submit localized text. */
+    submit?: string | undefined;
+    /** Gets or sets the Title localized text. */
+    title?: string | undefined;
+    /** Gets or sets the Vote localized text. */
+    vote?: string | undefined;
+    /** Gets or sets the Votes localized text. */
+    votes?: string | undefined;
+    /** Gets or sets the Withdraw localized text. */
+    withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
     yes?: string | undefined;
 }

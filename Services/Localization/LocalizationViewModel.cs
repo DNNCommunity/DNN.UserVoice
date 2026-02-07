@@ -83,6 +83,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
         /// </summary>
         public class UIInfo
         {
+            /// <summary>Gets or sets the BackToIdeas localized text.</summary>
+            /// <example>Back To Ideas</example>
+            public string BackToIdeas { get; set; } = "Back To Ideas";
+
             /// <summary>Gets or sets the Cancel localized text.</summary>
             /// <example>Cancel</example>
             public string Cancel { get; set; } = "Cancel";
@@ -91,25 +95,57 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <example>Create</example>
             public string Create { get; set; } = "Create";
 
+            /// <summary>Gets or sets the CreatedBy localized text.</summary>
+            /// <example>Created by</example>
+            public string CreatedBy { get; set; } = "Created by";
+
             /// <summary>Gets or sets the Delete localized text.</summary>
             /// <example>Delete</example>
             public string Delete { get; set; } = "Delete";
+
+            /// <summary>Gets or sets the Description localized text.</summary>
+            /// <example>Description</example>
+            public string Description { get; set; } = "Description";
+
+            /// <summary>Gets or sets the LoginToPost localized text.</summary>
+            /// <example>Please login to submit a new idea.</example>
+            public string LoginToPost { get; set; } = "Please login to submit a new idea.";
 
             /// <summary>Gets or sets the No localized text.</summary>
             /// <example>No</example>
             public string No { get; set; } = "No";
 
+            /// <summary>Gets or sets the PostIdea localized text.</summary>
+            /// <example>Post New Idea</example>
+            public string PostIdea { get; set; } = "Post New Idea";
+
             /// <summary>Gets or sets the Save localized text.</summary>
             /// <example>Save</example>
             public string Save { get; set; } = "Save";
 
-            /// <summary>Gets or sets the SearchPlaceholder localized text.</summary>
-            /// <example>Search</example>
-            public string SearchPlaceholder { get; set; } = "Search";
+            /// <summary>Gets or sets the SearchIdeasPlaceholder localized text.</summary>
+            /// <example>Describe your idea...</example>
+            public string SearchIdeasPlaceholder { get; set; } = "Describe your idea...";
 
-            /// <summary>Gets or sets the ShownItems localized text.</summary>
-            /// <example>Showing {0} of {1} items.</example>
-            public string ShownItems { get; set; } = "Showing {0} of {1} items.";
+            /// <summary>Gets or sets the Submit localized text.</summary>
+            /// <example>Submit</example>
+            public string Submit { get; set; } = "Submit";
+
+            /// <summary>Gets or sets the Title localized text.</summary>
+            /// <example>Title</example>
+            public string Title { get; set; } = "Title";
+
+            /// <summary>Gets or sets the Vote localized text.</summary>
+            /// <example>Vote</example>
+            public string Vote { get; set; } = "Vote";
+
+            /// <summary>Gets or sets the Votes localized text.</summary>
+            /// <example>Votes</example>
+            public string Votes { get; set; } = "Votes";
+
+            /// <summary>Gets or sets the Withdraw localized text.</summary>
+            /// <example>Withdraw</example>
+            public string Withdraw { get; set; } = "Withdraw";
 
             /// <summary>Gets or sets the Yes localized text.</summary>
             /// <example>Yes</example>

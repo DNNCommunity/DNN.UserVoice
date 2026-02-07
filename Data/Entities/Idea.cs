@@ -4,14 +4,14 @@
 namespace DNN.Modules.UserVoice.Data.Entities
 {
     using DNN.Modules.UserVoice.Common;
-    using DotNetNuke.ComponentModel.DataAnnotations;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
     /// Represents an idea.
     /// </summary>
-    [TableName(Globals.ModulePrefix + "Ideas")]
+    [Table(Globals.ModulePrefix + "Ideas")]
     public class Idea : BaseEntity
     {
         /// <summary>

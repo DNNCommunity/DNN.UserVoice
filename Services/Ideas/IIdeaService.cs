@@ -5,6 +5,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas
 {
     using DNN.Modules.UserVoice.Data.Repositories;
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;
+    using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
     using DotNetNuke.Abstractions.Users;
     using OneOf;
     using OneOf.Types;
@@ -22,10 +23,11 @@ namespace DNN.Modules.UserVoice.Services.Ideas
         /// </summary>
         /// <param name="id">The unique identifier of the idea to retrieve details for.</param>
         /// <param name="actingUser">The user requesting the idea details.</param>
+        /// <param name="portalId">The identifier of the portal to which the idea belongs.</param>
         /// <param name="token">A cancellation token that can be used to cancel the operation.</param>
         /// <returns>A task that represents the asynchronous operation. The task result contains an <see
         /// cref="IdeaDetailsViewModel"/> with the details of the specified idea.</returns>
-        Task<IdeaDetailsViewModel> GetIdeaDetailsAsync(int id, IUserInfo actingUser, CancellationToken token);
+        Task<IdeaDetailsViewModel> GetIdeaDetailsAsync(int id, IUserInfo actingUser, int portalId, CancellationToken token);
 
         /// <summary>
         /// Saves (creates or updates) an idea asynchronously.

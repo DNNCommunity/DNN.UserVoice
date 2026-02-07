@@ -1,7 +1,7 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-namespace DNN.Modules.UserVoice.Services.Ideas.DTOs
+namespace DNN.Modules.UserVoice.Services.Ideas.ViewModels
 {
     /// <summary>
     /// Basic information about an idea.
@@ -17,5 +17,10 @@ namespace DNN.Modules.UserVoice.Services.Ideas.DTOs
         /// Gets or sets the title associated with the idea.
         /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description associated with the object.
+        /// </summary>
+        public string Description { get; set; }
     }
 }

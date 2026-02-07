@@ -53,12 +53,17 @@
             <assembly>
               <name>System.Runtime.CompilerServices.Unsafe.dll</name>
               <path>bin</path>
-              <version>4.6.28619</version>
+              <version>6.100.225</version>
             </assembly>
             <assembly>
               <name>OneOf.dll</name>
               <path>bin</path>
               <version>1.0.0</version>
+            </assembly>
+            <assembly>
+              <name>Humanizer.dll</name>
+              <path>bin</path>
+              <version>3.0.1</version>
             </assembly>
           </assemblies>
         </component>

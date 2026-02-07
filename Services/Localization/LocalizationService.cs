@@ -93,13 +93,22 @@ namespace DNN.Modules.UserVoice.Services.Localization
             viewModel.ModelValidation = modelvalidation;
             var ui = new UIInfo
             {
+                BackToIdeas = this.GetString("BackToIdeas", "UI.resx"),
                 Cancel = this.GetString("Cancel", "UI.resx"),
                 Create = this.GetString("Create", "UI.resx"),
+                CreatedBy = this.GetString("CreatedBy", "UI.resx"),
                 Delete = this.GetString("Delete", "UI.resx"),
+                Description = this.GetString("Description", "UI.resx"),
+                LoginToPost = this.GetString("LoginToPost", "UI.resx"),
                 No = this.GetString("No", "UI.resx"),
+                PostIdea = this.GetString("PostIdea", "UI.resx"),
                 Save = this.GetString("Save", "UI.resx"),
-                SearchPlaceholder = this.GetString("SearchPlaceholder", "UI.resx"),
-                ShownItems = this.GetString("ShownItems", "UI.resx"),
+                SearchIdeasPlaceholder = this.GetString("SearchIdeasPlaceholder", "UI.resx"),
+                Submit = this.GetString("Submit", "UI.resx"),
+                Title = this.GetString("Title", "UI.resx"),
+                Vote = this.GetString("Vote", "UI.resx"),
+                Votes = this.GetString("Votes", "UI.resx"),
+                Withdraw = this.GetString("Withdraw", "UI.resx"),
                 Yes = this.GetString("Yes", "UI.resx"),
 
             };

@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  margin-top: 1em;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  svg{
+    height: 1.5em;
+    fill: var(--dnn-color-primary-contrast, white);
+  }
+}
+
+.created-at {
+  margin-top: 0.75rem;
+  color: var(--dnn-color-neutral-600, #6b7280);
+  font-size: 0.875rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  .form-actions {
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+    dnn-button.submit {
+      margin-inline-start: auto;
+    }
+  }
+}
+
+.created-info {
+  text-align: end;
+}

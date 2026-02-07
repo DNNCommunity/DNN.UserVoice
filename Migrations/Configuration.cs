@@ -20,7 +20,6 @@ namespace DNN.Modules.UserVoice.Migrations
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = false;
-            this.ContextKey = "DNN.Modules.UserVoice.Data.ModuleDbContext";
         }
 
         /// <inheritdoc/>

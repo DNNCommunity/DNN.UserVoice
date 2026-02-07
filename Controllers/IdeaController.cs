@@ -9,6 +9,7 @@ namespace DNN.Modules.UserVoice.Controllers
     using DNN.Modules.UserVoice.Extensions;
     using DNN.Modules.UserVoice.Services.Ideas;
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;
+    using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
     using DNN.Modules.UserVoice.Services.Localization;
     using DotNetNuke.Security;
     using DotNetNuke.Web.Api;
@@ -57,9 +58,9 @@ namespace DNN.Modules.UserVoice.Controllers
         {
             var dtoWithContext = new SaveIdeaDtoWithContext
             {
-                ModuleId = this.requestContext.Module.ModuleID,
-                ActingUserId = this.requestContext.User.UserID,
-                PortalId = this.requestContext.PortalSettings.PortalId,
+                ModuleId = this.requestContext.Module?.ModuleID ?? -1,
+                ActingUserId = this.requestContext.User?.UserID ?? -1,
+                PortalId = this.requestContext.PortalSettings?.PortalId ?? -1,
                 Dto = dto,
             };
 
@@ -84,8 +85,8 @@ namespace DNN.Modules.UserVoice.Controllers
         {
             var dtoWithContext = new SearchIdeasDtoWithContext
             {
-                ModuleId = this.requestContext.Module.ModuleID,
-                ActingUserId = this.requestContext.User.UserID,
+                ModuleId = this.requestContext.Module?.ModuleID ?? -1,
+                ActingUserId = this.requestContext.User?.UserID ?? -1,
                 Dto = dto,
             };
             var result = await this.ideaService.SearchIdeasAsync(dtoWithContext, token);
@@ -130,7 +131,7 @@ namespace DNN.Modules.UserVoice.Controllers
         [SwaggerResponse(HttpStatusCode.OK, typeof(IdeaDetailsViewModel), Description = "The idea details were retrieved successfully.")]
         public async Task<IHttpActionResult> GetIdeaDetails(int id, CancellationToken token)
         {
-            var vm = await this.ideaService.GetIdeaDetailsAsync(id, this.requestContext.User, token);
+            var vm = await this.ideaService.GetIdeaDetailsAsync(id, this.requestContext.User, this.requestContext.PortalSettings.PortalId, token);
             return this.Ok(vm);
         }
     }

@@ -21,6 +21,9 @@
     <TargetFramework>net48</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+  <PropertyGroup>
+    <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="artifacts\**" />
     <Compile Remove="docs\**" />
@@ -85,6 +88,7 @@
     <PackageReference Include="FluentValidation">
       <Version>11.12.0</Version>
     </PackageReference>
+    <PackageReference Include="Humanizer" Version="3.0.1" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core">
       <Version>5.3.0</Version>
     </PackageReference>

@@ -20,6 +20,7 @@ export const config: Config = {
   devServer: {
     reloadStrategy: "pageReload"
   },
+  sourceMap: true,
   plugins: [
     sass()
   ]

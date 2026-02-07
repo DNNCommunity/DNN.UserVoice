@@ -117,26 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BackToIdeas.Text" xml:space="preserve">
+    <value>Back To Ideas</value>
+  </data>
   <data name="Cancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="Create.Text" xml:space="preserve">
     <value>Create</value>
   </data>
+  <data name="CreatedBy.Text" xml:space="preserve">
+    <value>Created by</value>
+  </data>
   <data name="Delete.Text" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Description.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LoginToPost.Text" xml:space="preserve">
+    <value>Please login to submit a new idea.</value>
   </data>
   <data name="No.Text" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="PostIdea.Text" xml:space="preserve">
+    <value>Post New Idea</value>
+  </data>
   <data name="Save.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="SearchPlaceholder.Text" xml:space="preserve">
-    <value>Search</value>
+  <data name="SearchIdeasPlaceholder.Text" xml:space="preserve">
+    <value>Describe your idea...</value>
   </data>
-  <data name="ShownItems.Text" xml:space="preserve">
-    <value>Showing {0} of {1} items.</value>
+  <data name="Submit.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Vote.Text" xml:space="preserve">
+    <value>Vote</value>
+  </data>
+  <data name="Votes.Text" xml:space="preserve">
+    <value>Votes</value>
+  </data>
+  <data name="Withdraw.Text" xml:space="preserve">
+    <value>Withdraw</value>
   </data>
   <data name="Yes.Text" xml:space="preserve">
     <value>Yes</value>
