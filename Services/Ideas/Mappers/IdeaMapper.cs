@@ -74,7 +74,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
                 Title = idea.Title,
                 Description = idea.Description,
                 CanEdit = actingUser is null ? false : (actingUser.IsAdmin || actingUser.UserID == idea.CreatedByUserId),
-                CreatedByUserDisplayName = author.DisplayName,
+                CreatedByUserDisplayName = author?.DisplayName,
                 CreatedAt = idea.CreatedAt,
                 CreatedSince = idea.CreatedAt.Humanize(),
             };
