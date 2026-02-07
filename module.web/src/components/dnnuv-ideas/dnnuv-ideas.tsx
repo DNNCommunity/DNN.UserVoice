@@ -77,7 +77,7 @@ export class DnnuvIdeas {
                 </dnn-button>
               </div>
               <a
-                href={`#/idea/${idea.id}}`}
+                href={`#/idea/${idea.id}`}
                 class="idea-summary"
               >
                 <h3>{idea.title}</h3>
