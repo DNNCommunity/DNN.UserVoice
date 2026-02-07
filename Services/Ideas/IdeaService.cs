@@ -3,11 +3,13 @@
 
 namespace DNN.Modules.UserVoice.Services.Ideas
 {
+    using DNN.Modules.UserVoice.Adapters;
     using DNN.Modules.UserVoice.Common.Extensions;
     using DNN.Modules.UserVoice.Data.Repositories;
     using DNN.Modules.UserVoice.Providers;
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;
     using DNN.Modules.UserVoice.Services.Ideas.Mappers;
+    using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
     using DotNetNuke.Abstractions.Users;
     using FluentValidation;
     using OneOf;
@@ -25,6 +27,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas
         private readonly IIdeaRepository ideaRepository;
         private readonly IValidator<RequestIdeaDeletionDtoWithContext> requestIdeaDeletionDtoValidator;
         private readonly IDateTimeProvider datetimeProvider;
+        private readonly IUserControllerAdapter userController;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IdeaService"/> class.
@@ -33,23 +36,31 @@ namespace DNN.Modules.UserVoice.Services.Ideas
         /// <param name="ideaRepository">Provides data-access to ideas.</param>
         /// <param name="requestIdeaDeletionDtoValidator">Validator for requesting idea deletion.</param>
         /// <param name="datetimeProvider">Provider for current date and time.</param>
+        /// <param name="userController">Provides services related to users.</param>
         public IdeaService(
             IValidator<SaveIdeaDtoWithContext> saveIdeaDtoValidator,
             IIdeaRepository ideaRepository,
             IValidator<RequestIdeaDeletionDtoWithContext> requestIdeaDeletionDtoValidator,
-            IDateTimeProvider datetimeProvider)
+            IDateTimeProvider datetimeProvider,
+            IUserControllerAdapter userController)
         {
             this.saveIdeaDtoValidator = saveIdeaDtoValidator;
             this.ideaRepository = ideaRepository;
             this.requestIdeaDeletionDtoValidator = requestIdeaDeletionDtoValidator;
             this.datetimeProvider = datetimeProvider;
+            this.userController = userController;
         }
 
         /// <inheritdoc/>
-        public async Task<IdeaDetailsViewModel> GetIdeaDetailsAsync(int id, IUserInfo actingUser, CancellationToken token)
+        public async Task<IdeaDetailsViewModel> GetIdeaDetailsAsync(
+            int id,
+            IUserInfo actingUser,
+            int portalId,
+            CancellationToken token)
         {
             var idea = await this.ideaRepository.GetByIdAsync(id, token);
-            return idea.ToIdeaDetailsViewModel(actingUser);
+            var author = this.userController.GetUserById(portalId, idea.CreatedByUserId);
+            return idea.ToIdeaDetailsViewModel(actingUser, author);
         }
 
         /// <inheritdoc/>

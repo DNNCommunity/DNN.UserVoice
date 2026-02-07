@@ -5,7 +5,10 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
 {
     using DNN.Modules.UserVoice.Data.Entities;
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;
+    using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
     using DotNetNuke.Abstractions.Users;
+    using Humanizer;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// Provides static methods for mapping and transforming idea-related data.
@@ -50,6 +53,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
             {
                 Id = idea.Id,
                 Title = idea.Title,
+                Description = idea.Description,
             };
         }
 
@@ -58,17 +62,21 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
         /// cref="Idea"/>.
         /// </summary>
         /// <param name="idea">The <see cref="Idea"/> object containing the data to be mapped. Cannot be null.</param>
-        /// <param name="user">Information about the user performing the action.</param>
+        /// <param name="actingUser">Information about the user performing the action.</param>
+        /// <param name="author">Information about the author of the idea.</param>
         /// <returns>An <see cref="IdeaDetailsViewModel"/> initialized with provided <see cref="Idea"/>
         /// <paramref name="idea"/>.</returns>
-        public static IdeaDetailsViewModel ToIdeaDetailsViewModel(this Idea idea, IUserInfo user)
+        public static IdeaDetailsViewModel ToIdeaDetailsViewModel(this Idea idea, IUserInfo actingUser, IUserInfo author)
         {
             return new IdeaDetailsViewModel
             {
                 Id = idea.Id,
                 Title = idea.Title,
                 Description = idea.Description,
-                CanEdit = user.IsAdmin || user.UserID == idea.CreatedByUserId,
+                CanEdit = actingUser is null ? false : (actingUser.IsAdmin || actingUser.UserID == idea.CreatedByUserId),
+                CreatedByUserDisplayName = author.DisplayName,
+                CreatedAt = idea.CreatedAt,
+                CreatedSince = idea.CreatedAt.Humanize(),
             };
         }
     }

@@ -6,10 +6,38 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DnnuvIdea {
+        /**
+          * The ID of the idea to display.
+         */
+        "ideaId": number;
+    }
+    interface DnnuvIdeas {
+    }
     interface DnnuvUservoice {
+        /**
+          * The ID of the current module
+         */
+        "moduleId": number;
+        /**
+          * The ID of the current user
+         */
+        "userId": number;
     }
 }
 declare global {
+    interface HTMLDnnuvIdeaElement extends Components.DnnuvIdea, HTMLStencilElement {
+    }
+    var HTMLDnnuvIdeaElement: {
+        prototype: HTMLDnnuvIdeaElement;
+        new (): HTMLDnnuvIdeaElement;
+    };
+    interface HTMLDnnuvIdeasElement extends Components.DnnuvIdeas, HTMLStencilElement {
+    }
+    var HTMLDnnuvIdeasElement: {
+        prototype: HTMLDnnuvIdeasElement;
+        new (): HTMLDnnuvIdeasElement;
+    };
     interface HTMLDnnuvUservoiceElement extends Components.DnnuvUservoice, HTMLStencilElement {
     }
     var HTMLDnnuvUservoiceElement: {
@@ -17,21 +45,54 @@ declare global {
         new (): HTMLDnnuvUservoiceElement;
     };
     interface HTMLElementTagNameMap {
+        "dnnuv-idea": HTMLDnnuvIdeaElement;
+        "dnnuv-ideas": HTMLDnnuvIdeasElement;
         "dnnuv-uservoice": HTMLDnnuvUservoiceElement;
     }
 }
 declare namespace LocalJSX {
-    interface DnnuvUservoice {
+    type OneOf<K extends string, PropT, AttrT = PropT> = { [P in K]: PropT } & { [P in `attr:${K}` | `prop:${K}`]?: never } | { [P in `attr:${K}`]: AttrT } & { [P in K | `prop:${K}`]?: never } | { [P in `prop:${K}`]: PropT } & { [P in K | `attr:${K}`]?: never };
+
+    interface DnnuvIdea {
+        /**
+          * The ID of the idea to display.
+         */
+        "ideaId": number;
     }
+    interface DnnuvIdeas {
+    }
+    interface DnnuvUservoice {
+        /**
+          * The ID of the current module
+         */
+        "moduleId": number;
+        /**
+          * The ID of the current user
+         */
+        "userId"?: number;
+    }
+
+    interface DnnuvIdeaAttributes {
+        "ideaId": number;
+    }
+    interface DnnuvUservoiceAttributes {
+        "moduleId": number;
+        "userId": number;
+    }
+
     interface IntrinsicElements {
-        "dnnuv-uservoice": DnnuvUservoice;
+        "dnnuv-idea": Omit<DnnuvIdea, keyof DnnuvIdeaAttributes> & { [K in keyof DnnuvIdea & keyof DnnuvIdeaAttributes]?: DnnuvIdea[K] } & { [K in keyof DnnuvIdea & keyof DnnuvIdeaAttributes as `attr:${K}`]?: DnnuvIdeaAttributes[K] } & { [K in keyof DnnuvIdea & keyof DnnuvIdeaAttributes as `prop:${K}`]?: DnnuvIdea[K] } & OneOf<"ideaId", DnnuvIdea["ideaId"], DnnuvIdeaAttributes["ideaId"]>;
+        "dnnuv-ideas": DnnuvIdeas;
+        "dnnuv-uservoice": Omit<DnnuvUservoice, keyof DnnuvUservoiceAttributes> & { [K in keyof DnnuvUservoice & keyof DnnuvUservoiceAttributes]?: DnnuvUservoice[K] } & { [K in keyof DnnuvUservoice & keyof DnnuvUservoiceAttributes as `attr:${K}`]?: DnnuvUservoiceAttributes[K] } & { [K in keyof DnnuvUservoice & keyof DnnuvUservoiceAttributes as `prop:${K}`]?: DnnuvUservoice[K] } & OneOf<"moduleId", DnnuvUservoice["moduleId"], DnnuvUservoiceAttributes["moduleId"]>;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "dnnuv-uservoice": LocalJSX.DnnuvUservoice & JSXBase.HTMLAttributes<HTMLDnnuvUservoiceElement>;
+            "dnnuv-idea": LocalJSX.IntrinsicElements["dnnuv-idea"] & JSXBase.HTMLAttributes<HTMLDnnuvIdeaElement>;
+            "dnnuv-ideas": LocalJSX.IntrinsicElements["dnnuv-ideas"] & JSXBase.HTMLAttributes<HTMLDnnuvIdeasElement>;
+            "dnnuv-uservoice": LocalJSX.IntrinsicElements["dnnuv-uservoice"] & JSXBase.HTMLAttributes<HTMLDnnuvUservoiceElement>;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace DNN.Modules.UserVoice.Extensions
     using DNN.Modules.UserVoice.Services.Localization;
     using FluentValidation;
     using Microsoft.Extensions.DependencyInjection;
+    using System.Web;
 
     /// <summary>
     /// Provides extension methods for configuring and managing services in an <see cref="IServiceCollection"/>.
@@ -58,6 +59,7 @@ namespace DNN.Modules.UserVoice.Extensions
         {
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserControllerAdapter, UserControllerAdapter>();
+            services.AddScoped<HttpContextBase>(_ => new HttpContextWrapper(HttpContext.Current));
             services.AddScoped<IDnnRequestContext, DnnRequestContext>();
         }
     }

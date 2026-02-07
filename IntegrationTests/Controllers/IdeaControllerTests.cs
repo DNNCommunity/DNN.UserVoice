@@ -4,6 +4,8 @@ using DNN.Modules.UserVoice.Data.Entities;
 using DNN.Modules.UserVoice.Data.Repositories;
 using DNN.Modules.UserVoice.Entities.ProblemDetails;
 using DNN.Modules.UserVoice.Services.Ideas.DTOs;
+using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
+using DotNetNuke.Abstractions.Portals;
 using DotNetNuke.Abstractions.Users;
 using DotNetNuke.ExtensionPoints;
 using NSubstitute;
@@ -312,6 +314,9 @@ namespace IntegrationTests.Controllers
                 .GetUserById(this.RequestContext.PortalSettings.PortalId, this.RequestContext.User.UserID)
                 .Returns(admin);
             await this.dataContext.SaveChangesAsync(this.token);
+            var portalSettings = Substitute.For<IPortalSettings>();
+            portalSettings.PortalId = fixture.Create<int>();
+            this.RequestContext.PortalSettings.Returns(portalSettings);
 
             // Act
             var response = await this.ideaController.GetIdeaDetails(idea.Id, this.token);

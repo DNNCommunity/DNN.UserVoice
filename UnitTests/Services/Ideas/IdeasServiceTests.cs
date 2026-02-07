@@ -1,4 +1,5 @@
 ﻿using AutoFixture;
+using DNN.Modules.UserVoice.Adapters;
 using DNN.Modules.UserVoice.Data;
 using DNN.Modules.UserVoice.Data.Entities;
 using DNN.Modules.UserVoice.Data.Repositories;
@@ -6,6 +7,7 @@ using DNN.Modules.UserVoice.Providers;
 using DNN.Modules.UserVoice.Services.Ideas;
 using DNN.Modules.UserVoice.Services.Ideas.DTOs;
 using DotNetNuke.Abstractions.Users;
+using DotNetNuke.Entities.Modules;
 using Effort;
 using FluentValidation;
 using NSubstitute;
@@ -13,6 +15,7 @@ using System;
 using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI;
 using Xunit;
 
 namespace UnitTests.Services.Ideas
@@ -26,6 +29,7 @@ namespace UnitTests.Services.Ideas
         private readonly IIdeaRepository ideaRepository;
         private readonly IDateTimeProvider dateTimeProvider;
         private readonly InlineValidator<RequestIdeaDeletionDtoWithContext> requestIdeaDeletionValidator;
+        private readonly IUserControllerAdapter userController;
 
         private readonly IIdeaService ideaService;
 
@@ -37,12 +41,14 @@ namespace UnitTests.Services.Ideas
             this.ideaRepository = Substitute.For<IIdeaRepository>();
             this.dateTimeProvider = Substitute.For<IDateTimeProvider>();
             this.requestIdeaDeletionValidator = new InlineValidator<RequestIdeaDeletionDtoWithContext>();
+            this.userController = Substitute.For<IUserControllerAdapter>();
 
             this.ideaService = new IdeaService(
                 this.saveIdeaDtoValidator,
                 this.ideaRepository,
                 this.requestIdeaDeletionValidator,
-                this.dateTimeProvider);
+                this.dateTimeProvider,
+                this.userController);
         }
 
         [Fact]
@@ -170,7 +176,8 @@ namespace UnitTests.Services.Ideas
                     this.saveIdeaDtoValidator,
                     ideaRepository,
                     this.requestIdeaDeletionValidator,
-                    this.dateTimeProvider);
+                    this.dateTimeProvider,
+                    this.userController);
                 var dto = new SearchIdeasDtoWithContext
                 {
                     ModuleId = moduleId,
@@ -198,23 +205,38 @@ namespace UnitTests.Services.Ideas
         {
             // Arrange
             var idea = fixture.Build<Idea>()
-                .With(x => x.CreatedByUserId, 123)
+                .With(x => x.ModuleId, fixture.Create<int>())
+                .With(x => x.CreatedByUserId, fixture.Create<int>())
+                .With(x => x.CreatedAt, DateTime.UtcNow.AddDays(-1))
                 .Create();
             this.ideaRepository
                 .GetByIdAsync(idea.Id, this.token)
                 .Returns(idea);
-            var user = Substitute.For<IUserInfo>();
-            user.UserID.Returns(234);
-            user.IsAdmin.Returns(false);
+
+            var actingUser = Substitute.For<IUserInfo>();
+            actingUser.DisplayName.Returns("Acting User");
+            actingUser.UserID.Returns(fixture.Create<int>());
+            actingUser.IsAdmin.Returns(false);
+            
+            var authorUser = Substitute.For<IUserInfo>();
+            authorUser.DisplayName.Returns("Author User");
+            authorUser.UserID.Returns(idea.CreatedByUserId);
+            var portalId = fixture.Create<int>();
+            this.userController
+                .GetUserById(portalId, idea.CreatedByUserId)
+                .Returns(authorUser);
 
             // Act
-            var result = await this.ideaService.GetIdeaDetailsAsync(idea.Id, user, this.token);
+            var result = await this.ideaService.GetIdeaDetailsAsync(idea.Id, actingUser, portalId, this.token);
 
             // Assert
             Assert.Equal(idea.Id, result.Id);
             Assert.Equal(idea.Title, result.Title);
             Assert.Equal(idea.Description, result.Description);
             Assert.False(result.CanEdit);
+            Assert.Equal(authorUser.DisplayName, result.CreatedByUserDisplayName);
+            Assert.Equal(idea.CreatedAt, result.CreatedAt);
+            Assert.Equal("yesterday", result.CreatedSince);
         }
 
         [Fact]
@@ -228,9 +250,10 @@ namespace UnitTests.Services.Ideas
             var user = Substitute.For<IUserInfo>();
             user.UserID.Returns(idea.CreatedByUserId);
             user.IsAdmin.Returns(false);
+            var portalId = fixture.Create<int>();
 
             // Act
-            var result = await this.ideaService.GetIdeaDetailsAsync(idea.Id, user, this.token);
+            var result = await this.ideaService.GetIdeaDetailsAsync(idea.Id, user, portalId, this.token);
 
             // Assert
             Assert.Equal(idea.Id, result.Id);
@@ -252,9 +275,10 @@ namespace UnitTests.Services.Ideas
             var user = Substitute.For<IUserInfo>();
             user.UserID.Returns(234);
             user.IsAdmin.Returns(true);
+            var portalId = fixture.Create<int>();
 
             // Act
-            var result = await this.ideaService.GetIdeaDetailsAsync(idea.Id, user, this.token);
+            var result = await this.ideaService.GetIdeaDetailsAsync(idea.Id, user, portalId, this.token);
 
             // Assert
             Assert.Equal(idea.Id, result.Id);

@@ -3,13 +3,21 @@ import { LocalizationViewModel } from "../services/services";
 
 /** Defines the shape of the global state store. */
 interface IStore {
-  /** The id of the Dnn module */
+  /** The localization data for the module. */
+  localization: LocalizationViewModel | null;
+  
+  /** The id of the Dnn module. */
   moduleId: number;
+  
+  /** The id of the current user. */
+  userId: number;
 }
 
 /** Initializes the store with an initial (default) state. */
 export const store = createStore<IStore>({
+  localization: null,
   moduleId: -1,
+  userId: -1,
 });
 
 export default store.state;

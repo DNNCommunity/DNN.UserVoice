@@ -16,9 +16,10 @@
     "loader/"
   ],
   "scripts": {
-    "lint": "eslint",
-    "build": "stencil build --docs && npm run lint",
+    "build": "stencil build --docs",
+    "postbuild": "npm run lint",
     "start": "stencil build --dev --watch --serve --no-open",
+    "lint": "eslint",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
@@ -26,12 +27,13 @@
   "devDependencies": {
     "@dnncommunity/dnn-elements": "^0.27.8",
     "@eslint/js": "^9.36.0",
+    "@stencil/core": "^4.42.1",
     "@stencil/eslint-plugin": "^1.1.0",
-    "@stencil/core": "^4.42.0",
     "@stencil/sass": "^3.0.2",
     "@stencil/store": "^2.0.0",
-    "@types/node": "^25.0.3",
+    "@types/node": "^24.10.11",
     "jiti": "^2.4.2",
+    "stencil-router-v2": "^0.6.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.54.0"
   },

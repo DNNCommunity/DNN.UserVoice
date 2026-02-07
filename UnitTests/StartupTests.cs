@@ -10,6 +10,7 @@ using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Web;
 using Xunit;
 
 namespace UnitTests
@@ -39,6 +40,7 @@ namespace UnitTests
                 // Adapters
                 typeof(IDateTimeProvider),
                 typeof(IUserControllerAdapter),
+                typeof(HttpContextBase),
                 typeof(IDnnRequestContext)
             };
 
