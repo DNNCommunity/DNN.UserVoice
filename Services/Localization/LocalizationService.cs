@@ -103,7 +103,7 @@ namespace DNN.Modules.UserVoice.Services.Localization
                 No = this.GetString("No", "UI.resx"),
                 PostIdea = this.GetString("PostIdea", "UI.resx"),
                 Save = this.GetString("Save", "UI.resx"),
-                SeachIdeasPlaceholder = this.GetString("SeachIdeasPlaceholder", "UI.resx"),
+                SearchIdeasPlaceholder = this.GetString("SearchIdeasPlaceholder", "UI.resx"),
                 Submit = this.GetString("Submit", "UI.resx"),
                 Title = this.GetString("Title", "UI.resx"),
                 Vote = this.GetString("Vote", "UI.resx"),

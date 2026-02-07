@@ -41,7 +41,7 @@ export class DnnuvIdeas {
       <Host>
         <div class="top-controls">
           <dnn-searchbox
-            placeholder={state.localization?.uI?.seachIdeasPlaceholder}
+            placeholder={state.localization?.uI?.searchIdeasPlaceholder}
             onQueryChanged={e => this.query = e.detail}
           />
           {this.query != "" && state.userId > 0 &&(

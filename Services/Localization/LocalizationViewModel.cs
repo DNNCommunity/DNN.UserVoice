@@ -123,9 +123,9 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <example>Save</example>
             public string Save { get; set; } = "Save";
 
-            /// <summary>Gets or sets the SeachIdeasPlaceholder localized text.</summary>
+            /// <summary>Gets or sets the SearchIdeasPlaceholder localized text.</summary>
             /// <example>Describe your idea...</example>
-            public string SeachIdeasPlaceholder { get; set; } = "Describe your idea...";
+            public string SearchIdeasPlaceholder { get; set; } = "Describe your idea...";
 
             /// <summary>Gets or sets the Submit localized text.</summary>
             /// <example>Submit</example>

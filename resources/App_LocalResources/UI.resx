@@ -147,7 +147,7 @@
   <data name="Save.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="SeachIdeasPlaceholder.Text" xml:space="preserve">
+  <data name="SearchIdeasPlaceholder.Text" xml:space="preserve">
     <value>Describe your idea...</value>
   </data>
   <data name="Submit.Text" xml:space="preserve">

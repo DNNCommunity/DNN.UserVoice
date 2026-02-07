@@ -902,8 +902,8 @@ export class UIInfo implements IUIInfo {
     postIdea?: string | undefined;
     /** Gets or sets the Save localized text. */
     save?: string | undefined;
-    /** Gets or sets the SeachIdeasPlaceholder localized text. */
-    seachIdeasPlaceholder?: string | undefined;
+    /** Gets or sets the SearchIdeasPlaceholder localized text. */
+    searchIdeasPlaceholder?: string | undefined;
     /** Gets or sets the Submit localized text. */
     submit?: string | undefined;
     /** Gets or sets the Title localized text. */
@@ -938,7 +938,7 @@ export class UIInfo implements IUIInfo {
             this.no = _data["No"];
             this.postIdea = _data["PostIdea"];
             this.save = _data["Save"];
-            this.seachIdeasPlaceholder = _data["SeachIdeasPlaceholder"];
+            this.searchIdeasPlaceholder = _data["SearchIdeasPlaceholder"];
             this.submit = _data["Submit"];
             this.title = _data["Title"];
             this.vote = _data["Vote"];
@@ -967,7 +967,7 @@ export class UIInfo implements IUIInfo {
         data["No"] = this.no;
         data["PostIdea"] = this.postIdea;
         data["Save"] = this.save;
-        data["SeachIdeasPlaceholder"] = this.seachIdeasPlaceholder;
+        data["SearchIdeasPlaceholder"] = this.searchIdeasPlaceholder;
         data["Submit"] = this.submit;
         data["Title"] = this.title;
         data["Vote"] = this.vote;
@@ -1000,8 +1000,8 @@ export interface IUIInfo {
     postIdea?: string | undefined;
     /** Gets or sets the Save localized text. */
     save?: string | undefined;
-    /** Gets or sets the SeachIdeasPlaceholder localized text. */
-    seachIdeasPlaceholder?: string | undefined;
+    /** Gets or sets the SearchIdeasPlaceholder localized text. */
+    searchIdeasPlaceholder?: string | undefined;
     /** Gets or sets the Submit localized text. */
     submit?: string | undefined;
     /** Gets or sets the Title localized text. */
