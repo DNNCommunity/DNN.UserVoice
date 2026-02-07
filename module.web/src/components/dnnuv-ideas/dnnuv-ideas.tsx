@@ -44,7 +44,7 @@ export class DnnuvIdeas {
             placeholder={state.localization?.uI?.searchIdeasPlaceholder}
             onQueryChanged={e => this.query = e.detail}
           />
-          {this.query != "" && state.userId > 0 &&(
+          {this.query != "" && state.userLoggedIn &&(
             <dnn-button
               onClick={() => location.replace(`#/idea/-1?title=${encodeURIComponent(this.query)}`)}
             >
@@ -55,7 +55,7 @@ export class DnnuvIdeas {
             </dnn-button>
           )}
         </div>
-        {isNaN(state.userId) && (
+        {!state.userLoggedIn && (
           <div class="info">
             {state.localization?.uI?.loginToPost}
           </div>

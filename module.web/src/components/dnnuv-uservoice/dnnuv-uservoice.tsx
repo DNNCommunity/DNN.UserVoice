@@ -26,7 +26,7 @@ export class DnnuvUservoice {
 
   async componentWillLoad() {
     state.moduleId = this.moduleId;
-    state.userId = this.userId;
+    state.userLoggedIn = this.userId != null && !isNaN(this.userId) && this.userId > 0;
     try {
       state.localization = await this.localizationClient.getLocalization();
     } catch (error) {

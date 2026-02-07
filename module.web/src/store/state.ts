@@ -10,14 +10,14 @@ interface IStore {
   moduleId: number;
   
   /** The id of the current user. */
-  userId: number;
+  userLoggedIn: boolean;
 }
 
 /** Initializes the store with an initial (default) state. */
 export const store = createStore<IStore>({
   localization: null,
   moduleId: -1,
-  userId: -1,
+  userLoggedIn: false,
 });
 
 export default store.state;
