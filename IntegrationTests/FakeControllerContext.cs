@@ -1,6 +1,7 @@
 ﻿using AutoFixture;
 using DNN.Modules.UserVoice.Adapters;
 using DNN.Modules.UserVoice.Controllers.Context;
+using DNN.Modules.UserVoice.Entities.Settings;
 using DNN.Modules.UserVoice.Providers;
 using DNN.Modules.UserVoice.Services.Localization;
 using DotNetNuke.Entities.Modules;
@@ -24,6 +25,7 @@ namespace IntegrationTests
         protected readonly IUserControllerAdapter userController;
         protected readonly ILocalizationService localizationService;
         protected readonly IDateTimeProvider dateTimeProvider;
+        protected readonly IUserVoiceSettingsRepository userVoiceSettingsRepository;
 
         protected readonly IDnnRequestContext RequestContext;
         protected readonly HttpContextBase HttpContext;
@@ -39,10 +41,15 @@ namespace IntegrationTests
             this.localizationService.ViewModel.Returns(localizationViewModel);
             this.dateTimeProvider = Substitute.For<IDateTimeProvider>();
             this.dateTimeProvider.GetUtcNow().Returns(fixture.Create<DateTime>());
+            this.userVoiceSettingsRepository = Substitute.For<IUserVoiceSettingsRepository>();
+            this.userVoiceSettingsRepository
+                .GetSettings(Arg.Any<ModuleInfo>())
+                .Returns(new UserVoiceSettings());
 
             // Prepopulate RequestContext defaults
             this.RequestContext.User.UserID.Returns(fixture.Create<int>());
             this.RequestContext.Tab.Returns(new TabInfo { TabID = fixture.Create<int>() });
+            this.RequestContext.UserVoiceSettings.Returns(new UserVoiceSettings());
             this.RequestContext.Module.Returns(new ModuleInfo { ModuleID = fixture.Create<int>() });
             this.userController
                 .GetUserById(RequestContext.PortalSettings.PortalId, RequestContext.User.UserID)
@@ -58,6 +65,7 @@ namespace IntegrationTests
             services.Replace(ServiceDescriptor.Scoped(_ => this.dataContext));
             services.Replace(ServiceDescriptor.Scoped(_ => this.localizationService));
             services.Replace(ServiceDescriptor.Singleton(_ => this.dateTimeProvider));
+            services.Replace(ServiceDescriptor.Scoped(_ => this.userVoiceSettingsRepository));
 
             services.AddTransient(_ => this.userController);
 

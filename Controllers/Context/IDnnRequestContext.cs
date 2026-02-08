@@ -1,13 +1,14 @@
 ﻿// MIT License
 // Copyright DNN Community
 
-using DotNetNuke.Abstractions.Portals;
-using DotNetNuke.Abstractions.Users;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Tabs;
-
 namespace DNN.Modules.UserVoice.Controllers.Context
 {
+    using DNN.Modules.UserVoice.Entities.Settings;
+    using DotNetNuke.Abstractions.Portals;
+    using DotNetNuke.Abstractions.Users;
+    using DotNetNuke.Entities.Modules;
+    using DotNetNuke.Entities.Tabs;
+
     /// <summary>
     /// Provides information about the current request context.
     /// </summary>
@@ -33,5 +34,10 @@ namespace DNN.Modules.UserVoice.Controllers.Context
         /// <remarks>Will be null unless the module and tab IDs are provided in the request.</remarks>
         /// </summary>
         ModuleInfo Module { get; }
+
+        /// <summary>
+        /// Gets settings for the UserVoice module.
+        /// </summary>
+        UserVoiceSettings UserVoiceSettings { get; }
     }
 }

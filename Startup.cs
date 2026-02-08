@@ -3,8 +3,10 @@
 
 namespace DNN.Modules.UserVoice
 {
+    using DNN.Modules.UserVoice.Entities.Settings;
     using DNN.Modules.UserVoice.Extensions;
     using DotNetNuke.DependencyInjection;
+    using DotNetNuke.Entities.Modules.Settings;
     using Microsoft.Extensions.DependencyInjection;
     using System.Diagnostics.CodeAnalysis;
 
@@ -24,6 +26,7 @@ namespace DNN.Modules.UserVoice
             services.AddModuleServices();
             services.AddValidators();
             services.AddAdapters();
+            services.AddScoped<IUserVoiceSettingsRepository>();
         }
     }
 }

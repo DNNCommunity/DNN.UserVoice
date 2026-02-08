@@ -8,12 +8,14 @@ namespace DNN.Modules.UserVoice.Data
     using System.Configuration;
     using System.Data.Common;
     using System.Data.Entity;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Web;
 
     /// <summary>
     /// The data context for this module.
     /// </summary>
+    [ExcludeFromCodeCoverage] // Very close to the metal configuration code, hard to test without heavy mocking, and low risk of bugs.
     public class ModuleDbContext : DbContext
     {
         /// <summary>

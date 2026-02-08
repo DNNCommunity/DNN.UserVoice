@@ -7,7 +7,6 @@ using DNN.Modules.UserVoice.Services.Ideas.DTOs;
 using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
 using DotNetNuke.Abstractions.Portals;
 using DotNetNuke.Abstractions.Users;
-using DotNetNuke.ExtensionPoints;
 using NSubstitute;
 using System;
 using System.Linq;

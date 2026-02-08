@@ -226,5 +226,35 @@ namespace UnitTests.Services.Ideas.Validators
             // Assert
             result.ShouldNotHaveAnyValidationErrors();
         }
+
+        [Fact]
+        public async Task NoUserCantDelete()
+        {
+            // Arrange
+            var userId = 123;
+            var idea = this.fixture
+                .Build<Idea>()
+                .With(x => x.CreatedByUserId, userId)
+                .Create();
+            this.ideaRepository.GetByIdAsync(idea.Id)
+                .Returns(idea);
+            this.userController.GetUserById(Arg.Any<int>(), userId)
+                .Returns((IUserInfo)null);
+            var dto = new RequestIdeaDeletionDtoWithContext
+            {
+                ActingUserId = userId,
+                PortalId = 1,
+                Dto = new RequestIdeaDeletionDto
+                {
+                    Id = idea.Id,
+                }
+            };
+
+            // Act
+            var result = await this.validator.TestValidateAsync(dto);
+
+            // Assert
+            result.ShouldHaveValidationErrorFor(x => x.ActingUserId);
+        }
     }
 }

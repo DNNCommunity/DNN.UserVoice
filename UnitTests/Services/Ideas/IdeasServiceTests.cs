@@ -7,7 +7,6 @@ using DNN.Modules.UserVoice.Providers;
 using DNN.Modules.UserVoice.Services.Ideas;
 using DNN.Modules.UserVoice.Services.Ideas.DTOs;
 using DotNetNuke.Abstractions.Users;
-using DotNetNuke.Entities.Modules;
 using Effort;
 using FluentValidation;
 using NSubstitute;
@@ -15,7 +14,6 @@ using System;
 using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.UI;
 using Xunit;
 
 namespace UnitTests.Services.Ideas
