@@ -11,6 +11,7 @@ using Effort;
 using FluentValidation;
 using NSubstitute;
 using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
@@ -101,7 +102,10 @@ namespace UnitTests.Services.Ideas
         {
             // Arrange
             var dto = fixture.Create<SaveIdeaDtoWithContext>();
-            var existingIdea = fixture.Create<Idea>();
+            var existingIdea = fixture
+                .Build<Idea>()
+                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Create();
             existingIdea.Id = dto.Dto.Id;
             this.ideaRepository
                 .GetByIdAsync(dto.Dto.Id, this.token)
@@ -146,24 +150,28 @@ namespace UnitTests.Services.Ideas
                     .With(i => i.Title, "An Idea about Performance")
                     .With(i => i.Description, "This idea aims to enhance website performance, but the description mentions seo.")
                     .With(i => i.DeletedOn, default(DateTime?))
+                    .With(x => x.UserVotes, new HashSet<UserVote>())
                     .Create();
                 var idea2 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, moduleId)
                     .With(i => i.Title, "Some Idea about SEO")
                     .With(i => i.Description, "This idea is focused on improving search engine optimization.")
                     .With(i => i.DeletedOn, default(DateTime?))
+                    .With(x => x.UserVotes, new HashSet<UserVote>())
                     .Create();
                 var idea3 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, 999)
                     .With(i => i.Title, "Mentions SEO but for wrong module")
                     .With(i => i.Description, "Also mentions SEO for still for wrong module")
                     .With(i => i.DeletedOn, default(DateTime?))
+                    .With(x => x.UserVotes, new HashSet<UserVote>())
                     .Create();
                 var idea4 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, moduleId)
                     .With(i => i.Title, "Deleted SEO idea")
                     .With(i => i.Description, "This idea mentions SEO but is deleted and should not be included.")
                     .With(i => i.DeletedOn, this.dateTimeProvider.GetUtcNow())
+                    .With(x => x.UserVotes, new HashSet<UserVote>())
                     .Create();
                 var ideas = new[] { idea1, idea2, idea3, idea4 };
 
@@ -206,6 +214,7 @@ namespace UnitTests.Services.Ideas
                 .With(x => x.ModuleId, fixture.Create<int>())
                 .With(x => x.CreatedByUserId, fixture.Create<int>())
                 .With(x => x.CreatedAt, DateTime.UtcNow.AddDays(-1))
+                .With(x => x.UserVotes, new HashSet<UserVote>())
                 .Create();
             this.ideaRepository
                 .GetByIdAsync(idea.Id, this.token)
@@ -241,7 +250,10 @@ namespace UnitTests.Services.Ideas
         public async Task GetsIdeaDetails_WhenUserCanEdit()
         {
             // Arrange
-            var idea = fixture.Create<Idea>();
+            var idea = fixture
+                .Build<Idea>()
+                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Create();
             this.ideaRepository
                 .GetByIdAsync(idea.Id, this.token)
                 .Returns(idea);
@@ -266,6 +278,7 @@ namespace UnitTests.Services.Ideas
             // Arrange
             var idea = fixture.Build<Idea>()
                 .With(x => x.CreatedByUserId, 123)
+                .With(x => x.UserVotes, new HashSet<UserVote>())
                 .Create();
             this.ideaRepository
                 .GetByIdAsync(idea.Id, this.token)
@@ -319,7 +332,10 @@ namespace UnitTests.Services.Ideas
                 .GetUtcNow()
                 .Returns(new DateTime(2026, 2, 1));
             var dto = fixture.Create<RequestIdeaDeletionDtoWithContext>();
-            var existingIdea = fixture.Create<Idea>();
+            var existingIdea = fixture
+                .Build<Idea>()
+                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Create();
             existingIdea.DeletedOn = null;
             existingIdea.Id = dto.Dto.Id;
             this.ideaRepository

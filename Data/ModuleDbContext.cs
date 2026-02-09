@@ -49,6 +49,11 @@ namespace DNN.Modules.UserVoice.Data
         public virtual DbSet<Idea> Ideas { get; set; }
 
         /// <summary>
+        /// Gets or sets the collection of user vote entities in the database.
+        /// </summary>
+        public virtual DbSet<UserVote> UserVotes { get; set; }
+
+        /// <summary>
         /// Gets the connection string, using cached value after first call.
         /// </summary>
         /// <returns>The connection string.</returns>

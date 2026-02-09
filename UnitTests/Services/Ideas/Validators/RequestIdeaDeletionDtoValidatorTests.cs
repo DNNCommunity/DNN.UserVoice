@@ -9,6 +9,7 @@ using DotNetNuke.Abstractions.Users;
 using FluentValidation;
 using FluentValidation.TestHelper;
 using NSubstitute;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -134,6 +135,7 @@ namespace UnitTests.Services.Ideas.Validators
             var idea = this.fixture
                 .Build<Idea>()
                 .With(x => x.CreatedByUserId, userId1)
+                .With(x => x.UserVotes, new HashSet<UserVote>())
                 .Create();
             this.ideaRepository.GetByIdAsync(idea.Id)
                 .Returns(idea);
@@ -168,6 +170,7 @@ namespace UnitTests.Services.Ideas.Validators
             var idea = this.fixture
                 .Build<Idea>()
                 .With(x => x.CreatedByUserId, userId)
+                .With(x => x.UserVotes, new HashSet<UserVote>())
                 .Create();
             this.ideaRepository.GetByIdAsync(idea.Id)
                 .Returns(idea);
@@ -202,6 +205,7 @@ namespace UnitTests.Services.Ideas.Validators
             var idea = this.fixture
                 .Build<Idea>()
                 .With(x => x.CreatedByUserId, userId)
+                .With(x => x.UserVotes, new HashSet<UserVote>())
                 .Create();
             this.ideaRepository.GetByIdAsync(idea.Id)
                 .Returns(idea);
@@ -235,6 +239,7 @@ namespace UnitTests.Services.Ideas.Validators
             var idea = this.fixture
                 .Build<Idea>()
                 .With(x => x.CreatedByUserId, userId)
+                .With(x => x.UserVotes, new HashSet<UserVote>())
                 .Create();
             this.ideaRepository.GetByIdAsync(idea.Id)
                 .Returns(idea);

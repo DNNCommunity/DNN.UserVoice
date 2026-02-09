@@ -26,6 +26,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="artifacts\**" />
+    <Compile Remove="Combined\**" />
     <Compile Remove="docs\**" />
     <Compile Remove="IntegrationTests\**" />
     <Compile Remove="module.web\**" />
@@ -33,6 +34,7 @@
     <Compile Remove="UnitTests\**" />
     <Compile Remove="_build\**" />
     <EmbeddedResource Remove="artifacts\**" />
+    <EmbeddedResource Remove="Combined\**" />
     <EmbeddedResource Remove="docs\**" />
     <EmbeddedResource Remove="IntegrationTests\**" />
     <EmbeddedResource Remove="module.web\**" />
@@ -40,6 +42,7 @@
     <EmbeddedResource Remove="UnitTests\**" />
     <EmbeddedResource Remove="_build\**" />
     <None Remove="artifacts\**" />
+    <None Remove="Combined\**" />
     <None Remove="docs\**" />
     <None Remove="IntegrationTests\**" />
     <None Remove="module.web\**" />

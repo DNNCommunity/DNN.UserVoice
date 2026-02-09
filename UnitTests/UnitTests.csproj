@@ -59,4 +59,7 @@
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Services\Voting\" />
+	</ItemGroup>
 </Project>
