@@ -54,6 +54,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
                 Id = idea.Id,
                 Title = idea.Title,
                 Description = idea.Description,
+                Votes = idea.UserVotes.Count,
             };
         }
 
@@ -77,6 +78,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
                 CreatedByUserDisplayName = author?.DisplayName,
                 CreatedAt = idea.CreatedAt,
                 CreatedSince = idea.CreatedAt.Humanize(),
+                Votes = idea.UserVotes.Count,
             };
         }
     }

@@ -12,6 +12,7 @@ using FluentValidation;
 using NSubstitute;
 using System;
 using System.Data.Common;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -149,7 +150,11 @@ namespace UnitTests.Services.Ideas
                     .With(i => i.Title, "An Idea about Performance")
                     .With(i => i.Description, "This idea aims to enhance website performance, but the description mentions seo.")
                     .With(i => i.DeletedOn, default(DateTime?))
-                    .Without(x => x.UserVotes)
+                    .With(x => x.UserVotes, fixture
+                        .Build<UserVote>()
+                        .Without(v => v.Idea)
+                        .CreateMany(10)
+                        .ToList())
                     .Create();
                 var idea2 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, moduleId)
@@ -200,8 +205,15 @@ namespace UnitTests.Services.Ideas
                 // Assert
                 Assert.Equal(2, result.ResultCount);
                 Assert.Collection(result.Items,
-                    item => Assert.Equal(idea2.Id, item.Id),
-                    item => Assert.Equal(idea1.Id, item.Id));
+                    item => {
+                        Assert.Equal(idea2.Id, item.Id);
+                        Assert.Equal(0, item.Votes);
+                    },
+                    item =>
+                    {
+                        Assert.Equal(idea1.Id, item.Id);
+                        Assert.Equal(10, item.Votes);
+                    });
             }
         }
 
@@ -215,6 +227,11 @@ namespace UnitTests.Services.Ideas
                 .With(x => x.CreatedAt, DateTime.UtcNow.AddDays(-1))
                 .Without(x => x.UserVotes)
                 .Create();
+            var votes = fixture.Build<UserVote>()
+                .With(v => v.Idea, idea)
+                .CreateMany(10)
+                .ToList();
+            idea.UserVotes = votes;
             this.ideaRepository
                 .GetByIdAsync(idea.Id, this.token)
                 .Returns(idea);
@@ -243,6 +260,7 @@ namespace UnitTests.Services.Ideas
             Assert.Equal(authorUser.DisplayName, result.CreatedByUserDisplayName);
             Assert.Equal(idea.CreatedAt, result.CreatedAt);
             Assert.Equal("yesterday", result.CreatedSince);
+            Assert.Equal(10, result.Votes);
         }
 
         [Fact]

@@ -22,5 +22,10 @@ namespace DNN.Modules.UserVoice.Services.Ideas.ViewModels
         /// Gets or sets the description associated with the object.
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of votes associated with the idea.
+        /// </summary>
+        public int Votes { get; set; }
     }
 }

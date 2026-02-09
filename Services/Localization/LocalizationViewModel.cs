@@ -31,10 +31,6 @@ namespace DNN.Modules.UserVoice.Services.Localization
         /// </summary>
         public class ModelValidationInfo
         {
-            /// <summary>Gets or sets the AllVotesUsed localized text.</summary>
-            /// <example>You have already used all of your votes, withdraw votes if you want to vote on other ideas.</example>
-            public string AllVotesUsed { get; set; } = "You have already used all of your votes, withdraw votes if you want to vote on other ideas.";
-
             /// <summary>Gets or sets the CannotEditIdeaNotYours localized text.</summary>
             /// <example>You cannot edit this idea because it was not created by you</example>
             public string CannotEditIdeaNotYours { get; set; } = "You cannot edit this idea because it was not created by you";

@@ -12,7 +12,6 @@ namespace DNN.Modules.UserVoice.Services.Localization
     using DotNetNuke.Common.Utilities;
     using DotNetNuke.Services.Localization;
     using System.Diagnostics.CodeAnalysis;
-    using System.Web.Hosting;
     using System.Threading;
     using static DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel;
 
@@ -77,7 +76,6 @@ namespace DNN.Modules.UserVoice.Services.Localization
         {
             var modelvalidation = new ModelValidationInfo
             {
-                AllVotesUsed = this.GetString("AllVotesUsed", "ModelValidation.resx"),
                 CannotEditIdeaNotYours = this.GetString("CannotEditIdeaNotYours", "ModelValidation.resx"),
                 DescriptionRequired = this.GetString("DescriptionRequired", "ModelValidation.resx"),
                 DescriptionTooLong = this.GetString("DescriptionTooLong", "ModelValidation.resx"),
