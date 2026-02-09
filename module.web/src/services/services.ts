@@ -306,6 +306,109 @@ export class LocalizationClient extends ClientBase {
     }
 }
 
+export class SettingsClient extends ClientBase {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(configuration: ConfigureRequest, baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        super(configuration);
+        this.http = http ? http : window as any;
+        this.baseUrl = this.getBaseUrl("", baseUrl);
+    }
+
+    /**
+     * Retrieves the current configuration settings for the UserVoice module.
+     * @return The settings of the UserVoice module.
+     */
+    getSettings(signal?: AbortSignal): Promise<UserVoiceSettings | null> {
+        let url_ = this.baseUrl + "/Settings/GetSettings";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            signal,
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processGetSettings(_response);
+        });
+    }
+
+    protected processGetSettings(response: Response): Promise<UserVoiceSettings | null> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? UserVoiceSettings.fromJS(resultData200) : null as any;
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<UserVoiceSettings | null>(null as any);
+    }
+
+    /**
+     * Updates the module settings with the specified values.
+     * @param settings (optional) The settings to apply to the UserVoice module. Cannot be null.
+     * @return An HTTP response indicating the result of the update operation.
+     */
+    updateSettings(settings: UserVoiceSettings | null | undefined, signal?: AbortSignal): Promise<FileResponse> {
+        let url_ = this.baseUrl + "/Settings/UpdateSettings";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(settings);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/octet-stream"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processUpdateSettings(_response);
+        });
+    }
+
+    protected processUpdateSettings(response: Response): Promise<FileResponse> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200 || status === 206) {
+            const contentDisposition = response.headers ? response.headers.get("content-disposition") : undefined;
+            let fileNameMatch = contentDisposition ? /filename\*=(?:(\\?['"])(.*?)\1|(?:[^\s]+'.*?')?([^;\n]*))/g.exec(contentDisposition) : undefined;
+            let fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[3] || fileNameMatch[2] : undefined;
+            if (fileName) {
+                fileName = decodeURIComponent(fileName);
+            } else {
+                fileNameMatch = contentDisposition ? /filename="?([^"]*?)"?(;|$)/g.exec(contentDisposition) : undefined;
+                fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[1] : undefined;
+            }
+            return response.blob().then(blob => { return { fileName: fileName, data: blob, status: status, headers: _headers }; });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<FileResponse>(null as any);
+    }
+}
+
 /** Implements RFC 7807 Problem Details for HTTP APIs. */
 export class ProblemDetails implements IProblemDetails {
     /** Gets or sets a URI that describes the type of problem. */
@@ -782,6 +885,8 @@ export interface ILocalizationViewModel {
 
 /** Localized strings for the ModelValidation resources. */
 export class ModelValidationInfo implements IModelValidationInfo {
+    /** Gets or sets the AllVotesUsed localized text. */
+    allVotesUsed?: string | undefined;
     /** Gets or sets the CannotEditIdeaNotYours localized text. */
     cannotEditIdeaNotYours?: string | undefined;
     /** Gets or sets the DescriptionRequired localized text. */
@@ -804,6 +909,8 @@ export class ModelValidationInfo implements IModelValidationInfo {
     userRequired?: string | undefined;
     /** Gets or sets the ValidationErrorTitle localized text. */
     validationErrorTitle?: string | undefined;
+    /** Gets or sets the VotesExhausted localized text. */
+    votesExhausted?: string | undefined;
 
     constructor(data?: IModelValidationInfo) {
         if (data) {
@@ -816,6 +923,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
 
     init(_data?: any) {
         if (_data) {
+            this.allVotesUsed = _data["AllVotesUsed"];
             this.cannotEditIdeaNotYours = _data["CannotEditIdeaNotYours"];
             this.descriptionRequired = _data["DescriptionRequired"];
             this.descriptionTooLong = _data["DescriptionTooLong"];
@@ -827,6 +935,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
             this.titleUnique = _data["TitleUnique"];
             this.userRequired = _data["UserRequired"];
             this.validationErrorTitle = _data["ValidationErrorTitle"];
+            this.votesExhausted = _data["VotesExhausted"];
         }
     }
 
@@ -839,6 +948,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
+        data["AllVotesUsed"] = this.allVotesUsed;
         data["CannotEditIdeaNotYours"] = this.cannotEditIdeaNotYours;
         data["DescriptionRequired"] = this.descriptionRequired;
         data["DescriptionTooLong"] = this.descriptionTooLong;
@@ -850,12 +960,15 @@ export class ModelValidationInfo implements IModelValidationInfo {
         data["TitleUnique"] = this.titleUnique;
         data["UserRequired"] = this.userRequired;
         data["ValidationErrorTitle"] = this.validationErrorTitle;
+        data["VotesExhausted"] = this.votesExhausted;
         return data;
     }
 }
 
 /** Localized strings for the ModelValidation resources. */
 export interface IModelValidationInfo {
+    /** Gets or sets the AllVotesUsed localized text. */
+    allVotesUsed?: string | undefined;
     /** Gets or sets the CannotEditIdeaNotYours localized text. */
     cannotEditIdeaNotYours?: string | undefined;
     /** Gets or sets the DescriptionRequired localized text. */
@@ -878,6 +991,8 @@ export interface IModelValidationInfo {
     userRequired?: string | undefined;
     /** Gets or sets the ValidationErrorTitle localized text. */
     validationErrorTitle?: string | undefined;
+    /** Gets or sets the VotesExhausted localized text. */
+    votesExhausted?: string | undefined;
 }
 
 /** Localized strings for the UI resources. */
@@ -1014,6 +1129,53 @@ export interface IUIInfo {
     withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
     yes?: string | undefined;
+}
+
+/** Represents the UserVoice module settings. */
+export class UserVoiceSettings implements IUserVoiceSettings {
+    /** Gets or sets the default number of votes allocated to each user. */
+    baseVotesPerUser?: number;
+
+    constructor(data?: IUserVoiceSettings) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.baseVotesPerUser = _data["BaseVotesPerUser"];
+        }
+    }
+
+    static fromJS(data: any): UserVoiceSettings {
+        data = typeof data === 'object' ? data : {};
+        let result = new UserVoiceSettings();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["BaseVotesPerUser"] = this.baseVotesPerUser;
+        return data;
+    }
+}
+
+/** Represents the UserVoice module settings. */
+export interface IUserVoiceSettings {
+    /** Gets or sets the default number of votes allocated to each user. */
+    baseVotesPerUser?: number;
+}
+
+export interface FileResponse {
+    data: Blob;
+    status: number;
+    fileName?: string;
+    headers?: { [name: string]: any };
 }
 
 export class ApiException extends Error {

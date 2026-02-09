@@ -31,6 +31,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
         /// </summary>
         public class ModelValidationInfo
         {
+            /// <summary>Gets or sets the AllVotesUsed localized text.</summary>
+            /// <example>You have already used all of your votes, withdraw votes if you want to vote on other ideas.</example>
+            public string AllVotesUsed { get; set; } = "You have already used all of your votes, withdraw votes if you want to vote on other ideas.";
+
             /// <summary>Gets or sets the CannotEditIdeaNotYours localized text.</summary>
             /// <example>You cannot edit this idea because it was not created by you</example>
             public string CannotEditIdeaNotYours { get; set; } = "You cannot edit this idea because it was not created by you";
@@ -74,6 +78,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <summary>Gets or sets the ValidationErrorTitle localized text.</summary>
             /// <example>Validation Error</example>
             public string ValidationErrorTitle { get; set; } = "Validation Error";
+
+            /// <summary>Gets or sets the VotesExhausted localized text.</summary>
+            /// <example>You have used all your available votes. You can withdraw some votes if you want to vote on other ideas.</example>
+            public string VotesExhausted { get; set; } = "You have used all your available votes. You can withdraw some votes if you want to vote on other ideas.";
 
 
         }

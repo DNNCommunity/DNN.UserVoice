@@ -12,6 +12,9 @@ namespace DNN.Modules.UserVoice.Extensions
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;
     using DNN.Modules.UserVoice.Services.Ideas.Validators;
     using DNN.Modules.UserVoice.Services.Localization;
+    using DNN.Modules.UserVoice.Services.Voting;
+    using DNN.Modules.UserVoice.Services.Voting.DTOs;
+    using DNN.Modules.UserVoice.Services.Voting.Validators;
     using FluentValidation;
     using Microsoft.Extensions.DependencyInjection;
     using System.Web;
@@ -29,6 +32,7 @@ namespace DNN.Modules.UserVoice.Extensions
         {
             services.AddScoped<ModuleDbContext, ModuleDbContext>();
             services.AddScoped<IIdeaRepository, IdeaRepository>();
+            services.AddScoped<IUserVoteRepository, UserVoteRepository>();
         }
 
         /// <summary>
@@ -39,6 +43,7 @@ namespace DNN.Modules.UserVoice.Extensions
         {
             services.AddScoped<ILocalizationService, LocalizationService>();
             services.AddScoped<IIdeaService, IdeaService>();
+            services.AddScoped<IVotingService, VotingService>();
         }
 
         /// <summary>
@@ -49,6 +54,7 @@ namespace DNN.Modules.UserVoice.Extensions
         {
             services.AddScoped<IValidator<SaveIdeaDtoWithContext>, SaveIdeaDtoValidator>();
             services.AddScoped<IValidator<RequestIdeaDeletionDtoWithContext>, RequestIdeaDeletionDtoValidator>();
+            services.AddScoped<IValidator<VoteDtoWithContext>, UpvoteDtoValidator>();
         }
 
         /// <summary>

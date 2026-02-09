@@ -44,7 +44,7 @@ namespace UnitTests.Data.Repositories
             var otherIdea = fixture.Build<DNN.Modules.UserVoice.Data.Entities.Idea>()
                 .With(x => x.Title, title)
                 .With(x => x.ModuleId, otherModuleId)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(otherIdea);
             await this.dataContext.SaveChangesAsync();
@@ -65,7 +65,7 @@ namespace UnitTests.Data.Repositories
             var existingIdea = fixture.Build<DNN.Modules.UserVoice.Data.Entities.Idea>()
                 .With(x => x.Title, title)
                 .With(x => x.ModuleId, moduleId)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(existingIdea);
             await this.dataContext.SaveChangesAsync();
@@ -86,7 +86,7 @@ namespace UnitTests.Data.Repositories
             var existingIdea = fixture.Build<DNN.Modules.UserVoice.Data.Entities.Idea>()
                 .With(x => x.Title, title)
                 .With(x => x.ModuleId, moduleId)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(existingIdea);
             await this.dataContext.SaveChangesAsync();

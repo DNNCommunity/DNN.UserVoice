@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AllVotesUsed.Text" xml:space="preserve">
+    <value>You have already used all of your votes, withdraw votes if you want to vote on other ideas.</value>
+  </data>
   <data name="CannotEditIdeaNotYours.Text" xml:space="preserve">
     <value>You cannot edit this idea because it was not created by you</value>
   </data>
@@ -149,5 +152,8 @@
   </data>
   <data name="ValidationErrorTitle.Text" xml:space="preserve">
     <value>Validation Error</value>
+  </data>
+  <data name="VotesExhausted.Text" xml:space="preserve">
+    <value>You have used all your available votes. You can withdraw some votes if you want to vote on other ideas.</value>
   </data>
 </root>

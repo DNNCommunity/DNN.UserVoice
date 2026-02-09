@@ -61,6 +61,19 @@ namespace DNN.Modules.UserVoice.Data.Repositories
         }
 
         /// <inheritdoc/>
+        public async Task<int> CountVotesForUserAsync(int thisModuleId, int actingUserId, CancellationToken token)
+        {
+            var count = await this.dataContext
+                .UserVotes
+                .CountAsync(
+                    v =>
+                        v.UserId == actingUserId &&
+                        v.Idea.ModuleId == thisModuleId,
+                    token);
+            return count;
+        }
+
+        /// <inheritdoc/>
         public async Task RemoveVoteAsync(int userId, int ideaId, CancellationToken token)
         {
             var vote = await this.dataContext.UserVotes

@@ -9,7 +9,6 @@ using DotNetNuke.Abstractions.Portals;
 using DotNetNuke.Abstractions.Users;
 using NSubstitute;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -113,7 +112,7 @@ namespace IntegrationTests.Controllers
             var yesterdayIdea = this.fixture
                 .Build<Idea>()
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(yesterdayIdea);
             await this.dataContext.SaveChangesAsync(this.token);
@@ -145,18 +144,18 @@ namespace IntegrationTests.Controllers
                 .Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.DeletedOn, default(DateTime?))
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .CreateMany(20);
             var deletedIdeas = this.fixture
                 .Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.DeletedOn, this.dateTimeProvider.GetUtcNow().AddDays(-5))
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .CreateMany(5);
             var otherModuleIdeas = this.fixture
                 .Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID + 10)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .CreateMany(5);
             var allIdeas = ideas
                 .Concat(deletedIdeas)
@@ -193,12 +192,12 @@ namespace IntegrationTests.Controllers
                 .With(i => i.DeletedOn, default(DateTime?))
                 .With(i => i.Title, () => $"SEO {fixture.Create<string>()}")
                 .With(i => i.Description, () => $"SEO {fixture.Create<string>()}")
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .CreateMany(5);
             var seoDescriptions = fixture.Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.DeletedOn, default(DateTime?))
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .With(i => i.Title, () =>
                 {
                     // Ensure it doesn't contain "SEO"
@@ -213,7 +212,7 @@ namespace IntegrationTests.Controllers
             var nonSeoIdeas = fixture.Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.DeletedOn, default(DateTime?))
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .With(i => i.Title, () =>
                 {
                     // Ensure it doesn't contain "SEO"
@@ -267,7 +266,7 @@ namespace IntegrationTests.Controllers
             var idea = this.fixture.Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID + 1)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(idea);
             await this.dataContext.SaveChangesAsync(this.token);
@@ -290,7 +289,7 @@ namespace IntegrationTests.Controllers
             var idea = this.fixture.Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(idea);
             await this.dataContext.SaveChangesAsync(this.token);
@@ -313,7 +312,7 @@ namespace IntegrationTests.Controllers
             var idea = this.fixture.Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID + 1)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(idea);
             var admin = Substitute.For<IUserInfo>();
@@ -346,7 +345,7 @@ namespace IntegrationTests.Controllers
             var idea = fixture.Build<Idea>()
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID + 1)
                 .With(i => i.DeletedOn, default(DateTime?))
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(idea);
             await this.dataContext.SaveChangesAsync();
@@ -371,7 +370,7 @@ namespace IntegrationTests.Controllers
             var idea = fixture.Build<Idea>()
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID)
                 .With(i => i.DeletedOn, default(DateTime?))
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(idea);
             await this.dataContext.SaveChangesAsync();
@@ -395,7 +394,7 @@ namespace IntegrationTests.Controllers
             var idea = this.fixture.Build<Idea>()
                 .With(i => i.ModuleId, this.RequestContext.Module.ModuleID)
                 .With(i => i.CreatedByUserId, this.RequestContext.User.UserID + 1)
-                .With(x => x.UserVotes, new HashSet<UserVote>())
+                .Without(x => x.UserVotes)
                 .Create();
             this.dataContext.Ideas.Add(idea);
             var admin = Substitute.For<IUserInfo>();

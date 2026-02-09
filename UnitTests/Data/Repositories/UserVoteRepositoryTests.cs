@@ -134,5 +134,66 @@ namespace UnitTests.Data.Repositories
             // Assert
             Assert.Empty(this.dataContext.UserVotes);
         }
+
+        [Fact]
+        public async Task CountsUserVotes()
+        {
+            // Arrange
+            var actingUserId = fixture.Create<int>();
+            var thisModuleId = fixture.Create<int>();
+            var votedIdea = fixture
+                .Build<Idea>()
+                .With(i => i.ModuleId, thisModuleId)
+                .With(i => i.UserVotes, fixture
+                    .Build<UserVote>()
+                    .Without(v => v.Idea)
+                    .With(v => v.UserId, actingUserId)
+                    .CreateMany(1)
+                    .ToList())
+                .Create();
+            this.dataContext.Ideas.Add(votedIdea);
+            var otherUserId = fixture.Create<int>();
+            var otherIdea = fixture
+                .Build<Idea>()
+                .With(i => i.ModuleId, thisModuleId)
+                .With(i => i.UserVotes, fixture
+                    .Build<UserVote>()
+                    .Without(v => v.Idea)
+                    .With(v => v.UserId, otherUserId)
+                    .CreateMany(1)
+                    .ToList())
+                .Create();
+            this.dataContext.Ideas.Add(otherIdea);
+            var otherVotedIdea = fixture
+                .Build<Idea>()
+                .With(i => i.ModuleId, thisModuleId)
+                .With(i => i.UserVotes, fixture
+                    .Build<UserVote>()
+                    .Without(v => v.Idea)
+                    .With(v => v.UserId, actingUserId)
+                    .CreateMany(1)
+                    .ToList())
+                .Create();
+            this.dataContext.Ideas.Add(otherVotedIdea);
+            var otherModuleIdea = fixture
+                .Build<Idea>()
+                .With(i => i.ModuleId, fixture.Create<int>())
+                .With(i => i.UserVotes, fixture
+                    .Build<UserVote>()
+                    .Without(v => v.Idea)
+                    .With(v => v.UserId, actingUserId)
+                    .CreateMany(1)
+                    .ToList())
+                .Create();
+            this.dataContext.Ideas.Add(otherModuleIdea);
+            await this.dataContext.SaveChangesAsync(token);
+
+            // Act
+            var count = await this.userVoteRepository
+                .CountVotesForUserAsync(thisModuleId, actingUserId, token);
+
+            // Assert
+            Assert.Equal(2, count);
+        }
     }
 }

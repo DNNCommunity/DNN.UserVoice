@@ -22,6 +22,16 @@ namespace DNN.Modules.UserVoice.Data.Repositories
         Task AddVoteAsync(int userId, int ideaId, CancellationToken token);
 
         /// <summary>
+        /// Asynchronously counts the number of votes cast by the specified user in the given module.
+        /// </summary>
+        /// <param name="moduleId">The identifier of the module in which to count votes.</param>
+        /// <param name="userId">The identifier of the user whose votes are to be counted.</param>
+        /// <param name="token">A cancellation token that can be used to cancel the asynchronous operation.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the total number of votes cast
+        /// by the specified user in the module.</returns>
+        Task<int> CountVotesForUserAsync(int moduleId, int userId, CancellationToken token);
+
+        /// <summary>
         /// Asynchronously removes a user's vote from the specified idea.
         /// </summary>
         /// <param name="userId">The unique identifier of the user whose vote is to be removed.</param>
