@@ -162,6 +162,9 @@
   <data name="Votes.Text" xml:space="preserve">
     <value>Votes</value>
   </data>
+  <data name="VotesLeft.Text" xml:space="preserve">
+    <value>You have {0} votes left</value>
+  </data>
   <data name="Withdraw.Text" xml:space="preserve">
     <value>Withdraw</value>
   </data>

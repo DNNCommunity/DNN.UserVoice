@@ -144,6 +144,7 @@ namespace UnitTests.Services.Ideas
             {
                 // Arrange
                 var moduleId = 123;
+                var actingUserId = 234;
 
                 var idea1 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, moduleId)
@@ -163,6 +164,7 @@ namespace UnitTests.Services.Ideas
                     .With(i => i.DeletedOn, default(DateTime?))
                     .Without(x => x.UserVotes)
                     .Create();
+                idea2.UserVotes.Add(new UserVote { Idea = idea2, UserId = actingUserId });
                 var idea3 = fixture.Build<Idea>()
                     .With(i => i.ModuleId, 999)
                     .With(i => i.Title, "Mentions SEO but for wrong module")
@@ -191,7 +193,7 @@ namespace UnitTests.Services.Ideas
                 var dto = new SearchIdeasDtoWithContext
                 {
                     ModuleId = moduleId,
-                    ActingUserId = 234,
+                    ActingUserId = actingUserId,
                     Dto = new SearchIdeasDto
                     {
                         Query = "seo",
@@ -207,7 +209,8 @@ namespace UnitTests.Services.Ideas
                 Assert.Collection(result.Items,
                     item => {
                         Assert.Equal(idea2.Id, item.Id);
-                        Assert.Equal(0, item.Votes);
+                        Assert.Equal(1, item.Votes);
+                        Assert.True(item.IsVotedByUser);
                     },
                     item =>
                     {

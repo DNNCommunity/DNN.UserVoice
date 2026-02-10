@@ -7,6 +7,7 @@ namespace DNN.Modules.UserVoice.Extensions
     using DNN.Modules.UserVoice.Controllers.Context;
     using DNN.Modules.UserVoice.Data;
     using DNN.Modules.UserVoice.Data.Repositories;
+    using DNN.Modules.UserVoice.Entities.Settings;
     using DNN.Modules.UserVoice.Providers;
     using DNN.Modules.UserVoice.Services.Ideas;
     using DNN.Modules.UserVoice.Services.Ideas.DTOs;

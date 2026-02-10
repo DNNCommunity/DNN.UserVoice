@@ -12,6 +12,7 @@ namespace DNN.Modules.UserVoice.Services.Localization
     using DotNetNuke.Common.Utilities;
     using DotNetNuke.Services.Localization;
     using System.Diagnostics.CodeAnalysis;
+    using System.Web.Hosting;
     using System.Threading;
     using static DNN.Modules.UserVoice.Services.Localization.LocalizationViewModel;
 
@@ -108,6 +109,7 @@ namespace DNN.Modules.UserVoice.Services.Localization
                 Title = this.GetString("Title", "UI.resx"),
                 Vote = this.GetString("Vote", "UI.resx"),
                 Votes = this.GetString("Votes", "UI.resx"),
+                VotesLeft = this.GetString("VotesLeft", "UI.resx"),
                 Withdraw = this.GetString("Withdraw", "UI.resx"),
                 Yes = this.GetString("Yes", "UI.resx"),
 

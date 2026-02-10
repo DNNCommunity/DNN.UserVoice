@@ -15,12 +15,14 @@
 
 - dnn-searchbox
 - dnn-button
+- dnn-progress-bar
 
 ### Graph
 ```mermaid
 graph TD;
   dnnuv-ideas --> dnn-searchbox
   dnnuv-ideas --> dnn-button
+  dnnuv-ideas --> dnn-progress-bar
   dnn-button --> dnn-modal
   dnn-button --> dnn-button
   dnnuv-uservoice --> dnnuv-ideas

@@ -25,7 +25,7 @@ namespace DNN.Modules.UserVoice
             services.AddModuleServices();
             services.AddValidators();
             services.AddAdapters();
-            services.AddScoped<IUserVoiceSettingsRepository>();
+            services.AddScoped<IUserVoiceSettingsRepository, UserVoiceSettingsRepository>();
         }
     }
 }

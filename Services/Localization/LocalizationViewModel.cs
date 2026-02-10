@@ -147,6 +147,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <example>Votes</example>
             public string Votes { get; set; } = "Votes";
 
+            /// <summary>Gets or sets the VotesLeft localized text.</summary>
+            /// <example>You have {0} votes left</example>
+            public string VotesLeft { get; set; } = "You have {0} votes left";
+
             /// <summary>Gets or sets the Withdraw localized text.</summary>
             /// <example>Withdraw</example>
             public string Withdraw { get; set; } = "Withdraw";

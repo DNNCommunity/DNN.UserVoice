@@ -115,7 +115,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas
                     .OrderByDescending(i => i.CreatedAt)
                     .ToPagedListAsync(dto.Dto.Page, dto.Dto.PageSize, token);
                 return new PagedList<IdeaViewModel>(
-                    paged.Items.Select(i => i.ToIdeaViewModel()),
+                    paged.Items.Select(i => i.ToIdeaViewModel(dto.ActingUserId)),
                     paged.Page,
                     paged.PageSize,
                     paged.ResultCount,
@@ -141,7 +141,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas
                 .ToPagedListAsync(dto.Dto.Page, dto.Dto.PageSize, token);
 
             return new PagedList<IdeaViewModel>(
-                pagedScored.Items.Select(x => x.Idea.ToIdeaViewModel()),
+                pagedScored.Items.Select(x => x.Idea.ToIdeaViewModel(dto.ActingUserId)),
                 pagedScored.Page,
                 pagedScored.PageSize,
                 pagedScored.ResultCount,

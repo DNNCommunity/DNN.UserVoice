@@ -27,5 +27,10 @@ namespace DNN.Modules.UserVoice.Services.Ideas.ViewModels
         /// Gets or sets the number of votes associated with the idea.
         /// </summary>
         public int Votes { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the current user has voted for this item.
+        /// </summary>
+        public bool IsVotedByUser { get; set; }
     }
 }

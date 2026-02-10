@@ -782,6 +782,8 @@ export class IdeaViewModel implements IIdeaViewModel {
     description?: string | undefined;
     /** Gets or sets the number of votes associated with the idea. */
     votes?: number;
+    /** Gets or sets a value indicating whether the current user has voted for this item. */
+    isVotedByUser?: boolean;
 
     constructor(data?: IIdeaViewModel) {
         if (data) {
@@ -798,6 +800,7 @@ export class IdeaViewModel implements IIdeaViewModel {
             this.title = _data["Title"];
             this.description = _data["Description"];
             this.votes = _data["Votes"];
+            this.isVotedByUser = _data["IsVotedByUser"];
         }
     }
 
@@ -814,6 +817,7 @@ export class IdeaViewModel implements IIdeaViewModel {
         data["Title"] = this.title;
         data["Description"] = this.description;
         data["Votes"] = this.votes;
+        data["IsVotedByUser"] = this.isVotedByUser;
         return data;
     }
 }
@@ -828,6 +832,8 @@ export interface IIdeaViewModel {
     description?: string | undefined;
     /** Gets or sets the number of votes associated with the idea. */
     votes?: number;
+    /** Gets or sets a value indicating whether the current user has voted for this item. */
+    isVotedByUser?: boolean;
 }
 
 /** The details about ideas search to perform. */
@@ -1194,6 +1200,8 @@ export class UIInfo implements IUIInfo {
     vote?: string | undefined;
     /** Gets or sets the Votes localized text. */
     votes?: string | undefined;
+    /** Gets or sets the VotesLeft localized text. */
+    votesLeft?: string | undefined;
     /** Gets or sets the Withdraw localized text. */
     withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
@@ -1225,6 +1233,7 @@ export class UIInfo implements IUIInfo {
             this.title = _data["Title"];
             this.vote = _data["Vote"];
             this.votes = _data["Votes"];
+            this.votesLeft = _data["VotesLeft"];
             this.withdraw = _data["Withdraw"];
             this.yes = _data["Yes"];
         }
@@ -1254,6 +1263,7 @@ export class UIInfo implements IUIInfo {
         data["Title"] = this.title;
         data["Vote"] = this.vote;
         data["Votes"] = this.votes;
+        data["VotesLeft"] = this.votesLeft;
         data["Withdraw"] = this.withdraw;
         data["Yes"] = this.yes;
         return data;
@@ -1292,6 +1302,8 @@ export interface IUIInfo {
     vote?: string | undefined;
     /** Gets or sets the Votes localized text. */
     votes?: string | undefined;
+    /** Gets or sets the VotesLeft localized text. */
+    votesLeft?: string | undefined;
     /** Gets or sets the Withdraw localized text. */
     withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
