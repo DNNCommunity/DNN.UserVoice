@@ -38,6 +38,7 @@
         "InstallNpmPackages",
         "IntegrationTests",
         "LogInfo",
+        "MergeCoverage",
         "Package",
         "Release",
         "Restore",

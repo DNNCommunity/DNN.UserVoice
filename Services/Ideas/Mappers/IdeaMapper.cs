@@ -8,7 +8,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
     using DNN.Modules.UserVoice.Services.Ideas.ViewModels;
     using DotNetNuke.Abstractions.Users;
     using Humanizer;
-    using System.Runtime.CompilerServices;
+    using System.Linq;
 
     /// <summary>
     /// Provides static methods for mapping and transforming idea-related data.
@@ -46,14 +46,17 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
         /// Creates a new IdeaViewModel instance that represents the specified Idea.
         /// </summary>
         /// <param name="idea">The Idea object to convert to an IdeaViewModel. Cannot be null.</param>
+        /// <param name="actingUserId">The ID of the user for whom the view model is being created.</param>
         /// <returns>An IdeaViewModel containing the Id and Title from the specified Idea.</returns>
-        public static IdeaViewModel ToIdeaViewModel(this Idea idea)
+        public static IdeaViewModel ToIdeaViewModel(this Idea idea, int actingUserId)
         {
             return new IdeaViewModel
             {
                 Id = idea.Id,
                 Title = idea.Title,
                 Description = idea.Description,
+                Votes = idea.UserVotes.Count,
+                IsVotedByUser = idea.UserVotes.Any(v => v.UserId == actingUserId),
             };
         }
 
@@ -77,6 +80,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Mappers
                 CreatedByUserDisplayName = author?.DisplayName,
                 CreatedAt = idea.CreatedAt,
                 CreatedSince = idea.CreatedAt.Humanize(),
+                Votes = idea.UserVotes.Count,
             };
         }
     }

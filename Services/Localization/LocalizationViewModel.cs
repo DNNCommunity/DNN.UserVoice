@@ -75,6 +75,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <example>Validation Error</example>
             public string ValidationErrorTitle { get; set; } = "Validation Error";
 
+            /// <summary>Gets or sets the VotesExhausted localized text.</summary>
+            /// <example>You have used all your available votes. You can withdraw some votes if you want to vote on other ideas.</example>
+            public string VotesExhausted { get; set; } = "You have used all your available votes. You can withdraw some votes if you want to vote on other ideas.";
+
 
         }
 
@@ -142,6 +146,10 @@ namespace DNN.Modules.UserVoice.Services.Localization
             /// <summary>Gets or sets the Votes localized text.</summary>
             /// <example>Votes</example>
             public string Votes { get; set; } = "Votes";
+
+            /// <summary>Gets or sets the VotesLeft localized text.</summary>
+            /// <example>You have {0} votes left</example>
+            public string VotesLeft { get; set; } = "You have {0} votes left";
 
             /// <summary>Gets or sets the Withdraw localized text.</summary>
             /// <example>Withdraw</example>

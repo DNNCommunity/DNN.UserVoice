@@ -77,6 +77,7 @@ class Build : NukeBuild
     AbsolutePath BadgesDirectory => GithubDirectory / "badges";
     AbsolutePath UnitTestBadgesDirectory => BadgesDirectory / "UnitTests";
     AbsolutePath IntegrationTestsBadgesDirectory => BadgesDirectory / "IntegrationTests";
+    AbsolutePath CombinedTestBadgesDirectory => BadgesDirectory / "Combined";
     AbsolutePath ClientServicesDirectory => WebProjectDirectory / "src" / "services";
     AbsolutePath DocsDirectory => RootDirectory / "docs";
 
@@ -192,6 +193,7 @@ class Build : NukeBuild
                 .SetReportTypes(ReportTypes.Badges, ReportTypes.HtmlInline, ReportTypes.HtmlChart)
                 .SetTargetDirectory(UnitTestsResultsDirectory)
                 .SetHistoryDirectory(RootDirectory / "UnitTests" / "history")
+                .AddFileFilters("-**/Migrations/**")
                 .AddProcessAdditionalArguments("-title:UnitTests"));
 
             Helpers.CleanCodeCoverageHistoryFiles(RootDirectory / "UnitTests" / "history");
@@ -247,6 +249,7 @@ class Build : NukeBuild
                 .SetHistoryDirectory(RootDirectory / "IntegrationTests" / "history")
                 .SetTargetDirectory(IntegrationTestsResultsDirectory)
                 .AddClassFilters("-*Data.ModuleDbContext")
+                .AddFileFilters("-**/Migrations/**")
                 .AddProcessAdditionalArguments("-title:IntegrationTests"));
 
             Helpers.CleanCodeCoverageHistoryFiles(RootDirectory / "IntegrationTests" / "history");
@@ -260,9 +263,40 @@ class Build : NukeBuild
             }
         });
 
+    Target MergeCoverage => _ => _
+        .DependsOn(UnitTests)
+        .DependsOn(IntegrationTests)
+        .Executes(() =>
+        {
+            var combinedCoverageDirectory = TestResultsDirectory / "Combined";
+            combinedCoverageDirectory.CreateOrCleanDirectory();
+
+            ReportGenerator(_ => _
+                .SetReports(
+                    UnitTestsResultsDirectory / "coverage.xml",
+                    IntegrationTestsResultsDirectory / "coverage.xml")
+                .SetReportTypes(ReportTypes.Badges, ReportTypes.HtmlInline, ReportTypes.HtmlChart)
+                .SetTargetDirectory(combinedCoverageDirectory)
+                .SetHistoryDirectory(RootDirectory / "Combined" / "history")
+                .AddClassFilters("-*Data.ModuleDbContext", "-*Migrations*")
+                .AddFileFilters("-**/Migrations/**")
+                .AddProcessAdditionalArguments("-title:Combined Coverage"));
+
+            Helpers.CleanCodeCoverageHistoryFiles(RootDirectory / "Combined" / "history");
+
+            var testBadges = combinedCoverageDirectory.GlobFiles("badge_branchcoverage.svg", "badge_linecoverage.svg");
+            testBadges.ForEach(f => f.CopyToDirectory(CombinedTestBadgesDirectory, ExistsPolicy.FileOverwrite, createDirectories: true));
+
+            if (IsWin && (InvokedTargets.Contains(MergeCoverage) || InvokedTargets.Contains(Test)))
+            {
+                Process.Start(@"cmd.exe ", @"/c " + (combinedCoverageDirectory / "index.html"));
+            }
+        });
+
     Target Test => _ => _
         .DependsOn(UnitTests)
         .DependsOn(IntegrationTests)
+        .DependsOn(MergeCoverage)
         .Executes(() =>
         {
         });
@@ -779,6 +813,7 @@ class Build : NukeBuild
                 Git("add docs -f");
                 Git("add IntegrationTests/history -f");
                 Git("add UnitTests/history -f");
+                Git("add Combined/history -f");
                 Git("add .github/badges -f");
                 Git("status");
                 Git($"commit --allow-empty -m \"Commit latest generated files\""); // We allow an empty commit in case the last change did not affect the site.

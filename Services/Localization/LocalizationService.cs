@@ -88,6 +88,7 @@ namespace DNN.Modules.UserVoice.Services.Localization
                 TitleUnique = this.GetString("TitleUnique", "ModelValidation.resx"),
                 UserRequired = this.GetString("UserRequired", "ModelValidation.resx"),
                 ValidationErrorTitle = this.GetString("ValidationErrorTitle", "ModelValidation.resx"),
+                VotesExhausted = this.GetString("VotesExhausted", "ModelValidation.resx"),
 
             };
             viewModel.ModelValidation = modelvalidation;
@@ -108,6 +109,7 @@ namespace DNN.Modules.UserVoice.Services.Localization
                 Title = this.GetString("Title", "UI.resx"),
                 Vote = this.GetString("Vote", "UI.resx"),
                 Votes = this.GetString("Votes", "UI.resx"),
+                VotesLeft = this.GetString("VotesLeft", "UI.resx"),
                 Withdraw = this.GetString("Withdraw", "UI.resx"),
                 Yes = this.GetString("Yes", "UI.resx"),
 

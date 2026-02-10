@@ -2,7 +2,6 @@
 // Copyright DNN Community
 
 using System;
-using System.Collections.Generic;
 
 namespace DNN.Modules.UserVoice.Services.Ideas.ViewModels
 {
@@ -45,5 +44,10 @@ namespace DNN.Modules.UserVoice.Services.Ideas.ViewModels
         /// Gets or sets a value indicating how long ago the idea was created, in a human-readable format (e.g., "2 hours ago").
         /// </summary>
         public string CreatedSince { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of votes associated with the idea.
+        /// </summary>
+        public int Votes { get; set; }
     }
 }

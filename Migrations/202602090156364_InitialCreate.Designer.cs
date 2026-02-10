@@ -13,7 +13,7 @@ namespace DNN.Modules.UserVoice.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202602041849373_InitialCreate"; }
+            get { return "202602090156364_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

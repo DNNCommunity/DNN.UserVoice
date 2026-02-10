@@ -150,4 +150,7 @@
   <data name="ValidationErrorTitle.Text" xml:space="preserve">
     <value>Validation Error</value>
   </data>
+  <data name="VotesExhausted.Text" xml:space="preserve">
+    <value>You have used all your available votes. You can withdraw some votes if you want to vote on other ideas.</value>
+  </data>
 </root>

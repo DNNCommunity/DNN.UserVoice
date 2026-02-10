@@ -1,6 +1,6 @@
 import { Component, Fragment, Host, State, h } from '@stencil/core';
 import state from '../../store/state';
-import { IdeaClient, IdeaViewModel, SearchIdeasDto } from '../../services/services';
+import { IdeaClient, IdeaViewModel, IVoteStatsViewModel, SearchIdeasDto, VoteDto, VotingClient } from '../../services/services';
 import alertError from '../../services/alert-error';
 import { Icon } from '../../icons/icons';
 
@@ -12,13 +12,15 @@ import { Icon } from '../../icons/icons';
 export class DnnuvIdeas {
 
   @State() ideas: IdeaViewModel[] | undefined;
-
   @State() query: string = '';
+  @State() voteStats: IVoteStatsViewModel | null = null;
   
   private readonly ideaClient: IdeaClient;
+  private readonly votingClient: VotingClient;
 
   constructor() {
     this.ideaClient = new IdeaClient({moduleId: state.moduleId});
+    this.votingClient = new VotingClient({moduleId: state.moduleId});
   }
 
   async componentWillLoad() {
@@ -34,6 +36,75 @@ export class DnnuvIdeas {
     } catch (error) {
       alertError(error);
     }
+
+    if (state.userLoggedIn) {
+      this.voteStats = await this.votingClient.getVotingStats();
+    }
+  }
+
+  private async upvote(id: number) {
+    const dto = new VoteDto ({
+      ideaId: id,
+    });
+    await this.votingClient.upvoteIdea(dto);
+    
+    // Update the UI
+    const ideaIndex = this.ideas?.findIndex(i => i.id === id);
+    if (this.ideas && ideaIndex !== undefined && ideaIndex > -1) {
+      const idea = this.ideas[ideaIndex];
+      const updatedIdea = new IdeaViewModel({
+        ...idea,
+        votes: (idea.votes ?? 0) + 1,
+        isVotedByUser: true,
+      });
+
+      // Update ideas in a way that triggers state changes
+      this.ideas = [
+        ...this.ideas.slice(0, ideaIndex),
+        updatedIdea,
+        ...this.ideas.slice(ideaIndex + 1),
+      ];
+
+      // Update vote stats in the proper way for state to react to the change
+      if (this.voteStats) {
+        this.voteStats = { ...this.voteStats, currentVotes: this.voteStats.currentVotes! + 1 };
+      }
+    }
+  }
+
+  private async withDrawVote(id: number) {
+    const dto = new VoteDto ({
+      ideaId: id,
+    });
+    await this.votingClient.removeVote(dto);
+
+    // Update the UI
+    const ideaIndex = this.ideas?.findIndex(i => i.id === id);
+    if (this.ideas && ideaIndex !== undefined && ideaIndex > -1) {
+      const idea = this.ideas[ideaIndex];
+      const updatedIdea = new IdeaViewModel({
+        ...idea,
+        votes: (idea.votes ?? 0) - 1,
+        isVotedByUser: false,
+      });
+      this.ideas = [
+        ...this.ideas.slice(0, ideaIndex),
+        updatedIdea,
+        ...this.ideas.slice(ideaIndex + 1),
+      ];
+
+      // Update vote stats in the proper way for state to react to the change
+      if (this.voteStats) {
+        this.voteStats = { ...this.voteStats, currentVotes: this.voteStats.currentVotes! - 1 };
+      }
+    }
+  }
+
+  private getRemainingVotesLabel(): string {
+    const remainingVotes = (this.voteStats?.maxVotes ?? 0) - (this.voteStats?.currentVotes ?? 0);
+    const votesLeft = String(state.localization?.uI?.votesLeft ?? '');
+    const message = votesLeft.replace('{0}', remainingVotes.toString());
+    return message;
   }
 
   render() {
@@ -60,21 +131,45 @@ export class DnnuvIdeas {
             {state.localization?.uI?.loginToPost}
           </div>
         )}
+        {this.voteStats &&
+          <div class="vote-stats">
+            <div class="vote-stats-label">
+              {this.getRemainingVotesLabel()}
+            </div>
+            <dnn-progress-bar
+              value={this.voteStats.currentVotes}
+              max={this.voteStats.maxVotes}
+              useGradient
+            />
+          </div>
+        }
         <div class="ideas">
           {this.ideas?.map(idea => (
             <Fragment>
               <div class="vote">
                 <div class="vote-box">
                   <div class="vote-count">
-                    {Math.floor(Math.random() * 200)} {/* TODO: replace with real vote count */}
+                    {idea.votes}
                   </div>
                   <div class="vote-label">
                     {state.localization?.uI?.votes}
                   </div>
                 </div>
-                <dnn-button>
-                  {state.localization?.uI?.vote}
-                </dnn-button>
+                {state.userLoggedIn && !idea.isVotedByUser &&
+                  <dnn-button
+                    onClick={() => void this.upvote(idea.id!)}
+                  >
+                    {state.localization?.uI?.vote}
+                  </dnn-button>
+                }
+                {state.userLoggedIn && idea.isVotedByUser &&
+                  <dnn-button
+                    reversed
+                    onClick={() => void this.withDrawVote(idea.id!)}
+                  >
+                    {state.localization?.uI?.withdraw}
+                  </dnn-button>
+                }
               </div>
               <a
                 href={`#/idea/${idea.id}`}

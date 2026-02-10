@@ -27,6 +27,7 @@ graph TD;
   dnnuv-uservoice --> dnnuv-idea
   dnnuv-ideas --> dnn-searchbox
   dnnuv-ideas --> dnn-button
+  dnnuv-ideas --> dnn-progress-bar
   dnn-button --> dnn-modal
   dnn-button --> dnn-button
   dnnuv-idea --> dnn-button

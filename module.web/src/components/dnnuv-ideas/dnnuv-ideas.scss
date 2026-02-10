@@ -29,6 +29,16 @@
   color: var(--dnn-color-info-contrast, white);
 }
 
+.vote-stats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1em;
+  align-items: center;
+  dnn-progress-bar {
+    flex-grow: 1;
+  }
+}
+
 .ideas {
   display: grid;
   gap: 1em;
@@ -38,13 +48,13 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 2px solid var(--dnn-color-primary, blue);
     .vote-box {
       flex-grow: 1;
       font-weight: bold;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border: 1px solid var(--dnn-color-primary, blue);
       .vote-count {
         font-size: 1.5em;
         margin: 0 1em;

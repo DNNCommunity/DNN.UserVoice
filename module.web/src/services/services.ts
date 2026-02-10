@@ -306,6 +306,270 @@ export class LocalizationClient extends ClientBase {
     }
 }
 
+export class SettingsClient extends ClientBase {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(configuration: ConfigureRequest, baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        super(configuration);
+        this.http = http ? http : window as any;
+        this.baseUrl = this.getBaseUrl("", baseUrl);
+    }
+
+    /**
+     * Retrieves the current configuration settings for the UserVoice module.
+     * @return The settings of the UserVoice module.
+     */
+    getSettings(signal?: AbortSignal): Promise<UserVoiceSettings | null> {
+        let url_ = this.baseUrl + "/Settings/GetSettings";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            signal,
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processGetSettings(_response);
+        });
+    }
+
+    protected processGetSettings(response: Response): Promise<UserVoiceSettings | null> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? UserVoiceSettings.fromJS(resultData200) : null as any;
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<UserVoiceSettings | null>(null as any);
+    }
+
+    /**
+     * Updates the module settings with the specified values.
+     * @param settings (optional) The settings to apply to the UserVoice module. Cannot be null.
+     * @return An HTTP response indicating the result of the update operation.
+     */
+    updateSettings(settings: UserVoiceSettings | null | undefined, signal?: AbortSignal): Promise<FileResponse> {
+        let url_ = this.baseUrl + "/Settings/UpdateSettings";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(settings);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/octet-stream"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processUpdateSettings(_response);
+        });
+    }
+
+    protected processUpdateSettings(response: Response): Promise<FileResponse> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200 || status === 206) {
+            const contentDisposition = response.headers ? response.headers.get("content-disposition") : undefined;
+            let fileNameMatch = contentDisposition ? /filename\*=(?:(\\?['"])(.*?)\1|(?:[^\s]+'.*?')?([^;\n]*))/g.exec(contentDisposition) : undefined;
+            let fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[3] || fileNameMatch[2] : undefined;
+            if (fileName) {
+                fileName = decodeURIComponent(fileName);
+            } else {
+                fileNameMatch = contentDisposition ? /filename="?([^"]*?)"?(;|$)/g.exec(contentDisposition) : undefined;
+                fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[1] : undefined;
+            }
+            return response.blob().then(blob => { return { fileName: fileName, data: blob, status: status, headers: _headers }; });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<FileResponse>(null as any);
+    }
+}
+
+export class VotingClient extends ClientBase {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(configuration: ConfigureRequest, baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        super(configuration);
+        this.http = http ? http : window as any;
+        this.baseUrl = this.getBaseUrl("", baseUrl);
+    }
+
+    /**
+     * Retrieves aggregated voting statistics for the current user.
+     * @return The voting statistics were retrieved successfully.
+     */
+    getVotingStats(signal?: AbortSignal): Promise<VoteStatsViewModel | null> {
+        let url_ = this.baseUrl + "/Voting/GetVotingStats";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            signal,
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processGetVotingStats(_response);
+        });
+    }
+
+    protected processGetVotingStats(response: Response): Promise<VoteStatsViewModel | null> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? VoteStatsViewModel.fromJS(resultData200) : null as any;
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<VoteStatsViewModel | null>(null as any);
+    }
+
+    /**
+     * Registers an upvote for the specified idea on behalf of the current user.
+     * @param dto (optional) An object containing the details of the idea to upvote. Must not be null.
+     * @return An HTTP response indicating the result of the upvote operation. Returns 200 OK if the upvote is successful;
+                otherwise, returns 400 Bad Request with problem details.
+     */
+    upvoteIdea(dto: VoteDto | null | undefined, signal?: AbortSignal): Promise<FileResponse> {
+        let url_ = this.baseUrl + "/Voting/UpvoteIdea";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(dto);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/octet-stream"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processUpvoteIdea(_response);
+        });
+    }
+
+    protected processUpvoteIdea(response: Response): Promise<FileResponse> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200 || status === 206) {
+            const contentDisposition = response.headers ? response.headers.get("content-disposition") : undefined;
+            let fileNameMatch = contentDisposition ? /filename\*=(?:(\\?['"])(.*?)\1|(?:[^\s]+'.*?')?([^;\n]*))/g.exec(contentDisposition) : undefined;
+            let fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[3] || fileNameMatch[2] : undefined;
+            if (fileName) {
+                fileName = decodeURIComponent(fileName);
+            } else {
+                fileNameMatch = contentDisposition ? /filename="?([^"]*?)"?(;|$)/g.exec(contentDisposition) : undefined;
+                fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[1] : undefined;
+            }
+            return response.blob().then(blob => { return { fileName: fileName, data: blob, status: status, headers: _headers }; });
+        } else if (status === 400) {
+            return response.text().then((_responseText) => {
+            let result400: any = null;
+            let resultData400 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result400 = resultData400 ? ProblemDetails.fromJS(resultData400) : null as any;
+            return throwException("A server side error occurred.", status, _responseText, _headers, result400);
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<FileResponse>(null as any);
+    }
+
+    /**
+     * Removes a user's vote from the specified idea.
+     * @param dto (optional) An object containing the details of the vote to be removed. Cannot be null.
+     * @return An HTTP response indicating the result of the remove vote operation.
+     */
+    removeVote(dto: VoteDto | null | undefined, signal?: AbortSignal): Promise<FileResponse> {
+        let url_ = this.baseUrl + "/Voting/RemoveVote";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(dto);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            signal,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/octet-stream"
+            }
+        };
+
+        return this.transformOptions(options_).then(transformedOptions_ => {
+            return this.http.fetch(url_, transformedOptions_);
+        }).then((_response: Response) => {
+            return this.processRemoveVote(_response);
+        });
+    }
+
+    protected processRemoveVote(response: Response): Promise<FileResponse> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200 || status === 206) {
+            const contentDisposition = response.headers ? response.headers.get("content-disposition") : undefined;
+            let fileNameMatch = contentDisposition ? /filename\*=(?:(\\?['"])(.*?)\1|(?:[^\s]+'.*?')?([^;\n]*))/g.exec(contentDisposition) : undefined;
+            let fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[3] || fileNameMatch[2] : undefined;
+            if (fileName) {
+                fileName = decodeURIComponent(fileName);
+            } else {
+                fileNameMatch = contentDisposition ? /filename="?([^"]*?)"?(;|$)/g.exec(contentDisposition) : undefined;
+                fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[1] : undefined;
+            }
+            return response.blob().then(blob => { return { fileName: fileName, data: blob, status: status, headers: _headers }; });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<FileResponse>(null as any);
+    }
+}
+
 /** Implements RFC 7807 Problem Details for HTTP APIs. */
 export class ProblemDetails implements IProblemDetails {
     /** Gets or sets a URI that describes the type of problem. */
@@ -516,6 +780,10 @@ export class IdeaViewModel implements IIdeaViewModel {
     title?: string | undefined;
     /** Gets or sets the description associated with the object. */
     description?: string | undefined;
+    /** Gets or sets the number of votes associated with the idea. */
+    votes?: number;
+    /** Gets or sets a value indicating whether the current user has voted for this item. */
+    isVotedByUser?: boolean;
 
     constructor(data?: IIdeaViewModel) {
         if (data) {
@@ -531,6 +799,8 @@ export class IdeaViewModel implements IIdeaViewModel {
             this.id = _data["Id"];
             this.title = _data["Title"];
             this.description = _data["Description"];
+            this.votes = _data["Votes"];
+            this.isVotedByUser = _data["IsVotedByUser"];
         }
     }
 
@@ -546,6 +816,8 @@ export class IdeaViewModel implements IIdeaViewModel {
         data["Id"] = this.id;
         data["Title"] = this.title;
         data["Description"] = this.description;
+        data["Votes"] = this.votes;
+        data["IsVotedByUser"] = this.isVotedByUser;
         return data;
     }
 }
@@ -558,6 +830,10 @@ export interface IIdeaViewModel {
     title?: string | undefined;
     /** Gets or sets the description associated with the object. */
     description?: string | undefined;
+    /** Gets or sets the number of votes associated with the idea. */
+    votes?: number;
+    /** Gets or sets a value indicating whether the current user has voted for this item. */
+    isVotedByUser?: boolean;
 }
 
 /** The details about ideas search to perform. */
@@ -674,6 +950,8 @@ export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
     createdAt?: Date;
     /** Gets or sets a value indicating how long ago the idea was created, in a human-readable format (e.g., "2 hours ago"). */
     createdSince?: string | undefined;
+    /** Gets or sets the number of votes associated with the idea. */
+    votes?: number;
 
     constructor(data?: IIdeaDetailsViewModel) {
         if (data) {
@@ -693,6 +971,7 @@ export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
             this.createdByUserDisplayName = _data["CreatedByUserDisplayName"];
             this.createdAt = _data["CreatedAt"] ? new Date(_data["CreatedAt"].toString()) : undefined as any;
             this.createdSince = _data["CreatedSince"];
+            this.votes = _data["Votes"];
         }
     }
 
@@ -712,6 +991,7 @@ export class IdeaDetailsViewModel implements IIdeaDetailsViewModel {
         data["CreatedByUserDisplayName"] = this.createdByUserDisplayName;
         data["CreatedAt"] = this.createdAt ? this.createdAt.toISOString() : undefined as any;
         data["CreatedSince"] = this.createdSince;
+        data["Votes"] = this.votes;
         return data;
     }
 }
@@ -732,6 +1012,8 @@ export interface IIdeaDetailsViewModel {
     createdAt?: Date;
     /** Gets or sets a value indicating how long ago the idea was created, in a human-readable format (e.g., "2 hours ago"). */
     createdSince?: string | undefined;
+    /** Gets or sets the number of votes associated with the idea. */
+    votes?: number;
 }
 
 /** A viewmodel that exposes all resource keys in strong types. */
@@ -804,6 +1086,8 @@ export class ModelValidationInfo implements IModelValidationInfo {
     userRequired?: string | undefined;
     /** Gets or sets the ValidationErrorTitle localized text. */
     validationErrorTitle?: string | undefined;
+    /** Gets or sets the VotesExhausted localized text. */
+    votesExhausted?: string | undefined;
 
     constructor(data?: IModelValidationInfo) {
         if (data) {
@@ -827,6 +1111,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
             this.titleUnique = _data["TitleUnique"];
             this.userRequired = _data["UserRequired"];
             this.validationErrorTitle = _data["ValidationErrorTitle"];
+            this.votesExhausted = _data["VotesExhausted"];
         }
     }
 
@@ -850,6 +1135,7 @@ export class ModelValidationInfo implements IModelValidationInfo {
         data["TitleUnique"] = this.titleUnique;
         data["UserRequired"] = this.userRequired;
         data["ValidationErrorTitle"] = this.validationErrorTitle;
+        data["VotesExhausted"] = this.votesExhausted;
         return data;
     }
 }
@@ -878,6 +1164,8 @@ export interface IModelValidationInfo {
     userRequired?: string | undefined;
     /** Gets or sets the ValidationErrorTitle localized text. */
     validationErrorTitle?: string | undefined;
+    /** Gets or sets the VotesExhausted localized text. */
+    votesExhausted?: string | undefined;
 }
 
 /** Localized strings for the UI resources. */
@@ -912,6 +1200,8 @@ export class UIInfo implements IUIInfo {
     vote?: string | undefined;
     /** Gets or sets the Votes localized text. */
     votes?: string | undefined;
+    /** Gets or sets the VotesLeft localized text. */
+    votesLeft?: string | undefined;
     /** Gets or sets the Withdraw localized text. */
     withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
@@ -943,6 +1233,7 @@ export class UIInfo implements IUIInfo {
             this.title = _data["Title"];
             this.vote = _data["Vote"];
             this.votes = _data["Votes"];
+            this.votesLeft = _data["VotesLeft"];
             this.withdraw = _data["Withdraw"];
             this.yes = _data["Yes"];
         }
@@ -972,6 +1263,7 @@ export class UIInfo implements IUIInfo {
         data["Title"] = this.title;
         data["Vote"] = this.vote;
         data["Votes"] = this.votes;
+        data["VotesLeft"] = this.votesLeft;
         data["Withdraw"] = this.withdraw;
         data["Yes"] = this.yes;
         return data;
@@ -1010,10 +1302,145 @@ export interface IUIInfo {
     vote?: string | undefined;
     /** Gets or sets the Votes localized text. */
     votes?: string | undefined;
+    /** Gets or sets the VotesLeft localized text. */
+    votesLeft?: string | undefined;
     /** Gets or sets the Withdraw localized text. */
     withdraw?: string | undefined;
     /** Gets or sets the Yes localized text. */
     yes?: string | undefined;
+}
+
+/** Represents the UserVoice module settings. */
+export class UserVoiceSettings implements IUserVoiceSettings {
+    /** Gets or sets the default number of votes allocated to each user. */
+    baseVotesPerUser?: number;
+
+    constructor(data?: IUserVoiceSettings) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.baseVotesPerUser = _data["BaseVotesPerUser"];
+        }
+    }
+
+    static fromJS(data: any): UserVoiceSettings {
+        data = typeof data === 'object' ? data : {};
+        let result = new UserVoiceSettings();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["BaseVotesPerUser"] = this.baseVotesPerUser;
+        return data;
+    }
+}
+
+/** Represents the UserVoice module settings. */
+export interface IUserVoiceSettings {
+    /** Gets or sets the default number of votes allocated to each user. */
+    baseVotesPerUser?: number;
+}
+
+/** Represents voting statistics for a user. */
+export class VoteStatsViewModel implements IVoteStatsViewModel {
+    /** Gets or sets the total number of votes already cast by the user. */
+    currentVotes?: number;
+    /** Gets or sets the maximum number of votes allowed for the user. */
+    maxVotes?: number;
+
+    constructor(data?: IVoteStatsViewModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.currentVotes = _data["CurrentVotes"];
+            this.maxVotes = _data["MaxVotes"];
+        }
+    }
+
+    static fromJS(data: any): VoteStatsViewModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new VoteStatsViewModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["CurrentVotes"] = this.currentVotes;
+        data["MaxVotes"] = this.maxVotes;
+        return data;
+    }
+}
+
+/** Represents voting statistics for a user. */
+export interface IVoteStatsViewModel {
+    /** Gets or sets the total number of votes already cast by the user. */
+    currentVotes?: number;
+    /** Gets or sets the maximum number of votes allowed for the user. */
+    maxVotes?: number;
+}
+
+/** Information about the vote to cast or remove. */
+export class VoteDto implements IVoteDto {
+    /** Gets or sets the ID of the idea being voted on. */
+    ideaId?: number;
+
+    constructor(data?: IVoteDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (this as any)[property] = (data as any)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.ideaId = _data["IdeaId"];
+        }
+    }
+
+    static fromJS(data: any): VoteDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new VoteDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["IdeaId"] = this.ideaId;
+        return data;
+    }
+}
+
+/** Information about the vote to cast or remove. */
+export interface IVoteDto {
+    /** Gets or sets the ID of the idea being voted on. */
+    ideaId?: number;
+}
+
+export interface FileResponse {
+    data: Blob;
+    status: number;
+    fileName?: string;
+    headers?: { [name: string]: any };
 }
 
 export class ApiException extends Error {

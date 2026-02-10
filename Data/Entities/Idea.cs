@@ -5,6 +5,7 @@ namespace DNN.Modules.UserVoice.Data.Entities
 {
     using DNN.Modules.UserVoice.Common;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,9 +16,18 @@ namespace DNN.Modules.UserVoice.Data.Entities
     public class Idea : BaseEntity
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Idea"/> class.
+        /// </summary>
+        public Idea()
+        {
+            this.UserVotes = new HashSet<UserVote>();
+        }
+
+        /// <summary>
         /// Gets or sets the unique identifier for the module this idea belongs to.
         /// </summary>
         [Required]
+        [Index]
         public int ModuleId { get; set; }
 
         /// <summary>
@@ -38,5 +48,10 @@ namespace DNN.Modules.UserVoice.Data.Entities
         /// Gets or sets the date and time when the entity was soft-deleted.
         /// </summary>
         public DateTime? DeletedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collection of votes associated with the idea.
+        /// </summary>
+        public virtual ICollection<UserVote> UserVotes { get; set; }
     }
 }

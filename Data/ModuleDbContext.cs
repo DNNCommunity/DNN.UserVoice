@@ -8,12 +8,14 @@ namespace DNN.Modules.UserVoice.Data
     using System.Configuration;
     using System.Data.Common;
     using System.Data.Entity;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Web;
 
     /// <summary>
     /// The data context for this module.
     /// </summary>
+    [ExcludeFromCodeCoverage] // Very close to the metal configuration code, hard to test without heavy mocking, and low risk of bugs.
     public class ModuleDbContext : DbContext
     {
         /// <summary>
@@ -45,6 +47,11 @@ namespace DNN.Modules.UserVoice.Data
         /// Gets or sets the ideas.
         /// </summary>
         public virtual DbSet<Idea> Ideas { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collection of user vote entities in the database.
+        /// </summary>
+        public virtual DbSet<UserVote> UserVotes { get; set; }
 
         /// <summary>
         /// Gets the connection string, using cached value after first call.

@@ -57,7 +57,7 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
                                 .DependentRules(() =>
                                 {
                                     this.RuleFor(x => x.ActingUserId)
-                                        .Must(this.UserCanDeleteIdea)
+                                        .Must(this.ActingUserCanDeleteIdea)
                                         .WithMessage(this.localization.ModelValidation.CannotEditIdeaNotYours);
                                 });
                         });
@@ -70,21 +70,21 @@ namespace DNN.Modules.UserVoice.Services.Ideas.Validators
             return this.idea != null;
         }
 
-        private bool UserCanDeleteIdea(RequestIdeaDeletionDtoWithContext dto, int userId)
+        private bool ActingUserCanDeleteIdea(RequestIdeaDeletionDtoWithContext dto, int actingUserId)
         {
-            var user = this.userController.GetUserById(dto.PortalId, userId);
+            var actingUser = this.userController.GetUserById(dto.PortalId, actingUserId);
 
-            if (user is null)
+            if (actingUser is null)
             {
                 return false;
             }
 
-            if (user.IsAdmin)
+            if (actingUser.IsAdmin)
             {
                 return true;
             }
 
-            return this.idea.CreatedByUserId == userId;
+            return this.idea.CreatedByUserId == actingUserId;
         }
     }
 }
