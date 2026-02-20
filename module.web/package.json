@@ -31,7 +31,7 @@
     "@stencil/eslint-plugin": "^1.1.0",
     "@stencil/sass": "^3.0.2",
     "@stencil/store": "^2.0.0",
-    "@types/node": "^24.10.11",
+    "@types/node": "^25.3.0",
     "jiti": "^2.4.2",
     "stencil-router-v2": "^0.6.0",
     "typescript": "^5.8.3",
