@@ -35,7 +35,7 @@
     "jiti": "^2.4.2",
     "stencil-router-v2": "^0.6.0",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.56.0"
   },
   "license": "MIT"
 }
