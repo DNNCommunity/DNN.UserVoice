@@ -33,10 +33,10 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="AutoFixture" Version="4.18.1" />
-		<PackageReference Include="coverlet.collector" Version="6.0.4">
+		<PackageReference Include="coverlet.collector" Version="8.0.0">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="coverlet.msbuild" Version="6.0.4">
+		<PackageReference Include="coverlet.msbuild" Version="8.0.0">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="DotNetNuke.Abstractions" Version="10.2.1" />
